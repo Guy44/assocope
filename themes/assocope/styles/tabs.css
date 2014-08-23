@@ -1,0 +1,41 @@
+.activetab
+{
+  cursor: pointer; 
+  
+ border: 0px solid darkgrey; 
+  border-left-width:1px;
+  border-right-width:1px;
+  border-top-width:1px;
+
+  padding: 5px;
+}
+
+.passivetab
+{
+  cursor: hand; 
+  background-color : 	#D0D0D0  ;
+ border: 0px solid darkgrey; 
+  border-left-width:1px;
+  border-right-width:1px;
+  border-top-width:1px;
+  border-bottom-width:1px;
+   padding: 5px;
+}
+.passivetab:hover {
+ background-color : 	#E0E0E0  ;
+;
+}
+
+.tabsTabs
+{
+  margin-top:5px;
+  }
+.intertab
+{
+
+  border: 0px solid darkgrey;
+ 
+  border-bottom-width:2px;
+  margin-top:5px;
+
+}

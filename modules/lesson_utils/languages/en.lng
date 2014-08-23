@@ -1,0 +1,8 @@
+<?php
+
+  $en = array(
+    "view_source" => "View the source for this node", 
+    "menu_modulesource" => "Module source",
+    "loggedinuser" => "Logged in user"
+  );
+?>

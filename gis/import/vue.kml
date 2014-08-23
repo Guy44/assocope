@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.1">
+<Document>
+	<name>vue.kml</name>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Placemark>
+		<name>Sans titre - Repère</name>
+		<LookAt>
+			<longitude>-2.367253258655802</longitude>
+			<latitude>47.16732778549854</latitude>
+			<altitude>0</altitude>
+			<range>16993.04630380703</range>
+			<tilt>72.02535138427693</tilt>
+			<heading>10.32002894101426</heading>
+		</LookAt>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<Point>
+			<coordinates>-2.367253258655802,47.16732778549854,0</coordinates>
+		</Point>
+	</Placemark>
+</Document>
+</kml>

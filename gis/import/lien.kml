@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.1">
+<NetworkLink>
+	<name>Sans titre - Lien réseau</name>
+	<description>test lien ilco</description>
+	<Style>
+		<ListStyle>
+			<listItemType>check</listItemType>
+			<bgColor>00ffffff</bgColor>
+		</ListStyle>
+	</Style>
+	<Url>
+		<href>http://www.ilcoatlantique.org/index.php</href>
+	</Url>
+</NetworkLink>
+</kml>

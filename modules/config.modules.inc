@@ -1,0 +1,28 @@
+<?php
+module("utils");
+module("todo");
+module("pim");
+module("lesson_utils");
+module("manuel");
+module("table");
+module("individu");
+module("organisme");
+module("profil");
+module("global");
+module("search");
+module("editeur");
+module("development");
+module("divers");
+module("menu");
+module("gis");
+// module("gkcode_generator");
+module("gktools");
+module("traitement");
+module("application");
+module("test");
+module("scheduler");
+module("biodiversite");
+module("etp");
+module("tournoi");
+// module("tableaudebord");
+?>

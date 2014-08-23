@@ -1,0 +1,23 @@
+<?php
+	module("utils");
+	module("todo");
+	module("pim");
+	module("lesson_utils");
+	module("manuel");
+	module("table");
+	module("individu");
+	module("organisme");
+	module("profil");
+	module("global");
+	module("search");
+	module("editeur");
+	module("divers");
+	module("menu");
+	module("gkcode_generator");
+  module("gktools");
+  module("traitement");
+  module("wizard");
+	module("v_organisme_inscription_controle"); // added by ATK Code Generator on Jul 29, 2007. Author: Jorge Garifuna (http://www.GariDigital.com) <info@GariDigital.com>
+	module("v_organisme_insription"); // added by ATK Code Generator on Jul 30, 2007. Author: Jorge Garifuna (http://www.GariDigital.com) <info@GariDigital.com>
+	module("v_organisme_inscription"); // added by ATK Code Generator on Jul 30, 2007. Author: Jorge Garifuna (http://www.GariDigital.com) <info@GariDigital.com>
+?>

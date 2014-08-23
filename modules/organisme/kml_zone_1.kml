@@ -1,0 +1,1558 @@
+<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.1"  creator="association - http://www.wikistoma.org" ><Document>
+						<description>Phares et balises <br />
+							<table style="font: 12px Arial; ">
+							<tr><td><b>Pays:</b> FRANCE<br />
+						  	<b>Region:</b> Côte Atlantique<br />
+							<b>Zone:</b> Le Croisic - Saint Gildas<br />
+							<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+							<br /></div>
+							</td></tr>
+							</table>
+						</description>
+						<name>Le Croisic - Saint Gildas</name>
+						<visibility>1</visibility>
+						<LookAt>
+						<longitude> -2.3672532586558</longitude>
+						<latitude> 47.167327785499</latitude>
+						<altitude> 0</altitude>
+						<range> 16993.046303807</range>
+						<tilt> 72.025351384277</tilt>
+						<heading> 10.320028941014</heading>
+						</LookAt>		
+									<StyleMap id="msn_icon3">
+									<Pair> 
+									<key>normal</key> 
+									<styleUrl>#sn_icon3</styleUrl> 
+									</Pair> 
+									<Pair> 
+									<key>highlight</key> 
+									<styleUrl>#sh_icon3</styleUrl> 
+									</Pair> 
+									</StyleMap> 
+									<Style id="sh_icon3">
+									<IconStyle> 
+									<scale>1.1</scale> 
+									<Icon> 
+									<x>0.5</x>
+									<y>0.5</y>
+									<href>http://wikistoma.org/association/gis/images/gis_icone_3.png </href> 
+									</Icon>
+									</IconStyle> 
+									<LabelStyle>
+									<color>ff00ffff</color>
+									<scale>0.7</scale>
+									</LabelStyle>
+									<ListStyle> 
+									</ListStyle> 
+									</Style> 
+									<Style id="sn_icon3"> 
+									<IconStyle> 
+									<scale>1</scale> 
+									<Icon> 
+									<x>0.5</x>
+									<y>0.5</y>
+									<href>http://wikistoma.org/association/gis/images/gis_icone_3.png </href> 
+									</Icon>
+									</IconStyle> 
+									<LabelStyle>
+									<color>ff00ffff</color>
+									<scale>0.7</scale>
+									</LabelStyle>
+									<ListStyle> 
+									</ListStyle> 
+									</Style> 		
+									<StyleMap id="msn_icon4">
+									<Pair> 
+									<key>normal</key> 
+									<styleUrl>#sn_icon4</styleUrl> 
+									</Pair> 
+									<Pair> 
+									<key>highlight</key> 
+									<styleUrl>#sh_icon4</styleUrl> 
+									</Pair> 
+									</StyleMap> 
+									<Style id="sh_icon4">
+									<IconStyle> 
+									<scale>1.1</scale> 
+									<Icon> 
+									<x>0.5</x>
+									<y>0.5</y>
+									<href>http://wikistoma.org/association/gis/images/gis_icone_4.png </href> 
+									</Icon>
+									</IconStyle> 
+									<LabelStyle>
+									<color>ff00ffff</color>
+									<scale>0.7</scale>
+									</LabelStyle>
+									<ListStyle> 
+									</ListStyle> 
+									</Style> 
+									<Style id="sn_icon4"> 
+									<IconStyle> 
+									<scale>1</scale> 
+									<Icon> 
+									<x>0.5</x>
+									<y>0.5</y>
+									<href>http://wikistoma.org/association/gis/images/gis_icone_4.png </href> 
+									</Icon>
+									</IconStyle> 
+									<LabelStyle>
+									<color>ff00ffff</color>
+									<scale>0.7</scale>
+									</LabelStyle>
+									<ListStyle> 
+									</ListStyle> 
+									</Style> 		
+									<StyleMap id="msn_icon5">
+									<Pair> 
+									<key>normal</key> 
+									<styleUrl>#sn_icon5</styleUrl> 
+									</Pair> 
+									<Pair> 
+									<key>highlight</key> 
+									<styleUrl>#sh_icon5</styleUrl> 
+									</Pair> 
+									</StyleMap> 
+									<Style id="sh_icon5">
+									<IconStyle> 
+									<scale>1.1</scale> 
+									<Icon> 
+									<x>0.5</x>
+									<y>0.5</y>
+									<href>http://wikistoma.org/association/gis/images/gis_icone_5.png </href> 
+									</Icon>
+									</IconStyle> 
+									<LabelStyle>
+									<color>ff00ffff</color>
+									<scale>0.7</scale>
+									</LabelStyle>
+									<ListStyle> 
+									</ListStyle> 
+									</Style> 
+									<Style id="sn_icon5"> 
+									<IconStyle> 
+									<scale>1</scale> 
+									<Icon> 
+									<x>0.5</x>
+									<y>0.5</y>
+									<href>http://wikistoma.org/association/gis/images/gis_icone_5.png </href> 
+									</Icon>
+									</IconStyle> 
+									<LabelStyle>
+									<color>ff00ffff</color>
+									<scale>0.7</scale>
+									</LabelStyle>
+									<ListStyle> 
+									</ListStyle> 
+									</Style> 		
+									<StyleMap id="msn_icon6">
+									<Pair> 
+									<key>normal</key> 
+									<styleUrl>#sn_icon6</styleUrl> 
+									</Pair> 
+									<Pair> 
+									<key>highlight</key> 
+									<styleUrl>#sh_icon6</styleUrl> 
+									</Pair> 
+									</StyleMap> 
+									<Style id="sh_icon6">
+									<IconStyle> 
+									<scale>1.1</scale> 
+									<Icon> 
+									<x>0.5</x>
+									<y>0.5</y>
+									<href>http://wikistoma.org/association/gis/images/gis_icone_6.png </href> 
+									</Icon>
+									</IconStyle> 
+									<LabelStyle>
+									<color>ff00ffff</color>
+									<scale>0.7</scale>
+									</LabelStyle>
+									<ListStyle> 
+									</ListStyle> 
+									</Style> 
+									<Style id="sn_icon6"> 
+									<IconStyle> 
+									<scale>1</scale> 
+									<Icon> 
+									<x>0.5</x>
+									<y>0.5</y>
+									<href>http://wikistoma.org/association/gis/images/gis_icone_6.png </href> 
+									</Icon>
+									</IconStyle> 
+									<LabelStyle>
+									<color>ff00ffff</color>
+									<scale>0.7</scale>
+									</LabelStyle>
+									<ListStyle> 
+									</ListStyle> 
+									</Style> 		
+									<StyleMap id="msn_icon10">
+									<Pair> 
+									<key>normal</key> 
+									<styleUrl>#sn_icon10</styleUrl> 
+									</Pair> 
+									<Pair> 
+									<key>highlight</key> 
+									<styleUrl>#sh_icon10</styleUrl> 
+									</Pair> 
+									</StyleMap> 
+									<Style id="sh_icon10">
+									<IconStyle> 
+									<scale>1.1</scale> 
+									<Icon> 
+									<x>0.5</x>
+									<y>0.5</y>
+									<href>http://wikistoma.org/association/gis/images/gis_icone_10.png </href> 
+									</Icon>
+									</IconStyle> 
+									<LabelStyle>
+									<color>ff00ffff</color>
+									<scale>0.7</scale>
+									</LabelStyle>
+									<ListStyle> 
+									</ListStyle> 
+									</Style> 
+									<Style id="sn_icon10"> 
+									<IconStyle> 
+									<scale>1</scale> 
+									<Icon> 
+									<x>0.5</x>
+									<y>0.5</y>
+									<href>http://wikistoma.org/association/gis/images/gis_icone_10.png </href> 
+									</Icon>
+									</IconStyle> 
+									<LabelStyle>
+									<color>ff00ffff</color>
+									<scale>0.7</scale>
+									</LabelStyle>
+									<ListStyle> 
+									</ListStyle> 
+									</Style> 		
+									<StyleMap id="msn_icon13">
+									<Pair> 
+									<key>normal</key> 
+									<styleUrl>#sn_icon13</styleUrl> 
+									</Pair> 
+									<Pair> 
+									<key>highlight</key> 
+									<styleUrl>#sh_icon13</styleUrl> 
+									</Pair> 
+									</StyleMap> 
+									<Style id="sh_icon13">
+									<IconStyle> 
+									<scale>1.1</scale> 
+									<Icon> 
+									<x>0.5</x>
+									<y>0.5</y>
+									<href>http://wikistoma.org/association/gis/images/gis_icone_13.png </href> 
+									</Icon>
+									</IconStyle> 
+									<LabelStyle>
+									<color>ff00ffff</color>
+									<scale>0.7</scale>
+									</LabelStyle>
+									<ListStyle> 
+									</ListStyle> 
+									</Style> 
+									<Style id="sn_icon13"> 
+									<IconStyle> 
+									<scale>1</scale> 
+									<Icon> 
+									<x>0.5</x>
+									<y>0.5</y>
+									<href>http://wikistoma.org/association/gis/images/gis_icone_13.png </href> 
+									</Icon>
+									</IconStyle> 
+									<LabelStyle>
+									<color>ff00ffff</color>
+									<scale>0.7</scale>
+									</LabelStyle>
+									<ListStyle> 
+									</ListStyle> 
+									</Style> 		
+									<StyleMap id="msn_icon14">
+									<Pair> 
+									<key>normal</key> 
+									<styleUrl>#sn_icon14</styleUrl> 
+									</Pair> 
+									<Pair> 
+									<key>highlight</key> 
+									<styleUrl>#sh_icon14</styleUrl> 
+									</Pair> 
+									</StyleMap> 
+									<Style id="sh_icon14">
+									<IconStyle> 
+									<scale>1.1</scale> 
+									<Icon> 
+									<x>0.5</x>
+									<y>0.5</y>
+									<href>http://wikistoma.org/association/gis/images/gis_icone_14.png </href> 
+									</Icon>
+									</IconStyle> 
+									<LabelStyle>
+									<color>ff00ffff</color>
+									<scale>0.7</scale>
+									</LabelStyle>
+									<ListStyle> 
+									</ListStyle> 
+									</Style> 
+									<Style id="sn_icon14"> 
+									<IconStyle> 
+									<scale>1</scale> 
+									<Icon> 
+									<x>0.5</x>
+									<y>0.5</y>
+									<href>http://wikistoma.org/association/gis/images/gis_icone_14.png </href> 
+									</Icon>
+									</IconStyle> 
+									<LabelStyle>
+									<color>ff00ffff</color>
+									<scale>0.7</scale>
+									</LabelStyle>
+									<ListStyle> 
+									</ListStyle> 
+									</Style> 		
+									<StyleMap id="msn_icon15">
+									<Pair> 
+									<key>normal</key> 
+									<styleUrl>#sn_icon15</styleUrl> 
+									</Pair> 
+									<Pair> 
+									<key>highlight</key> 
+									<styleUrl>#sh_icon15</styleUrl> 
+									</Pair> 
+									</StyleMap> 
+									<Style id="sh_icon15">
+									<IconStyle> 
+									<scale>1.1</scale> 
+									<Icon> 
+									<x>0.5</x>
+									<y>0.5</y>
+									<href>http://wikistoma.org/association/gis/images/gis_icone_15.png </href> 
+									</Icon>
+									</IconStyle> 
+									<LabelStyle>
+									<color>ff00ffff</color>
+									<scale>0.7</scale>
+									</LabelStyle>
+									<ListStyle> 
+									</ListStyle> 
+									</Style> 
+									<Style id="sn_icon15"> 
+									<IconStyle> 
+									<scale>1</scale> 
+									<Icon> 
+									<x>0.5</x>
+									<y>0.5</y>
+									<href>http://wikistoma.org/association/gis/images/gis_icone_15.png </href> 
+									</Icon>
+									</IconStyle> 
+									<LabelStyle>
+									<color>ff00ffff</color>
+									<scale>0.7</scale>
+									</LabelStyle>
+									<ListStyle> 
+									</ListStyle> 
+									</Style> 		
+									<StyleMap id="msn_icon17">
+									<Pair> 
+									<key>normal</key> 
+									<styleUrl>#sn_icon17</styleUrl> 
+									</Pair> 
+									<Pair> 
+									<key>highlight</key> 
+									<styleUrl>#sh_icon17</styleUrl> 
+									</Pair> 
+									</StyleMap> 
+									<Style id="sh_icon17">
+									<IconStyle> 
+									<scale>1.1</scale> 
+									<Icon> 
+									<x>0.5</x>
+									<y>0.5</y>
+									<href>http://wikistoma.org/association/gis/images/gis_icone_17.png </href> 
+									</Icon>
+									</IconStyle> 
+									<LabelStyle>
+									<color>ff00ffff</color>
+									<scale>0.7</scale>
+									</LabelStyle>
+									<ListStyle> 
+									</ListStyle> 
+									</Style> 
+									<Style id="sn_icon17"> 
+									<IconStyle> 
+									<scale>1</scale> 
+									<Icon> 
+									<x>0.5</x>
+									<y>0.5</y>
+									<href>http://wikistoma.org/association/gis/images/gis_icone_17.png </href> 
+									</Icon>
+									</IconStyle> 
+									<LabelStyle>
+									<color>ff00ffff</color>
+									<scale>0.7</scale>
+									</LabelStyle>
+									<ListStyle> 
+									</ListStyle> 
+									</Style> 		
+									<StyleMap id="msn_icon18">
+									<Pair> 
+									<key>normal</key> 
+									<styleUrl>#sn_icon18</styleUrl> 
+									</Pair> 
+									<Pair> 
+									<key>highlight</key> 
+									<styleUrl>#sh_icon18</styleUrl> 
+									</Pair> 
+									</StyleMap> 
+									<Style id="sh_icon18">
+									<IconStyle> 
+									<scale>1.1</scale> 
+									<Icon> 
+									<x>0.5</x>
+									<y>0.5</y>
+									<href>http://wikistoma.org/association/gis/images/gis_icone_18.png </href> 
+									</Icon>
+									</IconStyle> 
+									<LabelStyle>
+									<color>ff00ffff</color>
+									<scale>0.7</scale>
+									</LabelStyle>
+									<ListStyle> 
+									</ListStyle> 
+									</Style> 
+									<Style id="sn_icon18"> 
+									<IconStyle> 
+									<scale>1</scale> 
+									<Icon> 
+									<x>0.5</x>
+									<y>0.5</y>
+									<href>http://wikistoma.org/association/gis/images/gis_icone_18.png </href> 
+									</Icon>
+									</IconStyle> 
+									<LabelStyle>
+									<color>ff00ffff</color>
+									<scale>0.7</scale>
+									</LabelStyle>
+									<ListStyle> 
+									</ListStyle> 
+									</Style> 		
+									<StyleMap id="msn_icon19">
+									<Pair> 
+									<key>normal</key> 
+									<styleUrl>#sn_icon19</styleUrl> 
+									</Pair> 
+									<Pair> 
+									<key>highlight</key> 
+									<styleUrl>#sh_icon19</styleUrl> 
+									</Pair> 
+									</StyleMap> 
+									<Style id="sh_icon19">
+									<IconStyle> 
+									<scale>1.1</scale> 
+									<Icon> 
+									<x>0.5</x>
+									<y>0.5</y>
+									<href>http://wikistoma.org/association/gis/images/gis_icone_19.png </href> 
+									</Icon>
+									</IconStyle> 
+									<LabelStyle>
+									<color>ff00ffff</color>
+									<scale>0.7</scale>
+									</LabelStyle>
+									<ListStyle> 
+									</ListStyle> 
+									</Style> 
+									<Style id="sn_icon19"> 
+									<IconStyle> 
+									<scale>1</scale> 
+									<Icon> 
+									<x>0.5</x>
+									<y>0.5</y>
+									<href>http://wikistoma.org/association/gis/images/gis_icone_19.png </href> 
+									</Icon>
+									</IconStyle> 
+									<LabelStyle>
+									<color>ff00ffff</color>
+									<scale>0.7</scale>
+									</LabelStyle>
+									<ListStyle> 
+									</ListStyle> 
+									</Style> 		
+									<StyleMap id="msn_icon20">
+									<Pair> 
+									<key>normal</key> 
+									<styleUrl>#sn_icon20</styleUrl> 
+									</Pair> 
+									<Pair> 
+									<key>highlight</key> 
+									<styleUrl>#sh_icon20</styleUrl> 
+									</Pair> 
+									</StyleMap> 
+									<Style id="sh_icon20">
+									<IconStyle> 
+									<scale>1.1</scale> 
+									<Icon> 
+									<x>0.5</x>
+									<y>0.5</y>
+									<href>http://wikistoma.org/association/gis/images/gis_icone_20.png </href> 
+									</Icon>
+									</IconStyle> 
+									<LabelStyle>
+									<color>ff00ffff</color>
+									<scale>0.7</scale>
+									</LabelStyle>
+									<ListStyle> 
+									</ListStyle> 
+									</Style> 
+									<Style id="sn_icon20"> 
+									<IconStyle> 
+									<scale>1</scale> 
+									<Icon> 
+									<x>0.5</x>
+									<y>0.5</y>
+									<href>http://wikistoma.org/association/gis/images/gis_icone_20.png </href> 
+									</Icon>
+									</IconStyle> 
+									<LabelStyle>
+									<color>ff00ffff</color>
+									<scale>0.7</scale>
+									</LabelStyle>
+									<ListStyle> 
+									</ListStyle> 
+									</Style> 		
+									<StyleMap id="msn_icon21">
+									<Pair> 
+									<key>normal</key> 
+									<styleUrl>#sn_icon21</styleUrl> 
+									</Pair> 
+									<Pair> 
+									<key>highlight</key> 
+									<styleUrl>#sh_icon21</styleUrl> 
+									</Pair> 
+									</StyleMap> 
+									<Style id="sh_icon21">
+									<IconStyle> 
+									<scale>1.1</scale> 
+									<Icon> 
+									<x>0.5</x>
+									<y>0.5</y>
+									<href>http://wikistoma.org/association/gis/images/gis_icone_21.png </href> 
+									</Icon>
+									</IconStyle> 
+									<LabelStyle>
+									<color>ff00ffff</color>
+									<scale>0.7</scale>
+									</LabelStyle>
+									<ListStyle> 
+									</ListStyle> 
+									</Style> 
+									<Style id="sn_icon21"> 
+									<IconStyle> 
+									<scale>1</scale> 
+									<Icon> 
+									<x>0.5</x>
+									<y>0.5</y>
+									<href>http://wikistoma.org/association/gis/images/gis_icone_21.png </href> 
+									</Icon>
+									</IconStyle> 
+									<LabelStyle>
+									<color>ff00ffff</color>
+									<scale>0.7</scale>
+									</LabelStyle>
+									<ListStyle> 
+									</ListStyle> 
+									</Style> 		
+									<StyleMap id="msn_icon30">
+									<Pair> 
+									<key>normal</key> 
+									<styleUrl>#sn_icon30</styleUrl> 
+									</Pair> 
+									<Pair> 
+									<key>highlight</key> 
+									<styleUrl>#sh_icon30</styleUrl> 
+									</Pair> 
+									</StyleMap> 
+									<Style id="sh_icon30">
+									<IconStyle> 
+									<scale>1.1</scale> 
+									<Icon> 
+									<x>0.5</x>
+									<y>0.5</y>
+									<href>http://wikistoma.org/association/gis/images/gis_icone_30.png </href> 
+									</Icon>
+									</IconStyle> 
+									<LabelStyle>
+									<color>ff00ffff</color>
+									<scale>0.7</scale>
+									</LabelStyle>
+									<ListStyle> 
+									</ListStyle> 
+									</Style> 
+									<Style id="sn_icon30"> 
+									<IconStyle> 
+									<scale>1</scale> 
+									<Icon> 
+									<x>0.5</x>
+									<y>0.5</y>
+									<href>http://wikistoma.org/association/gis/images/gis_icone_30.png </href> 
+									</Icon>
+									</IconStyle> 
+									<LabelStyle>
+									<color>ff00ffff</color>
+									<scale>0.7</scale>
+									</LabelStyle>
+									<ListStyle> 
+									</ListStyle> 
+									</Style> 		
+									<StyleMap id="msn_icon40">
+									<Pair> 
+									<key>normal</key> 
+									<styleUrl>#sn_icon40</styleUrl> 
+									</Pair> 
+									<Pair> 
+									<key>highlight</key> 
+									<styleUrl>#sh_icon40</styleUrl> 
+									</Pair> 
+									</StyleMap> 
+									<Style id="sh_icon40">
+									<IconStyle> 
+									<scale>1.1</scale> 
+									<Icon> 
+									<x>0.5</x>
+									<y>0.5</y>
+									<href>http://wikistoma.org/association/gis/images/gis_icone_40.png </href> 
+									</Icon>
+									</IconStyle> 
+									<LabelStyle>
+									<color>ff00ffff</color>
+									<scale>0.7</scale>
+									</LabelStyle>
+									<ListStyle> 
+									</ListStyle> 
+									</Style> 
+									<Style id="sn_icon40"> 
+									<IconStyle> 
+									<scale>1</scale> 
+									<Icon> 
+									<x>0.5</x>
+									<y>0.5</y>
+									<href>http://wikistoma.org/association/gis/images/gis_icone_40.png </href> 
+									</Icon>
+									</IconStyle> 
+									<LabelStyle>
+									<color>ff00ffff</color>
+									<scale>0.7</scale>
+									</LabelStyle>
+									<ListStyle> 
+									</ListStyle> 
+									</Style> 
+						<Folder>
+						<name>Phares et balises de la zone</name>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> La Couronnée<br />
+									<b>Coordonnées GPS (DMS): </b>47°7‘36\"N &nbsp;&nbsp; 2°20‘6\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>La Couronnée</name>
+									<styleUrl>#msn_icon"15</styleUrl>
+									<Point>
+									<coordinates>-2.33516667,47.126667,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Bouée de Préfailles<br />
+									<b>Coordonnées GPS (DMS): </b>47°8‘49\"N &nbsp;&nbsp; 2°14‘51\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Bouée de Préfailles</name>
+									<styleUrl>#msn_icon"17</styleUrl>
+									<Point>
+									<coordinates>-2.2475,47.147167,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Lancastria<br />
+									<b>Coordonnées GPS (DMS): </b>47°8‘56\"N &nbsp;&nbsp; 2°20‘19\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Lancastria</name>
+									<styleUrl>#msn_icon"6</styleUrl>
+									<Point>
+									<coordinates>-2.33866667,47.149,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Le Cormier<br />
+									<b>Coordonnées GPS (DMS): </b>47°9‘33\"N &nbsp;&nbsp; 2°10‘46\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Le Cormier</name>
+									<styleUrl>#msn_icon"3</styleUrl>
+									<Point>
+									<coordinates>-2.179666667,47.159333,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> La Gravette<br />
+									<b>Coordonnées GPS (DMS): </b>47°9‘53\"N &nbsp;&nbsp; 2°13‘1\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>La Gravette</name>
+									<styleUrl>#msn_icon"19</styleUrl>
+									<Point>
+									<coordinates>-2.217,47.164833,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> 1 Grand Chenal<br />
+									<b>Coordonnées GPS (DMS): </b>47°10‘1\"N &nbsp;&nbsp; 2°18‘18\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>1 Grand Chenal</name>
+									<styleUrl>#msn_icon"15</styleUrl>
+									<Point>
+									<coordinates>-2.305,47.167,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> SE Lambarde<br />
+									<b>Coordonnées GPS (DMS): </b>47°10‘6\"N &nbsp;&nbsp; 2°20‘42\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>SE Lambarde</name>
+									<styleUrl>#msn_icon"21</styleUrl>
+									<Point>
+									<coordinates>-2.34516667,47.1685,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Roche du Sud est<br />
+									<b>Coordonnées GPS (DMS): </b>47°10‘27\"N &nbsp;&nbsp; 2°26‘1\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Roche du Sud est</name>
+									<styleUrl>#msn_icon"18</styleUrl>
+									<Point>
+									<coordinates>-2.43366667,47.174333,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Entrée Port de Comberge<br />
+									<b>Coordonnées GPS (DMS): </b>47°10‘37\"N &nbsp;&nbsp; 2°9‘55\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Entrée Port de Comberge</name>
+									<styleUrl>#msn_icon"3</styleUrl>
+									<Point>
+									<coordinates>-2.1655,47.177167,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Phare de la Banche<br />
+									<b>Coordonnées GPS (DMS): </b>47°10‘41\"N &nbsp;&nbsp; 2°27‘58\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Phare de la Banche</name>
+									<styleUrl>#msn_icon"30</styleUrl>
+									<Point>
+									<coordinates>-2.46633333,47.178167,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> NW Lambarde<br />
+									<b>Coordonnées GPS (DMS): </b>47°10‘54\"N &nbsp;&nbsp; 2°22‘52\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>NW Lambarde</name>
+									<styleUrl>#msn_icon"20</styleUrl>
+									<Point>
+									<coordinates>-2.38116667,47.181833,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> 3<br />
+									<b>Coordonnées GPS (DMS): </b>47°11‘22\"N &nbsp;&nbsp; 2°17‘25\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>3</name>
+									<styleUrl>#msn_icon"15</styleUrl>
+									<Point>
+									<coordinates>-2.29033333,47.1895,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Euler<br />
+									<b>Coordonnées GPS (DMS): </b>47°11‘39\"N &nbsp;&nbsp; 2°18‘13\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Euler</name>
+									<styleUrl>#msn_icon"21</styleUrl>
+									<Point>
+									<coordinates>-2.30383333,47.194167,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Banche W<br />
+									<b>Coordonnées GPS (DMS): </b>47°11‘42\"N &nbsp;&nbsp; 2°32‘19\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Banche W</name>
+									<styleUrl>#msn_icon"20</styleUrl>
+									<Point>
+									<coordinates>-2.53883333,47.195,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> La Truie<br />
+									<b>Coordonnées GPS (DMS): </b>47°12‘7\"N &nbsp;&nbsp; 2°13‘16\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>La Truie</name>
+									<styleUrl>#msn_icon"10</styleUrl>
+									<Point>
+									<coordinates>-2.22133333,47.202167,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Le Vert<br />
+									<b>Coordonnées GPS (DMS): </b>47°12‘33\"N &nbsp;&nbsp; 2°15‘52\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Le Vert</name>
+									<styleUrl>#msn_icon"18</styleUrl>
+									<Point>
+									<coordinates>-2.26466667,47.209333,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> 5<br />
+									<b>Coordonnées GPS (DMS): </b>47°12‘43\"N &nbsp;&nbsp; 2°16‘30\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>5</name>
+									<styleUrl>#msn_icon"15</styleUrl>
+									<Point>
+									<coordinates>-2.27516667,47.212167,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Phare du Grand Charpentier<br />
+									<b>Coordonnées GPS (DMS): </b>47°12‘53\"N &nbsp;&nbsp; 2°19‘2\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Phare du Grand Charpentier</name>
+									<styleUrl>#msn_icon"30</styleUrl>
+									<Point>
+									<coordinates>-2.3175,47.214833,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> NW Banche<br />
+									<b>Coordonnées GPS (DMS): </b>47°12‘55\"N &nbsp;&nbsp; 2°30‘56\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>NW Banche</name>
+									<styleUrl>#msn_icon"19</styleUrl>
+									<Point>
+									<coordinates>-2.51566667,47.2155,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Petit Charpetier<br />
+									<b>Coordonnées GPS (DMS): </b>47°13‘23\"N &nbsp;&nbsp; 2°18‘50\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Petit Charpetier</name>
+									<styleUrl>#msn_icon"21</styleUrl>
+									<Point>
+									<coordinates>-2.314,47.223167,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Pierre Percée<br />
+									<b>Coordonnées GPS (DMS): </b>47°13‘28\"N &nbsp;&nbsp; 2°20‘34\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Pierre Percée</name>
+									<styleUrl>#msn_icon"19</styleUrl>
+									<Point>
+									<coordinates>-2.343,47.224667,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> 10<br />
+									<b>Coordonnées GPS (DMS): </b>47°13‘41\"N &nbsp;&nbsp; 2°16‘3\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>10</name>
+									<styleUrl>#msn_icon"6</styleUrl>
+									<Point>
+									<coordinates>-2.26766667,47.228167,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Le Caillou<br />
+									<b>Coordonnées GPS (DMS): </b>47°13‘43\"N &nbsp;&nbsp; 2°19‘5\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Le Caillou</name>
+									<styleUrl>#msn_icon"19</styleUrl>
+									<Point>
+									<coordinates>-2.31816667,47.228833,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Pointe de Chemoulin<br />
+									<b>Coordonnées GPS (DMS): </b>47°14‘1\"N &nbsp;&nbsp; 2°17‘49\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Pointe de Chemoulin</name>
+									<styleUrl>#msn_icon"3</styleUrl>
+									<Point>
+									<coordinates>-2.297,47.233833,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> La Vieille<br />
+									<b>Coordonnées GPS (DMS): </b>47°14‘4\"N &nbsp;&nbsp; 2°19‘25\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>La Vieille</name>
+									<styleUrl>#msn_icon"21</styleUrl>
+									<Point>
+									<coordinates>-2.32366667,47.234667,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Mouillage de Saint Marc<br />
+									<b>Coordonnées GPS (DMS): </b>47°14‘56\"N &nbsp;&nbsp; 2°15‘22\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Mouillage de Saint Marc</name>
+									<styleUrl>#msn_icon"40</styleUrl>
+									<Point>
+									<coordinates>-2.25633333,47.249,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Goué Vas du Four<br />
+									<b>Coordonnées GPS (DMS): </b>47°14‘58\"N &nbsp;&nbsp; 2°38‘8\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Goué Vas du Four</name>
+									<styleUrl>#msn_icon"21</styleUrl>
+									<Point>
+									<coordinates>-2.63566667,47.249667,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Mouillage alignement 25° feu<br />
+									<b>Coordonnées GPS (DMS): </b>47°15‘3\"N &nbsp;&nbsp; 2°15‘4\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Mouillage alignement 25° feu</name>
+									<styleUrl>#msn_icon"40</styleUrl>
+									<Point>
+									<coordinates>-2.25116667,47.251,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Tourelle des Morées<br />
+									<b>Coordonnées GPS (DMS): </b>47°15‘4\"N &nbsp;&nbsp; 2°12‘55\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Tourelle des Morées</name>
+									<styleUrl>#msn_icon"13</styleUrl>
+									<Point>
+									<coordinates>-2.21533333,47.251167,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Anse du Grand traict<br />
+									<b>Coordonnées GPS (DMS): </b>47°15‘49\"N &nbsp;&nbsp; 2°13‘7\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Anse du Grand traict</name>
+									<styleUrl>#msn_icon"3</styleUrl>
+									<Point>
+									<coordinates>-2.218833333,47.263833,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Basse Lovre<br />
+									<b>Coordonnées GPS (DMS): </b>47°16‘4\"N &nbsp;&nbsp; 2°29‘40\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Basse Lovre</name>
+									<styleUrl>#msn_icon"20</styleUrl>
+									<Point>
+									<coordinates>-2.49466667,47.268,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Entrée vieille Ecluse SN<br />
+									<b>Coordonnées GPS (DMS): </b>47°16‘32\"N &nbsp;&nbsp; 2°11‘38\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Entrée vieille Ecluse SN</name>
+									<styleUrl>#msn_icon"3</styleUrl>
+									<Point>
+									<coordinates>-2.194,47.275667,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Milieu arche viaduc<br />
+									<b>Coordonnées GPS (DMS): </b>47°17‘10\"N &nbsp;&nbsp; 2°10‘10\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Milieu arche viaduc</name>
+									<styleUrl>#msn_icon"13</styleUrl>
+									<Point>
+									<coordinates>-2.1695,47.286167,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Phare du Four<br />
+									<b>Coordonnées GPS (DMS): </b>47°17‘55\"N &nbsp;&nbsp; 2°37‘58\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA["<b><font color="#0000ff">Hauteur:</font></b> <br />100 m<br />
+																<b><font color="#0000ff">Portée:</font></b> <br />100 km<br />
+																 "]]></description>
+									<name>Phare du Four</name>
+									<styleUrl>#msn_icon"30</styleUrl>
+									<Point>
+									<coordinates>-2.633,47.298833,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Castouillet<br />
+									<b>Coordonnées GPS (DMS): </b>47°18‘11\"N &nbsp;&nbsp; 2°34‘17\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Castouillet</name>
+									<styleUrl>#msn_icon"20</styleUrl>
+									<Point>
+									<coordinates>-2.5715,47.303167,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Le Tréhic<br />
+									<b>Coordonnées GPS (DMS): </b>47°18‘33\"N &nbsp;&nbsp; 2°31‘20\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Le Tréhic</name>
+									<styleUrl>#msn_icon"13</styleUrl>
+									<Point>
+									<coordinates>-2.52233333,47.309167,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Bonen du Four<br />
+									<b>Coordonnées GPS (DMS): </b>47°18‘35\"N &nbsp;&nbsp; 2°39‘13\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Bonen du Four</name>
+									<styleUrl>#msn_icon"19</styleUrl>
+									<Point>
+									<coordinates>-2.65366667,47.309833,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Hergo<br />
+									<b>Coordonnées GPS (DMS): </b>47°18‘40\"N &nbsp;&nbsp; 2°31‘36\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Hergo</name>
+									<styleUrl>#msn_icon"14</styleUrl>
+									<Point>
+									<coordinates>-2.52683333,47.311333,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Entrée du port de la turballe<br />
+									<b>Coordonnées GPS (DMS): </b>47°20‘42\"N &nbsp;&nbsp; 2°30‘51\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Entrée du port de la turballe</name>
+									<styleUrl>#msn_icon"4</styleUrl>
+									<Point>
+									<coordinates>-2.51433333,47.345167,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Entrée sud de l'anse Lerat<br />
+									<b>Coordonnées GPS (DMS): </b>47°21‘39\"N &nbsp;&nbsp; 2°31‘59\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Entrée sud de l'anse Lerat</name>
+									<styleUrl>#msn_icon"4</styleUrl>
+									<Point>
+									<coordinates>-2.53333333,47.361,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Socle ancienne tourelle<br />
+									<b>Coordonnées GPS (DMS): </b>47°22‘30\"N &nbsp;&nbsp; 2°34‘12\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Socle ancienne tourelle</name>
+									<styleUrl>#msn_icon"3</styleUrl>
+									<Point>
+									<coordinates>-2.57016667,47.375167,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> les Bayonnelles<br />
+									<b>Coordonnées GPS (DMS): </b>47°22‘43\"N &nbsp;&nbsp; 2°35‘12\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>les Bayonnelles</name>
+									<styleUrl>#msn_icon"20</styleUrl>
+									<Point>
+									<coordinates>-2.58666667,47.378833,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Entrée sur alignement chenal<br />
+									<b>Coordonnées GPS (DMS): </b>47°23‘19\"N &nbsp;&nbsp; 2°32‘28\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Entrée sur alignement chenal</name>
+									<styleUrl>#msn_icon"3</styleUrl>
+									<Point>
+									<coordinates>-2.541333333,47.388833,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Grand Morven<br />
+									<b>Coordonnées GPS (DMS): </b>47°23‘37\"N &nbsp;&nbsp; 2°32‘48\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Grand Morven</name>
+									<styleUrl>#msn_icon"5</styleUrl>
+									<Point>
+									<coordinates>-2.54683333,47.393833,0</coordinates>
+									</Point>
+									</Placemark>
+									<Placemark>
+									<description><![CDATA["
+									<table style="font: 12px Arial; ">
+									<tr><td><<b>Pays:</b> FRANCE
+									<b>. Region:</b> Le Croisic - Saint Gildas
+									<b>. Zone:</b> Côte Atlantique<br />
+									<b>Point:</b> Mouillage île Dumet (NE)<br />
+									<b>Coordonnées GPS (DMS): </b>47°25‘10\"N &nbsp;&nbsp; 2°35‘51\"W <br />
+									<b>Description:</b> <br />
+									<div style="width:325px; padding: 2px; border: 1px solid #000; "><br />
+									<br /></div>
+									</td></tr>
+									</table>
+									<b>Attributs:</b><br /> "]]><![CDATA[" "]]></description>
+									<name>Mouillage île Dumet (NE)</name>
+									<styleUrl>#msn_icon"40</styleUrl>
+									<Point>
+									<coordinates>-2.5975,47.4195,0</coordinates>
+									</Point>
+									</Placemark>
+						</Folder>
+						</Document>
+						</kml>

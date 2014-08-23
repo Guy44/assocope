@@ -1,0 +1,7 @@
+<?php
+$fr=array(
+  "nom_tooltip" => "Ceci est le nom de l'individu.",
+"prenom_tooltip"=>"Ceci est son prenom"	 
+
+);
+?>

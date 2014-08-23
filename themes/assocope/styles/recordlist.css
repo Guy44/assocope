@@ -1,0 +1,287 @@
+TABLE.recordlist
+{
+  margin: 5px;
+  border-collapse: collapse;
+}
+
+TABLE.recordlist TH,
+TABLE.recordlist TD,
+TABLE.recordlist A
+{
+  font-family: Trebuchet MS;
+  font-size: 10px;
+ 
+
+}
+
+TABLE.recordlist TH,
+TABLE.recordlist TH A
+{
+  background-color: #b4bac6;
+  color: #fff;
+  	font-variant: small-caps;
+}
+
+TABLE.recordlist TH A:hover
+{
+  background-color: #ccccee;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+TABLE.recordlist TD,
+TABLE.recordlist TH
+{
+  padding: 1px;
+  margin: 0px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-top-width: 1px;
+  border-style: solid;
+  border-color: #ccc;
+   vertical-align: middle;
+}
+
+TABLE.recordlist .row1
+{
+  background-color: #ffffff;
+}
+
+TABLE.recordlist .row2
+{
+  background-color: #f8f9fb;
+}
+
+img.recordlist
+{
+  height: 20px;
+  width: 20px;
+}
+TABLE.recordlist .classe1
+{
+  background-color: #FF00FF;
+  font-weight: bold;
+  font-size: 10px;
+}
+TABLE.recordlist .classe2
+{
+  background-color: #FFA500;
+  font-size: 10px;
+}
+TABLE.recordlist .classe3
+{
+  background-color: #FFFF00;
+  font-size: 8px;
+}
+TABLE.recordlist .classe4
+{
+  background-color: #FFFFFF;
+  font-size: 8px;
+  font-style: italic;
+}
+TABLE.recordlist .classe5
+{
+  background-color: #FFFFFF;
+  font-size: 8px;
+  font-style: italic;
+}
+TABLE.recordlist .classe6
+{
+  background-color: #FFFFFF;
+  font-size: 8px;
+  font-style: italic;
+}
+
+
+
+TABLE.recordlistgg
+{
+  margin: 5px;
+  border-collapse: collapse;
+}
+
+TABLE.recordlistgg TH,
+TABLE.recordlistgg TD,
+TABLE.recordlistgg A
+{
+  font-family: Trebuchet MS;
+  font-size: 12px;
+   vertical-align: middle;
+
+}
+
+TABLE.recordlistgg TH,
+TABLE.recordlistgg TH A
+{
+  background-color: #ffff00;
+  -webkit-print-color-adjust:exact;
+  color: #000000;
+  	font-variant: small-caps;
+  	text-align:center;
+  	font-size: 14px;
+}
+
+TABLE.recordlistgg TH A:hover
+{
+  background-color: #ccccee;
+   -webkit-print-color-adjust:exact;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+TABLE.recordlistgg TD,
+TABLE.recordlistgg TH
+{
+  
+  padding: 5px;
+  margin: 0px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-top-width: 1px;
+  border-style: solid;
+  border-color: #ccc;
+   -webkit-print-color-adjust:exact;
+}
+
+TABLE.recordlistgg .row1
+{
+  background-color: #ffffff;
+   -webkit-print-color-adjust:exact;
+}
+
+TABLE.recordlistgg .row2
+{
+  background-color: #f8f9fb;
+   -webkit-print-color-adjust:exact;
+}
+
+img.recordlistgg
+{
+  height: 16px;
+  width: 16px;
+}
+
+
+TABLE.hautlistegg
+{
+  margin: 5px;
+  border-collapse: collapse;
+  border: none;
+}
+
+TABLE.hautlistegg TH,
+TABLE.hautlistegg TD,
+TABLE.hautlistegg A
+{
+  font-family: Trebuchet MS;
+  font-size: 20px;
+  font-weight: bold;
+  text-align:center;
+   vertical-align: middle;
+ 
+
+}
+
+TABLE.hautlistegg TH,
+TABLE.hautlistegg TH A
+{
+  background-color: #ffff00;
+   -webkit-print-color-adjust:exact;
+  color: #000000;
+  	font-variant: small-caps;
+  	text-align:center;
+  	font-size: 12px;
+}
+
+TABLE.hautlistegg TH A:hover
+{
+  background-color: #ccccee;
+   -webkit-print-color-adjust:exact;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+TABLE.hautlistegg TD,
+TABLE.hautlistegg TH
+{
+   padding: 1px;
+  margin: 0px;
+  border-left-width: 10px;
+  border-right-width: 10px;
+  border-bottom-width: 1px;
+  border-top-width: 1px;
+  border-style: none;
+  border-color: #ccc;
+   -webkit-print-color-adjust:exact;
+}
+
+TABLE.hautlistegg .row1
+{
+  background-color: #ffffff;
+   -webkit-print-color-adjust:exact;
+}
+
+TABLE.hautlistegg .row2
+{
+  background-color: #f8f9fb;
+   -webkit-print-color-adjust:exact;
+}
+
+img.hautlistegg
+{
+  height: 100px;
+  width: 100px;
+}
+
+
+TABLE.baslistegg
+{
+  margin: 5px;
+  border-collapse: collapse;
+  border: none;
+}
+
+TABLE.baslistegg TH,
+TABLE.baslistegg TD,
+TABLE.baslistegg A
+{
+  font-family: Trebuchet MS;
+  font-size: 8px;
+  text-align:center;
+  border: none;
+  font-weight: normal;
+ vertical-align: middle;
+}
+TABLE.golfgg
+{
+  margin: 5px;
+  border-collapse: collapse;
+  border: none;
+}
+
+
+TABLE.golfgg TD
+
+{
+
+   font-family: Trebuchet MS;
+  font-size: 12px;
+  text-align:right;
+  font-weight: normal;
+  vertical-align:middle;
+  padding-right:5px;
+	padding-left:5px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-top-width: 1px;
+  border-style: solid;
+  border-color: #ccc;
+   -webkit-print-color-adjust:exact;
+  
+
+}
+
+

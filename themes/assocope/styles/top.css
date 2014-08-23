@@ -1,0 +1,17 @@
+form{
+display: inline;
+}
+
+A:link,
+A:visited
+{
+  color: blue;
+  font-size: 10px;
+  text-decoration: none;
+}
+A:hover
+{
+  color: Blue;
+  font-weight: bold;
+  text-decoration: underline;
+}

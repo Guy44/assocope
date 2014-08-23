@@ -1,0 +1,143 @@
+1350049377 :texte_source ="title_individu_attribut_i_admin" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049377 :texte_source ="title_individu_attribut_i_admin" AND id_type_traduction IN ("1","4") 
+1350049377 :texte_source ="title_attribut_i_admin" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049377 :texte_source ="title_attribut_i_admin" AND id_type_traduction IN ("1","4") 
+1350049377 :texte_source ="title_individu_attribut_i" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049377 :texte_source ="title_individu_attribut_i" AND id_type_traduction IN ("1","4") 
+1350049377 :texte_source ="title_attribut_i" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049377 :texte_source ="title_attribut_i" AND id_type_traduction IN ("1","4") 
+1350049377 :texte_source ="attribut_i" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049377 :texte_source ="attribut_i" AND id_type_traduction IN ("1","4") 
+1350049377 :texte_source ="action_individu_attribut_i_admin" AND id_type_traduction IN ("1","4") 
+1350049377 :texte_source ="action_individu_attribut_i_admin" AND id_type_traduction IN ("1","4") 
+1350049377 :texte_source ="action_attribut_i_admin" AND id_type_traduction IN ("1","4") 
+1350049377 :texte_source ="action_attribut_i_admin" AND id_type_traduction IN ("1","4") 
+1350049377 :texte_source ="action_admin" AND id_type_traduction IN ("1","4") 
+1350049377 :texte_source ="action_admin" AND id_type_traduction IN ("1","4") 
+1350049377 : SELECT * FROM app_profil_droit_acces WHERE node='individu.individu'
+1350049377 :texte_source ="title_individu_attribut_i" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049377 :texte_source ="title_individu_attribut_i" AND id_type_traduction IN ("1","4") 
+1350049377 :texte_source ="title_attribut_i" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049377 :texte_source ="title_attribut_i" AND id_type_traduction IN ("1","4") 
+1350049377 :texte_source ="attribut_i" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049377 :texte_source ="attribut_i" AND id_type_traduction IN ("1","4") 
+1350049377 :texte_source ="title_individu_attribut_i_admin" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049378 :texte_source ="title_individu_attribut_i_admin" AND id_type_traduction IN ("1","4") 
+1350049378 :texte_source ="title_attribut_i_admin" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049378 :texte_source ="title_attribut_i_admin" AND id_type_traduction IN ("1","4") 
+1350049378 :texte_source ="action_individu_attribut_i_admin" AND id_type_traduction IN ("1","4") 
+1350049378 :texte_source ="action_individu_attribut_i_admin" AND id_type_traduction IN ("1","4") 
+1350049378 :texte_source ="action_attribut_i_admin" AND id_type_traduction IN ("1","4") 
+1350049378 :texte_source ="action_attribut_i_admin" AND id_type_traduction IN ("1","4") 
+1350049378 :texte_source ="action_admin" AND id_type_traduction IN ("1","4") 
+1350049378 :texte_source ="action_admin" AND id_type_traduction IN ("1","4") 
+1350049378 :texte_source ="link_attribut_i_add" AND id_type_traduction IN ("1","4") 
+1350049378 :texte_source ="link_attribut_i_add" AND id_type_traduction IN ("1","4") 
+1350049378 :texte_source ="attribut_i" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049378 :texte_source ="attribut_i" AND id_type_traduction IN ("1","4") 
+1350049379 :texte_source ="#" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049379 :texte_source ="#" AND id_type_traduction IN ("1","4") 
+1350049379 :texte_source ="descripteur_module_estampillage" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049379 :texte_source ="descripteur_module_estampillage" AND id_type_traduction IN ("1","4") 
+1350049380 : select page_touched from mw_page where page_title='Descripteur_module_estampillage'
+1350049380 :texte_source ="action_individu_attribut_i_view" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049380 :texte_source ="action_individu_attribut_i_view" AND id_type_traduction IN ("1","4") 
+1350049380 :texte_source ="action_attribut_i_view" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049381 :texte_source ="action_attribut_i_view" AND id_type_traduction IN ("1","4") 
+1350049381 :texte_source ="action_view" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049381 :texte_source ="action_view" AND id_type_traduction IN ("1","4") 
+1350049381 :texte_source ="view" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049381 :texte_source ="action_individu_attribut_i_edit" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049381 :texte_source ="action_individu_attribut_i_edit" AND id_type_traduction IN ("1","4") 
+1350049381 :texte_source ="action_attribut_i_edit" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049381 :texte_source ="action_attribut_i_edit" AND id_type_traduction IN ("1","4") 
+1350049381 :texte_source ="action_edit" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049381 :texte_source ="action_edit" AND id_type_traduction IN ("1","4") 
+1350049381 :texte_source ="edit" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049381 :texte_source ="action_individu_attribut_i_delete" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049381 :texte_source ="action_individu_attribut_i_delete" AND id_type_traduction IN ("1","4") 
+1350049381 :texte_source ="action_attribut_i_delete" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049381 :texte_source ="action_attribut_i_delete" AND id_type_traduction IN ("1","4") 
+1350049381 :texte_source ="action_delete" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049381 :texte_source ="action_delete" AND id_type_traduction IN ("1","4") 
+1350049381 :texte_source ="delete" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049381 :texte_source ="action_individu_attribut_i_view" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049381 :texte_source ="action_individu_attribut_i_view" AND id_type_traduction IN ("1","4") 
+1350049381 :texte_source ="action_attribut_i_view" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049381 :texte_source ="action_attribut_i_view" AND id_type_traduction IN ("1","4") 
+1350049381 :texte_source ="action_view" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049381 :texte_source ="action_view" AND id_type_traduction IN ("1","4") 
+1350049381 :texte_source ="view" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049381 :texte_source ="action_individu_attribut_i_edit" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049381 :texte_source ="action_individu_attribut_i_edit" AND id_type_traduction IN ("1","4") 
+1350049381 :texte_source ="action_attribut_i_edit" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049381 :texte_source ="action_attribut_i_edit" AND id_type_traduction IN ("1","4") 
+1350049381 :texte_source ="action_edit" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049381 :texte_source ="action_edit" AND id_type_traduction IN ("1","4") 
+1350049381 :texte_source ="edit" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049381 :texte_source ="action_individu_attribut_i_delete" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049381 :texte_source ="action_individu_attribut_i_delete" AND id_type_traduction IN ("1","4") 
+1350049382 :texte_source ="action_attribut_i_delete" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049382 :texte_source ="action_attribut_i_delete" AND id_type_traduction IN ("1","4") 
+1350049382 :texte_source ="action_delete" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049382 :texte_source ="action_delete" AND id_type_traduction IN ("1","4") 
+1350049382 :texte_source ="delete" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049382 :texte_source ="datagrid_summary" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049382 :texte_source ="onlyactiverecordsareshown" AND id_type_traduction IN ("1","4") 
+1350049382 :texte_source ="clicktoviewarchive" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049382 :texte_source ="clicktoviewarchive" AND id_type_traduction IN ("1","4") 
+1350049382 :texte_source ="title_individu_attribut_i" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049382 :texte_source ="title_individu_attribut_i" AND id_type_traduction IN ("1","4") 
+1350049382 :texte_source ="title_attribut_i" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049382 :texte_source ="title_attribut_i" AND id_type_traduction IN ("1","4") 
+1350049382 :texte_source ="attribut_i" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049382 :texte_source ="attribut_i" AND id_type_traduction IN ("1","4") 
+1350049382 :texte_source ="title_individu_attribut_i_admin" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049382 :texte_source ="title_individu_attribut_i_admin" AND id_type_traduction IN ("1","4") 
+1350049382 :texte_source ="title_attribut_i_admin" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049382 :texte_source ="title_attribut_i_admin" AND id_type_traduction IN ("1","4") 
+1350049382 :texte_source ="title_individu_attribut_i" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049382 :texte_source ="title_individu_attribut_i" AND id_type_traduction IN ("1","4") 
+1350049382 :texte_source ="title_attribut_i" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049382 :texte_source ="title_attribut_i" AND id_type_traduction IN ("1","4") 
+1350049382 :texte_source ="attribut_i" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049382 :texte_source ="attribut_i" AND id_type_traduction IN ("1","4") 
+1350049382 :texte_source ="action_individu_attribut_i_admin" AND id_type_traduction IN ("1","4") 
+1350049382 :texte_source ="action_individu_attribut_i_admin" AND id_type_traduction IN ("1","4") 
+1350049382 :texte_source ="action_attribut_i_admin" AND id_type_traduction IN ("1","4") 
+1350049383 :texte_source ="action_attribut_i_admin" AND id_type_traduction IN ("1","4") 
+1350049383 :texte_source ="action_admin" AND id_type_traduction IN ("1","4") 
+1350049383 :texte_source ="action_admin" AND id_type_traduction IN ("1","4") 
+1350049383 :texte_source ="attribut_i" AND nom_noeud="individu" AND nom_module="attribut_i" AND id_type_traduction="2" 
+1350049383 :texte_source ="attribut_i" AND id_type_traduction IN ("1","4") 
+1350049383 :texte_source ="admin" AND nom_noeud="individu" AND nom_module="attribut_i" AND id_type_traduction="2" 
+1350049383 :texte_source ="title_individu_attribut_i_admin" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049383 :texte_source ="title_individu_attribut_i_admin" AND id_type_traduction IN ("1","4") 
+1350049383 :texte_source ="title_attribut_i_admin" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049383 :texte_source ="title_attribut_i_admin" AND id_type_traduction IN ("1","4") 
+1350049383 :texte_source ="title_individu_attribut_i" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049383 :texte_source ="title_individu_attribut_i" AND id_type_traduction IN ("1","4") 
+1350049383 :texte_source ="title_attribut_i" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049383 :texte_source ="title_attribut_i" AND id_type_traduction IN ("1","4") 
+1350049383 :texte_source ="attribut_i" AND nom_noeud="attribut_i" AND nom_module="individu" AND id_type_traduction="2" 
+1350049383 :texte_source ="attribut_i" AND id_type_traduction IN ("1","4") 
+1350049383 :texte_source ="action_individu_attribut_i_admin" AND id_type_traduction IN ("1","4") 
+1350049383 :texte_source ="action_individu_attribut_i_admin" AND id_type_traduction IN ("1","4") 
+1350049383 :texte_source ="action_attribut_i_admin" AND id_type_traduction IN ("1","4") 
+1350049383 :texte_source ="action_attribut_i_admin" AND id_type_traduction IN ("1","4") 
+1350049383 :texte_source ="action_admin" AND id_type_traduction IN ("1","4") 
+1350049383 :texte_source ="action_admin" AND id_type_traduction IN ("1","4") 
+1350049383 :texte_source ="attribut_i" AND nom_noeud="individu" AND nom_module="attribut_i" AND id_type_traduction="2" 
+1350049383 :texte_source ="attribut_i" AND id_type_traduction IN ("1","4") 
+1350049383 :texte_source ="admin" AND nom_noeud="individu" AND nom_module="attribut_i" AND id_type_traduction="2" 
+1350049383 : SELECT texte_tt as texte FROM app_traduction WHERE id_type_langue in (select id from type_langue where code_iso_639_1="fr" ) AND texte_source ="topmenu_Copyright" AND id_type_traduction="5" 
+1350049384 : SELECT texte_tt as texte FROM app_traduction WHERE id_type_langue in (select id from type_langue where code_iso_639_1="fr" ) AND texte_source ="topmenu_Confidentialite" AND id_type_traduction="5" 
+1350049384 : SELECT texte_tt as texte FROM app_traduction WHERE id_type_langue in (select id from type_langue where code_iso_639_1="fr" ) AND texte_source ="topmenu_Atkpowered" AND id_type_traduction="5" 
+1350049384 : SELECT texte_tt as texte FROM app_traduction WHERE id_type_langue in (select id from type_langue where code_iso_639_1="fr" ) AND texte_source ="topmenu_Source" AND id_type_traduction="5" 
+1350049384 :texte_source ="view_source" AND id_type_traduction IN ("1","4") 
+1350049384 :texte_source ="traduire_entité" AND id_type_traduction IN ("1","4") 
+1350049384 :texte_source ="traduire_entité" AND id_type_traduction IN ("1","4") 
+1350049384 : select page_touched from mw_page where page_title='Module_individu.attribut_i'
+1350049384 : SELECT texte_tt as texte FROM app_traduction WHERE id_type_langue in (select id from type_langue where code_iso_639_1="fr" ) AND texte_source ="topmenu_Aideentite" AND id_type_traduction="5" 
+1350049384 : select page_touched from mw_page where page_title='AssoCope_faqs'
+1350049384 : SELECT texte_tt as texte FROM app_traduction WHERE id_type_langue in (select id from type_langue where code_iso_639_1="fr" ) AND texte_source ="topmenu_Faqs" AND id_type_traduction="5" 

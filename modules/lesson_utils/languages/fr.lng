@@ -1,0 +1,8 @@
+<?php
+
+  $en = array(
+    "view_source" => "Voir le source pour ce noeud", 
+    "menu_modulesource" => "Module source",
+    "loggedinuser" => "Utilisateur en cours"
+  );
+?>

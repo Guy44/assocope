@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8" ?><gpx xmlns="http://www.topografix.com/GPX/1/0"  creator="appli:association - http://www.wikistoma.org" ><desc>Phares et balises de la zone:Le Croisic - Saint Gildas</desc> 
+				<author>Guy Gourmellet</author>
+				<email>guy.gourmellet@wanadoo.fr</email> 
+				<time>2007-09-12T22:42:26+00:00</time> 
+				<desc>Phares et balises de la zone:Le Croisic - Saint Gildas</desc> 
+				<author>Guy Gourmellet</author>
+				<email>guy.gourmellet@wanadoo.fr</email> 
+				<time>2007-09-12T22:42:26+00:00</time> 
+						<wpt lat="47.4195" lon="-2.5975" >
+						<ele> 0</ele>
+						<name><![CDATA[Mouillage île Dumet (ne)]]></name>
+						<sym><![CDATA[Marina]]></sym>
+						</wpt>
+						<wpt lat="47.393833" lon="-2.54683333" >
+						<ele> 0</ele>
+						<name><![CDATA[Grand Morven]]></name>
+						<sym><![CDATA[Red Flag]]></sym>
+						</wpt>
+						<wpt lat="47.388833" lon="-2.541333333" >
+						<ele> 0</ele>
+						<name><![CDATA[Entrée sur Alignement Chenal]]></name>
+						<sym><![CDATA[Tower]]></sym>
+						</wpt>
+						<wpt lat="47.378833" lon="-2.58666667" >
+						<ele> 0</ele>
+						<name><![CDATA[Les Bayonnelles]]></name>
+						<sym><![CDATA[Marker 07]]></sym>
+						</wpt>
+						<wpt lat="47.375167" lon="-2.57016667" >
+						<ele> 0</ele>
+						<name><![CDATA[Socle Ancienne Tourelle]]></name>
+						<sym><![CDATA[Tower]]></sym>
+						</wpt>
+						<wpt lat="47.361" lon="-2.53333333" >
+						<ele> 0</ele>
+						<name><![CDATA[Entrée Sud de l'Anse Lerat]]></name>
+						<sym><![CDATA[Red Flag]]></sym>
+						</wpt>
+						<wpt lat="47.345167" lon="-2.51433333" >
+						<ele> 0</ele>
+						<name><![CDATA[Entrée du Port de la Turballe]]></name>
+						<sym><![CDATA[Red Flag]]></sym>
+						</wpt>
+						<wpt lat="47.311333" lon="-2.52683333" >
+						<ele> 0</ele>
+						<name><![CDATA[Hergo]]></name>
+						<sym><![CDATA[Green Flag]]></sym>
+						</wpt>
+						<wpt lat="47.309833" lon="-2.65366667" >
+						<ele> 0</ele>
+						<name><![CDATA[Bonen du Four]]></name>
+						<sym><![CDATA[Marker 03]]></sym>
+						</wpt>
+						<wpt lat="47.309167" lon="-2.52233333" >
+						<ele> 0</ele>
+						<name><![CDATA[Le Tréhic]]></name>
+						<sym><![CDATA[Green Flag]]></sym>
+						</wpt>
+						<wpt lat="47.303167" lon="-2.5715" >
+						<ele> 0</ele>
+						<name><![CDATA[Castouillet]]></name>
+						<sym><![CDATA[Marker 07]]></sym>
+						</wpt>
+						<wpt lat="47.298833" lon="-2.633" >
+						<ele> 0</ele>
+						<name><![CDATA[Phare du Four]]></name>
+						<sym><![CDATA[Lighthouse]]></sym>
+						</wpt>
+						<wpt lat="47.286167" lon="-2.1695" >
+						<ele> 0</ele>
+						<name><![CDATA[Milieu Arche Viaduc]]></name>
+						<sym><![CDATA[Green Flag]]></sym>
+						</wpt>
+						<wpt lat="47.275667" lon="-2.194" >
+						<ele> 0</ele>
+						<name><![CDATA[Entrée Vieille Ecluse Sn]]></name>
+						<sym><![CDATA[Tower]]></sym>
+						</wpt>
+						<wpt lat="47.268" lon="-2.49466667" >
+						<ele> 0</ele>
+						<name><![CDATA[Basse Lovre]]></name>
+						<sym><![CDATA[Marker 07]]></sym>
+						</wpt>
+						<wpt lat="47.263833" lon="-2.218833333" >
+						<ele> 0</ele>
+						<name><![CDATA[Anse du Grand Traict]]></name>
+						<sym><![CDATA[Tower]]></sym>
+						</wpt>
+						<wpt lat="47.251167" lon="-2.21533333" >
+						<ele> 0</ele>
+						<name><![CDATA[Tourelle des Morées]]></name>
+						<sym><![CDATA[Green Flag]]></sym>
+						</wpt>
+						<wpt lat="47.251" lon="-2.25116667" >
+						<ele> 0</ele>
+						<name><![CDATA[Mouillage alignement 25° feu]]></name>
+						<sym><![CDATA[Marina]]></sym>
+						</wpt>
+						<wpt lat="47.249667" lon="-2.63566667" >
+						<ele> 0</ele>
+						<name><![CDATA[Goué Vas du Four]]></name>
+						<sym><![CDATA[Marker 06]]></sym>
+						</wpt>
+						<wpt lat="47.249" lon="-2.25633333" >
+						<ele> 0</ele>
+						<name><![CDATA[Mouillage de Saint Marc]]></name>
+						<sym><![CDATA[Marina]]></sym>
+						</wpt>
+						<wpt lat="47.234667" lon="-2.32366667" >
+						<ele> 0</ele>
+						<name><![CDATA[La Vieille]]></name>
+						<sym><![CDATA[Marker 06]]></sym>
+						</wpt>
+						<wpt lat="47.233833" lon="-2.297" >
+						<ele> 0</ele>
+						<name><![CDATA[Pointe de Chemoulin]]></name>
+						<sym><![CDATA[Tower]]></sym>
+						</wpt>
+						<wpt lat="47.228833" lon="-2.31816667" >
+						<ele> 0</ele>
+						<name><![CDATA[Le Caillou]]></name>
+						<sym><![CDATA[Marker 03]]></sym>
+						</wpt>
+						<wpt lat="47.228167" lon="-2.26766667" >
+						<ele> 0</ele>
+						<name><![CDATA[10]]></name>
+						<sym><![CDATA[Red Flag]]></sym>
+						</wpt>
+						<wpt lat="47.224667" lon="-2.343" >
+						<ele> 0</ele>
+						<name><![CDATA[Pierre Percée]]></name>
+						<sym><![CDATA[Marker 03]]></sym>
+						</wpt>
+						<wpt lat="47.223167" lon="-2.314" >
+						<ele> 0</ele>
+						<name><![CDATA[Petit Charpetier]]></name>
+						<sym><![CDATA[Marker 06]]></sym>
+						</wpt>
+						<wpt lat="47.2155" lon="-2.51566667" >
+						<ele> 0</ele>
+						<name><![CDATA[NW Banche]]></name>
+						<sym><![CDATA[Marker 03]]></sym>
+						</wpt>
+						<wpt lat="47.214833" lon="-2.3175" >
+						<ele> 0</ele>
+						<name><![CDATA[Phare du Grand Charpentier]]></name>
+						<sym><![CDATA[Lighthouse]]></sym>
+						</wpt>
+						<wpt lat="47.212167" lon="-2.27516667" >
+						<ele> 0</ele>
+						<name><![CDATA[5]]></name>
+						<sym><![CDATA[Green Flag]]></sym>
+						</wpt>
+						<wpt lat="47.209333" lon="-2.26466667" >
+						<ele> 0</ele>
+						<name><![CDATA[Le Vert]]></name>
+						<sym><![CDATA[Marker 08]]></sym>
+						</wpt>
+						<wpt lat="47.202167" lon="-2.22133333" >
+						<ele> 0</ele>
+						<name><![CDATA[La Truie]]></name>
+						<sym><![CDATA[Danger Area]]></sym>
+						</wpt>
+						<wpt lat="47.195" lon="-2.53883333" >
+						<ele> 0</ele>
+						<name><![CDATA[Banche W]]></name>
+						<sym><![CDATA[Marker 07]]></sym>
+						</wpt>
+						<wpt lat="47.194167" lon="-2.30383333" >
+						<ele> 0</ele>
+						<name><![CDATA[Euler]]></name>
+						<sym><![CDATA[Marker 06]]></sym>
+						</wpt>
+						<wpt lat="47.1895" lon="-2.29033333" >
+						<ele> 0</ele>
+						<name><![CDATA[3]]></name>
+						<sym><![CDATA[Green Flag]]></sym>
+						</wpt>
+						<wpt lat="47.181833" lon="-2.38116667" >
+						<ele> 0</ele>
+						<name><![CDATA[NW Lambarde]]></name>
+						<sym><![CDATA[Marker 07]]></sym>
+						</wpt>
+						<wpt lat="47.178167" lon="-2.46633333" >
+						<ele> 0</ele>
+						<name><![CDATA[Phare de la Banche]]></name>
+						<sym><![CDATA[Lighthouse]]></sym>
+						</wpt>
+						<wpt lat="47.177167" lon="-2.1655" >
+						<ele> 0</ele>
+						<name><![CDATA[Entrée Port de Comberge]]></name>
+						<sym><![CDATA[Tower]]></sym>
+						</wpt>
+						<wpt lat="47.174333" lon="-2.43366667" >
+						<ele> 0</ele>
+						<name><![CDATA[Roche du Sud est]]></name>
+						<sym><![CDATA[Marker 08]]></sym>
+						</wpt>
+						<wpt lat="47.1685" lon="-2.34516667" >
+						<ele> 0</ele>
+						<name><![CDATA[SE Lambarde]]></name>
+						<sym><![CDATA[Marker 06]]></sym>
+						</wpt>
+						<wpt lat="47.167" lon="-2.305" >
+						<ele> 0</ele>
+						<name><![CDATA[1 Grand Chenal]]></name>
+						<sym><![CDATA[Green Flag]]></sym>
+						</wpt>
+						<wpt lat="47.164833" lon="-2.217" >
+						<ele> 0</ele>
+						<name><![CDATA[La Gravette]]></name>
+						<sym><![CDATA[Marker 03]]></sym>
+						</wpt>
+						<wpt lat="47.159333" lon="-2.179666667" >
+						<ele> 0</ele>
+						<name><![CDATA[Le Cormier]]></name>
+						<sym><![CDATA[Tower]]></sym>
+						</wpt>
+						<wpt lat="47.149" lon="-2.33866667" >
+						<ele> 0</ele>
+						<name><![CDATA[Lancastria]]></name>
+						<sym><![CDATA[Red Flag]]></sym>
+						</wpt>
+						<wpt lat="47.147167" lon="-2.2475" >
+						<ele> 0</ele>
+						<name><![CDATA[Bouée de Préfailles]]></name>
+						<sym><![CDATA[Green Flag]]></sym>
+						</wpt>
+						<wpt lat="47.126667" lon="-2.33516667" >
+						<ele> 0</ele>
+						<name><![CDATA[La Couronnée]]></name>
+						<sym><![CDATA[Green Flag]]></sym>
+						</wpt>
+						<wpt lat="47.2743" lon="-2.21361" >
+						<ele> 0</ele>
+						<name><![CDATA[Info St Nazaire]]></name>
+						<sym><![CDATA[Weather Station]]></sym>
+						</wpt>
+						<wpt lat="47.1939" lon="-1.57798" >
+						<ele> 0</ele>
+						<name><![CDATA[Info Trentemoult]]></name>
+						<sym><![CDATA[Weather Station]]></sym>
+						</wpt>
+							<rte>
+							<rtept lat="47.167401772238" lon="-2.3455112733637" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.193440099387" lon="-2.3044064229692" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.195282225542" lon="-2.3034995033673" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.19696448814" lon="-2.3024300598841" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.199849483779" lon="-2.299803607461" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.202698226212" lon="-2.2980087378979" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.204970323889" lon="-2.297191175001" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.205780969473" lon="-2.2969727979948" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.208384201593" lon="-2.2954492913529" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.178707729393" lon="-2.3511050993075" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.195653315349" lon="-2.234758034651" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.181648339283" lon="-2.2266264575959" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.199485265851" lon="-2.2084326979568" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.211525808052" lon="-2.2164780262262" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.222794833319" lon="-2.2362522266727" >
+							<ele> 0</ele>
+							</rtept>
+							</rte>
+							<rte>
+							<rtept lat="47.167401772238" lon="-2.3455112733637" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.193440099387" lon="-2.3044064229692" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.195282225542" lon="-2.3034995033673" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.19696448814" lon="-2.3024300598841" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.199849483779" lon="-2.299803607461" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.202698226212" lon="-2.2980087378979" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.204970323889" lon="-2.297191175001" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.205780969473" lon="-2.2969727979948" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.208384201593" lon="-2.2954492913529" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.178707729393" lon="-2.3511050993075" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.195653315349" lon="-2.234758034651" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.181648339283" lon="-2.2266264575959" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.199485265851" lon="-2.2084326979568" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.211525808052" lon="-2.2164780262262" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.222794833319" lon="-2.2362522266727" >
+							<ele> 0</ele>
+							</rtept>
+							</rte>
+							<rte>
+							<rtept lat="47.167401772238" lon="-2.3455112733637" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.193440099387" lon="-2.3044064229692" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.195282225542" lon="-2.3034995033673" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.19696448814" lon="-2.3024300598841" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.199849483779" lon="-2.299803607461" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.202698226212" lon="-2.2980087378979" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.204970323889" lon="-2.297191175001" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.205780969473" lon="-2.2969727979948" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.208384201593" lon="-2.2954492913529" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.178707729393" lon="-2.3511050993075" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.195653315349" lon="-2.234758034651" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.181648339283" lon="-2.2266264575959" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.199485265851" lon="-2.2084326979568" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.211525808052" lon="-2.2164780262262" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.222794833319" lon="-2.2362522266727" >
+							<ele> 0</ele>
+							</rtept>
+							</rte>
+							<rte>
+							</rte>
+							<rte>
+							<rtept lat="47.167401772238" lon="-2.3455112733637" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.193440099387" lon="-2.3044064229692" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.195282225542" lon="-2.3034995033673" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.19696448814" lon="-2.3024300598841" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.199849483779" lon="-2.299803607461" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.202698226212" lon="-2.2980087378979" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.204970323889" lon="-2.297191175001" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.205780969473" lon="-2.2969727979948" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.208384201593" lon="-2.2954492913529" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.178707729393" lon="-2.3511050993075" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.195653315349" lon="-2.234758034651" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.181648339283" lon="-2.2266264575959" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.199485265851" lon="-2.2084326979568" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.211525808052" lon="-2.2164780262262" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.222794833319" lon="-2.2362522266727" >
+							<ele> 0</ele>
+							</rtept>
+							</rte>
+							<rte>
+							<rtept lat="47.167401772238" lon="-2.3455112733637" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.193440099387" lon="-2.3044064229692" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.195282225542" lon="-2.3034995033673" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.19696448814" lon="-2.3024300598841" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.199849483779" lon="-2.299803607461" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.202698226212" lon="-2.2980087378979" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.204970323889" lon="-2.297191175001" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.205780969473" lon="-2.2969727979948" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.208384201593" lon="-2.2954492913529" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.178707729393" lon="-2.3511050993075" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.195653315349" lon="-2.234758034651" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.181648339283" lon="-2.2266264575959" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.199485265851" lon="-2.2084326979568" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.211525808052" lon="-2.2164780262262" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.222794833319" lon="-2.2362522266727" >
+							<ele> 0</ele>
+							</rtept>
+							</rte>
+							<trk>
+				<trkseg>
+							<trkpt lat="47.947680004967" lon="0.53818471658921" >
+							<ele> 0</ele>
+							</trkpt>
+							<trkpt lat="47.415912082724" lon="0.62918049609473" >
+							<ele> 0</ele>
+							</trkpt>
+							<trkpt lat="47.298626387694" lon="1.3902846670999" >
+							<ele> 0</ele>
+							</trkpt>
+							<trkpt lat="47.574008243085" lon="1.8465025525486" >
+							<ele> 0</ele>
+							</trkpt>
+							<trkpt lat="47.947680004967" lon="0.53818471658921" >
+							<ele> 0</ele>
+							</trkpt>
+							</trkseg>
+				</trk>
+							<rte>
+							<rtept lat="47.28156" lon="-1.38726" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.29354" lon="-1.38213" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.30084" lon="-1.36812" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.30625" lon="-1.3503" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.32174" lon="-1.33236" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.33227" lon="-1.31264" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.33945" lon="-1.30412" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.34166" lon="-1.27883" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.341" lon="-1.26228" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.34304" lon="-1.24857" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.34841" lon="-1.23188" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.35172" lon="-1.2243" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.35425" lon="-1.20393" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.35733" lon="-1.18987" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.36281" lon="-1.1764" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.36872" lon="-1.15955" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.37212" lon="-1.1478" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.36809" lon="-1.13473" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.3667" lon="-1.12733" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.36911" lon="-1.10696" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.36831" lon="-1.09182" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.3721" lon="-1.07806" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.36975" lon="-1.06714" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.36908" lon="-1.05882" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.36515" lon="-1.04699" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.36527" lon="-1.02989" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.36594" lon="-1.02268" >
+							<ele> 0</ele>
+							</rtept>
+							<rtept lat="47.36456" lon="-1.0135" >
+							<ele> 0</ele>
+							</rtept>
+							</rte></gpx>

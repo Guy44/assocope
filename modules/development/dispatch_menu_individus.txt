@@ -1,0 +1,174 @@
+1350049350 :texte_source ="AssoCope" AND id_type_traduction IN ("1","4") 
+1350049350 :texte_source ="AssoCope" AND id_type_traduction IN ("1","4") 
+1350049350 :texte_source ="Atk" AND id_type_traduction IN ("1","4") 
+1350049350 :texte_source ="Atk" AND id_type_traduction IN ("1","4") 
+
+1350049359 :texte_source ="Vous pouvez choisir parmi les individus que vous avez récemment traités" AND id_type_traduction IN ("1","4") 
+1350049359 :texte_source ="Vous pouvez choisir parmi les individus que vous avez récemment traités" AND id_type_traduction IN ("1","4") 
+1350049359 :texte_source ="Vous pouvez chercher dans la base complète et afficher dans la liste de droite des individus sur une partie du nom. La casse(minuscule, majuscule) est indifférente. 
+
+Le caractère '%' remplace toute chaîne de caractères, le caractère '_'(trait souligné) remplace un seul caractère : ainsi 'ger' ou '%ger%' recherchera toutes les chaînes contenant 'ger', 'l%ger' ou '%l%ger%' recherchera toutes les chaînes de caractères contenant 'l' et plus loin 'ger'." AND id_type_traduction IN ("1","4") 
+1350049359 :texte_source ="Vous pouvez chercher dans la base complète et afficher dans la liste de droite des individus sur une partie du nom. La casse(minuscule, majuscule) est indifférente. 
+
+Le caractère '%' remplace toute chaîne de caractères, le caractère '_'(trait souligné) remplace un seul caractère : ainsi 'ger' ou '%ger%' recherchera toutes les chaînes contenant 'ger', 'l%ger' ou '%l%ger%' recherchera toutes les chaînes de caractères contenant 'l' et plus loin 'ger'." AND id_type_traduction IN ("1","4") 
+1350049359 :texte_source ="Vous pouvez chercher avec sélection immédiate des individus sur une partie du nom, prénom dans n'importe quel ordre. Lors de la sélection l'individu choisi s'affiche dans le menu de gauche. 
+
+Le caractère '%' remplace toute chaîne de caractères, le caractère '_'(trait souligné) remplace un seul caractère : ainsi 'ger' ou '%ger%' recherchera toutes les chaînes contenant 'ger', 'l%ger' ou '%l%ger%' recherchera toutes les chaînes de caractères contenant 'l' et plus loin 'ger'." AND id_type_traduction IN ("1","4") 
+1350049359 :texte_source ="Vous pouvez chercher avec sélection immédiate des individus sur une partie du nom, prénom dans n'importe quel ordre. Lors de la sélection l'individu choisi s'affiche dans le menu de gauche. 
+
+Le caractère '%' remplace toute chaîne de caractères, le caractère '_'(trait souligné) remplace un seul caractère : ainsi 'ger' ou '%ger%' recherchera toutes les chaînes contenant 'ger', 'l%ger' ou '%l%ger%' recherchera toutes les chaînes de caractères contenant 'l' et plus loin 'ger'." AND id_type_traduction IN ("1","4") 
+1350049359 :texte_source ="aucun" AND id_type_traduction IN ("1","4") 
+1350049359 :texte_source ="aucun" AND id_type_traduction IN ("1","4") 
+1350049359 : select id_entite from app_recent_use where id_individu=104 and type_entite='individu' order by date_recent_use desc
+1350049359 : select aru.id_entite as entiteid, CONCAT_WS(' ',i.nom,i.prenom) as entitename from app_recent_use aru, individu i where	 id_individu=104 and type_entite='individu' and aru.id_entite=i.id order by entitename
+1350049360 :texte_source ="Rechercher" AND id_type_traduction IN ("1","4") 
+1350049360 :texte_source ="Rechercher" AND id_type_traduction IN ("1","4") 
+1350049360 :texte_source ="Historique" AND id_type_traduction IN ("1","4") 
+1350049360 :texte_source ="Historique" AND id_type_traduction IN ("1","4") 
+1350049360 :texte_source ="Créer" AND id_type_traduction IN ("1","4") 
+1350049360 :texte_source ="Créer" AND id_type_traduction IN ("1","4") 
+1350049360 : SELECT texte_tt as texte FROM app_traduction WHERE id_type_langue in (select id from type_langue where code_iso_639_1="fr" ) AND texte_source ="! Gourmellet Guy
+" AND id_type_traduction="5" 
+1350049360 :texte_source ="! Gourmellet Guy
+" AND id_type_traduction IN ("1","4") 
+1350049360 :texte_source ="!<a href="javascript:NewWindow(\'include.php?file=./atk/popups/qrpopup.inc&type=individu&id=104&atklevel=1&atkprevlevel=0&atkstackid=50781e1cbc20d&\',\'Coordonnées individu\',300,700,\'yes\',\'no\')"><img class="recordlist" border="0" src="./themes/assocope/icons/assocope/individu.png" alt="Coordonnées individu" title="Coordonnées individu" target=" blank"></img></a>&nbsp;<a href=\'dispatch.php?atknodetype=individu.individu&atkaction=edit&atkselector=individu.id%3D%27104%27&atklevel=1&atkprevlevel=0&atkstackid=50781e1cbc20d&\' target="main"><b>Gourmellet&nbsp;Guy</b></a><br /><a href="http://maps.google.com/maps?q=47.059062,-1.555465&iwloc=A&hl=fr" target=" blank"><img class="recordlist" border="0" src="./themes/assocope/icons/assocope/maps.png" alt="Maps : 2, la Métellerie , 44310 , St Colomban , FR" title="Maps : 2, la Métellerie , 44310 , St Colomban , FR" ></img></a><a href=\'dispatch.php?atknodetype=individu.individu&atkaction=googlemap&id=104&atklevel=1&atkprevlevel=0&atkstackid=50781e1cbc20d&\' target=" blank"><img class="recordlist" border="0" src="./themes/assocope/icons/assocope/geolocalisation.png" alt="Où est-ce ? : 2, la Métellerie , 44310 , St Colomban , FR" title="Où est-ce ? : 2, la Métellerie , 44310 , St Colomban , FR" ></img></a><a href="http:./dispatch.php?atknodetype=individu.v individu lieu&atkaction=document&atkselector=individu.id=104&id=&atkfilter=v individu lieu.id=104&atkdoctpl=enveloppe individu.odt&atkdoctpl prefix id=0&atkcode=2&atklevel=-1&atkprevlevel=0& target=" blank""><img class="recordlist" border="0" src="./themes/assocope/icons/assocope/courrier.png" alt="Enveloppe : 2, la Métellerie , 44310 , St Colomban , FR" title="Enveloppe : 2, la Métellerie , 44310 , St Colomban , FR" ></img></a><a href=" tel: 02 40 26 74 64"><img class="recordlist" border="0" src="./themes/assocope/icons/assocope/telephonefixe.png" alt="Appeler le : 02 40 26 74 64" title="Appeler le : 02 40 26 74 64" ></img></a><a href=" tel: 06 82 66 54 83"><img class="recordlist" border="0" src="./themes/assocope/icons/assocope/telephonemobile.png" alt="Appeler le : 06 82 66 54 83" title="Appeler le : 06 82 66 54 83" ></img></a><a href="mailto:guy.gourmellet@gmail.com"><img class="recordlist" border="0" src="./themes/assocope/icons/assocope/courriel.png" alt="Courriel à : guy.gourmellet@gmail.com" title="Courriel à : guy.gourmellet@gmail.com" ></img></a><a href=" https://sites.google.com/site/guygourmellet" target=" blank" ><img class="recordlist" border="0" src="./themes/assocope/icons/assocope/blog.png" alt="Accès à : https://sites.google.com/site/guygourmellet" title="Accès à : https://sites.google.com/site/guygourmellet" ></img></a><a href=" http://www.google.com/calendar/embed?pvttk=44bf3a1bd20659f4ff172865acbc1dae&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=guy.gourmellet%40gmail.com&amp;color=%23A32929&amp;src=6jdvaekqgdd7j1esiq5s3rc97g%40group.calendar.google.com&amp;color=%23" target=" blank"><img class="recordlist" border="0" src="./themes/assocope/icons/assocope/calendrier.png" alt="Calendrier : http://www.google.com/calendar/embed?pvttk=44bf3a1bd20659f4ff172865acbc1dae&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=guy.gourmellet%40gmail.com&amp;color=%23A32929&amp;src=6jdvaekqgdd7j1esiq5s3rc97g%40group.calendar.google.com&amp;color=%23" title="Calendrier : http://www.google.com/calendar/embed?pvttk=44bf3a1bd20659f4ff172865acbc1dae&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=guy.gourmellet%40gmail.com&amp;color=%23A32929&amp;src=6jdvaekqgdd7j1esiq5s3rc97g%40group.calendar.google.com&amp;color=%23" ></img></a><a href="http://www.google.fr/search?q=Gourmellet Guy&ie=utf-8&oe=utf-8&aq=t&" target=" blank"><img class="recordlist" border="0" src="./themes/assocope/icons/assocope/notoriete.png" alt="En parle-t\'on sur le web ?" title="En parle-t\'on sur le web ?" ></img></a><a href="javascript:NewWindow(\'include.php?file=./dispatch.php&atknodetype=individu.individu&atkaction=fiche&id=104&atklevel=-1&atkprevlevel=0&&atkprevlevel=0&atkstackid=50781e1cbc20d&\',\'Récapitulatif individu\',250,400,\'yes\',\'no\')"><img class="recordlist" border="0" src="./themes/assocope/icons/assocope/fiche.png" alt="Récapitulatif" title="Récapitulatif" ></img></a>" AND id_type_traduction IN ("1","4") 
+1350049360 :texte_source ="!<a href="javascript:NewWindow(\'include.php?file=./atk/popups/qrpopup.inc&type=individu&id=104&atklevel=1&atkprevlevel=0&atkstackid=50781e1cbc20d&\',\'Coordonnées individu\',300,700,\'yes\',\'no\')"><img class="recordlist" border="0" src="./themes/assocope/icons/assocope/individu.png" alt="Coordonnées individu" title="Coordonnées individu" target=" blank"></img></a>&nbsp;<a href=\'dispatch.php?atknodetype=individu.individu&atkaction=edit&atkselector=individu.id%3D%27104%27&atklevel=1&atkprevlevel=0&atkstackid=50781e1cbc20d&\' target="main"><b>Gourmellet&nbsp;Guy</b></a><br /><a href="http://maps.google.com/maps?q=47.059062,-1.555465&iwloc=A&hl=fr" target=" blank"><img class="recordlist" border="0" src="./themes/assocope/icons/assocope/maps.png" alt="Maps : 2, la Métellerie , 44310 , St Colomban , FR" title="Maps : 2, la Métellerie , 44310 , St Colomban , FR" ></img></a><a href=\'dispatch.php?atknodetype=individu.individu&atkaction=googlemap&id=104&atklevel=1&atkprevlevel=0&atkstackid=50781e1cbc20d&\' target=" blank"><img class="recordlist" border="0" src="./themes/assocope/icons/assocope/geolocalisation.png" alt="Où est-ce ? : 2, la Métellerie , 44310 , St Colomban , FR" title="Où est-ce ? : 2, la Métellerie , 44310 , St Colomban , FR" ></img></a><a href="http:./dispatch.php?atknodetype=individu.v individu lieu&atkaction=document&atkselector=individu.id=104&id=&atkfilter=v individu lieu.id=104&atkdoctpl=enveloppe individu.odt&atkdoctpl prefix id=0&atkcode=2&atklevel=-1&atkprevlevel=0& target=" blank""><img class="recordlist" border="0" src="./themes/assocope/icons/assocope/courrier.png" alt="Enveloppe : 2, la Métellerie , 44310 , St Colomban , FR" title="Enveloppe : 2, la Métellerie , 44310 , St Colomban , FR" ></img></a><a href=" tel: 02 40 26 74 64"><img class="recordlist" border="0" src="./themes/assocope/icons/assocope/telephonefixe.png" alt="Appeler le : 02 40 26 74 64" title="Appeler le : 02 40 26 74 64" ></img></a><a href=" tel: 06 82 66 54 83"><img class="recordlist" border="0" src="./themes/assocope/icons/assocope/telephonemobile.png" alt="Appeler le : 06 82 66 54 83" title="Appeler le : 06 82 66 54 83" ></img></a><a href="mailto:guy.gourmellet@gmail.com"><img class="recordlist" border="0" src="./themes/assocope/icons/assocope/courriel.png" alt="Courriel à : guy.gourmellet@gmail.com" title="Courriel à : guy.gourmellet@gmail.com" ></img></a><a href=" https://sites.google.com/site/guygourmellet" target=" blank" ><img class="recordlist" border="0" src="./themes/assocope/icons/assocope/blog.png" alt="Accès à : https://sites.google.com/site/guygourmellet" title="Accès à : https://sites.google.com/site/guygourmellet" ></img></a><a href=" http://www.google.com/calendar/embed?pvttk=44bf3a1bd20659f4ff172865acbc1dae&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=guy.gourmellet%40gmail.com&amp;color=%23A32929&amp;src=6jdvaekqgdd7j1esiq5s3rc97g%40group.calendar.google.com&amp;color=%23" target=" blank"><img class="recordlist" border="0" src="./themes/assocope/icons/assocope/calendrier.png" alt="Calendrier : http://www.google.com/calendar/embed?pvttk=44bf3a1bd20659f4ff172865acbc1dae&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=guy.gourmellet%40gmail.com&amp;color=%23A32929&amp;src=6jdvaekqgdd7j1esiq5s3rc97g%40group.calendar.google.com&amp;color=%23" title="Calendrier : http://www.google.com/calendar/embed?pvttk=44bf3a1bd20659f4ff172865acbc1dae&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=guy.gourmellet%40gmail.com&amp;color=%23A32929&amp;src=6jdvaekqgdd7j1esiq5s3rc97g%40group.calendar.google.com&amp;color=%23" ></img></a><a href="http://www.google.fr/search?q=Gourmellet Guy&ie=utf-8&oe=utf-8&aq=t&" target=" blank"><img class="recordlist" border="0" src="./themes/assocope/icons/assocope/notoriete.png" alt="En parle-t\'on sur le web ?" title="En parle-t\'on sur le web ?" ></img></a><a href="javascript:NewWindow(\'include.php?file=./dispatch.php&atknodetype=individu.individu&atkaction=fiche&id=104&atklevel=-1&atkprevlevel=0&&atkprevlevel=0&atkstackid=50781e1cbc20d&\',\'Récapitulatif individu\',250,400,\'yes\',\'no\')"><img class="recordlist" border="0" src="./themes/assocope/icons/assocope/fiche.png" alt="Récapitulatif" title="Récapitulatif" ></img></a>" AND id_type_traduction IN ("1","4") 
+1350049360 : SELECT texte_tt as texte FROM app_traduction WHERE id_type_langue in (select id from type_langue where code_iso_639_1="fr" ) AND texte_source ="adresse_individu_i" AND id_type_traduction="5" 
+1350049360 :texte_source ="Géolocalisation de l\'adresse dans Google maps." AND id_type_traduction IN ("1","4") 
+1350049360 :texte_source ="Géolocalisation de l\'adresse dans Google maps." AND id_type_traduction IN ("1","4") 
+1350049360 :texte_source ="2, la Métellerie
+44310 St Colomban (FR)" AND id_type_traduction="5" 
+1350049360 :texte_source ="2, la Métellerie
+44310 St Colomban (FR)" AND id_type_traduction IN ("1","4") 
+1350049360 :texte_source ="2, la Métellerie
+44310 St Colomban (FR)" AND id_type_traduction IN ("1","4") 
+1350049360 :texte_source ="2, la Métellerie
+44310 St Colomban (FR)" AND id_type_traduction IN ("1","4") 
+1350049360 : SELECT texte_tt as texte FROM app_traduction WHERE id_type_langue in (select id from type_langue where code_iso_639_1="fr" ) AND texte_source ="courriel_i" AND id_type_traduction="5" 
+1350049360 :texte_source ="Saisir un contact et envoyer par courriel à l\'adresse de courriel indiquée." AND id_type_traduction IN ("1","4") 
+1350049360 :texte_source ="Saisir un contact et envoyer par courriel à l\'adresse de courriel indiquée." AND id_type_traduction IN ("1","4") 
+1350049360 :texte_source ="guy.gourmellet@gmail.com" AND id_type_traduction="5" 
+1350049360 :texte_source ="guy.gourmellet@gmail.com" AND id_type_traduction IN ("1","4") 
+1350049360 :texte_source ="guy.gourmellet@gmail.com" AND id_type_traduction IN ("1","4") 
+1350049360 :texte_source ="guy.gourmellet@gmail.com" AND id_type_traduction IN ("1","4") 
+1350049360 :texte_source ="Calendrier rencontres" AND id_type_traduction IN ("1","4") 
+1350049360 :texte_source ="Calendrier rencontres" AND id_type_traduction IN ("1","4") 
+1350049360 : SELECT texte_tt as texte FROM app_traduction WHERE id_type_langue in (select id from type_langue where code_iso_639_1="fr" ) AND texte_source ="!(2012-10-03 00:00:00)" AND id_type_traduction="5" 
+1350049360 :texte_source ="!(2012-10-03 00:00:00)" AND id_type_traduction IN ("1","4") 
+1350049360 :texte_source ="!<b><font color="Coral">(2012-10-03 00:00:00)</font></b>" AND id_type_traduction IN ("1","4") 
+1350049360 :texte_source ="!<b><font color="Coral">(2012-10-03 00:00:00)</font></b>" AND id_type_traduction IN ("1","4") 
+1350049360 : SELECT texte_tt as texte FROM app_traduction WHERE id_type_langue in (select id from type_langue where code_iso_639_1="fr" ) AND texte_source ="(Rafraîchir)" AND id_type_traduction="5" 
+1350049360 :texte_source ="(Rafraîchir)" AND id_type_traduction IN ("1","4") 
+1350049360 :texte_source ="(Rafraîchir)" AND id_type_traduction IN ("1","4") 
+1350049361 :texte_source ="(Rafraîchir)" AND id_type_traduction IN ("1","4") 
+1350049361 :texte_source ="(Rafraîchir)" AND id_type_traduction="5" 
+1350049361 :texte_source ="(Rafraîchir)" AND id_type_traduction IN ("1","4") 
+1350049361 :texte_source ="(Rafraîchir)" AND id_type_traduction IN ("1","4") 
+1350049361 :texte_source ="(Rafraîchir)" AND id_type_traduction IN ("1","4") 
+1350049361 :texte_source ="Abandon de créances" AND id_type_traduction IN ("1","4") 
+1350049361 :texte_source ="Abandon de créances" AND id_type_traduction IN ("1","4") 
+1350049361 :texte_source ="Activités/Frais" AND id_type_traduction IN ("1","4") 
+1350049361 :texte_source ="Activités/Frais" AND id_type_traduction IN ("1","4") 
+1350049361 :texte_source ="Adresses" AND id_type_traduction IN ("1","4") 
+1350049361 :texte_source ="Adresses" AND id_type_traduction IN ("1","4") 
+1350049361 :texte_source ="Annuaire téléphonique" AND id_type_traduction IN ("1","4") 
+1350049361 :texte_source ="Annuaire téléphonique" AND id_type_traduction IN ("1","4") 
+1350049361 :texte_source ="Attributs" AND id_type_traduction IN ("1","4") 
+1350049361 :texte_source ="Attributs" AND id_type_traduction IN ("1","4") 
+1350049361 :texte_source ="Biodi. observations" AND id_type_traduction IN ("1","4") 
+1350049361 :texte_source ="Biodi. observations" AND id_type_traduction IN ("1","4") 
+1350049361 : SELECT texte_tt as texte FROM app_traduction WHERE id_type_langue in (select id from type_langue where code_iso_639_1="fr" ) AND texte_source ="biodiversité_observations_détails_i" AND id_type_traduction="5" 
+1350049361 :texte_source ="<p>&nbsp;D&eacute;tails des observations de la biodiversit&eacute; effectu&eacute;es par l\'individu s&eacute;lectionn&eacute;.</p>" AND id_type_traduction IN ("1","4") 
+1350049361 :texte_source ="<p>&nbsp;D&eacute;tails des observations de la biodiversit&eacute; effectu&eacute;es par l\'individu s&eacute;lectionn&eacute;.</p>" AND id_type_traduction IN ("1","4") 
+1350049361 :texte_source ="Blogs" AND id_type_traduction IN ("1","4") 
+1350049361 :texte_source ="Blogs" AND id_type_traduction IN ("1","4") 
+1350049361 :texte_source ="Compétences" AND id_type_traduction IN ("1","4") 
+1350049361 :texte_source ="Compétences" AND id_type_traduction IN ("1","4") 
+1350049361 :texte_source ="Compétitions" AND id_type_traduction IN ("1","4") 
+1350049361 :texte_source ="Compétitions" AND id_type_traduction IN ("1","4") 
+1350049361 :texte_source ="Contacts" AND id_type_traduction IN ("1","4") 
+1350049361 :texte_source ="Contacts" AND id_type_traduction IN ("1","4") 
+1350049361 :texte_source ="Contactant" AND id_type_traduction IN ("1","4") 
+1350049361 :texte_source ="Contactant" AND id_type_traduction IN ("1","4") 
+1350049362 :texte_source ="Contacté" AND id_type_traduction IN ("1","4") 
+1350049362 :texte_source ="Contacté" AND id_type_traduction IN ("1","4") 
+1350049362 :texte_source ="A traiter" AND id_type_traduction IN ("1","4") 
+1350049362 :texte_source ="A traiter" AND id_type_traduction IN ("1","4") 
+1350049362 :texte_source ="Attente" AND id_type_traduction IN ("1","4") 
+1350049362 :texte_source ="Attente" AND id_type_traduction IN ("1","4") 
+1350049362 :texte_source ="Cotisations" AND id_type_traduction IN ("1","4") 
+1350049362 :texte_source ="Cotisations" AND id_type_traduction IN ("1","4") 
+1350049362 :texte_source ="Demandes" AND id_type_traduction IN ("1","4") 
+1350049362 :texte_source ="Demandes" AND id_type_traduction IN ("1","4") 
+1350049362 :texte_source ="Documents" AND id_type_traduction IN ("1","4") 
+1350049362 :texte_source ="Documents" AND id_type_traduction IN ("1","4") 
+1350049362 :texte_source ="Documents (auteur)" AND id_type_traduction IN ("1","4") 
+1350049362 :texte_source ="Documents (auteur)" AND id_type_traduction IN ("1","4") 
+1350049362 : SELECT texte_tt as texte FROM app_traduction WHERE id_type_langue in (select id from type_langue where code_iso_639_1="fr" ) AND texte_source ="Enveloppe_i" AND id_type_traduction="5" 
+1350049362 :texte_source ="Les adresses postales de l\'individu sont déchargées dans un fichier open office qu\'on peut imprimer sur des enveloppes." AND id_type_traduction IN ("1","4") 
+1350049362 :texte_source ="Les adresses postales de l\'individu sont déchargées dans un fichier open office qu\'on peut imprimer sur des enveloppes." AND id_type_traduction IN ("1","4") 
+1350049362 :texte_source ="Enveloppe_i" AND id_type_traduction="5" 
+1350049362 :texte_source ="Envois groupés" AND id_type_traduction IN ("1","4") 
+1350049362 :texte_source ="Envois groupés" AND id_type_traduction IN ("1","4") 
+1350049362 : SELECT texte_tt as texte FROM app_traduction WHERE id_type_langue in (select id from type_langue where code_iso_639_1="fr" ) AND texte_source ="Facebook" AND id_type_traduction="5" 
+1350049362 :texte_source ="Facebook" AND id_type_traduction IN ("1","4") 
+1350049362 :texte_source ="Facebook" AND id_type_traduction IN ("1","4") 
+1350049362 :texte_source ="Facebook" AND id_type_traduction IN ("1","4") 
+1350049362 :texte_source ="Facebook" AND id_type_traduction="5" 
+1350049362 :texte_source ="Facebook" AND id_type_traduction IN ("1","4") 
+1350049362 :texte_source ="Facebook" AND id_type_traduction IN ("1","4") 
+1350049362 :texte_source ="Facebook" AND id_type_traduction IN ("1","4") 
+1350049362 :texte_source ="Fonctions" AND id_type_traduction IN ("1","4") 
+1350049362 :texte_source ="Fonctions" AND id_type_traduction IN ("1","4") 
+1350049362 :texte_source ="Géolocalisation" AND id_type_traduction IN ("1","4") 
+1350049362 :texte_source ="Géolocalisation" AND id_type_traduction IN ("1","4") 
+1350049362 :texte_source ="Groupes de travail" AND id_type_traduction IN ("1","4") 
+1350049363 :texte_source ="Groupes de travail" AND id_type_traduction IN ("1","4") 
+1350049363 :texte_source ="Historique" AND id_type_traduction IN ("1","4") 
+1350049363 :texte_source ="Historique" AND id_type_traduction IN ("1","4") 
+1350049363 :texte_source ="Images" AND id_type_traduction IN ("1","4") 
+1350049363 :texte_source ="Images" AND id_type_traduction IN ("1","4") 
+1350049363 :texte_source ="Immatriculations" AND id_type_traduction IN ("1","4") 
+1350049363 :texte_source ="Immatriculations" AND id_type_traduction IN ("1","4") 
+1350049363 :texte_source ="Inscriptions" AND id_type_traduction IN ("1","4") 
+1350049363 :texte_source ="Inscriptions" AND id_type_traduction IN ("1","4") 
+1350049363 :texte_source ="Lignes comptables" AND id_type_traduction IN ("1","4") 
+1350049363 :texte_source ="Lignes comptables" AND id_type_traduction IN ("1","4") 
+1350049363 :texte_source ="Marque pages" AND id_type_traduction IN ("1","4") 
+1350049363 :texte_source ="Marque pages" AND id_type_traduction IN ("1","4") 
+1350049363 :texte_source ="Mdph" AND id_type_traduction IN ("1","4") 
+1350049363 :texte_source ="Mdph" AND id_type_traduction IN ("1","4") 
+1350049363 :texte_source ="Notoriété" AND id_type_traduction IN ("1","4") 
+1350049363 :texte_source ="Notoriété" AND id_type_traduction IN ("1","4") 
+1350049363 :texte_source ="Récapitulatif" AND id_type_traduction IN ("1","4") 
+1350049363 :texte_source ="Récapitulatif" AND id_type_traduction IN ("1","4") 
+1350049363 :texte_source ="Rencontres" AND id_type_traduction IN ("1","4") 
+1350049363 :texte_source ="Rencontres" AND id_type_traduction IN ("1","4") 
+1350049363 :texte_source ="Soldes comptes" AND id_type_traduction IN ("1","4") 
+1350049363 :texte_source ="Soldes comptes" AND id_type_traduction IN ("1","4") 
+1350049363 :texte_source ="Tournois" AND id_type_traduction IN ("1","4") 
+1350049363 :texte_source ="Tournois" AND id_type_traduction IN ("1","4") 
+1350049363 : SELECT texte_tt as texte FROM app_traduction WHERE id_type_langue in (select id from type_langue where code_iso_639_1="fr" ) AND texte_source ="Tournois_matches" AND id_type_traduction="5" 
+1350049363 :texte_source ="Tournois_matches" AND id_type_traduction IN ("1","4") 
+1350049363 :texte_source ="Tournois matches" AND id_type_traduction IN ("1","4") 
+1350049363 :texte_source ="Tournois matches" AND id_type_traduction IN ("1","4") 
+1350049363 :texte_source ="Tournois_matches" AND id_type_traduction="5" 
+1350049363 :texte_source ="Tournois_matches" AND id_type_traduction IN ("1","4") 
+1350049364 :texte_source ="Tournois_matches" AND id_type_traduction IN ("1","4") 
+1350049364 :texte_source ="Tournois_matches" AND id_type_traduction IN ("1","4") 
+1350049364 :texte_source ="Tâches" AND id_type_traduction IN ("1","4") 
+1350049364 :texte_source ="Tâches" AND id_type_traduction IN ("1","4") 
+1350049364 :texte_source ="Utilisateur" AND id_type_traduction IN ("1","4") 
+1350049364 :texte_source ="Utilisateur" AND id_type_traduction IN ("1","4") 
+1350049364 : SELECT texte_tt as texte FROM app_traduction WHERE id_type_langue in (select id from type_langue where code_iso_639_1="fr" ) AND texte_source ="" AND id_type_traduction="5" 
+1350049364 :texte_source ="" AND id_type_traduction IN ("1","4") 
+1350049364 :texte_source ="<a href=\'index.php?atkprevlevel=0&atkstackid=50781e1cbc20d&\' target=" top"><img src="http://chart.apis.google.com/chart?cht=qr&chs=150x150&chl=MECARD:N:Gourmellet+,+Guy;TEL:+02+40+26+74+64;TEL:+06+82+66+54+83;BDAY:19500305;URL:https://sites.google.com/site/guygourmellet;EMAIL:guy.gourmellet@gmail.com;ADR:2,+la+MÃ©tellerie,44310,St+Colomban,FR;;" class="gwt-Image" style=""></a>" AND id_type_traduction IN ("1","4") 
+1350049364 :texte_source ="<a href=\'index.php?atkprevlevel=0&atkstackid=50781e1cbc20d&\' target=" top"><img src="http://chart.apis.google.com/chart?cht=qr&chs=150x150&chl=MECARD:N:Gourmellet+,+Guy;TEL:+02+40+26+74+64;TEL:+06+82+66+54+83;BDAY:19500305;URL:https://sites.google.com/site/guygourmellet;EMAIL:guy.gourmellet@gmail.com;ADR:2,+la+MÃ©tellerie,44310,St+Colomban,FR;;" class="gwt-Image" style=""></a>" AND id_type_traduction IN ("1","4") 
+1350049364 :texte_source ="" AND id_type_traduction="5" 
+1350049364 :texte_source ="" AND id_type_traduction IN ("1","4") 
+1350049364 :texte_source ="" AND id_type_traduction IN ("1","4") 
+1350049364 :texte_source ="" AND id_type_traduction IN ("1","4") 
+1350049364 :texte_source ="Individus" AND id_type_traduction="5" 
+1350049364 :texte_source ="Individus" AND id_type_traduction IN ("1","4") 
+1350049364 :texte_source ="Individus" AND id_type_traduction IN ("1","4") 
+1350049364 :texte_source ="Individus" AND id_type_traduction IN ("1","4") 

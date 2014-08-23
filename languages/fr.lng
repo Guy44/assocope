@@ -1,0 +1,1690 @@
+<?php
+$fr=array(
+/*
+"menu_Libellé"=>"contenu libellé menu",
+"menu_tooltip_Libellé"=>"contenu tooltip menu",
+ "module_nomattribut_tooltip" => "contenu tooltip.",
+"wiki_module.node"=>"critère de recherche pour le wiki",
+*/
+// MODULE INDIVIDU
+// NODE INDIVIDU
+ "individu_id_document_signature_tooltip" => "Fait référence à un document stocké dans les documents de la personne.",
+ "individu_id_document_portrait_tooltip" => "Fait référence à un document stocké dans les documents d'un organisme.",
+
+"date_naissance"=>"Date de naissance",
+ "annee_naissance"=>"Année de naissance",
+"prenom"=>"Prénom",
+ "individu_courriel_grp_tooltip" => "La syntaxe de l'adresse de courriel ainsi que l'xistence du domaine sont contrôlés lors de l'enregistrement.
+Pour envoyer un message automatiquement à partir de l'application (sans utiliser un client de messagerie) et qui sera mémorisé dans un contact : cliquer sur les points de suspension.",
+ "individu_calendrier_grp_tooltip" => "Le champ contient l'adresse internet d'un calendrier (type google) auquel vous aurez accès en cliquant sur les points de suspension puis en donnant l'identifiant et le mot-depasse nécessaires à l'accès de ce calendrier.",
+ "individu_site_internet_grp_tooltip" => "Le champ contient un lien vers un site internet, une page, un blog .... En cliquant sur les points de suspension la page internet sera affichée dans l'espace courant.",
+
+"telephone_fixe"=>"Téléphone fixe",
+ "individu_telephone_fixe_tooltip" => "Le numéro de téléphone est reformaté lors de l'enregistrement.",
+ "individu_telephone_mobile_tooltip" => "Le numéro de téléphone est reformaté lors de l'enregistrement.",
+"individu_contact_alternatif_tooltip" => "Texte libre : numéro de poste, téléphone d'un proche, téléphone au bureau, en vacance ...",
+
+"telephone_mobile"=>"Téléphone mobile",
+"numero_ss"=>"N° de sécurité sociale",
+"date_deces"=>"Date de décès",
+"individu_date_deces_tooltip" => "La saisie d'une date de décès provoque la radiation de toutes les inscriptions concernant la personne avec 'décès' pour motif et met une dae de fin à toutes les fonctions de la personne. Les lignes concernant la personne ne seront affichées que si l'on choisit de visualiser les archives.",
+
+  "individu_nom_tooltip" => "Vous pouvez saisir avec la casse qui vous convient (minuscules, majuscules).Nom et prénom sont reformatés avant stockage. ",
+"individu_prenom_tooltip"=>"Vous pouvez saisir avec la casse qui vous convient (minuscules, majuscules).Nom et prénom sont reformatés avant stockage. ",	
+ "individu_pas_de_courriel_o_n_tooltip"=>"Si cette case est cochée : cela signifie que l'individu ne souhaite pas être importuné par des courriels à caractère de multidiffusion. L'adresse de courriel de l'individu ne sera pas utilisée dans les envois groupés. ",	 
+ 
+ 
+"calendrier_grp"=>"Calendrier",
+"courriel_grp"=>"Courriel",
+"site_internet_grp"=>"Site internet",
+"app_description" => "Bienvenue dans AssoCope.",
+  "app_shorttitle" => "AssoCope",
+  "app_title" =>  "AssoCope",
+"id_creation" => "Créé",
+"date_creation" => "Créé le",
+"id_modification" => "Modifié",
+"date_modification" => "Modifié le",
+"id_document_portrait" => "Document portrait",
+
+"id_rapport_activite"=>"Activité Frais",
+"activite_i"=>"Activité/Frais",
+"type_moteur"=>"Moteurs de recherche",
+"id_pays" => "Pays",
+"id_profil" => "Profil",
+"id_type_organisme" => "Type organisme",
+"id_organisme_contrat" => "Organisme contrat",
+"id_organisme_inscrit" => "Organisme inscrit",
+"id_interlocuteur" => "Interlocuteur",
+"id_organisme_partenaire" => "Organisme partenaire",
+"id_organisme_referencement" => "Référenceur",
+"id_organisme_federation" => "Fédération",
+"id_organisme_fournisseur" => "Fournisseur",
+"id_organisme_financeur" => "Financeur",
+"id_organisme_tiers" => "Organisme tiers",
+"id_plaquette" => "Plaquette",
+"id_organisme_communication" => "Media",
+"id_contact_federation" => "Correspondant fédération",
+"id_document_inscription" => "Formulaire inscription",
+"id_document_programme" => "Document programme",
+"id_document_preparation" => "Document de préparation",
+"id_document_communication" => "Communiqué",
+"id_document" => "Document",
+"id_type_rencontre" => "Type rencontre",
+"id_type_rencontre_participation" => "Participation",
+"id_type_document" => "Type de document",
+"id_type_audience" => "Audience",
+"id_type_referencement" => "Type",
+"id_type_etat_referencement" => "Etat",
+"id_lieu" => "Adresse",
+"id_type_inscription" => "Type inscription",
+"id_type_radiation" => "Motif radiation",
+"id_liste" => "Liste",
+"id_compte_rendu" => "Compte rendu",
+"id_titre" => "Titre",
+"id_attribut" => "Attribut",
+"id_type_competence" => "Compétence",
+"id_type_contact" => "Type contact",
+"id_individu" => "Individu",
+"id_individu_a_faire" => "A faire par ",
+"id_contact" => "Contactant",
+"id_organisme" => "Organisme",
+"id_fonction" => "Fonction",
+"id_inscription" => "No inscription",
+"id_rencontre" => "Rencontre",
+"id_type_origine" => "Origine",
+"id_type_activite" => "Activité",
+"id_type_etat_todo" => "Etat",
+"id_type_liste" => "Type liste",
+"id_type_bookmark" => "Catégorie marque-page",
+"id_banque" => "Banque",
+"id_reglement" => "Règlement",
+"id_releve_banque" => "Référence relevé banque",
+"id_document_releve" => "Document relevé",
+"id_parent" => "Catégorie",
+"id_type_demande" => "Type",
+"id_type_placemark" => "Type repère",
+"type_placemark" => "Type repère",
+"id_zone_region_pays" => "Zone",
+"id_region_pays" => "Région",
+"type_zone_region_pays" => "Zone",
+"placemark"=> "Repère",
+"type_symbole_gps"=> "Symbole gps",
+"id_constructeur"=> "Code",
+"menu_dashboard"=> "Menu",
+
+"id_maree_meteo" => "Marée/Météo",
+"id_photo" => "Photo",
+"id_type_icone" => "Type icone",
+"placemark_attribut" => "Attribut",
+"id_placemark" => "Repère",
+"id_type_attribut_placemark" => "Type attribut",
+"type_attribut_placemark" => "Type attribut repère",
+"maree_meteo" => "Marée/Météo",
+"url_maree" => "Lien marée",
+"id_icone" => "Icone",
+"id_seconde_icone" => "Seconde icone",
+"id_symbole_gps" => "Symbole gps",
+"web_i" => "Blog",
+
+
+"id_ville" => "CP Ville",
+"adresse_defaut_o_n" => "Postale",
+"activite_i" => "Activités/Frais",
+"attribut_i" => "Attribut",
+"document_i" => "Document",
+"competence_i" => "Compétence",
+"contact_i" => "Contact",
+"cotisation_i" => "Cotisation",
+"cotorep_i" => "Invalidité",
+"fonction_i" => "Fonction",
+"inscription_i" => "Inscription",
+"image_i" => "Image",
+"immatriculation_i" => "Immatriculation",
+"individu_lieu" => "Adresse",
+"organisme_lieu" => "Adresse",
+"rencontre_i" => "Participant",
+"activites_i" => "Activités/Frais(Individu)",
+"attributs_i" => "Attributs(Individu)",
+"bookmarks_i" => "Marque pages(Individu)",
+"competences_i" => "Compétences(Individu)",
+"contacts_i" => "Contacts(Individu)",
+"cotisations_i" => "Cotisations(Individu)",
+"cotorep_i" => "Cotorep(Individu)",
+"fonctions_i" => "Fonctions(Individu)",
+"inscriptions_i" => "Inscriptions(Individu)",
+"immatriculations_i" => "Immatriculations(Individu)",
+"rencontres_i" => "Rencontres(Individu)",
+"organisme_lieux_i" => "Adresses inscrits(Individu)",
+"lieux_i" => "Adresses(Individu)",
+"listes_i" => "Listes(Individu)",
+"comptes_o" => "Comptes(Organisme)",
+"contrats_o" => "Contrats(Organisme)",
+"cotisations_o" => "Cotisations(Organisme)",
+"documents_o" => "Documents(Organisme)",
+"domaines_o" => "Domaines(Organisme)",
+"documents communication_o" => "Documents communication(Organisme)",
+"documents officiels_o" => "Documents officiels(Organisme)",
+"ecritures comptables_o" => "Ecritures comptables(Organisme)",
+"gazettes_o" => "Gazettes(Organisme)",
+"infolettres_o" => "Infolettres(Organisme)",
+"journaux comptables_o" => "Journaux comptables(Organisme)",
+"lieux_o" => "Adresses(Organisme)",
+"listes_o" => "Listes(Organisme)",
+"partenaires_o" => "Partenaires(Organisme)",
+"patrimoine_o" => "Patrimoine(Organisme)",
+"referencements_o" => "Référencements(Organisme)",
+"rencontres_o" => "Rencontres(Organisme)",
+"rencontres_communications_o" => "Rencontres communications(Organisme)",
+"rencontres_fournisseurs_o" => "Rencontres fournitures(Organisme)",
+"financements_o" => "Financements(Organisme)",
+"fournitures_o" => "Fournitures(Organisme)",
+"fourniture" => "Dépense",
+"financement" => "Recette",
+"regles_o" => "Règles(Organisme)",
+"particulier_o_n" => "Particulier",
+"nombre_heures" => "Temps passé(h)",
+"log_o_n" => "Log",
+"cotisation_organisme_o_n" => "Cotisation organisme",
+"cotisation_federation_o_n" => "Cotisation fédération",
+"view_source" => "Source",
+"view_help" => "Aide",
+"onlyactiverecordsareshown" => "Consultation des enregistrements actifs.",
+"clicktoviewactiverecords" => "Cliquer ici pour ne visualiser que les enregistrements actifs.",
+"clicktoviewarchive" => "Cliquer ici pour visualiser aussi les archives.",
+ "youareinthearchive" => "Consultation de tous les enregistrements.",
+"lister" => "Copier dans le presse papier",
+"listerpp" => "Coller à partir du presse papier",
+"search" => "Chercher",
+"search_again" => "Nouvelle recherche ",
+"type_bookmark" => "Marque page",
+"id_type_ bookmark" => "Catégorie",
+"bookmark_i" => "Marque page",
+"id_organisme_registrar" => "Registrar",
+"id_organisme_hebergement" => "Hébergeur",
+"date_registrar_debut" => "Début",
+"date_registrar_fin" => "Echéance",
+"url_administration_registrar" => "Admin registrar",
+"url_administration_mysql" => "Admin mysql",
+"url_administration_ftp" => "Admin ftp",
+"url_administration_mail" => "Admin mail",
+"url_administration_hebergement" => "Admin hébergement",
+"identifiant_registrar" => "Identifiant",
+"identifiant_mysql" => "Identifiant",
+"identifiant_ftp" => "Identifiant",
+"identifiant_mail" => "Identifiant",
+"identifiant_hebergement" => "Identifiant",
+"mot_de_passe_registrar" => "Mot_de_passe",
+"mot_de_passe_mysql" => "Mot_de_passe",
+"mot_de_passe_ftp" => "Mot_de_passe",
+"mot_de_passe_mail" => "Mot_de_passe",
+"mot_de_passe_hebergement" => "Mot_de_passe",
+"serveur_registrar" => "Serveur",
+"serveur_mysql" => "Serveur",
+"serveur_ftp" => "Serveur",
+"serveur_mail" => "Serveur",
+"serveur_hebergement" => "Serveur",
+"commentaire_registrar" => "Commentaire",
+"commentaire_mysql" => "Commentaire",
+"commentaire_ftp" => "Commentaire",
+"commentaire_mail" => "Commentaire",
+"commentaire_hebergement" => "Commentaire",
+"caracteristiques_hebergement" => "Caractéristiques",
+"date_contrat_debut_hebergement" => "Début",
+"date_contrat_fin_hebergement" => "Echéance",
+"userpimitems" => "Elément de rappel",
+"menu_item_individu" => "Action",
+"menu_item_organisme" => "Action",
+"menu_item_table" => "Action",
+"menu_item_lieu" => "Action",
+"pimitem" => "Elément de rappel",
+"pimitems" => "Eléments de rappel",
+"pim" => "Rappels",
+"password_leaveblankifunchanged" => "Laisser les deux champs à blanc pour garder le mot de passe actuel.",
+"pim_orderby_help" => "Un élément avec une valeur de 10 apparaîtra avant un champ avec la valeur de 20",
+"pim_assignedbyyou" => "Assigné par vous et non assigné à vous",
+"pim_assignedtoyou" => "Assigné à vous",
+"pim_nopimitems" => "Aucun élément de rappel n'a été configuré.Utiliser les préférences pour ajouter des éléments de rappel à votre page personnelle.",
+"pim_todos" => "Vos tâches du jour",
+"pim_contact_i" => "Vos contacts du jour",
+"pim_rencontre_i" => "Vos rencontres du jour",
+"pim_activite_i" => "Vos saisies d'activité du jour",
+"pim_blocnotes" => "Votre bloc notes",
+"pim_todo_empty" => "Pas de tâche",
+"todo" => "Tâche",
+"contact_vous_concernant" => "Vous concernant",
+"pas_de_contact" => "Pas de contact",
+"contacts_crees_par_vous_et_ne_vous_concernant_pas" => "Créés par vous et ne vous concernant pas",
+"rencontre_ou_vous_etes_inscrit" => "Rencontres auxquelles vous êtes inscrit",
+"pas_de_rencontre" => "Pas de rencontre",
+"activite_pas_d_activite_aujourdhui" => "Pas d'activité aujourd'hui",
+"activite_enregistrer_des_activites" => "Enregistrer des activités",
+"error_non_inscrit_organisme" => "Individu non inscrit à l'organisme",
+"error_non_inscrit_federation" => "Individu non inscrit à la fédération",
+"error_deja_inscrit_organisme" => "Individu déjà inscrit à l'organisme",
+"userprefs" => "Préférences",
+"organisme_select" => "Organisme",
+"menu_organisme_select" => "Action",
+"individu_select" => "Organisme",
+"menu_individu_select" => "Action",
+"bookmarks" => "Marque-pages",
+"pas_de_courriel_o_n" => "Pas de courriel",
+"lettre_o_n" => "Lettre",
+"infolettre_o_n" => "Infolettre",
+"coups_recus" => "Hcp",
+"id_organisme_parcours" => "Parcours de golf",
+"trou_depart" => "Trou de départ",
+"couleur_depart" => "Couleur",
+"id_type_categorie_golf" => "Catégorie",
+"net_corrige" => "Stableford corrigé",
+"index_apres" => "Index après",
+"id_trou" => "Trou",
+"numero_trou" => "Numéro",
+"carte_golf_trou" => "Trou",
+"id_carte" => "Carte",
+"coups_donnes" => "Coups donnés",
+"coup_nomme" => "Coup nommé",
+"competiteur" => "Compétiteur",
+"url_meteo" => "Lien météo",
+"meteo" => "Météo",
+"id_document_photo" => "Photo",
+"id_document_signature" => "Signature",
+
+"regles_locales" => "Règles locales",
+"golf_parcours_trou" => "Trou",
+"golf_parcours" => "Parcours de golf",
+"file_name" => "Fichier",
+"file_extension" => "Type de fichier",
+"file_size" => "Taille",
+"libelle" => "Libellé",
+"libelle_1" => "Libellé",
+"id_etat" => "Etat",
+"id_compte"=>"Compte",
+"id_type_reglement"=>"Règlement",
+"id_type_banque"=>"Banque",
+"id_journal"=>"Journal",
+"id_ecriture_organisme"=>"Ecriture organisme",
+"id_compte_banque"=>"Compte banque",
+"id_document_facture"=>"Facture",
+"id_ecriture_reglement"=>"Ecriture réglement",
+"id_ecriture_recette"=>"Ecriture recette",
+"id_ecriture_depense"=>"Ecriture dépense",
+"id_ecriture_participation"=>"Ecriture participation",
+"id_compte_charge"=>"Compte de dépense",
+"id_compte_produit"=>"Compte de recette",
+"id_compte_financier"=>"Compte caisse ou banque",
+"id_compte_debit"=>"Vers compte(débité)",
+"id_compte_credit"=>"Du compte(crédité)",
+"id_compte_tiers"=>"Compte tiers",
+"id_recu_fiscal"=>"Numero reçu fiscal",
+"id_cotisation_federation"=>"Cotisation fédération",
+"id_ecriture_cotisation"=>"Ecriture cotisation",
+"id_ecriture_virement"=>"Ecriture virement",
+"id_ecriture_cotisation_federation"=>"Ecriture cotisation fédération",
+"id_document_intervenant"=>"Document intervention",
+"id_individu_auteur"=>"Auteur/Rédacteur",
+"id_remise_organisme"=>"Numéro remise organisme",
+"id_type_remise_banque"=>"Type remise",
+"id_remise_banque"=>"Numéro remise banque",
+"id_releve"=>"Numéro de relevé",
+"id_document_remise"=>"Bordereau de remise",
+"id_cotisation"=>"Cotisation",
+"id_document_organisme"=>"Document organisme",
+"id_document_organisme_1"=>"Document organisme",
+"id_document_organisme_2"=>"Document organisme",
+"id_document_individu"=>"Document individu",
+"id_document_individu_1"=>"Document individu",
+"id_document_individu_2"=>"Document individu",
+"id_document_justificatif"=>"Justificatif",
+"id_ecriture_frais"=>"Ecriture frais",
+"id_ecriture_benevolat"=>"Ecriture bénévolat",
+// Version 6
+  "decimal_separator" => ",",
+  "recordlistsummary" => "Enregistrements [start] à [end] de [count]",
+
+// TOP MENUS UTILISATEUR
+
+"menu_Top_Utilisateur"=>"<b>UTILISATEUR</b>",
+"menu_tooltip_Top_Utilisateur"=>"Vous êtes un individu utilisateur de l'application AssoCope. ",
+
+"menu_Activités_u"=>"Activités/Frais",
+"menu_tooltip_Activités_u"=>"Vos rapports d'activité, vos notes de frais ...",
+
+"menu_Blogs_u"=>"Blogs",
+"menu_tooltip_Blogs_u"=>"Vos blogs, sites internet et leurs spécificités (stats, pubs, ...).",
+
+"menu_Bloc_Notes_u"=>"Bloc Notes",
+"menu_tooltip_Bloc_Notes_u"=>"Votre bloc notes AssoCope.",
+
+"menu_Calendrier_u"=>"Calendrier",
+"menu_tooltip_Calendrier_u"=>"Accéder à votre calendrier.",
+
+"menu_Contactant_u"=>"Contactant",
+"menu_tooltip_Contactant_u"=>"Créer un contact donné par vous.",
+
+"menu_Contacté_u"=>"Contacté",
+"menu_tooltip_Contacté_u"=>"Créer un contact reçu par vous.",
+
+"menu_Contacts_u"=>"Contacts",
+"menu_tooltip_Contacts_u"=>"Vos contacts (appels téléphoniques, courriels, visites, courrier postal ...).",
+
+"menu_Demandes_u"=>"Demandes",
+"menu_tooltip_Demandes_u"=>"Vos demandes de correction, d'amélioration de l'applicatio AssoCope.",
+
+"menu_Documents_u"=>"Documents personnels",
+"menu_tooltip_Documents_u"=>"Vos documents personnels. Permet le stockage de tout type de fichier d'une taille inférieure à 5 MegaOctets.",
+
+"menu_Documents_auteur_u"=>"Documents (auteur)",
+"menu_tooltip_Documents_auteur_u"=>"Documents d'organismes dont vous êtes l'auteur.",
+
+"menu_Envoi_groupe_utilisateur_u"=>"Envois groupés",
+"menu_tooltip_Envoi_groupe_utilisateur_u"=>"Envois groupés que vous avez effectués.",
+
+"menu_Historique_u"=>"Historique",
+"menu_tooltip_Historique_u"=>"Les individus, organismes que vous avez consultés récemment.",
+
+"menu_Immatriculations_u"=>"Immatriculations",
+"menu_tooltip_Immatriculations_u"=>"Vos immatriculations. (Numéro de SS, identifiants dans des forums ...).",
+
+"menu_Listes_u"=>"*Listes",
+"menu_tooltip_Listes_u"=>"Vos listes d'individus et/ou d'organismes",
+
+"menu_Marque-pages_u"=>"Marque-pages",
+"menu_tooltip_Marque-pages_u"=>"Vos marques pages que vous pouvez consulter par le menu déroulant du haut à droite.",
+
+"menu_Préférences_u"=>"Préférences",
+"menu_tooltip_Préférences_u"=>"Vos préférences AssoCope.",
+
+"menu_Presse-papier_u"=>"Presse-papier",
+"menu_tooltip_Presse-papier_u"=>"Contenu de votre presse-papier AssoCope.",
+
+"menu_Rappels_u"=>"Rappels",
+"menu_tooltip_Rappels_u"=>"Vos rappels AssoCope.",
+
+"menu_Rencontres_u"=>"Rencontres",
+"menu_tooltip_Rencontres_u"=>"Rencontres dans lesquelles vous êtes participant.",
+
+"menu_Règles de confidentialité_u"=>"Règles de confidentialité",
+"menu_tooltip_Règles de confidentialité_u"=>"Les règles de confidentialité et d'utilisation de l'application AssoCope auxquelles vous avez souscrit.",
+
+"menu_Sauvegardes_u"=>"Sauvegardes",
+"menu_tooltip_Sauvegardes_u"=>"Sauvegardes de répertoire(s) et de base(s) que vous gérez sur le serveur web.",
+
+"menu_Taches_u_af"=>"Tâches (à faire)",
+"menu_tooltip_Taches_u_af"=>"Tâches que vous avez faites ou que vous devez faire.",
+
+"menu_Taches_u_creees"=>"Tâches (créées)",
+"menu_tooltip_Taches_u_creees"=>"Tâches que vous avez créées.",
+
+// TOP MENUS ORGANISME
+"menu_Organismes_top"=>"<b>ORGANISMES</b>",
+"menu_tooltip_Organismes_top"=>"Menu Organismes. Accès à toutes les fonctionnalités liées à l'organisme sélectionné.",
+
+"menu_Rechercher_o"=>"Rechercher",
+"menu_tooltip_Rechercher_o"=>"Rechercher dans la base des organismes à partir de critères autres que le nom.",
+
+"menu_Récents_o"=>"Historique",
+"menu_tooltip_Récents_o"=>"Gérer l'historique des organisme accédés par l'individu utilisateur de l'application.",
+
+"menu_Créer_o"=>"Créer",
+"menu_tooltip_Créer_o"=>"Créer un nouvel organisme.Vérifier avant qu'il n'existe pas. L'application n'autorise pas les doublons sur nom.",
+
+"menu_tooltip_fiche_organisme_o"=>"Accès à la fiche de l'organisme.",
+"menu_tooltip_adresse_organisme_o"=>"Géolocalisation des adresses de l'organisme et de l'adresse de l'utilisateur.",
+"menu_tooltip_telephone_organisme_o"=>"Téléphone de l'organisme.",
+"menu_tooltip_web_organisme_o"=>"Accès au site web de l'organisme.",
+
+"menu_Calendrier_o"=>"Calendrier",
+"menu_tooltip_Calendrier_o"=>"Calendrier de l'organisme.",
+
+"menu_Enveloppe_o"=>"Enveloppe",
+"menu_tooltip_Enveloppe_o"=>"Pour impression d'enveloppe pour nevoyer u courrier à l'organisme.",
+
+"menu_vcard_o"=>"Vcard",
+"menu_tooltip_vcard_o"=>"Carte de visite électronique intégrable dans outlook par exemple.",
+
+"menu_Activités_o"=>"Activités/Frais",
+"menu_tooltip_Activités_o"=>"Rapports d'activité et notes de frais affectées à l'organisme.",
+
+"menu_Adresses_o"=>"Adresses",
+"menu_tooltip_Adresses_o"=>"Adresses postales de l'organisme.",
+
+"menu_Annuaire téléphonique_o"=>"Annuaire téléphonique",
+"menu_tooltip_Annuaire téléphonique_o"=>"Recherche dans les pages blanches sur le nom de l'organisme.Truc : lors de la création d'une fiche organisme , saisir le nom puis lancer cette recherche dans l'annuaire qui vous permettra de trouver souvent adresse et numéro de téléphone.",
+
+"menu_Blogs_o"=>"Blogs",
+"menu_tooltip_Blogs_o"=>"Sites web de l'organisme et particularités de chaque site(stats, pubs, ...).",
+
+"menu_Communications_o"=>"Communications",
+"menu_tooltip_Communications_o"=>"Communications de l'organisme à la presse.",
+
+"menu_Comptabilite_o"=>"<b>Comptabilité</b>",
+"menu_tooltip_Comptabilite_o"=>"Accès au menu comptabilité de l'organisme sélectionné.",
+
+"menu_Fonctions_o"=>"<b>*Fonctions</b>",
+"menu_tooltip_Fonctions_o"=>"Fonctions de l'organisme et nombre d'individus occupant ces fonctions.<br></br> Possibilité d'extraction des courriels, des adresses postales par fonction.<br></br> Vérification des sans adresse, sans courriel.<br></br>Possibilité de mettre dans le presse papier les individus par fonction et de constituer des listes ou de les copier pour inscription à une rencontre par exemple.  ",
+
+"menu_Fonctions_Détail"=>"(Détaillé)",
+"menu_tooltip_Fonctions_Détail"=>"Liste des individus ayant des fonctions dans l'organisme.  ",
+
+"menu_Contacts_fonctions"=>"(Contacts)",
+"menu_tooltip_Contacts_fonctions"=>"Contacts avec les individus ayant des fonctions dans l'organisme.  ",
+
+"menu_Inscriptions_o"=>" <b>*Inscriptions</b>",
+"menu_tooltip_Inscriptions_o"=>"Types d'inscription utilisés dans l'organisme et nombre d'individus par type d'inscription.<br></br> Possibilité d'extraction des courriels, des adresses postales par type d'insciption.<br></br> Vérification des sans adresse, sans courriel.<br></br>Possibilité de mettre dans le presse papier les individus par type d'inscription et de constituer des listes ou de les copier pour inscription à une rencontre par exemple.  ",
+
+"menu_Inscriptions_Détail"=>"(Détaillé)",
+"menu_tooltip_Inscriptions_Détail"=>"Liste des individus inscrits à l'organisme.  ",
+
+"menu_Inscriptions_Types"=>"(Types)",
+"menu_tooltip_Inscriptions_Types"=>"Types d'inscription propres à l'organisme.",
+
+"menu_Contacts_inscriptions"=>"(Contacts)",
+"menu_tooltip_Contacts_inscriptions"=>"Contacts avec les individus inscrits dans l'organisme. ",
+
+"menu_Cotisations_o"=>" <b>*Cotisations</b>",
+"menu_tooltip_Cotisations_o"=>"Cotisations de l'organisme (tarif, année, stats ...).",
+
+"menu_Cotisations_Détails_o"=>"(Détaillé)",
+"menu_tooltip_Cotisations_Détails_o"=>"Détail des cotisations des individus cotisant à l'organisme.",
+
+"menu_Rencontres_o"=>" <b>*Rencontres</b>",
+"menu_tooltip_Rencontres_o"=>"Groupage des rencontres organisées par l'organisme par type de rencontre et par an.",
+
+"menu_Rencontres_Détails"=>"(Détaillé)",
+"menu_tooltip_Rencontres_Détails"=>"Rencontres organisées par l'organisme .<br></br> Possibilité d'extraction des courriels, des adresses postales des participants à une rensontre.<br></br> Vérification des sans adresse, sans courriel.<br></br>Possibilité de mettre dans le presse papier les individus participant à une rencontre et de constituer des listes ou de les copier pour inscription à une autre rencontre par exemple. ",
+
+"menu_Contrats_o"=>"Contrats",
+"menu_tooltip_Contrats_o"=>"Contrats de l'organisme (assurance, convention, entretien, ...)",
+
+"menu_Documents_o"=>"Documents",
+"menu_tooltip_Documents_o"=>"Documents de l'organisme. Permet le stockage de tout type de fichier d'une taille inférieure à 5 MegaOctets.",
+
+"menu_Documents_Officiels_o"=>"Documents officiels",
+"menu_tooltip_Documents_Officiels_o"=>"Documents officiels de l'organisme avec date de dépôt.",
+
+"menu_Domaines_internet_o"=>"Domaines internet",
+"menu_tooltip_Domaines_internet_o"=>"Domaines internet de l'organisme (Hébergement, date échéance, registrar, gestion ...). ",
+
+"menu_Enveloppe_o"=>"Enveloppes",
+"menu_tooltip_Enveloppe_o"=>"Les adresses postales de l'organisme sont déchargées dans un fichier open office qu'on peut imprimer sur des enveloppes.",
+
+"menu_Envoi_groupe_organisme"=>"Envois groupés",
+"menu_tooltip_Envoi_groupe_organisme"=>"Envois groupés dont l'organisme est l'émetteur.",
+
+"menu_gazettes_o"=>"Gazettes",
+"menu_tooltip_gazettes_o"=>"Information régulière des membres de l'organisme (lettre, journal, publication ...).",
+
+"menu_Geolocalisation_o"=>"Géolocalisation",
+"menu_tooltip_Geolocalisation_o"=>"Géolocalisation des adresses de l'organisme dans Googlemaps et de l'adresse de l'utilisateur.",
+
+"menu_images_o"=>"Images",
+"menu_tooltip_images_o"=>"Images de l'organisme : logo, bandeau publicitaire ...",
+
+"menu_Immatriculations_o"=>"Immatriculations",
+"menu_tooltip_Immatriculations_o"=>"Immatriculations de l'organisme. (Code association, numéro cnil, ...).",
+
+"menu_Infolettres_o"=>"Infolettres",
+"menu_tooltip_Infolettres_o"=>"Informations régulières de l'organisme diffusées par courriel. (Infolettre, newsletter...).",
+
+"menu_Notoriete_o"=>"Notoriété",
+"menu_tooltip_Notoriete_o"=>"Recherche du nom de l'organisme dans google.Truc : lors de la création d'une fiche organisme, saisir le nom puis lancer cette recherche vous trouverez le site internet de l'organisme, son adresse ...",
+
+"menu_Opérations_de_banque"=>"<b>Opérations de banque</b>",
+"menu_tooltip_Opérations_de_banque"=>"Accès au menu de gestion des opérations de banque pour l'organisme. Pour les comptes bancaires : endos de chèques, remises de chèques en banque, rapprochement des relevés, consultation et opérations sur les comptes bancaires par internet.",
+
+"menu_Parcours_o"=>"Parcours",
+"menu_tooltip_Parcours_o"=>"Parcours de golf de l'organisme.",
+
+"menu_Partenaires_o"=>"Partenaires",
+"menu_tooltip_Partenaires_o"=>"Partenaires habituels de l'organisme.",
+
+"menu_Pouvoirs_CA"=>"Pouvoirs CA",
+"menu_tooltip_Pouvoirs_CA"=>"Editions de pouvoirs pour les réunions de conseil d'administration.",
+
+"menu_Patrimoine_o"=>"Patrimoine",
+"menu_tooltip_Patrimoine_o"=>"Patrimoine de l'organisme. (Appareil photo, videoprojecteur, photocopieuse, banderolle, ...).",
+
+"menu_Référencements_o"=>"Référencements",
+"menu_tooltip_Référencements_o"=>"Référencements de l'organisme et état de ces référecements. (Annuaires associatifs, annuaires électroniques, sites web, lieux de diffusion des plaquettes de l'organisme ...).  ",
+
+"menu_Règles et définitions_o"=>"Règles et définitions",
+"menu_tooltip_Règles et définitions_o"=>"Règles et définitions de l'organisme.",
+
+"menu_Sauvegardes_o"=>"Sauvegardes",
+"menu_tooltip_Sauvegardes_o"=>"Sauvegardes des informations de l'organisme sur le serveur web.",
+
+"menu_Traitements"=>"<b>Traitements</b>",
+"menu_tooltip_Traitements_o"=>"Traitements périodiques pour l'organisme : sélection des destinataires de la lettre aux membres, rappels de cotisation, reçus fiscaux, timbres, cartes adhérents, synchronisation avec fédération de l'organisme, cotisations à la fédération.",
+
+// TOP MENUS INDIVIDU
+
+"menu_Individus_top"=>"<b>INDIVIDUS</b>",
+"menu_tooltip_Individus_top"=>"Menu Individus. Accès à toutes les fonctionnalités liées à l'individu sélectionné.",
+
+"menu_Rechercher_i"=>"Rechercher",
+"menu_tooltip_Rechercher_i"=>"Rechercher dans la base des individus à partir de critères autres que le nom.",
+
+"menu_Récents_i"=>"Historique",
+"menu_tooltip_Récents_i"=>"Gérer l'historique des individus accédés par l'individu utilisateur de l'application.",
+
+"menu_Créer_i"=>"Créer",
+"menu_tooltip_Créer_i"=>"Créer un nouvel individu.Vérifier avant qu'il n'existe pas. L'application n'autorise pas les doublons sur nom et prénom.",
+
+"menu_tooltip_fiche_individu_i"=>"Accès à la fiche de l'individu.",
+"menu_tooltip_date_deces_i"=>"Date de décès. La fiche de l'individu est alors non modifiable.",
+"menu_tooltip_adresse_individu_i"=>"Géolocalisation de l'adresse dans Google maps.",
+"menu_tooltip_telephone_fixe_i"=>"Téléphone fixe.",
+"menu_tooltip_telephone_mobile_i"=>"Téléphone mobile.",
+"menu_tooltip_courriel_i"=>"Saisir un contact et envoyer par courriel à l'adresse de courriel indiquée.",
+"menu_tooltip_site_internet_i"=>"Accès au site internet personnel de l'individu.",
+"menu_tooltip_enveloppe_i"=>"Impression d'une enveloppe.",
+"menu_tooltip_calendrier_i"=>"Accès au calendrier personnel de l'individu.",
+"menu_tooltip_vcard_i"=>"Carte de visite électronique intégrable dans outlook par exemple.",
+
+"menu_Activités_i"=>"Activités/Frais",
+"menu_tooltip_Activités_i"=>"Rapports d'activité et notes de frais",
+
+"menu_Adresses_i"=>"Adresses",
+"menu_tooltip_Adresses_i"=>"Adresses postales de l'individu",
+
+"menu_Annuaire_téléphonique_i"=>"Annuaire téléphonique",
+"menu_tooltip_Annuaire_téléphonique_i"=>"Recherche sur nom et prénom dans les pages jaunes pour trouver le numéro de téléphone te l'adresse de l'individu. Truc : lors de la création d'une fiche individu, saisir le nom/prénom puis lancer cette recherche dans l'annuaire qui vous permettra de trouver souvent adresse et numéro de téléphone.",
+
+"menu_Attributs_i"=>"Attributs",
+"menu_tooltip_Attributs_i"=>"Attributs de l'individu et dates de validité : chirurgien, conseiller général, musicien ...",
+
+"menu_Blogs"=>"Blogs",
+"menu_tooltip_Blogs"=>"Sites web et hacks de chaque site.",
+
+"menu_Compétences_i"=>"Compétences",
+"menu_tooltip_Compétences_i"=>"Compétences particulières qui peuvent servir à l'organisme : chante, dessine, anime ...",
+
+"menu_Compétitions_i"=>"Compétitions",
+"menu_tooltip_Compétitions_i"=>"Compétitions de golf.",
+
+"menu_Contactant"=>"Contactant",
+"menu_tooltip_Contactant"=>"Contacts où l'individu est à l'initiative du contact.",
+
+"menu_Contacté"=>"Contacté",
+"menu_tooltip_Contacté"=>"Contacts où l'individu est contacté par un autre individu.",
+
+"menu_Contacts_i"=>"Contacts",
+"menu_tooltip_Contacts_i"=>"Tous les contacts où l'individu est soit contacté soit contactant.",
+
+"menu_Cotisations_i"=>"Cotisations",
+"menu_tooltip_Cotisations_i"=>"Cotisations de l'individu.",
+
+"menu_Cotoreps_i"=>"Mdph",
+"menu_tooltip_Cotoreps_i"=>"Suivi des dossiers mdph de l'individu.",
+
+"menu_Demandes_i"=>"Demandes",
+"menu_tooltip_Demandes_i"=>"Demandes d'amélioration de l'application Assocope (Erreurs, nouveaux besoins ...).",
+
+"menu_Documents_i"=>"Documents",
+"menu_tooltip_Documents_i"=>"Documents personnels. Permet le stockage de tout type de fichier d'une taille inférieure à 5 MegaOctets.",
+
+"menu_Documents_auteur"=>"Documents (auteur)",
+"menu_tooltip_Documents_auteur"=>"Documents attachés à des organismes dont l'individu est l'auteur.",
+
+"menu_Enveloppe_i"=>"Enveloppe",
+"menu_tooltip_Enveloppe_i"=>"Les adresses postales de l'individu sont déchargées dans un fichier open office qu'on peut imprimer sur des enveloppes.",
+
+"menu_Envoi_groupe_individu"=>"Envois groupés",
+"menu_tooltip_Envoi_groupe_individu"=>"Envois groupés dont l'individu est l'émetteur.",
+
+"menu_Fonctions_i"=>"Fonctions",
+"menu_tooltip_Fonctions_i"=>"Fonctions de l'individu et dates de validité : directeur, membre du CA, visiteur ...",
+
+"menu_Geolocalisation_i"=>"Géolocalisation",
+"menu_tooltip_Geolocalisation_i"=>"Géolocalisation des adresses de l'individu dans Googlemaps et de l'adresse de l'utilisateur.",
+
+"menu_Historique_i"=>"Historique",
+"menu_tooltip_Historique_i"=>"Historique des individus, organismes consultés par l'individu.",
+
+"menu_Images_i"=>"Images",
+"menu_tooltip_Images_i"=>"Images de l'individu : photo, logo,bandeau publicitaire ...",
+
+"menu_Immatriculations_i"=>"Immatriculations",
+"menu_tooltip_Immatriculations_i"=>"Liens vers des sites internet et codes d'accès, numéro de sécu, numéro de client ...",
+
+"menu_Inscriptions_i"=>"Inscriptions",
+"menu_tooltip_Inscriptions_i"=>"Inscriptions de l'individu à un ou des organismes, avec le type d'inscription : adhérent, pour information ...",
+
+"menu_Lignes comptables_i"=>"Lignes comptables",
+"menu_tooltip_Lignes comptables_i"=>"Ligne comptables des organismes concernat l'individu : cotisation, frais, participation à rencontre ...",
+
+"menu_Marque pages_i"=>"Marque pages",
+"menu_tooltip_Marque pages_i"=>"Les sites web favoris de l'individu : ils sont sélectionnables dans la boîte de recherche de la partie haute à droite lorsque l'indivu est utilisateur.",
+
+"menu_Images_i"=>"Images",
+"menu_tooltip_Images_i"=>"Images de l'individu : photo, logo,bandeau publicitaire ...",
+
+"menu_Notoriete_i"=>"Notoriété",
+"menu_tooltip_Notoriete_i"=>"Recherche du nom de l'individu dans google.",
+
+"menu_Rencontres_i"=>"Rencontres",
+"menu_tooltip_Rencontres_i"=>"Rencontres organisées par des organismes où l'individu est inscrit ou a participé.(Inscriptions, rapports d'activité, paiement participation).",
+
+"menu_Récapitulatif"=>"Récapitulatif",
+"menu_tooltip_Récapitulatif"=>"Fiche résumant pour l'individu : nom, adresses, fonctions, inscriptions, contacts, rencontres ...",
+
+"menu_Sauvegardes_i"=>"Sauvegardes",
+"menu_tooltip_Sauvegardes_i"=>"Sauvegardes sur le serveur web.",
+
+"menu_Soldes comptes_i"=>"Soldes comptes",
+"menu_tooltip_Soldes comptes_i"=>"Soldes comptes d'organismes concernant l'individu.",
+
+"menu_Tâches_i"=>"Tâches",
+"menu_tooltip_Tâches_i"=>"Tâches de l'individu.",
+
+"menu_Utilisateur_i"=>"Utilisateur",
+"menu_tooltip_Utilisateur_i"=>"Caracéristiques de l'individu utilisateur de l'application AssoCope.",
+
+// TOP MENU RENCONTRES
+"menu_Rencontres_top"=>"<b>RENCONTRES</b>",
+"menu_tooltip_Rencontres_top"=>"Menu Rencontres. Accès à toutes les fonctionnalités liées à la rencontre sélectionnée.",
+
+"menu_tooltip_fiche_organisme_r"=>"Accès à la fiche de l'organisme. Pour changer d'organisme, sélectionner le menu 'Organismes' du haut.",
+
+"menu_Rechercher_r"=>"Rechercher",
+"menu_tooltip_Rechercher_r"=>"Rechercher parmi les rencontres de l'organisme sélectionné.",
+
+"menu_Récents_r"=>"Historique",
+"menu_tooltip_Récents_r"=>"Gérer l'historique des rencontres que vous avez traitées récemment.",
+
+"menu_Créer_r"=>"Créer",
+"menu_tooltip_Créer_r"=>"Créer une nouvelle rencontre pour l'organisme sélectionné.",
+
+"menu_Rencontres_r"=>" <b>*Rencontres</b>",
+"menu_tooltip_Rencontres_r"=>"Rencontres organisées par l'organisme et regroupées par type de rencontre et par an.",
+
+"menu_Rencontres_Détails_r"=>"(Détaillé)",
+"menu_tooltip_Rencontres_Détails_r"=>"Rencontres organisées par l'organisme sélectionné.<br></br> Possibilité d'extraction des courriels, des adresses postales des participants à une rensontre.<br></br> Vérification des sans adresse, sans courriel.<br></br>Possibilité de mettre dans le presse papier les individus participant à une rencontre et de constituer des listes ou de les copier pour inscription à une autre rencontre par exemple. ",
+
+"menu_tooltip_fiche_rencontre_r"=>"Accès à la fiche de la rencontre de l'organisme mentionné entre parenthèse.<br></br> Pour changer d'organisme, sélectionner le menu 'Organismes' du haut.",
+
+"menu_m_inscrire_r"=>"S'inscrire",
+"menu_tooltip_m_inscrire_r"=>"S'inscrire (vous l'utilisateur de l'application AssoCope) comme participant à la rencontre sélectionnée.",
+
+"menu_Participants_r"=>"Participants",
+"menu_tooltip_Participants_r"=>"Gestion des participants à la rencontre sélectionnée. Liste, ajout, suppression, modification ...",
+
+"menu_Liste_Participants_r"=>"Liste d'émargement",
+"menu_tooltip_Liste_Participants_r"=>"Liste des participants à la rencontre sélectionnée. La sortir sur imprimante pour faire émarger aux participants. Un conseil pur l'imprimer : positionner le pointeur souris sur la lite, cliquer droit, et choisir 'Ce cadre/Ouvrir dans un nouvel onglet ou nouvelle fenêtre, puis Fichier/Imprimer.",
+
+"menu_Enveloppes_Participants_r"=>"Enveloppes",
+"menu_tooltip_Enveloppes_Participants_r"=>"Déchargement d'un fichier au format open office et contenant les adresses des particpants à imprimer sur des enveloppes.Attention : auparavant s'assurer que tous les particpants ont bien une adresse postale : pour le vérifier aller dans la gestion des participants et vérifier avec l'option 'Sans adresse'.",
+
+"menu_Fournisseurs_r"=>"Fournisseurs",
+"menu_tooltip_Fournisseurs_r"=>"Gestion des fournitures pour la rencontre sélectionnée.Quel organisme fournit quoi, à quel prix, quel est le correspondant ?. Saisie des montants prévisionnels, des factures s'il y a lieu.",
+
+"menu_Communications_r"=>"Communications",
+"menu_tooltip_Communications_r"=>"Gestion des communications à la presse, ... pour la rencontre sélectionnée.",
+
+// TOP MENU OPERATIONS DE BANQUE
+"menu_Comptes_top"=>"<b>OPERATIONS DE BANQUE</b>",
+"menu_tooltip_Comptes_top"=>"Opérations de banque concernant l'organisme sélectionné.",
+
+"menu_Comptes"=>"<b>Opérations de banque</b>",
+"menu_tooltip_Comptes"=>"Opérations de banque concernant l'organisme sélectionné.",
+
+"menu_Récents_c"=>"Historique",
+"menu_tooltip_Récents_c"=>"Gérer l'historique des comptes que vous avez traités récemment.",
+
+"menu_tooltip_fiche_organisme_c"=>"Fiche de l'organisme sélectionné. Pour changer d'organisme, sélectionner le menu 'Organismes' du haut.",
+
+"menu_Rechercher_c"=>"Rechercher",
+"menu_tooltip_Rechercher_c"=>"Rechercher parmi les comptes de l'organisme sélectionné.",
+
+"menu_tooltip_fiche_compte_c"=>"Fiche du compte sélectionné. Pour changer de compte 'Rechercher'. Pour changer d'organisme, sélectionner le menu 'Organismes' du haut.",
+
+"menu_Site_de_la_banque_c"=>"Site web de la banque",
+"menu_tooltip_Site_de_la_banque_c"=>"Accès au site web de la banque. La gestion de cette adresse se fait dans la fiche compte. Attention : certains sites de banque vont vous faire quitter AssoCope : il faudra relancer après consultation.",
+
+"menu_Ecritures_c"=>"Ecritures",
+"menu_tooltip_Ecritures_c"=>"Accès à toutes les écritures et lignes d'écriture du compte sélectionné.",
+ 
+"menu_Ecritures_non_remises_c"=>"Ecritures non rapprochées",
+"menu_tooltip_Ecritures_non_remises_c"=>"Accès aux écritures non rapprochées et non remises du compte sélectionné.",
+
+"menu_Remises_c"=>"Remises en banque",
+"menu_tooltip_Remises_c"=>"Remises en banque pour le compte (de banque) sélectionné. Dès qu'une saisie de chèque (cotisation, participation à une rencontre, don, financement ...) est faite dans l'application AssoCope, une remise est créée pour le compte bancaire concerné. Tant que cette remise ne sera pas close les chèques viendront s'y accumuler. Lorsque vous êtes prêt à remettre les chèques en banque : 'Clore' la remise, 'Imprimer' la remise, signer et porter en banque. ",
+
+"menu_Remises_non_rapprochees_c"=>"Remises non rapprochées",
+"menu_tooltip_Remises_non_rapprochees_c"=>"Accès aux remises non rapprochées du compte sélectionné. Cela vous permet de pointer rapidement les remises figuant sur votre relevé de banque.",
+
+"menu_Relevés_c"=>"Relevés",
+"menu_tooltip_Relevés_c"=>"Accès aux relevés pour le compte (de banque) sélectionné. On créée un relevé à réception du relevé envoyé par la banque, on fait le pointage des remises et des écritures, et lorsque le résultat est juste on clot le relevé. ",
+
+"menu_Endosser_c"=>"Endosser le(s) chèque(s)",
+"menu_tooltip_Endosser_c"=>"Génère un fichier open office qui contient les infrmations à imprimer sur le dos des chèques. Mettre les chèqes dans l'imprimante, ouvrir le fichier , 'Imprimer' et choisir le nombre d'exemplaires.",
+
+// TOP MENU COMPTABILITE
+
+"menu_Top_Comptabilite"=>"<b>COMPTABILITE</b>",
+"menu_tooltip_Top_Comptabilite"=>"Menu Comptabilité. Accès à toutes les fonctionnalités liées à la comptabilité de l'organisme sélectionné.",
+
+"menu_tooltip_fiche_organisme_comptabilite"=>"Accès à la fiche de l'organisme. Pour changer d'organisme, sélectionner le menu 'Organismes' du haut.",
+
+"menu_Activités Frais"=>"Activités Frais",
+"menu_tooltip_Activités Frais"=>"Rapport d'activités et notes de frais de l'organisme sélectionné. Ces activités peuvent être saisies à artie de l'individu concerné.",
+
+"menu_Dépenses Réglements"=>"Dépenses Réglements",
+"menu_tooltip_Dépenses Réglements"=>"Dépenses et règlements. Pour le paiement de fournisseurs associés à une rencontre : faire ces règlements dans la rencontre concernée. ",
+
+"menu_Recettes Subventions"=>"Recettes Subventions",
+"menu_tooltip_Recettes Subventions"=>"Enregistrement pour l'organisme sélectionné de recettes spécifiques, des subventions. Les cotisations, les participations aux rencontres doivent être saisies dans les 'Cotisations' (Inividu ou organisme) et dans les 'Rencontres'  .",
+
+"menu_Virements Retraits"=>"Virements Retraits",
+"menu_tooltip_Virements Retraits"=>"Virements de compte à compte de l'organisme,retraits.",
+
+"menu_Soldes usagers"=>"Soldes usagers",
+"menu_tooltip_Soldes usagers"=>"Soldes des usagers de l'organisme. Permet de voir rapidement qui est débiteur/créditeur visà-vis de l'organisme.",
+
+"menu_Plan comptable"=>"Plan comptable",
+"menu_tooltip_Plan comptable"=>"Plan comptable de l'organisme sélectionné. Liste des comptes avec leurs soldes.",
+
+"menu_Produits"=>"Produits",
+"menu_tooltip_Produits"=>"Comptes de produit (classe 7) de l'organisme sélectionné avec leurs soldes.",
+
+"menu_Charges"=>"Charges",
+"menu_tooltip_Charges"=>"Comptes de charge (classe 6) de l'organisme sélectionné avec leurs soldes.",
+
+"menu_Contributions volontaires"=>"Contributions volontaires",
+"menu_tooltip_Contributions volontaires"=>"Comptes de contribution volontaire (classe 8) de l'organisme sélectionné avec leurs soldes. Ces comptes sont alimentés par les saisies des rapports d'activité.",
+
+"menu_Finances"=>"Finances",
+"menu_tooltip_Finances"=>"Comptes financiers (classe 5) de l'organisme sélectionné avec leurs soldes.",
+
+"menu_Tiers"=>"Tiers",
+"menu_tooltip_Tiers"=>"Comptes de tiers (classe 4) de l'organisme sélectionné avec leurs soldes. Comptes fournisseurs, usagers, financeurs, fédération, assurances, cotisations ...",
+
+"menu_Journaux"=>"Journaux",
+"menu_tooltip_Journaux"=>"Journaux comptables de l'organisme sélectionné avec leurs soldes. Si la ligne est rouge : erreur d'équilibrage des écritures.",
+
+"menu_Ecritures"=>"Ecritures",
+"menu_tooltip_Ecritures"=>"Ecritures comptables de l'organisme sélectionné. Permet de vérifier le résultat de la saisie d'une cotisation, d'une participation à une rencontre, d'une saisi de dépenses ...",
+
+// TOP MENU LIEUX
+
+"menu_Lieux_l"=>"<b>LIEUX</b>",
+"menu_tooltip_Lieux_l"=>"Voyage à travers la géographie",
+
+
+"menu_Individus_li"=>" <b>Géolocaliser des individus</b>",
+"menu_tooltip_Individus_li"=>"Permet de visualiser les individus par zone géographique (code postal, ville, province pas) et de pouvoir utiliser les outils de groupes d'individus (copie coller, listes, générations d'enveloppes, de courrier électronique ..).",
+
+"menu_Code_Postal_li"=>"*Code Postal",
+"menu_tooltip_Code_Postal_li"=>"Géolocalisation des individus de la base par code postal.",
+
+"menu_Pays_li"=>"*Pays",
+"menu_tooltip_Pays_li"=>"Géolocalisation des individus de la base par pays.",
+
+"menu_Province/Département_li"=>"*Province/Département",
+"menu_tooltip_Province/Département_li"=>"Géolocalisation des individus de la base par département/province.",
+
+"menu_Ville_li"=>"*Ville",
+"menu_tooltip_Ville_li"=>"Géolocalisation des individus de la base par ville.",
+
+"menu_Administration_li"=>" <b>Administration</b>",
+"menu_tooltip_Administration_li"=>"Gestion des fichiers des codes postaux, des lieux, des pays",
+
+"menu_Codes_Postaux_li"=>"Codes Postaux",
+"menu_tooltip_Codes_Postaux_li"=>"Gestion des codes postaux. La base AssoCope contient tous les codes postaux usuels du territoire français.Vous pourrez géolocaliser une ville, les villes d'un même code postal, les villes d'un même département. Vous pourrezà l'aide d'un clic consulter la météo d'une localité.",
+
+"menu_Lieux_li"=>"Lieux",
+"menu_tooltip_Lieux_li"=>"Liste des lieux (adresses) créés pour les individus, les organismes ",
+
+"menu_Pays_2_li"=>"Pays",
+"menu_tooltip_Pays_2_li"=>"La base AssoCope contient tous les pays du monde avec les noms anglais et français normalisés par l'ISO.",
+
+// TOP MENU TABLES
+
+"menu_Tables_top"=>"<b>TABLES</b>",
+"menu_tooltip_Tables_top"=>"Tables de référence.",
+	
+"menu_activites_t"=>"Activités/Frais",
+"menu_tooltip_activites_t"=>"Types d'activité : système associatf, système de santé ...",
+
+"menu_Tâches(état)_t"=>"Tâches(état)",
+"menu_tooltip_Tâches(état)_t"=>"Etat des tâches : nouveau, fait, rejeté ...",
+
+"menu_attributs_t"=>"Attributs",
+"menu_tooltip_attributs_t"=>"Types d'attributs pour les individus : peintre, professeur, stomisé, ...",
+
+"menu_audiences_t"=>"Audiences",
+"menu_tooltip_audiences_t"=>"Types d'audience : le membres, tout public ...",
+
+"menu_banques_t"=>"Banques",
+"menu_tooltip_banques_t"=>"Libellés banques : CIO, BNP, LCL ...",
+
+"menu_calendriers_t"=>"Calendriers",
+"menu_tooltip_calendriers_t"=>"Types de calendriers",
+
+"menu_compétences_t"=>"*Compétences",
+"menu_tooltip_compétences_t"=>"Types de compétences : animateur, compteur,...",
+
+"menu_contacts_t"=>"Contacts",
+"menu_tooltip_contacts_t"=>"Types de contacts : téléphone, visite, couriel ...",
+
+"menu_codes_postaux_t"=>"Codes postaux",
+"menu_tooltip_codes_postaux_t"=>"Communes et codes postaux",
+
+"menu_demandes_t"=>"Demandes",
+"menu_tooltip_demandes_t"=>"Types de demandes de corrections, d'amélioration de l'application, du fonctionnement d'un organisme : anomalie, requête ...",
+
+"menu_entités_t"=>"Entités",
+"menu_tooltip_entités_t"=>"Types d'entités : organisme, individu, rencontre ...",
+
+"menu_documents_t"=>"Documents",
+"menu_tooltip_documents_t"=>"Types de documents : compte-rendu, plan, annuaire, enquête ...",
+
+"menu_envois_groupés_t"=>"Envois groupés",
+"menu_tooltip_documents_t"=>"Types d'envoi goupé : courriel, courrier postal...",
+
+"menu_etats_referencement_t"=>"Etats référencement",
+"menu_tooltip_etats_referencement_t"=>"Etats des référencements d'un organisme : à créer, à vérifier, opérationnel ...",
+
+"menu_fonctions_t"=>"*Fonctions",
+"menu_tooltip_fonctions_t"=>"Types de fonctions : président, directeur, responsable marketing, maire, conseiller ...",
+
+"menu_images_t"=>"Images",
+"menu_tooltip_images_t"=>"Types d'images : icône, logo, bannière, photo ...",
+
+"menu_inscriptions_t"=>"Inscriptions",
+"menu_tooltip_inscriptions_t"=>"Types d'inscriptions : adhérent, membre honoraire, pour information ... ",
+
+"menu_langues_t"=>"Langues",
+"menu_tooltip_langues_t"=>"Langues principales de tous les pays du monde. ",
+
+"menu_listes_t"=>"*Listes",
+"menu_tooltip_listes_t"=>"Types de listes personnelles.",
+
+"menu_marque_pages_t"=>"Marque pages",
+"menu_tooltip_marque_pages_t"=>"Types de marques pages.",
+
+"menu_menus_t"=>"Menus",
+"menu_tooltip_menus_t"=>"Types de menus.",
+
+"menu_moteurs_t"=>"Moteurs de recherche",
+"menu_tooltip_moteurs_t"=>"Moteurs de recherche : utilisable dans la partie haute à gauche de l'écran AssoCope. Permet de rechercher sur les sites spécialisés : santé, wikipedia, ... ",
+
+"menu_normalisation_t"=>"Normalisation",
+"menu_tooltip_normalisation_t"=>"Mots et symboles utilisés dans la normalisation des libellés : séparateurs, mots à laisseren minuscule ...",
+
+"menu_organismes_t"=>"Organismes",
+"menu_tooltip_organismes_t"=>"Types d'organismes : mairie, conseil régional, association ... ",
+
+"menu_origines_t"=>"Origines",
+"menu_tooltip_origines_t"=>"Origines des inscriptions à un organisme : internet, campagne pubicitaire, plaquette ...",
+
+"menu_pays_t"=>"Pays",
+"menu_tooltip_pays_t"=>"Les pays du monde avec libellés anglais et français et abbréviations.",
+
+"menu_radiations_t"=>"Radiations",
+"menu_tooltip_radiations_t"=>"Types de radiation d'une incription à un organisme : NPAI, décès, décision personnelle ... ",
+
+"menu_remises_banque_t"=>"Remises banque",
+"menu_tooltip_remises_banque_t"=>"Types de remises en banque : chèques, espèces ...",
+
+"menu_referencements_t"=>"Referencements", 
+"menu_tooltip_referencements_t"=>"Types de référencement d'un organisme : annuaire papier, annuaire électronique, lieu ...",
+
+"menu_reglements_t"=>"Règlements",
+"menu_tooltip_reglements_t"=>"Types de règlements : chèque, espèce, virement ...",
+
+"menu_rencontres_t"=>"Rencontres",
+"menu_tooltip_rencontres_t"=>"Types de rencontres : rencontre récréative, conseil d'administration, permanence, conférence ...",
+
+"menu_participation_rencontres_t"=>"Participation rencontres",
+"menu_tooltip_participation_rencontres_t"=>"Tpes de participation à une rencontre pour un individu : présent, absent, excusé, pouvoir ...",
+
+"menu_titres_t"=>"Titres",
+"menu_tooltip_titres_t"=>"Titres de politesse : madame, monsieur, mademoiselle, professeur, ...",
+
+"menu_traduction_t"=>"Traductions",
+"menu_tooltip_traduction_t"=>"Type des messages pour les traductions : champ de la base, champ d'un noeud, menu ...",
+
+// TOP MENU OUTILS
+"menu_Téléchargements"=>"<b>TELECHARGEMENTS</b>",
+"menu_tooltip_Téléchargements"=>"Téléchargements utiles pour la bonne exécution de l'application AssoCope",
+
+"menu_7 zip"=>"7 zip 4.57",
+"menu_tooltip_7 zip"=>"Logiciel de compression tous formats : zip, gzip, 7z ...",
+
+"menu_Acrobat reader"=>"Acrobat reader 9",
+"menu_tooltip_Acrobat reader"=>"Lecteur des fichiers au format pdf (portable data format) lisible universellement. Conseil : transformez tous vos fichiers imprimables au format pdf en utilisant la pseudo imprimante 'Pdf creator' ou en utilisant dans open office la fonction 'Exporter au format pdf'. de même lorque vous digitalisez un document : transformez-le au format pdf.",
+
+"menu_Firefox"=>"Firefox 2.0.0.15",
+"menu_tooltip_Firefox"=>"Firefox : le logiciel libre de navigation à 'absolument utiliser' utiliser pour l'application AssoCope das des conditions optimales.",
+
+"menu_Firebug"=>"Firebug",
+"menu_tooltip_Firebug"=>"Le logiciel libre de développement pour debugger sous firefox et tout comprendre à html, css, javascript ...",
+
+"menu_Eclipse"=>"Eclipse 3.4",
+"menu_tooltip_Eclipse"=>"Pour les développeurs : 'Le logiciel libre' de développement à utiliser.",
+
+"menu_Gimp"=>"Gimp 2.4.2",
+"menu_tooltip_Gimp"=>"Le logiciel libre de retouche d'images.",
+
+"menu_Open_office"=>"Open_office 2.4.1",
+"menu_tooltip_Open_office"=>"Le logiciel libre de bureautique : traitement de texte, tableur, diapositives. Obligatoire pour utiliser AssoCope.",
+
+"menu_PDFCreator"=>"PDFCreator 0.9.5",
+"menu_tooltip_PDFCreator"=>"L'imprimante virtuelle qui transforme tout ce que vous imprimz au format pdf lisible par tous avec Acrobate reader.",
+
+"menu_SnIco"=>"SnIco",
+"menu_tooltip_SnIco"=>"Pour créer des icônes.",
+
+"menu_Wink tutorial"=>"Wink tutorial",
+"menu_Wink tutorial"=>"Logiciel pour faire des tutoriels d'enseignement d'applications informatiques : enregistre l'exécution dapplications.",
+
+"menu_Guides"=>"<b>GUIDES</b>",
+"menu_tooltip_Guides"=>"Guides utiles dans une association.",
+
+"menu_Bien communiquer"=>"Bien communiquer",
+"menu_tooltip_Bien communiquer"=>"Pour une association : Comment bien communiquer ?",
+
+"menu_Comprendre la comptabilité"=>"Comprendre la comptabilité",
+"menu_tooltip_Comprendre la comptabilité"=>"Pour une association : Comprendre la comptabilité.",
+
+"menu_Guide du président"=>"Guide du président",
+"menu_tooltip_Guide du président"=>"Pour une association : le guide du président",
+
+"menu_Guide du trésorier"=>"Guide du trésorier",
+"menu_tooltip_Guide du trésorier"=>"Pour une association : le guide du trésorier",
+
+"menu_Transparence et associations"=>"Transparence et associations",
+"menu_tooltip_Transparence et associations"=>"Transparence et associations : une étude KPMG de 2007.",
+
+"menu_Principe application"=>"L'application AssoCope",
+"menu_tooltip_Principe application"=>"schéma des entités d'AssoCope.",
+
+// TOP MENU R&D
+
+"menu_Serveur_web"=>"<b>SERVEUR DREAMHOST</b>",
+"menu_tooltip_Serveur_web"=>"Serveur hébergeur de AssoCope.",
+
+"menu_Panel"=>"Compte",
+"menu_tooltip_Panel"=>"Accès à la page d'accueil de gestion du site web chez l'hébergeur.",
+
+"menu_phpMyAdmin"=>"phpMyAdmin",
+"menu_tooltip_phpMyAdmin"=>"Administration des bases de données mySql.",
+
+"menu_phpInfo"=>"phpInfo",
+"menu_tooltip_phpInfo"=>"Configuration php du serveur.",
+
+"menu_Webftp"=>"Webftp",
+"menu_tooltip_Webftp"=>"Ftp sous navigateur web.",	
+
+"menu_Editeur fichier"=>"Editeur fichier",
+"menu_tooltip_Editeur fichier"=>"Editeur de fichiers en ligne. Webfp le permet aussi.",				
+			
+"menu_Atk"=>"<b>ACHIEVO TOOL KIT</b>",
+"menu_tooltip_Atk"=>"Achievo Tool Kit logiciel de développement en PHP : fondations d'AssoCope. Merci à Ivo de Ibuilding (Pays Bas).",
+
+"menu_Api"=>"Api",
+"menu_tooltip_Api"=>"Accès au APIS de ATK.",
+
+"menu_Bugs"=>"Bugs",
+"menu_tooltip_Bugs"=>"Voir,consulter soumettre des problem reports concernat ATK.",
+
+"menu_Download"=>"Download",
+"menu_tooltip_Download"=>"Déchargement de la dernière version de ATK.",
+
+"menu_Fck Editor"=>"Fck Editor",
+"menu_tooltip_Fck Editor"=>"Fck Editor",
+
+"menu_Forum"=>"Forum",
+"menu_tooltip_Forum"=>"Forum de discussion pour ATK.",
+
+"menu_Site"=>"Site",
+"menu_tooltip_Site"=>"Site officiel d'ATK.",
+
+"menu_Svn"=>"Svn",
+"menu_tooltip_Svn"=>"Sources ATK au format Svn.",
+
+"menu_Wiki"=>"Wiki",
+"menu_tooltip_Wiki"=>"Wiki d'ATK.",
+
+"menu_reference_manuals"=>"<b>REFERENCES</b>",
+"menu_tooltip_reference_manuals"=>"Manels de référence en liges des différents langages utilisés pour le développement de AssoCope.",
+
+
+"menu_Css"=>"Css",
+"menu_tooltip_Css"=>"Cascading Style Sheet, feuilles de style en cascade en français, utilisé dans la présentation de pages web.",
+
+"menu_Google Maps Api"=>"Google Maps Api",
+"menu_tooltip_Google Maps Api"=>"Google Maps Api sont des interfaces de programmation fournis pa Google et permettant de montrer les géolocalisations.",
+
+"menu_Html"=>"Html",
+"menu_tooltip_Html"=>"L'Hypertext Markup Language, généralement abrégé HTML, est le format de données conçu pour représenter les pages web.",
+
+"menu_Java"=>"Java",
+"menu_tooltip_Java"=>"Java est le nom d’une technologie mise au point par Sun Microsystems qui permet de produire des logiciels indépendants de toute architecture matérielle.",
+
+"menu_Javascript"=>"Javascript",
+"menu_tooltip_Javascript"=>"JavaScript est un langage de programmation de scripts principalement utilisé pour les pages web interactives.",
+
+"menu_Kml"=>"Kml",
+"menu_tooltip_Kml"=>"KML (Keyhole Markup Language) est un langage basé sur le formalisme XML et destiné à la gestion de l'affichage de données géospatiales dans les logiciels Google Earth, Google Maps, Google Mobile et World Wind.",
+
+"menu_Mysql"=>"Mysql",
+"menu_tooltip_Mysql"=>"MySQL est un système de gestion de base de données (SGDB).",
+
+"menu_Php1"=>"Php (site officiel php)",
+"menu_tooltip_Php1"=>"PHP (acronyme récursif pour PHP: Hypertext Preprocessor[3]), est un langage de scripts libre[4] principalement utilisé pour produire des pages web dynamiques via un serveur HTTP[3], mais pouvant également fonctionner comme n'importe quel langage interprété de façon locale, en exécutant les programmes en ligne de commande. ",
+
+"menu_Php2"=>"Php (Manuel PHP)",
+"menu_tooltip_Php2"=>"Site de cours, de scripts ...",
+
+"menu_W3Schools"=>"W3Schools",
+"menu_tooltip_W3Schools"=>"World Wide Web Schools.",
+
+"menu_Xhtml"=>"Xhtml",
+"menu_tooltip_Xhtml"=>"XHTML est un langage de balisage servant à écrire des pages pour le World Wide Web. Conçu à l'origine comme le successeur d'HTML, XHTML se fonde sur la syntaxe définie par XML, plus récente, mais plus exigeante que celle définie par SGML sur laquelle repose HTML : il s'agit en effet de présenter un contenu affichable non seulement par les ordinateurs classiques, mais également sans trop de dégradation par des PDA bien moins puissants.",
+
+"menu_Xml"=>"Xml",
+"menu_tooltip_Xml"=>"XML (Extensible Markup Language , « langage de balisage extensible ») est un langage informatique de balisage générique. Il sert essentiellement à stocker/transférer des données de type texte Unicode structuré en champs arborescents.",
+
+"menu_Tests"=>"<b>TESTS</b>",
+"menu_tooltip_Tests"=>"Tests : 'Mise au point' lance AssoCope en mode debug uniquement pour l'administrateur. On en sort en choisissant 'Accueil'",
+
+
+// TOP MENU ADMINISTRER
+
+"menu_Administration"=>"<b>ADMINISTRATION</b>",
+"menu_tooltip_Administration"=>"Administration.",
+
+"menu_Demandes"=>"Demandes",
+"menu_tooltip_Demandes"=>"Demandes de corrections, d'améliorations de l'application AssoCope.",
+
+"menu_Ex Administration"=>"Ex Administration",
+"menu_tooltip_Ex Administration"=>"Ex Administration",
+
+"menu_Export Contacts"=>"Export Contacts",
+"menu_tooltip_Export Contacts"=>"Exportation des adresses organismes et individus dans un format importable dans les logiciels de messagerie.",
+
+"menu_Globales"=>"Globales",
+"menu_tooltip_Globales"=>"Accès aux données globales de l'application AssoCope. Règles de confidentialité et d'utilisation, ...",
+
+"menu_Global"=>"Global",
+"menu_tooltip_Global"=>"Accès aux entités de l'application AssoCope.",
+
+"menu_Logs"=>"Logs",
+"menu_tooltip_Logs"=>"Suivis des activités sur la base AssoCope.",
+
+"menu_Normalisation individus"=>"Normalisation individus",
+"menu_tooltip_Normalisation individus"=>"Normalisation des noms, prénoms, numéros de téléphone des individus.",
+
+"menu_Normalisation organismes"=>"Normalisation organismes",
+"menu_tooltip_Normalisation organismes"=>"Normalisation des noms, numéros de téléphone des organismes.",
+ 
+"menu_Profils"=>"Profils",
+"menu_tooltip_Profils"=>"Profils d'accès aux différents moules et noeuds de l'application AssoCope.",
+
+"menu_Utilisateurs"=>"Utilisateurs",
+"menu_tooltip_Utilisateurs"=>"Gestion des utilisateurs de l'application AssoCope. (Accès, profil, préférences, rappels ...)",
+
+// TOP MENU LANGUES
+"menu_Langues_top"=>"<b>LANGUES</b>",
+"menu_tooltip_Langues_top"=>"Menu Langues. Langues et traductions de l'application AssoCope.",
+
+"menu_tooltip_fiche_langue_lng"=>"Accès à la fiche de la langue.",
+
+"menu_Rechercher_lng"=>"Rechercher",
+"menu_tooltip_Rechercher_lng"=>"Rechercher parmi les langues.",
+
+"menu_Récents_lng"=>"Historique",
+"menu_tooltip_Récents_lng"=>"Gérer l'historique des langues que vous avez traitées récemment.",
+
+"menu_Créer_lng"=>"Créer",
+"menu_tooltip_Créer_lng"=>"Créer une nouvelle langue.",
+
+"menu_Traductions_lng"=>"<b>Traductions</b>",
+"menu_tooltip_Traductions_lng"=>"Traductions appartenant à la langue sélectionnée groupées par langue et par type de traduction.",
+
+"menu_Traductions_detail_lng"=>"Détails",
+"menu_tooltip_Traductions_detail_lng"=>"Traductions appartenant à la langue sélectionnée.",
+
+"menu_Chargement_schema_lng"=>"Charger le schéma",
+"menu_tooltip_Chargement_schema_lng"=>"Charge les noms des champs de la base pour la langue sélectionnée. Ceci doit permettre la traduction exhaustive des noms des champs. Si un champ est déjà présent et a déjà été traduit, il n'est pas remplacé.",
+
+"menu_Chargement_attributs_lng"=>"Charger les attributs par module/noeud.",
+"menu_tooltip_Chargement_attributs_lng"=>"Charge les attributs à partir des noeuds mentionnés dans les module.inc de chaque module pour la langue sélectionnée. Ceci doit permettre la traduction exhaustive des noms des attributs. Si un attribut est déjà présent et a déjà été traduit, il n'est pas remplacé.",
+
+"menu_Chargement_atk_lng"=>"Charger les messages atk.",
+"menu_tooltip_Chargement_atk_lng"=>"Charge les messages atk pour la langue sélectionnée.  Si un message est déjà présent et a déjà été traduit, il n'est pas remplacé.",
+
+
+"menu_Chargement_application_lng"=>"Charger les messages AssoCope.",
+"menu_tooltip_Chargement_application_lng"=>"Charge les messages application dans root/languages pour la langue sélectionnée.  Si un message est déjà présent et a déjà été traduit, il n'est pas remplacé.",
+
+// TOP MENU GLOBAL
+
+"menu_Activités(Individu)"=>"Activités/Frais(Individu)",
+"menu_Attributs(Individu)"=>"Attributs(Individu)",
+"menu_Compétences(Individu)"=>"Compétences(Individu)",
+"menu_Contacts(Individu)"=>"Contacts(Individu)",
+"menu_Cotisations(Individu)"=>"Cotisations(Individu)",
+"menu_Cotorep(Individu)"=>"Cotorep(Individu)",
+"menu_Fonctions(Individu)"=>"Fonctions(Individu)",
+"menu_Inscriptions(Individu)"=>"Inscriptions(Individu)",
+"menu_Immatriculations(Individu)"=>"Immatriculations(Individu)",
+"menu_Marque pages(Individu)"=>"Marque pages(Individu)",
+"menu_Rencontres(Individu)"=>"Rencontres(Individu)",
+"menu_Lieux(Individu)"=>"Lieux(Individu)",
+"menu_Listes(Individu)"=>"Listes(Individu)",
+"menu_Comptes(Organisme)"=>"Comptes(Organisme)",
+
+"menu_Contrats(Organisme)"=>"Contrats(Organisme)",
+"menu_Cotisations(Organisme)"=>"Cotisations(Organisme)",
+"menu_Documents(Organisme)"=>"Documents(Organisme)",
+"menu_Documents communication(Organisme)"=>"Documents communication(Organisme)",
+"menu_Documents_officiels(Organisme)"=>"Documents_officiels(Organisme)",
+"menu_Domaines(Organisme)"=>"Domaines(Organisme)",
+"menu_Ecritures comptables(Organisme)"=>"Ecritures comptables(Organisme)",
+"menu_Financements(Organisme)"=>"Financements(Organisme)",
+"menu_Fournitures(Organisme)"=>"Fournitures(Organisme)",
+"menu_Gazettes(Organisme)"=>"Gazettes(Organisme)",
+"menu_Immatriculations(Organisme)"=>"Immatriculations(Organisme)",
+"menu_Infolettres(Organisme)"=>"Infolettres(Organisme)",
+"menu_Journaux comptables(Organisme)"=>"Journaux comptables(Organisme)",
+"menu_Lieux(Organisme)"=>"Lieux(Organisme)",
+"menu_Partenaires(Organisme)"=>"Partenaires(Organisme)",
+"menu_Patrimoine(Organisme)"=>"Patrimoine(Organisme)",
+"menu_Référencements(Organisme)"=>"Référencements(Organisme)",
+"menu_Règles(Organisme)"=>"Règles(Organisme)",
+"menu_Rencontres(Organisme)"=>"Rencontres(Organisme)",
+"menu_Rencontres_u"=>"Rencontres",
+"menu_Rencontres fournitures(Organisme)"=>"Rencontres fournitures(Organisme)",
+"menu_Rencontres communications(Organisme)"=>"Rencontres communications(Organisme)",
+
+// TOP MENU DIVERS
+
+"menu_Régions"=>"Régions",
+"menu_Repères"=>"Repères",
+"menu_Symboles"=>"Symboles",
+"menu_Zones"=>"Zones",
+"menu_Attributs Repères"=>"Attributs Repères",
+"menu_Marée Météo"=>"Marée Météo",
+"menu_Symboles Gps"=>"Symboles Gps",
+"menu_Types Repères"=>"Types Repères",
+"menu_Types symboles"=>"Types symboles",
+"menu_Catégories"=>"Catégories",
+"menu_Compétitions"=>"Compétitions",
+"menu_Parcours"=>"Parcours",
+
+// TOP MENU TRAITEMENTS
+
+"menu_Traitements_top"=>"<b>TRAITEMENTS</b>",
+"menu_tooltip_Traitements_top"=>"Traitement périodique de l'organisme. Les traitements sont pilotés par les types d'inscription, les cotisations reçues ...",
+
+"menu_tooltip_fiche_organisme_traitements"=>"Fiche de l'organisme sélectionné.",
+
+"menu_Cotisations fédé seulement"=>"Cotisations fédé seulement",
+"menu_tooltip_Cotisations fédé seulement"=>"Génération des cotisations pour les adhérents qui ne cotisent pas à l'organisme mais pour lesquels l'organisme cotise à une fédération.",
+
+"menu_Préparation"=>"Préparation",
+"menu_tooltip_Préparation"=>"Cette préparation peut être lanée à tout moment.<br></br> Elle permet de vérifier si les adresses sont toutes renseignées. <br></br>Elle donne les quantités d'enveloppes, de timbres, de cartes à prévoir et donne aussi une idée du temps qu'il faudra. ",
+
+"menu_Vérification globale"=>"<b>Vérification globale</b>",
+"menu_tooltip_Vérification globale"=>"Visualiser les individus concernés et vérifier dans un premier temps si les résultats de la préparation sont vraisemblables. ",
+
+"menu_Adresses manquantes"=>"Adresses manquantes",
+"menu_tooltip_Adresses manquantes"=>"Individus qui n'ont pas d'adresse postale.Les traitements ne pourront pas se poursuivre tant que ces adresses n seront pas renseignées. ",
+
+"menu_A inscrire à fédération"=>"A inscrire à fédération",
+"menu_tooltip_A inscrire à fédération"=>"Individus qui ont adhérés à un organisme affilié à une fédération et qui doivent être inscrits à la fédération.",
+
+"menu_Créer cotisation fédération"=>"Créer cotisation fédération",
+"menu_tooltip_Créer cotisation fédération"=>"Individus ne cotisant qu'à la fédération et pour lesquels la cotisatin à la fédération n'a pas été générée.",
+
+"menu_Reporter inscription fédération"=>"Reporter inscription fédération",
+"menu_tooltip_Reporter inscription fédération"=>"Individus à inscrire à la fédération.",
+
+"menu_Reporter radiation fédération"=>"Reporter radiation fédération",
+"menu_tooltip_Reporter radiation fédération"=>"Individus à radier de la fédération.",
+
+"menu_Régler cotisations fédération"=>"Régler cotisations fédération",
+"menu_tooltip_Régler cotisations fédération"=>"Individus pour lesquels doit être réglée une cotisation à la fédération.",
+
+"menu_Adresses à imprimer"=>"Adresses à imprimer",
+"menu_tooltip_Adresses à imprimer"=>"Individus destinataires du courrier et pour lesquels il faut prévoir enveloppes et timbres.",
+
+"menu_Reçus fiscaux à imprimer"=>"Reçus fiscaux à imprimer",
+"menu_tooltip_Reçus fiscaux à imprimer"=>"Individus auxquels il faut envoyer n reçu fiscal.",
+
+"menu_Timbres à envoyer"=>"Timbres à envoyer",
+"menu_tooltip_Timbres à envoyer"=>"Individus à qui il faut envoyer le timbre de cotisation.",
+
+"menu_Cartes à envoyer"=>"Cartes à envoyer",
+"menu_tooltip_Cartes à envoyer"=>"Individus auxquels il faut envoer la carte d'adhérent.",
+
+"menu_Cotisations à relancer"=>"Cotisations à relancer",
+"menu_tooltip_Cotisations à relancer"=>"Individus à relancer pour paiement de leur cotisation.",
+
+"menu_Avertir radiation cotisation"=>"Avertir radiation cotisation",
+"menu_tooltip_Avertir radiation cotisation"=>"Individus adhérents à avertir de leur radiation pour cause de non paiement de cotisation.",
+
+"menu_Effectuer radiation cotisation"=>"Effectuer radiation cotisation",
+"menu_tooltip_Effectuer radiation cotisation"=>"Individus à radier pour non paiement de cotisation.",
+
+"menu_Avertir radiation adhésion"=>"Avertir radiation adhésion",
+"menu_tooltip_Avertir radiation adhésion"=>"Individus inscrits à avertir de leur radiation pour cause de leur non adhésion.",
+
+"menu_Effectuer radiation adhésion"=>"Effectuer radiation adhésion",
+"menu_tooltip_Effectuer radiation adhésion"=>"Individus inscrits à radier pour non adhésion.",
+
+"menu_Adhésion sans cotisation"=>"Adhésion sans cotisation",
+"menu_tooltip_Adhésion sans cotisation"=>"Individus adhérents sans payer de cotisation.",
+
+"menu_Vérification compléments courrier"=>"<b>Vérification compléments courrier</b>",
+"menu_tooltip_Vérification compléments courrier"=>"Individus et courriers complémentaires. Les compléments courrier sont visibles dans l'onglet 'Notifications' de l'inscription de l'individu à l'organisme.",
+
+"menu_Impression enveloppes"=>"Impression enveloppes",
+"menu_tooltip_Impression enveloppes"=>"Impression des enveloppes. Un fichier open office contenant les adresses triées par ordre alphabétique sur le nom de famille.",
+
+"menu_Impression reçus fiscaux"=>"Impression reçus fiscaux",
+"menu_tooltip_Impression reçus fiscaux"=>"Impression reçus fiscaux. Un fichier open office contenant les reçus fiscaux triés par ordre alphabétique sur le nom de famille. Un reçu fiscal est imprimé sur un format tiers de A4.",
+
+"menu_Impression notifications"=>"Impression notifications",
+"menu_tooltip_Impression notifications"=>"Impression des notifications. Un fichier open office contenant les reçus fiscaux triés par ordre alphabétique sur le nom de famille. Un reçu fiscal est imprimé sur un format tiers de A4.",
+
+"menu_Mise à jour date reçus fiscaux"=>"Mise à jour date reçus fiscaux",
+"menu_tooltip_Mise à jour date reçus fiscaux"=>"Mise à jour de la date des reçus fiscaux qui étaient en impression avec la date du jour. Cette date sera visible au niveau de la cotisation de l'individu.",
+
+"menu_Mise à jour date timbres"=>"Mise à jour date timbres",
+"menu_tooltip_Mise à jour date timbres"=>"Mise à jour de la date de l'envoi des timbres qui étaient en impression avec la date du jour. Cette date sera visible au niveau de la cotisation de l'individu.",
+
+"menu_Mise à jour date cartes"=>"Mise à jour date cartes",
+"menu_tooltip_Mise à jour date cartes"=>"Mise à jour de la date de l'envoi de la carte d'adhérent avec la date du jour. Cette date sera visible au niveau de l'inscription de l'individu.",
+
+"menu_Inscriptions fédération (voir)"=>"Inscriptions fédération (voir)",
+"menu_tooltip_Inscriptions fédération (voir)"=>"Liste des nouvelles inscriptions à la fédération.",
+
+"menu_Inscriptions fédération (export)"=>"Inscriptions fédération (export)",
+"menu_tooltip_Inscriptions fédération (export)"=>"Liste des nouvelles inscriptions à la fédération.",
+
+"menu_Radiations fédération (voir)"=>"Radiations fédération (voir)",
+"menu_tooltip_Radiations fédération (voir)"=>"Liste des radiations à la fédération.",
+
+"menu_Radiations fédération (export)"=>"Radiations fédération (export)",
+"menu_tooltip_Radiations fédération (export)"=>"Liste des radiations à la fédération.",
+
+"menu_Cotisations fédération (voir)"=>"Cotisations fédération (voir)",
+"menu_tooltip_Cotisations fédération (voir)"=>"Liste des cotisations à la fédération.",
+
+"menu_Cotisations fédération (export)"=>"Cotisations fédération (export)",
+"menu_tooltip_Cotisations fédération (export)"=>"Liste des cotisations à la fédération.",
+
+// "menu_miseàjourenvoifédération"=>"miseàjourenvoifédération",
+"menu_tooltip_miseàjourenvoifédération"=>"Mise à jour de la datede synchronisaton avec la fédération.",
+
+
+// TOP MENU ENVOIS
+"menu_Envois_top"=>"<b>ENVOIS GROUPES</b>",
+"menu_tooltip_Envois_top"=>"Envois groupés.",
+
+"menu_Envoi_groupe_utilisateur"=>"Envois groupés",
+"menu_Envoi_groupe_organisme"=>"Envois groupés",
+
+// MENU DU TOP 
+"menu_tooltip_topmenu_Outils"=>"Menu Outils",
+"menu_tooltip_topmenu_Rd"=>"Menu Recherche et Développement.",
+"menu_tooltip_topmenu_Divers"=>"Menu Divers.",
+"menu_tooltip_topmenu_Rappels"=>"Rappels.",
+"menu_tooltip_topmenu_Préférences"=>"Préférences.",
+"menu_tooltip_topmenu_BlocNote"=>"Bloc Notes Google.",
+"menu_tooltip_topmenu_Aide"=>"Wiki AssoCope",
+"menu_tooltip_topmenu_Nomutilisateur"=>"Utilisateur et profil.",
+"menu_tooltip_topmenu_Administrer"=>"Administration AssoCope",
+"menu_tooltip_topmenu_Langues_lng"=>"Menu des langues et traductions de l'application AssoCope.",
+"menu_tooltip_topmenu_Deconnexion"=>"Déconnexion.",
+"menu_tooltip_topmenu_Montrercachermenugauche"=>"Afficher/Masquer le menu (cadre) de gauche. Les cadres de gauche et du haut sont redimensionnables avec la souris.",
+"menu_tooltip_topmenu_Accueil"=>"Relance complètement AssoCope et permet aussi de sortir du mode de mise au point (Voir R&D).",
+"menu_tooltip_topmenu_Utilisateur"=>"Lance le menu 'Utilisateur' dans le cadre de gauche.",
+"menu_tooltip_topmenu_Individus"=>"Lance le menu 'Individus' dans le cadre de gauche.",
+"menu_tooltip_topmenu_Organismes"=>"Lance le menu 'Organismes' dans le cadre de gauche.",
+"menu_tooltip_topmenu_Rencontres"=>"Lance le menu 'Rencontres' pour l'organisme sélectionné dans le cadre de gauche.",
+"menu_tooltip_topmenu_Envois"=>"Lance le menu 'Envois groupés' dans le cadre de gauche.",
+"menu_tooltip_topmenu_Comptabilite"=>"Lance le menu 'Comptabilié' pour l'organisme sélectionné dans le cadre de gauche.",
+"menu_tooltip_topmenu_Operationsdebanque"=>"Lance le menu 'Opérations de banque' pour l'organisme sélectionné dans le cadre de gauche.",
+"menu_tooltip_topmenu_Lieux"=>"Lance le menu 'Lieux' dans le cadre de gauche.",
+"menu_tooltip_topmenu_Tables"=>"Lance le menu 'Tables' dans le cadre de gauche.",
+
+"menu_tooltip_topmenu_Marquepages"=>"Choix dans vos marques pages. Vous pouvez gérer vos marques pages dans le menu 'Utilisateur/Marques Pages'.",
+"menu_tooltip_topmenu_Moteurs"=>"Choix d'un moteur de recherche d'AssoCope. La gestion des moteurs de recherche se fait dans le menu 'Tables/Moteurs'.",
+"menu_tooltip_topmenu_Langues"=>"Choix d'une langue pour des sites de type wikipedia. La gestion des langues se fait dans le menu 'Tables/Lngues'.",
+"menu_tooltip_topmenu_Critererecherche"=>"Vous pouvez saisir votre critère de recherche. ",
+
+"menu_tooltip_topmenu_Copyright"=>" Copright de l'application AssoCope. ",
+"menu_tooltip_topmenu_Source"=>" Code php du noeud sélectionné.",
+"menu_tooltip_topmenu_Aideentite"=>" Recherche dans le wiki d'AssoCope ce qui peut concerner l'entité sélectionnée. ",
+"menu_tooltip_topmenu_Faqs"=>" Accès aux faqs ( Frequent Asked Questions) donc aux questions que vous êtes en droit de vous posez pour utiliser l'application AssoCope. Ces questions/réponses sont stockées dans le wiki d'AssoCope et vous serez le bienvenu si vous proposez de rédiger les Faqs manquantes ( et cela ne manque pas ...). ",
+"menu_tooltip_topmenu_Confidentialite"=>" Les clauses de confidentialité et d'utilisation de l'application AssoCope que vous avez acceptées.",
+"menu_tooltip_topmenu_Atkpowered"=>" L'application AssoCope est entièrement construite à partir de l'Achievo Toolkit de Ibuildings aux Pays Bas. ",
+
+
+"id_type_envoi_groupe"=>"Type envoi groupé",
+"id_individu_emetteur"=>"Individu émetteur",
+"id_organisme_emetteur"=>"Organisme émetteur",
+"id_documentorganisme"=>"Document organisme",
+"id_documentindividu"=>"Document individu",
+"id_gazette"=>"Gazette",
+
+"id_infolettre"=>"Infolettre",
+"id_utilisateur"=>"Utilisateur",
+"type_envoi_groupe"=>"Type envoi groupé",
+"envoi_groupe"=>"Envoi groupé",
+"id_envoi_groupe"=>"Envoi groupé",
+
+
+"recent_use"=>"Historique",
+"id_statuts"=>"Statuts",
+"id_reglement_interieur"=>"Réglement intérieur",
+"id_projet_associatif"=>"Projet d'organisme",
+"id_organigramme_vie_statutaire"=>"Organigramme vie statutaire",
+"id_organigramme_du_personnel"=>"Organigramme",
+"id_entite"=>"Entité",
+"id_type_entite"=>"Type entité",
+"id_type_image"=>"Type image",
+"wiki_application.aide"=>"application.aide",	   
+"wiki_application.aide_mot_cle"=>"application.aide_mot_cle",	   
+"wiki_application.demande"=>"application.demande",	   
+"wiki_application.globales"=>"application.globales",	   
+"wiki_application.image_a"=>"application.image_a",	   
+"wiki_individu.activite_i"=>"individu.activite_i",	   
+"wiki_individu.activite_i.old"=>"individu.activite_i.old",	   
+"wiki_individu.attribut_i"=>"individu.attribut_i",	   
+"wiki_individu.bookmark_i"=>"individu.bookmark_i",	   
+"wiki_individu.carte_golf"=>"individu.carte_golf",	   
+"wiki_individu.carte_golf_trou"=>"individu.carte_golf_trou",	   
+"wiki_individu.competence_i"=>"individu.competence_i",	   
+"wiki_individu.contact_i"=>"contact",	   
+"wiki_individu.cotisation_i"=>"individu.cotisation_i",	   
+"wiki_individu.cotisation_i.old"=>"individu.cotisation_i.old",	   
+"wiki_individu.cotorep_i"=>"individu.cotorep_i",	   
+"wiki_individu.document_i"=>"individu.document_i",	   
+"wiki_individu.envoi_groupe"=>"individu.envoi_groupe",	   
+"wiki_individu.fonction_i"=>"individu.fonction_i",	   
+"wiki_individu.image_i"=>"individu.image_i",	   
+"wiki_individu.immatriculation_i"=>"individu.immatriculation_i",	   
+"wiki_individu.individu"=>"individu",	   
+"wiki_individu.individu.old"=>"individu.individu.old",	   
+"wiki_individu.individu_lieu"=>"individu.individu_lieu",	   
+"wiki_individu.individu_liste"=>"individu.individu_liste",	   
+"wiki_individu.individu_pda"=>"individu.individu_pda",	   
+"wiki_individu.inscription_i"=>"individu.inscription_i",	   
+"wiki_individu.lieu"=>"individu.lieu",	   
+"wiki_individu.menu_dashboard"=>"individu.menu_dashboard",	   
+"wiki_individu.organisme"=>"individu.organisme",	   
+"wiki_individu.rencontre_i"=>"individu.rencontre_i",	   
+"wiki_individu.rencontre_i.old"=>"individu.rencontre_i.old",	   
+"wiki_individu.v_individu_correspondance"=>"individu.v_individu_correspondance",	   
+"wiki_individu.v_individu_lieu"=>"individu.v_individu_lieu",	   
+"wiki_individu.web_i"=>"individu.web_i",	   
+"wiki_manuel.manuel"=>"manuel.manuel",	   
+"wiki_organisme.compte"=>"organisme.compte",	   
+"wiki_organisme.contrat"=>"organisme.contrat",	   
+"wiki_organisme.cotisation"=>"organisme.cotisation",	   
+"wiki_organisme.cotisation_i"=>"organisme.cotisation_i",	   
+"wiki_organisme.document"=>"organisme.document",	   
+"wiki_organisme.document_communication"=>"organisme.document_communication",	   
+"wiki_organisme.document_i"=>"organisme.document_i",	   
+"wiki_organisme.document_officiel"=>"organisme.document_officiel",	   
+"wiki_organisme.domaine"=>"organisme.domaine",	   
+"wiki_organisme.ecriture_comptable"=>"organisme.ecriture_comptable",	   
+"wiki_organisme.financement"=>"organisme.financement",	   
+"wiki_organisme.fourniture"=>"organisme.fourniture",	   
+"wiki_organisme.fourniture.old"=>"organisme.fourniture.old",	   
+"wiki_organisme.gazette"=>"organisme.gazette",	   
+"wiki_organisme.golf_parcours"=>"organisme.golf_parcours",	   
+"wiki_organisme.golf_parcours_trou"=>"organisme.golf_parcours_trou",	   
+"wiki_organisme.image"=>"organisme.image",	   
+"wiki_organisme.immatriculation"=>"organisme.immatriculation",	   
+"wiki_organisme.infolettre"=>"organisme.infolettre",	   
+"wiki_organisme.journal_comptable"=>"organisme.journal_comptable",	   
+"wiki_organisme.ligne_ecriture_comptable"=>"organisme.ligne_ecriture_comptable",	   
+"wiki_organisme.menu_dashboard"=>"organisme.menu_dashboard",	   
+"wiki_organisme.organisme"=>"organisme",	   
+"wiki_organisme.organisme_lieu"=>"organisme.organisme_lieu",	   
+"wiki_organisme.organisme_pda"=>"organisme.organisme_pda",	   
+"wiki_organisme.partenaire"=>"organisme.partenaire",	   
+"wiki_organisme.patrimoine"=>"organisme.patrimoine",	   
+"wiki_organisme.printview"=>"organisme.printview",	   
+"wiki_organisme.referencement"=>"organisme.referencement",	   
+"wiki_organisme.releve_banque"=>"organisme.releve_banque",	   
+"wiki_organisme.remise_banque"=>"organisme.remise_banque",	   
+"wiki_organisme.rencontre"=>"organisme.rencontre",	   
+"wiki_organisme.rencontre.old"=>"organisme.rencontre.old",	   
+"wiki_organisme.rencontre_communication"=>"organisme.rencontre_communication",	   
+"wiki_organisme.rencontre_fournisseur"=>"organisme.rencontre_fournisseur",	   
+"wiki_organisme.rencontre_fournisseur.old"=>"organisme.rencontre_fournisseur.old",	   
+"wiki_organisme.type_zone_region_pays"=>"organisme.type_zone_region_pays",	   
+"wiki_organisme.v_individu_lieu"=>"organisme.v_individu_lieu",	   
+"wiki_organisme.v_individu_recu_fiscal"=>"organisme.v_individu_recu_fiscal",	   
+"wiki_organisme.v_organisme_comptes_tiers"=>"organisme.v_organisme_comptes_tiers",	   
+"wiki_organisme.v_organisme_fonction"=>"organisme.v_organisme_fonction",	   
+"wiki_organisme.v_organisme_fonction.old"=>"organisme.v_organisme_fonction.old",	   
+"wiki_organisme.v_organisme_inscription"=>"organisme.v_organisme_inscription",	   
+"wiki_organisme.v_organisme_inscription_controle"=>"organisme.v_organisme_inscription_controle",	   
+"wiki_organisme.v_organisme_lieu"=>"organisme.v_organisme_lieu",	   
+"wiki_organisme.v_organisme_remise_banque"=>"organisme.v_organisme_remise_banque",	   
+"wiki_organisme.v_organisme_rencontre"=>"organisme.v_organisme_rencontre",	   
+"wiki_organisme.virement_comptable"=>"organisme.virement_comptable",	   
+"wiki_organisme.web"=>"organisme.web",	   
+"wiki_pim.app.php"=>"pim.app.php",	   
+"wiki_pim.pim"=>"pim.pim",	   
+"wiki_pim.userpimitems"=>"pim.userpimitems",	   
+"wiki_pim.userprefs"=>"pim.userprefs",	   
+"wiki_profil.copier_coller"=>"profil.copier_coller",	   
+"wiki_profil.liste"=>"profil.liste",	   
+"wiki_profil.log"=>"profil.log",	   
+"wiki_profil.profil"=>"profil.profil",	   
+"wiki_profil.profil_organisme"=>"profil.profil_organisme",	   
+"wiki_profil.recent_use"=>"profil.recent_use",	   
+"wiki_profil.userprefs"=>"profil.userprefs",	   
+"wiki_profil.utilisateur"=>"profil.utilisateur",	   
+"wiki_search.search"=>"search.search",	   
+"wiki_table.activite"=>"table.activite",	   
+"wiki_table.audience"=>"table.audience",	   
+"wiki_table.banque"=>"table.banque",	   
+"wiki_table.categorie_golf"=>"table.categorie_golf",	   
+"wiki_table.competence"=>"table.competence",	   
+"wiki_table.contact"=>"table.contact",	   
+"wiki_table.cp_ville_pays"=>"table.cp_ville_pays",	   
+"wiki_table.fonction"=>"table.fonction",	   
+"wiki_table.infolettre"=>"table.infolettre",	   
+"wiki_table.maree_meteo"=>"table.maree_meteo",	   
+"wiki_table.menu"=>"table.menu",	   
+"wiki_table.origine"=>"table.origine",	   
+"wiki_table.pays"=>"table.pays",	   
+"wiki_table.placemark"=>"table.placemark",	   
+"wiki_table.reglement"=>"table.reglement",	   
+"wiki_table.titre"=>"table.titre",	   
+"wiki_table.type_attribut"=>"table.type_attribut",	   
+"wiki_table.type_attribut_placemark"=>"table.type_attribut_placemark",	   
+"wiki_table.type_bookmark"=>"table.type_bookmark",	   
+"wiki_table.type_calendrier"=>"table.type_calendrier",	   
+"wiki_table.type_demande"=>"table.type_demande",	   
+"wiki_table.type_document"=>"table.type_document",	   
+"wiki_table.type_entite"=>"table.type_entite",	   
+"wiki_table.type_envoi_groupe"=>"table.type_envoi_groupe",	   
+"wiki_table.type_etat_referencement"=>"table.type_etat_referencement",	   
+"wiki_table.type_etat_todo"=>"table.type_etat_todo",	   
+"wiki_table.type_icone"=>"table.type_icone",	   
+"wiki_table.type_image"=>"table.type_image",	   
+"wiki_table.type_inscription"=>"table.type_inscription",	   
+"wiki_table.type_langue"=>"table.type_langue",	   
+"wiki_table.type_liste"=>"table.type_liste",	   
+"wiki_table.type_menu"=>"table.type_menu",	   
+"wiki_table.type_moteur"=>"table.type_moteur",	   
+"wiki_table.type_normalisation_libelle"=>"table.type_normalisation_libelle",	   
+"wiki_table.type_organisme"=>"table.type_organisme",	   
+"wiki_table.type_placemark"=>"table.type_placemark",	   
+"wiki_table.type_radiation"=>"table.type_radiation",	   
+"wiki_table.type_referencement"=>"table.type_referencement",	   
+"wiki_table.type_region_pays"=>"table.type_region_pays",	   
+"wiki_table.type_remise_banque"=>"table.type_remise_banque",	   
+"wiki_table.type_rencontre"=>"table.type_rencontre",	   
+"wiki_table.type_rencontre_participation"=>"table.type_rencontre_participation",	   
+"wiki_table.type_symbole_gps"=>"table.type_symbole_gps",	   
+"wiki_table.type_zone_region_pays"=>"table.type_zone_region_pays",	   
+"wiki_table.v_lieu_cp"=>"table.v_lieu_cp",	   
+"wiki_table.v_lieu_province"=>"table.v_lieu_province",	   
+"wiki_table.v_lieu_ville"=>"table.v_lieu_ville",	   
+"wiki_todo.todo"=>"todo.todo",	   
+"wiki_traitement.trimestriel"=>"traitement.trimestriel",	 
+  "additem" => "Ajouter un item", 
+  "allday_events" => "Évènement pour toute la journée", 
+  "allusers" => "Tous les usagers", 
+  "all_countries" => "Tous les pays", 
+  "all_invited_employees" => "Tous les employé(s) visité(es)", 
+  "all_non_private" => "Éditer tous les items non privé", 
+  "all_users" => "Tous les usagers", 
+  "assistant" => "Assistant", 
+  "attendees" => "Invités", 
+  "autorefresh" => "Auto actualisation", 
+  "bgcolor" => "Couleur d'arrière plan", 
+  "birthday" => "Fête", 
+  "birthdayview" => "Vue des fêtes", 
+  "category" => "Catégorie", 
+  "colors" => "Couleurs", 
+  "country" => "Pays", 
+  "currentweek" => "Semaine courante", 
+  "cyclus" => "Cycle", 
+  "cyclus_enddate" => "Date de fin", 
+  "daily" => "Journalier", 
+  "day" => "Jour", 
+  "days" => "Jours", 
+  "dayview" => "Vue par jours", 
+  "default_category" => "Catégorie par défaut", 
+  "default_eventtime" => "Temps d'évènement par défaut", 
+  "default_userview" => "Usager/groupe par défaut", 
+  "default_view" => "Vue par défaut", 
+  "delete_cyclus" => "Supprimer cyclus", 
+  "delete_single" => "Supprimer singulier", 
+  "description" => "Description", 
+  "edit_cyclus" => "Éditer cyclus", 
+  "edit_single" => "Éditer singulier", 
+  "email" => "Courriel", 
+  "employeeview" => "Comparer les agendas", 
+  "enddate" => "Date de fin", 
+  "endday" => "Jour de fin", 
+  "endmonth" => "Mois de fin", 
+  "endtime" => "Temps de fin", 
+  "every" => "Tous les", 
+  "example" => "Exemple", 
+  "exceptions" => "Exceptions", 
+  "export" => "Exporter les jours fériés", 
+  "fgcolor" => "Couleur du texte", 
+  "first" => "Premier", 
+  "flag" => "Drapeau", 
+  "fourth" => "Quatrième", 
+  "full_moon" => "Pleine lune", 
+  "groups" => "Groupes", 
+  "half_moon" => "Demi lune", 
+   "ifsatorsunthen" => "Samedi ou dimanche", 
+  "ifsatorsunthen2","Saturday" => "Vendredi, Dimanche
+                                   // Class scheduler",
+  "ifsunthen" => "Dimanche",
+  "import" => "Importer les jours fériés",
+  "location" => "Location",
+  "last" => "Dernier",
+  "menu_scheduler" => "Agenda",
+  "menu_scheduler_category" => "Catégorie d'agenda",
+  "menu_scheduler_email_templates" => "Mise en page de courriel d'agenda",
+  "menu_scheduler_holidays" => "Agenda des jours fériés",
+  "month" => "Mois",
+  "monthly" => "Mensuel",
+  "monthly_date" => "Date mensuelle",
+  "monthly_day" => "Jour mensuelle",
+  "months" => "mois",
+  "monthview" => "Vue pas mois",
+  "month_time" => "Temps par mois",
+  "moveto" => "Déplacer vers",
+  "name" => "Nom",
+  "nextweek" => "Semaine suivante",
+  "next_day" => "Jour suivant",
+  "next_month" => "Mois suivant",
+  "next_year" => "Année suivante",
+  "nonblocking" => "Non bloquable",
+  "note" => "Note",
+  "notes" => "Notes",
+  "no_moon" => "Sans lune",
+  "offset" => "Juxtaposé",
+  "once" => "Une fois",
+  "owner" => "Propriétaire",
+  "owner_attendee" => "Invité du propriétaire",
+  "pim_gotoschedule" => "Aller a l'agenda",
+  "pim_scheduler_empty" => "Pas d'items d'agenda",
+  "previousweek" => "Semaine précédente",
+  "previous_day" => "Jour précédent",
+  "previous_month" => "Mois précédent",
+  "previous_year" => "Année précédente",
+  "priority" => "Priorité",
+  "private" => "Privé",
+  "Private_event" => "Évènement privé",
+  "recur" => "Récurrent",
+  "recurring_event" => "Évènement récurrent",
+  "refreshview" => "Actualiser",
+  "refresh_interval" => "Intervalle de rafraîchissement",
+  "reminder_event" => "Rappel",
+  "schedulecategory" => "Catégorie de l'agenda",
+  "scheduler" => "Agenda",
+  "scheduler_admin" => "Agenda",
+  "scheduler_emptycolor" => "Couleur par défaut",
+  "scheduler_emptyworkhourscolor" => "Couleur des heures de travail par défaut",
+  "scheduler_group" => "Groupe de l'agenda",
+  "scheduler_owner_attendee" => "Allez-vous être a ce rendez-vous vous même?",
+  "second" => "Seconde",
+  "seconds" => "Secondes",
+  "select_country" => "Sélectionner le pays",
+  "settings" => "paramètres",
+  "show" => "Afficher",
+  "showemployeebirthdays" => "Afficher les fêtes des employés(ées)",
+  "showlunarphases" => "Afficher les phases lunaires",
+  "showtodo" => "Afficher les tâches",
+  "showweeknumbers" => "Afficher les numéros des semaines",
+  "special" => "Spéciale",
+  "startdate" => "Date de démarrage",
+  "startday" => "Jour de démarrage",
+  "startmonth" => "Mois de démarrage",
+  "starttime" => "Heure de démarrage",
+  "third" => "Troisième",
+  "this_month" => "Ce mois ci",
+  "this_year" => "Année courante",
+  "timeschedule" => "Intervalle de la vue par jour",
+  "title" => "Titre",
+  "today" => "Aujourd'hui",
+  "tommorow" => "Demain",
+  "type" => "Type",
+  "view" => "Vue",
+  "weekday" => "Jours de semaine",
+  "weekly" => "Hebdomadaire",
+  "weeks" => "semaines",
+  "weekview" => "Vue par semaine",
+  "every_workday"  => "Jour travaillé",
+   "yearly" => "Annuel",
+  "yearly_date" => "Date annuelle",
+  "yearly_day" => "Jour annuel",
+  "years" => "années",
+  "yearview" => "Vue par année",
+  "end_choice"=>"Date de fin",
+  'recur_info'=>'Information récurrente',
+  'monthly_day'=>'Jour',
+  'yearly_day'=>'Jour',
+  'yearly_month'=>'Mois',
+  'yearly_month2'=>'Mois',
+  'daily_every'=>'Tous les',
+  'weekly_every'=>'Tous les',
+  'monthly_every'=>'Tous les',
+  'monthly_every2'=>'Tous les',
+  'monthly_month_time'=>'Temps mensuel',
+  'yearly_month_time'=>'Temps mensuel',
+  'weekly_weekday'=>'Jour de semaine',
+  'monthly_weekday_list'=>'jour de semaine',
+  'yearly_weekday_list'=>'Jour de semaine',
+);
+?>

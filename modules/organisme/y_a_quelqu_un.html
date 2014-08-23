@@ -1,0 +1,63 @@
+<html>
+<head>
+<script src="jquery-1.6.1.min.js"></script>
+<script>
+$(document).ready(function() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(successCallback, errorCallback, , {enableHighAccuracy : true, timeout:10000, maximumAge:600000});
+  } else {
+    alert('GPS not supported');
+  }
+});
+
+function successCallback(position) {
+	alert("Latitude : " + position.coords.latitude + ", longitude : " + position.coords.longitude);
+  loadArticles( position.coords.latitude, position.coords.longitude );
+}
+
+function loadArticles( lat, lon ) {
+  $.ajax({
+    url: "find.php",
+    dataType: 'xml',
+    data: {
+    lat:lat,
+    lon:lon,
+    radius:20
+    },
+    success: buildArticlePage
+  });
+}
+
+function buildArticlePage( data ) {
+  $(data).find("article").each(function() {
+  var title = $(this).find("title").text();
+  var summary = $(this).find("summary").text();
+  var url = $(this).find("url").text();
+  var address = $(this).find("address").text();
+    $("#output").append( "<a target=\"_blank\" href=\""+url+"\">"+title+"</a><br/>");
+    $("#output").append( "<i>"+address+"</i><br />");
+    $("#output").append( summary+"<br /><br />");
+  });
+}
+
+
+function errorCallback(error){
+  switch(error.code){
+    case error.PERMISSION_DENIED:
+      alert("L'utilisateur n'a pas autorisé l'accès à sa position");
+      break;      
+    case error.POSITION_UNAVAILABLE:
+      alert("L'emplacement de l'utilisateur n'a pas pu être déterminé");
+      break;
+    case error.TIMEOUT:
+      alert("Le service n'a pas répondu à temps");
+      break;
+    }
+  
+</script>
+</head>
+<body>
+<div id="output">
+</div>
+</body> 
+</html>

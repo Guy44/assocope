@@ -1,0 +1,119 @@
+TABLE.recordlist
+{
+  margin: 5px;
+  border-collapse: collapse;
+}
+
+TABLE.recordlist TH,
+TABLE.recordlist TD,
+TABLE.recordlist A
+{
+  font-family: Trebuchet MS;
+  font-size: 10px;
+
+}
+
+TABLE.recordlist TH,
+TABLE.recordlist TH A
+{
+  background-color: #b4bac6;
+  color: #fff;
+  	font-variant: small-caps;
+}
+
+TABLE.recordlist TH A:hover
+{
+  background-color: #ccccee;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+TABLE.recordlist TD,
+TABLE.recordlist TH
+{
+  padding: 1px;
+  margin: 0px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-top-width: 1px;
+  border-style: solid;
+  border-color: #ccc;
+}
+
+TABLE.recordlist .row1
+{
+  background-color: #ffffff;
+}
+
+TABLE.recordlist .row2
+{
+  background-color: #f8f9fb;
+}
+
+img.recordlist
+{
+  height: 16px;
+  width: 16px;
+}
+
+
+TABLE.recordlistgg
+{
+  margin: 5px;
+  border-collapse: collapse;
+}
+
+TABLE.recordlistgg TH,
+TABLE.recordlistgg TD,
+TABLE.recordlistgg A
+{
+  font-family: Trebuchet MS;
+  font-size: 10px;
+
+}
+
+TABLE.recordlistgg TH,
+TABLE.recordlistgg TH A
+{
+  background-color: #b4bac6;
+  color: #fff;
+  	font-variant: small-caps;
+}
+
+TABLE.recordlistgg TH A:hover
+{
+  background-color: #ccccee;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+TABLE.recordlistgg TD,
+TABLE.recordlistgg TH
+{
+  padding: 1px;
+  margin: 0px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-top-width: 1px;
+  border-style: solid;
+  border-color: #ccc;
+}
+
+TABLE.recordlistgg .row1
+{
+  background-color: #ffffff;
+}
+
+TABLE.recordlistgg .row2
+{
+  background-color: #f8f9fb;
+}
+
+img.recordlistgg
+{
+  height: 16px;
+  width: 16px;
+}
+
