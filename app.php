@@ -246,7 +246,7 @@ if ("\$Name$" != "\$" . "Name:  $")
 $res .= '  <meta name="atkversion" content="' . $version . '" />' . "\n";
 // GG Pour test en local
 //$urlsite = 'http://' . atkHost () . '/association/';
-$urlsite = 'http://' . atkHost () . '/private/assocope/';
+$urlsite = 'http://' . atkHost () . '/assocope/';
 $res .= '<base href="' . $urlsite . '" />' . "\n";
 $res .= '<meta name="Author" content="Guy Gourmellet">';
 $res .= '<meta name="Copyright" content="AssoCope">';
