@@ -1106,7 +1106,9 @@
       $sessionname = atkconfig("session_name");
       if (!$sessionname) $sessionname = atkconfig('identifier');
       session_name($sessionname);
+      atkdebug("avant session_start  (atksessionmanager.atksession_init) de la session ".$sessionname,DEBUG_HTML);
       session_start();
+      atkdebug("après session_start  (atksessionmanager.atksession_init)de la session ".$sessionname ,DEBUG_HTML);
       return true;
     } else atkwarning("Not a valid session!");
     return false;

@@ -239,7 +239,9 @@
         $cookiepath   = atkconfig("application_root");
         $cookiedomain = (atkconfig("cookiedomain") != "") ? atkconfig("cookiedomain") : NULL;
         session_set_cookie_params($cookie_params["lifetime"], $cookiepath, $cookiedomain);
+       atkdebug("avant @session_start  (atksecuritymanager.authenticate)",DEBUG_HTML);
         @session_start();
+        atkdebug("après @session_start  (atksecuritymanager.authenticate) ",DEBUG_HTML);
         $session = array();
         $session["relogin"]=1;
 
