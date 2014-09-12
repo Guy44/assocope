@@ -530,9 +530,9 @@ class resultat_comptable extends assMetaNode {
 		;
 		$legende .= '<br /> Classes : 1=capitaux, 2=immobilisations, 3=stocks, 4=tiers, 5=financiers, 6=charges, 7=produits, 8=contributions volontaires ';
 		if ($view == "active") {
-			return atktext("Consultation des comptes usuels.") . " " . href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=nonactive', atktext('Cliquer ici pour visualiser tous les comptes.', $this->m_module, $this->m_type)) . "<br>" .			$legende . $retour;
+			return atktext("Consultation des comptes usuels.") . " " . href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=nonactive', atktext('Cliquer ici pour visualiser tous les comptes.', $this->m_module, $this->m_type),SESSION_DEFAULT, false, ' style="color: white; background:blueviolet;" ') . "<br>" .			$legende . $retour;
 		} else {
-			return atktext("Consultation de tous les comptes.") . " " . href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=active', atktext('Cliquer ici pour ne visualiser que les comptes usuels.', $this->m_module, $this->m_type)) . "<br>" .			$legende .$retour;
+			return atktext("Consultation de tous les comptes.") . " " . href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=active', atktext('Cliquer ici pour ne visualiser que les comptes usuels.', $this->m_module, $this->m_type),SESSION_DEFAULT, false, ' style="color: white; background:blueviolet;" ') . "<br>" .			$legende .$retour;
 		}
 	}
 	function recordActions($rec, & $actions, & $mraactions) {

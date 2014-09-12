@@ -1517,9 +1517,9 @@ FROM
 		$legende = 'Légende des couleurs : ';
 		$legende .= '<font color="Orange"> <b> A vérifier </b></font>';
 		$view = $this->getView();
-		$retour_a_verifier=href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=a_verifier', 'Observations à vérifier') ;
-		$retour_verifie= href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=verifie', 'Observations vérifiées') ;
-		$retour_tout= href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=tout', 'Tout')  ;
+		$retour_a_verifier=href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=a_verifier', 'Observations à vérifier',SESSION_DEFAULT, false, ' style="color: white; background:blueviolet;" ') ;
+		$retour_verifie= href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=verifie', 'Observations vérifiées',SESSION_DEFAULT, false, ' style="color: white; background:blueviolet;" ') ;
+		$retour_tout= href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=tout', 'Tout',SESSION_DEFAULT, false, ' style="color: white; background:blueviolet;" ')  ;
 		$db = & atkGetDb();
 		if ($filtre=='')
 		{

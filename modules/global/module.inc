@@ -2140,7 +2140,7 @@ class mod_global extends associationModule {
 				$data = $db->getrows("SELECT count(id) as nombre from organisme_rencontre_choix where  id_rencontre ='" . $rencontreid . "'");
 				$nombre_rencontre_choix = $data[0]["nombre"];
 				// Fournisseurs
-				$this->menuitem("Choix"."#".$nombre_rencontre_choix, dispatch_url("organisme.rencontre_choix", "admin", array (
+				$this->menuitem("Choix_r"."#".$nombre_rencontre_choix, dispatch_url("organisme.rencontre_choix", "admin", array (
 						"atkfilter" => "organisme_rencontre_choix.id_rencontre ='" . $rencontreid . "'"
 				)), "Rencontres", true);
 		/*		$actions["balance_carree"] = session_url("dispatch.php?atknodetype=" . $this->atkNodeType() . "&atkaction=balance_carree&atkselector=[pk]", SESSION_NESTED);
@@ -2191,10 +2191,10 @@ class mod_global extends associationModule {
 			$this->menuitem("Dépenses/recettes rencontre", dispatch_url("organisme.rencontre", "depenses_recettes", array (
 					"atkfilter" => "organisme_rencontre.id ='" . $rencontreid . "'"
 			)), "Rencontres", true);
-			$this->menuitem("Balance carrée participants", dispatch_url("organisme.rencontre", "balance_carree", array (
+			$this->menuitem("Balance carrée participants_r", dispatch_url("organisme.rencontre", "balance_carree", array (
 					"atkfilter" => "organisme_rencontre.id ='" . $rencontreid . "'"
 			)), "Rencontres", true);
-			$this->menuitem("Renseignements voyage", dispatch_url("organisme.rencontre", "renseignements_voyage", array (
+			$this->menuitem("Renseignements voyage_r", dispatch_url("organisme.rencontre", "renseignements_voyage", array (
 					"atkfilter" => "organisme_rencontre.id ='" . $rencontreid . "'"
 			)), "Rencontres", true);
 			

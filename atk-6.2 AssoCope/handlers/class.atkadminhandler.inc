@@ -332,8 +332,12 @@
 				elseif ($this->m_node->hasFlag(NF_ADD_LINK))
 				{
 					$addurl = atkSelf().'?atknodetype='.$this->m_node->atknodetype().'&atkaction=add';
-	        return atkHref($addurl,$label,SESSION_NESTED);
-				}
+					//GG
+					//	return atkHref ( $addurl, $label, SESSION_NESTED );
+					$label="&nbsp;".$label."&nbsp;";
+					return atkHref ( $addurl, $label, SESSION_NESTED, false, ' style="color: white; background:red;" ' );
+					// GG FIN
+	    				}
 
 			}
 

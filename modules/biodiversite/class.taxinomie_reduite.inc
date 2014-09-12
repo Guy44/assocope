@@ -135,8 +135,8 @@ function observations_display ($record,$mode)
  		$legende = 'Légende des couleurs : ';
 		$legende .= '<font color="'.$this->couleurpriorite2.'"> <b> Espèce déjà observée dans la base utilisée </b></font><br>';
 		$view = $this->getView();
-		$retour_especes_observees=href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=observees', 'Espèces observées')  ;
-		$retour_sans_nom_francais= href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=observees_sans_nom_francais', 'Espèces observées sans nom français') ;
+		$retour_especes_observees=href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=observees', 'Espèces observées',SESSION_DEFAULT, false, ' style="color: white; background:blueviolet;" ')  ;
+		$retour_sans_nom_francais= href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=observees_sans_nom_francais', 'Espèces observées sans nom français',SESSION_DEFAULT, false, ' style="color: white; background:blueviolet;" ') ;
 		$retour_tout= href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=tout', 'Tout')  ;
 		$db = & atkGetDb();
 		$sql='select count(bt.id) as nombre from biodiversite_taxinomie bt ';

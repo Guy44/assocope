@@ -512,10 +512,10 @@ class inscription_i extends assMetaNode {
 		$legende='Légende des couleurs : ';
 		$legende.='<font color="'. $this->couleurarchive.'"> <b> Archive ';
 		if ($view == "active") {
-			return atktext("onlyactiverecordsareshown") . " " . href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=nonactive', atktext('clicktoviewarchive', $this->m_module, $this->m_type)) . "<br>"
+			return atktext("onlyactiverecordsareshown") . " " . href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=nonactive', atktext('clicktoviewarchive', $this->m_module, $this->m_type),SESSION_DEFAULT, false, ' style="color: white; background:blueviolet;" ') . "<br>"
 					.$legende.$retour;
 		} else {
-			return atktext("youareinthearchive") . " " . href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=active', atktext('clicktoviewactiverecords', $this->m_module, $this->m_type)) . "<br>"
+			return atktext("youareinthearchive") . " " . href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=active', atktext('clicktoviewactiverecords', $this->m_module, $this->m_type),SESSION_DEFAULT, false, ' style="color: white; background:blueviolet;" ') . "<br>"
 					.$legende.$retour;
 		}
 	}

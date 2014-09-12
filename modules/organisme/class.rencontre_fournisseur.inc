@@ -7,7 +7,7 @@ class rencontre_fournisseur extends assMetaNode {
 		$policy->addFlags("commentaire", "description", AF_HIDE_LIST);
 		$policy->addFlags("id_creation", "date_creation", "id_modification", "date_modification", AF_READONLY);
 		//				$policy->addFlags("id_ecriture_depense", "id_ecriture_reglement", AF_READONLY|AF_FORCE_LOAD);
-		$policy->setOrder("id_rencontre");
+		$policy->setOrder("libelle");
 	}
 	function rencontre_fournisseur() {
 		$this->atkMetaNode();
@@ -40,7 +40,7 @@ class rencontre_fournisseur extends assMetaNode {
 		$this->add(new atkDummyAttribute("descripteur_module_estampillage",'text',AF_HIDE_ADD | AF_HIDE_EDIT  | AF_NO_LABEL | AF_COMPACT),null,40 );
 	}
 	function descripteur_rencontre_display($record, $mode) {
-		return $this->decoupe_affichage_colonne($this->descripteur_rencontre($record["id_rencontre"]["id"]),100);
+		return $this->decoupe_affichage_colonne($this->descripteur_rencontre($record["id_rencontre"]["id"]),110);
 	}
 	function descripteur_rencontre_fournisseur_display($record, $mode) {
 		return $this->decoupe_affichage_colonne($this->descripteur_rencontre_fournisseur($record["id"]),100);

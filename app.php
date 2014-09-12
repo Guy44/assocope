@@ -35,26 +35,36 @@
  * @internal includes..
  */
 $config_atkroot = "./";
-include_once ("atk.inc");
-atksession ();
-// DD
-/*
+ include_once ("atk.inc");
+
+// GG 2014-08-30
+// $id=$GLOBALS["g_user"]["id_individu"];
+/*/ DD
+ echo " \$_SESSION : <br>";
+echo "<pre>";
 print_r ($_SESSION);
+echo "</pre>";
+echo "<br> \$GLOBALS : <br>";
+echo "<pre>";
+print_r ($GLOBALS);
+echo "</pre>";
+echo "<br> \$_COOKIE : <br>";
+echo "<pre>";
+print_r ($_COOKIE);
+echo "</pre>";
 die();
 */
- // atk_array_print($_SESSION);
+atksession ();
  atksecure ();
-//atk_array_print($_SESSION);
-// die();
-
-include "theme.inc";
+ 
+ 
+ include "theme.inc";
 global $g_user;
-//atk_array_print($g_user);
-// die();
 if ($g_user ["name"] != "administrator") {
 	$db = & atkGetDb ();
 	$user = getUser ();
 	$id = $user ["id"];
+
 	$data = $db->getrows ( "SELECT google_map_key, ubio_keycode, tracer_mysqldb_query_o_n, en_travaux_o_n, debug_o_n from app_globales" );
 	$google_map_key = $data [0] ["google_map_key"];
 	$ubio_keycode = $data [0] ["ubio_keycode"];

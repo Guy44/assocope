@@ -23,7 +23,9 @@
   filter_request_where_clause('atkfilter');
 
   // initialise g_ array.
-  $GLOBALS['g_user'] = array();
+  //GG
+  //$GLOBALS['g_user'] = array();
+  //
 
   /**
    * Calling this function will invoke the login process. Call this function in

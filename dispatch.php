@@ -31,7 +31,7 @@
  */
 $config_atkroot = "./";
 include_once("atk.inc");
-
+atkdebug("avant atksession (dispatch.php)");
 atksession();
 
 $session = &atkSessionManager::getSession();

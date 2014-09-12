@@ -841,12 +841,12 @@ if  (substr($this->m_postvars["atkfilter"],0,5) =="'%@@@")
 		$legende = '<b>Légende des couleurs : </b>';
 		$legende .= '<font color="'.$this->couleurpriorite2.'"> <b> Espèce déjà observée dans la base utilisée </b></font><br>';
 		$view = $this->getView();
-		$retour_especes_observees=href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=observees', 'Espèces observées')  ;
-		$retour_sans_image=href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=sans_image', 'Espèces observées sans image')  ;
-		$retour_sans_nom_francais= href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=sans_nom_francais', 'Espèces observées sans nom français') ;
-		$retour_observees_protegees= href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=observees_protegees', 'Espèces observées protégées') ;
-		$retour_toutes_protegees= href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=toutes_protegees', 'Toutes espèces protégées') ;
-		$retour_tout= href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=tout', 'Tout')  ;
+		$retour_especes_observees=href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=observees', 'Espèces observées',SESSION_DEFAULT, false, ' style="color: white; background:blueviolet;" ')  ;
+		$retour_sans_image=href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=sans_image', 'Espèces observées sans image',SESSION_DEFAULT, false, ' style="color: white; background:blueviolet;" ')  ;
+		$retour_sans_nom_francais= href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=sans_nom_francais', 'Espèces observées sans nom français',SESSION_DEFAULT, false, ' style="color: white; background:blueviolet;" ') ;
+		$retour_observees_protegees= href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=observees_protegees', 'Espèces observées protégées',SESSION_DEFAULT, false, ' style="color: white; background:blueviolet;" ') ;
+		$retour_toutes_protegees= href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=toutes_protegees', 'Toutes espèces protégées',SESSION_DEFAULT, false, ' style="color: white; background:blueviolet;" ') ;
+		$retour_tout= href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=tout', 'Tout',SESSION_DEFAULT, false, ' style="color: white; background:blueviolet;" ')  ;
 		$db = & atkGetDb();
 		$sql='select count(bt.id) as nombre from biodiversite_taxinomie bt ';
 		$data=$db->getrows($sql);

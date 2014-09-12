@@ -30,7 +30,9 @@
     // leave it in place for now.
     $g_sessionData = &$_SESSION[atkconfig('identifier')];
   }
-
+  // GG
+  atkdebug( " INITIALISATION de g_sessionData : ".$g_sessionData );
+  // GG FIN
   define("SESSION_DEFAULT",0); // stay at current stacklevel
   define("SESSION_NEW",1);     // new stack
   define("SESSION_NESTED",2);  // new item on current stack
@@ -140,7 +142,21 @@
 
       if ($no_namespace) $g_sessionData["globals"][$var] = $value;
       else               $g_sessionData[$this->m_namespace]["globals"][$var] = $value;
-
+   // GG
+    /*
+     if ($var=="authentication")
+   {  echo "<pre>";
+      echo "G_SESSIONDATA  :<br/>";;
+      print_r ($g_sessionData);
+      echo "<br><br>".'$_SESSION de la SESSION ID '.session_id.' :<br/>';
+      print_r ($_SESSION);
+      echo "</pre>";
+      die ();
+      }
+    */
+  
+   // GG FIN
+      
       return $value;
     }
 
@@ -1106,11 +1122,14 @@
       $sessionname = atkconfig("session_name");
       if (!$sessionname) $sessionname = atkconfig('identifier');
       session_name($sessionname);
-      atkdebug("avant session_start  (atksessionmanager.atksession_init) de la session ".$sessionname,DEBUG_HTML);
+      atkdebug("avant SESSION_START  (atksessionmanager.atksession_init) de la session ID ".session_id(),DEBUG_HTML);
       session_start();
-      atkdebug("après session_start  (atksessionmanager.atksession_init)de la session ".$sessionname ,DEBUG_HTML);
+      atkdebug("après SESSION_START  (atksessionmanager.atksession_init) de la session ID  ".session_id() ,DEBUG_HTML);
       return true;
-    } else atkwarning("Not a valid session!");
+    } else 
+    {atkwarning("Not a valid session!");
+    atkdebug("NOT A VALID SESSION  (atksessionmanager.atksession_init) de la session ".$sessionname,DEBUG_HTML);
+    }
     return false;
   }
 
@@ -1134,7 +1153,8 @@
    */
   function atksession($namespace = "default", $usestack=true)
   {
-    global $ATK_VARS, $g_sessionManager, $g_sessionData, $atkprevlevel;
+    atkdebug("appel de ATKSESSION");
+  	global $ATK_VARS, $g_sessionManager, $g_sessionData, $atkprevlevel;
 
     $g_sessionManager = atknew('atk.session.atksessionmanager', $namespace, $usestack);
 
@@ -1267,14 +1287,15 @@
     if (isset($_COOKIE[$name])&&$_COOKIE[$name])
     {
       $sessionid = $_COOKIE[$name];
+      atkdebug("Le session ID dans le cookie assocope = ".$sessionid,DEBUG_HTML);
     }
     else
     {
       $sessionid = ${$name};
     }
-
+    
     if ($sessionid=="") return true;
-
+  
     if (!preg_match('/^[a-z0-9:-]+$/i', $sessionid)) return false;
 
     return true;

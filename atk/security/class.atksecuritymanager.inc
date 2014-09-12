@@ -239,9 +239,8 @@
         $cookiepath   = atkconfig("application_root");
         $cookiedomain = (atkconfig("cookiedomain") != "") ? atkconfig("cookiedomain") : NULL;
         session_set_cookie_params($cookie_params["lifetime"], $cookiepath, $cookiedomain);
-       atkdebug("avant @session_start  (atksecuritymanager.authenticate)",DEBUG_HTML);
-        @session_start();
-        atkdebug("après @session_start  (atksecuritymanager.authenticate) ",DEBUG_HTML);
+          @session_start();
+        atkdebug("après @session_start de la SESSION : ".session_id()."  (atksecuritymanager.authenticate) ",DEBUG_HTML);
         $session = array();
         $session["relogin"]=1;
 
@@ -500,9 +499,10 @@
       //This way we can always retrieve the user from apache logs
       header('user: '.$this->m_user["name"]);
       $GLOBALS["g_user"] = $this->m_user;
+     global $g_sessionData ;
       $g_sessionManager->globalVar("authentication",array("authenticated"=>1, "user"=>$this->m_user), true);
-      sessionStore('loginattempts',''); //reset maxloginattempts
-      atkdebug($this->m_user["name"].' a été stocké dans $g_user["name"] et $g_sessionManager ["user"]["name"]' );
+     sessionStore('loginattempts',''); //reset maxloginattempts
+      atkdebug("LOGIN terminé : ".$this->m_user["name"].' a été stocké dans $g_user["name"] et $g_sessionManager ["user"]["name"]' );
       if ($throwPostLoginEvent)
         $this->notifyListeners("postLogin", $auth_user);
 
@@ -589,7 +589,7 @@
         $tplvars["userfield"] = $userField;
         $tplvars["passwordfield"] = '<input class="loginform" type="password" size="15" name="auth_pw" value="" />';
         $tplvars["submitbutton"] = '<input name="login" class="button" type="submit" value="'.atktext('login').'" />';
-        $tplvars["title"] = atktext('login_form');
+        $tplvars["title"] = atktext("AssoCope");
 
         if ($lastresponse == AUTH_LOCKED)
         {

@@ -8,7 +8,7 @@
 {/if}
 {stacktrace}
 {if count($stacktrace)}  
-  <div align="left">
+  <div align="left"><br />
 &nbsp;
 
     {section name=i loop=$stacktrace}
@@ -16,7 +16,7 @@
        {if %i.last%}
          <span class="stacktrace_end">{$stacktrace[i].title}</span>
        {else}           
-         <a href="{$stacktrace[i].url}" class="stacktrace">{$stacktrace[i].title}</a> &raquo;
+         <a href="{$stacktrace[i].url}" class="stacktrace"  style="color: white; background:darkorange;" >{$stacktrace[i].title}</a> &raquo;
        {/if}
       {else}
         {if %i.index% == 0}... &raquo;{/if}
@@ -30,7 +30,7 @@
 {/foreach}
 {stacktrace}
 {if count($stacktrace)}  
-  <div align="left" class="stacktrace_end">
+  <div align="left" class="stacktrace_end"><br />
 
 &nbsp;
     {section name=i loop=$stacktrace}
@@ -38,7 +38,7 @@
        {if %i.last%}
          <span class="stacktrace_end">{$stacktrace[i].title}</span>
        {else}           
-         <a href="{$stacktrace[i].url}" class="stacktrace_end">{$stacktrace[i].title}</a> &raquo;
+         <a href="{$stacktrace[i].url}" class="stacktrace_end" style="color: white; background:darkorange;">{$stacktrace[i].title}</a> &raquo;
        {/if}
       {else}
         {if %i.index% == 0}... &raquo;{/if}

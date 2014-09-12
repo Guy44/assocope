@@ -421,7 +421,7 @@ function action_renseignements_voyage()
 			
 	}
 	function descripteur_rencontre_display($record, $mode) {
-		return $this->decoupe_affichage_colonne($this->descripteur_rencontre($record["id"]),100);
+		return $this->decoupe_affichage_colonne($this->descripteur_rencontre($record["id"]),110);
 	}
 	function descripteur_rencontre_documents_display($record, $mode) {
 		return $this->decoupe_affichage_colonne($this->descripteur_rencontre_documents($record["id"]),100);

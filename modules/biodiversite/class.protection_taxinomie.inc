@@ -282,11 +282,11 @@ class protection_taxinomie extends assMetaNode {
 		$legende .= '<font color="'.$this->couleurmois.'"> <b> Espèce non répertoriée dans la table (taxinomie taxons) </b></font><br>';
 		$retour= '</b>'.$legende .$retour.'<b>';
 
-		$retour_especes_non_repertoriees=href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkfilter=' . '&atkaction=' . $this->m_action , 'Espèces non répertoriées dans la table des taxons')  ;
+		$retour_especes_non_repertoriees=href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkfilter=' . '&atkaction=' . $this->m_action , 'Espèces non répertoriées dans la table des taxons',SESSION_DEFAULT, false, ' style="color: white; background:blueviolet;" ')  ;
 		//			$retour_normalisation=href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=traduction' , 'Normalisation')  ;
 		//		$retour_recuperation_inpn=href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=recuperation_inpn' , 'Recupération no inpn');
 		//	$retour_recuperation_noms_francais=href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=recuperation_noms_francais' , 'Recupération des noms français') ;
-		$retour_recherche_nom_binomial_inpn	=href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=recherche_nom_binomial_inpn	' , 'recherche_nom_binomial_inpn	') ;
+		$retour_recherche_nom_binomial_inpn	=href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=recherche_nom_binomial_inpn	' , 'recherche_nom_binomial_inpn	',SESSION_DEFAULT, false, ' style="color: white; background:blueviolet;" ') ;
 
 
 

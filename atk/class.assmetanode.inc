@@ -1339,11 +1339,11 @@ function action_synchro_google_contacts() {
 			if ($compact == "actif") {
 				$imageadd='<img class="recordlist" border="0" src="./themes/assocope/icons/assocope/Button-Add-icon.png" alt="Passer en mode étendu" title="Passer en mode étendu"></img>';
 
-				$mescompact= atktext("L'affichage est actuellement en mode compact : ") . " " . href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&compact=inactif', '==> Etendre '.$imageadd ) ;
+				$mescompact= atktext("L'affichage est actuellement en mode compact : ") . " " . href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&compact=inactif', '==> Etendre&nbsp; &nbsp; '.$imageadd.'&nbsp; &nbsp; ' ,SESSION_DEFAULT, false,  ' style="color: white; background:red;" ') ;
 			} else {
 				$imageminus='<img class="recordlist" border="0" src="./themes/assocope/icons/assocope/Math-minus-icon.png" alt="Passer en mode compact" title="Passer en mode compact"></img>';
 
-				$mescompact= atktext("L'affichage est actuellement en mode étendu : ") . " " . href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&compact=actif', '==> Compacter '.$imageminus) ;
+				$mescompact= atktext("L'affichage est actuellement en mode étendu : ") . " " . href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&compact=actif', '==> Compacter&nbsp; &nbsp; '.$imageminus.'&nbsp; &nbsp; ',SESSION_DEFAULT, false,  ' style="color: white; background:red;" ') ;
 			}
 			return $mescompact."<br/>";
 		}
@@ -2620,13 +2620,13 @@ function action_synchro_google_contacts() {
 			$res2=substr($res2, 0, strlen($res2)-2)."<br/>";
 			$retour.=$res2.'</b>';
 			
-			$retour.='</b>Options : ';
+/*			$retour.='</b>Options : ';
 			(!empty($libelle_participation_1)) ? $retour.='<b>'.$href_participants_partiels.' ('.$libelle_participation_1."), " : null;
 			(!empty($libelle_participation_2)) ? $retour.='<b>'.$href_participants.' ('.$libelle_participation_2."), ": null;
 			(!empty($libelle_participation_3)) ? $retour.='<b>'.$href_participants_3.' ('.$libelle_participation_3."), ": null;
 			(!empty($libelle_participation_4)) ? $retour.='<b>'.$href_participants_4.' ('.$libelle_participation_4."), ": null;
 			$retour=substr($retour, 0, strlen($retour)-2)."<br/>";
-			
+	*/		
 			if ($data[0]["parcours"]>0)
 			{
 				$parcoursnode = &atkGetNode("organisme.golf_parcours");
@@ -2634,7 +2634,64 @@ function action_synchro_google_contacts() {
 				$retour.="</b>Parcours : <b>".$parcoursnode->descriptor($records[0],"n","n").'</b>'.'<br />';
 				$retour.='</b>Joueurs : <b>'.$href_joueurs.'</b>'.'<br />' ;
 			}
-
+			$sql="select 
+			sum(montant_versement) as montant_versement , sum(montant_versement_2) as montant_versement_2
+			from individu_rencontre
+			where id_rencontre =$id_rencontre";
+			$data3 = $db->getrows($sql);
+			$montant_versement_1=$data3[0]["montant_versement"];
+			$montant_versement_2=$data3[0]["montant_versement_2"];
+			$sql="select
+			sum(irc.quantite*orc.cout) as montant_choix_prevu
+			from individu_rencontre ir,  individu_rencontre_choix  irc,  organisme_rencontre_choix orc
+			where ir.id_rencontre =$id_rencontre
+			 and ir.id=irc.id_individu_rencontre 
+			and orc.id=irc.id_organisme_rencontre_choix ";
+			$data3 = $db->getrows($sql);
+			$montant_recettes_prevu=$data3[0]["montant_choix_prevu"];
+			$sql="select
+			sum(montant_prevu) as montant_fournisseurs_prevu , sum(montant_fourniture) as montant_fournisseurs_realise
+			from organisme_rencontre_fournisseur
+			where id_rencontre =$id_rencontre";
+			$data3 = $db->getrows($sql);
+					
+			$montant_fournisseurs_prevu=$data3[0]["montant_fournisseurs_prevu"];
+			$montant_fournisseurs_realise=$data3[0]["montant_fournisseurs_realise"];
+			
+			$montant_recettes_realise=$montant_versement_1+$montant_versement_2;
+			
+			$solde_recettes=$montant_recettes_prevu-$montant_recettes_realise;
+			$solde_depenses=$montant_fournisseurs_prevu-$montant_fournisseurs_realise;
+			$solde_prevu=$montant_recettes_prevu-$montant_fournisseurs_prevu;
+			$solde_realise=$montant_recettes_realise-$montant_fournisseurs_realise;
+			$solde_solde=$solde_prevu-$solde_realise;
+			
+			$montant_recettes_prevu=number_format($montant_recettes_prevu,0,",",".");
+			$montant_recettes_realise=number_format($montant_recettes_realise,0,",",".");
+			$montant_fournisseurs_prevu=number_format($montant_fournisseurs_prevu,0,",",".");
+			$montant_fournisseurs_realise=number_format($montant_fournisseurs_realise,0,",",".");
+			$solde_recettes=number_format($solde_recettes,0,",",".");
+			$solde_depenses=number_format($solde_depenses,0,",",".");
+			$solde_prevu=number_format($solde_prevu,0,",",".");
+			$solde_realise=number_format($solde_realise,0,",",".");
+			$solde_solde=number_format($solde_solde,0,",",".");
+			
+			$tableau_rd="<style>  .alnright { text-align: right; }</style><style>  .alncenter { text-align: center ; }</style><style> td {
+ border-width:1px;
+ border-style:solid;
+ border-color:black;
+			
+ }</style><table class=\"toc  sortable\" >";
+			$tableau_rd.="<tr><td class='alncenter'></td><td class='alncenter'><b>&nbsp;&nbsp; Prévues &nbsp;&nbsp; </b></td><td class='alncenter'><b>Réalisées</b></td><td class='alncenter'><b>Prévues<br/>-<br/>Réalisées</b></td></tr>";
+			$tableau_rd.="<tr><td class='alncenter'><b>Recettes</b></td><td class='alncenter'>$montant_recettes_prevu</td><td class='alncenter'>$montant_recettes_realise</td><td class='alncenter'><b>$solde_recettes</td></tr>";
+			$tableau_rd.="<tr><td class='alncenter'><b>Dépenses</b></td><td class='alncenter'>$montant_fournisseurs_prevu</td><td class='alncenter'>$montant_fournisseurs_realise</td><td class='alncenter'><b>$solde_depenses</td></tr>";
+			$tableau_rd.="<tr><td class='alncenter'><b>Solde</b></td><td class='alncenter'><b>$solde_prevu</td><td class='alncenter'><b>$solde_realise</td><td class='alncenter'><b>$solde_solde</td></tr>";
+			$tableau_rd.="</table>";
+			
+			if ($montant_recettes_prevu>0 || $montant_recettes_realise>0 || $montant_fournisseurs_prevu>0 || $montant_fournisseurs_realise>0 )
+			$retour.=$tableau_rd;
+			$retour.='<br />';
+/*
 			if ($total_montant_versement>0 || $total_montant_versement_2>0 )
 			{
 				$retour.='</b></b>Versements (premier/second): <b>';
@@ -2642,6 +2699,7 @@ function action_synchro_google_contacts() {
 				($total_montant_versement_2>0 ) ? $retour.=' | '.$href_montant_versement_2.'</b>' : $retour.='<b>/0</b>';
 				$retour.='<br />';
 			}
+			*/
 			($covoiturage_places_offertes>0 || $covoiturage_places_demandees>0 ) ?
 			$retour.="Covoiturage : <b>".$covoiturage_places_offertes."/".$covoiturage_places_demandees. "</b> (places offertes/demandées)<br />" : $retour.="" ;
 		}
@@ -2914,7 +2972,7 @@ function action_synchro_google_contacts() {
 		$sql="SELECT orc.libelle, orc.cout
 		from organisme_rencontre_choix orc
 		where orc.id_rencontre=$id_rencontre
-		order by orc.id" ;
+		order by orc.libelle" ;
 		$data=$db->getrows($sql);
 		for ($i=0;$i<count($data);$i++)
 		{
@@ -2950,7 +3008,7 @@ function action_synchro_google_contacts() {
 			ir.id_rencontre=$id_rencontre and
 			ir.id_individu=$id_individu and
 			ir.id=irc.id_individu_rencontre
-			order by orc.id
+			order  by orc.libelle
 			" ;
 			$data_choix=$db->getrows($sql);
 			$total_prestations_individu=0;
@@ -3081,7 +3139,8 @@ function action_synchro_google_contacts() {
 		$retour.="<tr><td><b>Choix</td><td><b>PU</td><td><b>Nombre</td><td><b>Total</td><td><b></td><td><b></td></tr>";
 		$sql="SELECT orc.id, orc.libelle, orc.cout
 		from organisme_rencontre_choix orc
-		where orc.id_rencontre=$id_rencontre" ;
+		where orc.id_rencontre=$id_rencontre
+		 order by orc.libelle " ;
 
 		$data=$db->getrows($sql);
 		$total_total=0;
@@ -3107,8 +3166,10 @@ function action_synchro_google_contacts() {
 					'atkfilter' => " individu_rencontre.id in (select id_individu_rencontre from individu_rencontre_choix where id_organisme_rencontre_choix=$id_choix   and quantite>0)
 					"	), "dispatch.php"), $option["quantite"] , SESSION_NESTED,null," title=\"individus rencontres \"");
 			
+			$href_rencontre_choix="<b>".href(dispatch_url("organisme.rencontre_choix", "edit", array (	'atkselector' => "organisme_rencontre_choix.id='" . $option["id"]. "'"
+			), "dispatch.php"),$option["libelle"].'<br />', SESSION_NESTED)."</b>" ;
 			
-			$retour.="<tr><td>".$this->decoupe_affichage_colonne($option["libelle"], 50)."</td><td class='alnright'>".$option["cout"]."</td><td class='alnright'>".$lien_choix."</td><td class='alnright'>".$total_ligne."</td><td><b></td><td><b></td>";
+			$retour.="<tr><td>".$href_rencontre_choix."</td><td class='alnright'>".$option["cout"]."</td><td class='alnright'>".$lien_choix."</td><td class='alnright'>".$total_ligne."</td><td><b></td><td><b></td>";
 			$retour.="</tr>";
 			
 		}
@@ -3146,15 +3207,27 @@ function action_synchro_google_contacts() {
 			number_format($data1[0]["montant_fourniture"],2,",",".")
 		."</td><td class='alnright'><b>".
 			$solde."</td></tr>";
-			$sql1="select orf.id_organisme_fournisseur, orf.libelle as libelle, orf.montant_prevu as montant_prevu,orf.montant_fourniture as montant_fourniture
+			$sql1="select orf.id as id, orf.id_organisme_fournisseur, orf.id_individu as id_individu, orf.libelle as libelle,orf.description as description,orf.id_document_accord as id_document_accord,  orf.montant_prevu as montant_prevu,orf.montant_fourniture as montant_fourniture
 			from organisme_rencontre_fournisseur orf
-			where orf.id_rencontre =$id_rencontre ";
+			where orf.id_rencontre =$id_rencontre  order by orf.libelle ";
+			
 			$data1=$db->getrows($sql1);
 			for ($i=0;$i<count($data1);$i++)
 					
 			{
-			$retour.="<tr><td>".$data1[$i]["libelle"]."<br/>".
-				$this->descripteur_organisme($data1[$i]["id_organisme_fournisseur"],'n','n')
+				$table="organisme_rencontre_fournisseur";
+				$id=($data1[$i]["id"]);
+				$field="description";
+				$popup=atkPopup(atkconfig("atkroot").'atk/popups/htmlpopup.inc','table='.$table.'&id='.$id.'&field='.$field,'Contenu html',650,650,'yes','no');
+				(!empty($data1[$i]["description"])) ? $description=' <a href="'.$popup.'"><img class="recordlist" border="0" src="./themes/assocope/icons/assocope/txt.png" alt="Description"title="Description" ></img></a>' : $description='';
+			
+				(!empty($data1[$i]["id_document_accord"])) ? $accord="<b>Accord :  </b>".$this->descripteur_document("organisme",$data1[$i]["id_document_accord"],'n').'<br />' : $accord="" ;
+				(!empty($data1[$i]["id_individu"])) ? $correspondant=$this->descripteur_individu($data1[$i]["id_individu"],'n','n') :$correspondant="" ;
+		$href_fournisseur="<b>".href(dispatch_url("organisme.rencontre_fournisseur", "edit", array (	'atkselector' => "organisme_rencontre_fournisseur.id='" . $id. "'"
+				), "dispatch.php"),$data1[$i]["libelle"], SESSION_NESTED)."</b>" ;
+	
+			$retour.="<tr><td>".$href_fournisseur.$description." (".
+				$this->descripteur_organisme($data1[$i]["id_organisme_fournisseur"],'n','n')." ".$correspondant." )."."<br/>".$accord
 									."</td><td></td><td></td><td class='alnright'>".
 									number_format($data1[$i]["montant_prevu"],2,",",".")
 									."</td><td class='alnright'>".
@@ -3845,7 +3918,7 @@ if ($abrege_o_n=='n')
 
 	}
 
-	function descripteur_document($type='organisme',$id_document, $aide_o_n='o',&$lien=null)
+	function descripteur_document($type='organisme',$id_document, $aide_o_n='o',&$lien=null,$nom_organisme_individu_o_n='n')
 	{
 		
 		$db = & atkGetDb();
@@ -3904,9 +3977,9 @@ if ($abrege_o_n=='n')
 				
 		
 		($type=='individu')? $retour.=" ".atkHref(		dispatch_url("individu.document_i", "edit", array ("atkselector" => "individu_document.id='" . $id_document . "'" )),
-				"<b>".$data[0]["titre"]."</b> ".$aide."<br /> (".$data[0]["type"].") ",SESSION_NESTED, false, 'target="main"') : $retour.='';
+				"<b>".$data[0]["titre"]."</b> ".$aide."  (".$data[0]["type"].") ",SESSION_NESTED, false, 'target="main"') : $retour.='';
 		($type=='organisme')? $retour.=" ".atkHref(		dispatch_url("organisme.document", "edit", array ("atkselector" => "organisme_document.id='" . $id_document . "'" )),
-				"<b>".$data[0]["titre"]."</b> ".$aide."<br /> (".$data[0]["type"].") ",SESSION_NESTED, false, 'target="main"') : $retour.='';
+				"<b>".$data[0]["titre"]."</b> ".$aide."  (".$data[0]["type"].") ",SESSION_NESTED, false, 'target="main"') : $retour.='';
 		$icon="down.png";
 		if (strstr("doc, odt, txt, rtf", $data[0]["extension"])!=false) $icon="ttexte.gif";
 		if (strstr(" html, htm", $data[0]["extension"])!=false) $icon="html.png";
@@ -3976,10 +4049,11 @@ if ($abrege_o_n=='n')
 				$retour.='</br>Par : '.$this->descripteur_individu($data[0]["id_upload"],'n');
 			}
 		}
-		
-
-		($type=='individu') ?	$retour.="<br/>".$this->descripteur_individu($id_individu,'n','n') : $retour.="";
-		($type=='organisme') ? $retour.="<br/>".$this->descripteur_organisme($id_organisme,'n','n'): $retour.="";
+		if ($nom_organisme_individu_o_n=="o")
+		{
+		($type=='individu') ?	$retour.=" (".$this->descripteur_individu($id_individu,'n','n').")" : $retour.="";
+		($type=='organisme') ? $retour.=" (".$this->descripteur_organisme($id_organisme,'n','n').")": $retour.="";
+		}
 		
 		($aide_o_n=='o' ) ? $aide=$this->descripteur_aide('Descripteur_document','n') : $aide="";
 	
@@ -5808,7 +5882,7 @@ else
 		$statut='';
 		$data = $db->getrows(
 				"SELECT
-				categorie_statut,
+				categorie_statut, 
 				statut_liste_rouge,
 				criteres_liste_rouge,
 				statut_presence_determinant,

@@ -117,10 +117,12 @@ class atkDGSummary extends atkDGComponent
 
 		$module = $grid->getNode()->m_module;
 		$nodetype = $grid->getNode()->m_type;
-		$link=' ==> '.'<a href="dispatch.php?atknodetype='.$module.'.'.$nodetype.'&atkaction=datagrid_view&" target="_blank"><img class="recordlist" border="0" src="./themes/assocope/icons/recordlist/tableau_html.gif" alt="Tableau html" title="Tableau html"></a>';
+		$link=' ==> ';
+		$link.='<span  style="color: white; background:red;" >&nbsp;&nbsp;';
+		$link.='<a href="dispatch.php?atknodetype='.$module.'.'.$nodetype.'&atkaction=datagrid_view&" target="_blank"><img class="recordlist" border="0" src="./themes/assocope/icons/recordlist/tableau_html.gif" alt="Tableau html" title="Tableau html"></a>';
 		$link.=' <a href="dispatch.php?atknodetype='.$module.'.'.$nodetype.'&atkaction=datagrid_google_export&" target="_blank"><img class="recordlist" border="0" src="./themes/assocope/icons/recordlist/tableur.gif" alt="Tableur Google" title="Tableur Google"></a>';
 		$link.=' <a href="dispatch.php?atknodetype='.$module.'.'.$nodetype.'&atkaction=datagrid_google_texte_export&" target="_blank"><img class="recordlist" border="0" src="./themes/assocope/icons/recordlist/texte.gif" alt="Texte Google" title="Texte Google"></a>';
-
+		$link.='&nbsp;&nbsp;</span>';
 
 		$result=substr($result,0 ,strlen($result)-1).' '.$link.' )';
 		// GG Fin

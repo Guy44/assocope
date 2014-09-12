@@ -124,11 +124,19 @@ $config_auth_mail_server = "localhost";
 $config_administratorpassword = "rf1930";
 $config_auth_dropdown = false;
 $config_session_regenerate = false;
-
+$config_session_init = true;
+// DD
+ /**
+   * Use the session to store authentication information.
+   * @var boolean
+   */
+  $config_authentication_session = true;
+//
 
 
 // GG
-$config_identifier = "wikiassocloc"; 
+$config_identifier = "assocope"; 
+//$config_session_name = "assocope";
 //$config_identifier = "wikiassoc";
 $config_top_frame = 1;
 $config_authorization = "db";
