@@ -1272,7 +1272,7 @@ function action_synchro_google_contacts() {
 		require './modules/search/db_search.php';
 		// get columns names
 
-	}
+ 	}
 
 	function action_full_base_search($handler) {
 
