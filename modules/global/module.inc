@@ -2179,7 +2179,7 @@ class mod_global extends associationModule {
 			$nombre_rencontre_fournisseur = $data[0]["nombre"];
 			// Fournisseurs
 			$this->menuitem("Fournisseurs_r"."#".$nombre_rencontre_fournisseur, dispatch_url("organisme.rencontre_fournisseur", "admin", array (
-			"atkfilter" => "organisme_rencontre_fournisseur.id_rencontre ='" . $rencontreid . "'"
+			"atkfilter" => "organisme_rencontre_fournisseur.id_rencontre ='" . $rencontreid . " order by organisme_rencontre_fournisseur.libelle '"
 			)), "Rencontres", true);
 			$data = $db->getrows("SELECT count(id) as nombre from organisme_rencontre_communication where  id_rencontre ='" . $rencontreid . "'");
 			$nombre_rencontre_communication = $data[0]["nombre"];

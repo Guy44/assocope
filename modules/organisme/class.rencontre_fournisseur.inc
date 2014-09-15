@@ -38,12 +38,13 @@ class rencontre_fournisseur extends assMetaNode {
 		$this->add(new atkAttribute("id_ecriture_depense",AF_HIDE_ADD|AF_HIDE_EDIT|AF_FORCE_LOAD),null,20 );
 		$this->add(new atkAttribute("id_ecriture_reglement",AF_HIDE_ADD|AF_HIDE_EDIT|AF_FORCE_LOAD),null,30 );
 		$this->add(new atkDummyAttribute("descripteur_module_estampillage",'text',AF_HIDE_ADD | AF_HIDE_EDIT  | AF_NO_LABEL | AF_COMPACT),null,40 );
+		$this->setOrder("organisme_rencontre_fournisseur.libelle ");
 	}
 	function descripteur_rencontre_display($record, $mode) {
 		return $this->decoupe_affichage_colonne($this->descripteur_rencontre($record["id_rencontre"]["id"]),110);
 	}
 	function descripteur_rencontre_fournisseur_display($record, $mode) {
-		return $this->decoupe_affichage_colonne($this->descripteur_rencontre_fournisseur($record["id"]),100);
+		return $this->decoupe_affichage_colonne($this->descripteur_rencontre_fournisseur($record["id"]),120);
 	}
 
 	function ecritures_display($record, $mode) {

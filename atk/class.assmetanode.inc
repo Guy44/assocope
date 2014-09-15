@@ -286,7 +286,7 @@ class assMetaNode extends atkMetaNode {
 			
 			
 		$descripteur_operations="".$this->table_operations($this->m_module.".".$this->m_type, $this->m_table, $record["id"]);
-		$descripteur_operations.= " - ".$source."".$schema."".$datarecord."".$editrecord."".$atk_record."".$traduction."".$log." ".$aide;
+		$descripteur_operations.= " - ".'<span  style="color: white; background:blue;" >  ' .$source." ".$schema." ".$datarecord." ".$editrecord." ".$atk_record." ".$traduction." ".$log." ".$aide.'&nbsp;</span>';
 		
 		// GG ATTENTION shnt des aides
 		
@@ -2452,7 +2452,8 @@ function action_synchro_google_contacts() {
 		}
 		$href.=href(dispatch_url($nodename, "add",array(),"dispatch.php"),
 				'<img class="recordlist" style="border-style:solid;border-width:3px 0px;border-color:transparent;" src="./themes/assocope/icons/assocope/table-add-icon.png"
-				alt="Création" title="Création : '.$nodename.'" ></img>',SESSION_NESTED, null,$target);
+				alt="Création" title="Création : '.$nodename.'" ></img>',SESSION_NESTED, null,$target );
+ $href='<span  style="color: white; background:red;" > '.$href.'&nbsp;</span> ';
 		return $href;
 	}
 	function descripteur_tournoi_rencontre_equipe($id_rencontre_equipe, $aide_o_n='o')
@@ -4898,7 +4899,9 @@ else
 			rf.numero_cheque,
 				
 			numero_facture ,
-			id_document_facture
+			id_document_facture,
+			id_ecriture_reglement,
+			id_ecriture_depense
 				
 			from organisme_rencontre_fournisseur rf
 			LEFT JOIN organisme_compte c ON rf.id_compte_financier=c.id
@@ -4917,7 +4920,7 @@ else
 		(!empty($data[0]["date_reglement"])) ? $retour.="</b> le <b>".$data[0]["date_reglement"]  : $retour.="" ;
 		(!empty($data[0]["reglement"])) ? $retour.='</b> <b>'.$data[0]["reglement"]." </b>" : $retour.="" ;
 		(!empty($data[0]["numero_cheque"])) ? $retour.="<b>".$data[0]["numero_cheque"]."</b> " : $retour.=" " ;
-		(!empty($data[0]["nom_compte"])) ? $retour.='</b> sur <b>'.$data[0]["code"].'-'.$data[0]["nom_compte"].'<br />': $retour.='';
+		(!empty($data[0]["nom_compte"])) ? $retour.='</b> sur <b>'.$data[0]["code"].'-'.$data[0]["nom_compte"].' ': $retour.='';
 		(!empty($data[0]["banque"])) ? $retour.="</b>Banque : <b>".$data[0]["banque"] : $retour.="" ;
 				
 		if (($type=='participant_rencontre' || $type=='participant_rencontre_2') && (isset ($data[0]["id_ecriture_reglement"]) || isset ($data[0]["id_ecriture_participation"]))) {
@@ -4940,12 +4943,22 @@ else
 				$retour.="";
 			}
 			
+			if ($type=='rencontre_fournisseur' && (isset ($data[0]["id_ecriture_depense"]) || isset ($data[0]["id_ecriture_reglement"]))) {
+				$retour.=href(dispatch_url("organisme.ligne_ecriture_comptable", "admin", array (
+						'atkfilter' => "organisme_ligne_ecriture_comptable.id_ecriture='" . $data[0]['id_ecriture_reglement'] . "'
+					or organisme_ligne_ecriture_comptable.id_ecriture='" . $data[0]['id_ecriture_depense'] . "'"
+				), "dispatch.php"), text(" (=> Ecritures)"), SESSION_NESTED)."<br />";
+			}
+			else {
+				$retour.="";
+			}
+			
 
 		(!empty($data[0]["id_recu_fiscal"])) ? $retour.="</b><br/>Reçu fiscal : <b>".$data[0]["id_recu_fiscal"] : $retour.="" ;
 		(!empty($data[0]["date_envoi_recu_fiscal"])) ? $retour.="</b>Envoyé le : <b>".$data[0]["date_envoi_recu_fiscal"]."<br />" : $retour.="" ;
 		(!empty($data[0]["date_envoi_timbre"])) ? $retour.="</b><br/>Timbre envoyé le : <b>".$data[0]["date_envoi_timbre"]."<br />" : $retour.="" ;
 
-		(!empty($data[0]["numero_facture"]) || !empty($data[0]["id_document_facture"])) ? $retour.='</b><br/>Facture : <b>' : $retour.='';
+		(!empty($data[0]["numero_facture"]) || !empty($data[0]["id_document_facture"])) ? $retour.='</b>Facture : <b>' : $retour.='';
 		(!empty($data[0]["numero_facture"])) ? $retour.= $data[0]["numero_facture"]." " : $retour.="" ;
 		(!empty($data[0]["id_document_facture"])) ? $retour.=$this->descripteur_document_sans_lien("organisme",$data[0]["id_document_facture"]).'' : $retour.="" ;
 		(!empty($data[0]["numero_facture"]) || !empty($data[0]["id_document_facture"])) ?  $retour.='<br />' : $retour.='';

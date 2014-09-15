@@ -1,5 +1,5 @@
 {if isset($formstart)}{$formstart}{/if}
-<table class="bordfin" cellspacing="0" cellpadding="5" width="100%">
+<table class="bordfineditform" cellspacing="0" cellpadding="5" width="100%">
   {atkmessages}
   {if count($atkmessages)}
     <tr>

@@ -1,7 +1,7 @@
 .activetab
 {
   cursor: pointer; 
-  
+   background-color : 	#FFFFCC  ;
  border: 0px solid darkgrey; 
   border-left-width:1px;
   border-right-width:1px;
@@ -13,7 +13,8 @@
 .passivetab
 {
   cursor: hand; 
-  background-color : 	#D0D0D0  ;
+  background-color : 	red  ;
+  color: #FFFFFF;
  border: 0px solid darkgrey; 
   border-left-width:1px;
   border-right-width:1px;
@@ -21,6 +22,9 @@
   border-bottom-width:1px;
    padding: 5px;
 }
+.passivetab:hover,.passivetab:link,.passivetab:visited,.passivetab:active,.passivetab:TD
+{
+color: #FFFFFF;	}
 .passivetab:hover {
  background-color : 	#E0E0E0  ;
 ;
