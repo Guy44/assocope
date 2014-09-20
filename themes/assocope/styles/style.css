@@ -7,17 +7,32 @@
 .entityadd {
 	font-size: 14px;
 }
-
+.bordfineditform {
+	 background-color : 	#FFFFCC  ;
+}
 .bordfin,tr {
 	border-collapse: collapse;
 	border: 1px solid darkgrey;
 }
-.bordfineditform {
-	 background-color : 	#FFFFCC  ;
+.sansbord,tr {
+	border-collapse: collapse;
+	border: 0px solid darkgrey;
 }
+
+
 .bordfineditform,tr {
 	border-collapse: collapse;
 	border: 1px solid darkgrey;
+}
+
+.listentete {
+	 background-color : 	#FFFF99  ;
+}
+.listcorps {
+	 background-color : 	#FFFFCC  ;
+}
+.listpied {
+	 background-color : 	#FFFF99  ;
 }
 
 BODY {
@@ -139,6 +154,25 @@ INPUT.btn_saveandmail {
 	color: red;
 	 -webkit-print-color-adjust:exact;
 	font-weight: bold;
+}
+
+INPUT.btn_valideraction {
+	background-color:red;
+	color: white;
+	 -webkit-print-color-adjust:exact;
+	font-weight: bold;
+	cursor : hand;
+}
+INPUT.btn_valideraction:hover {
+	font-weight: bold;
+	background-color: #f8f9fb;
+	color: red;
+ -webkit-print-color-adjust:exact;
+}
+INPUT.btn_saveandclose:hover {
+	font-weight: bold;
+	background-color: #f8f9fb;
+ -webkit-print-color-adjust:exact;
 }
 
 INPUT.btn_saveandclose {

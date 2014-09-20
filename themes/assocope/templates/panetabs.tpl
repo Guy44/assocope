@@ -14,7 +14,7 @@
               </td>          
               <td class="intertab" >&nbsp;</td>
             {/foreach}
-<td class="intertab" width="100%" ></td>
+<td class="intertab" width="2000px" ></td>
 
           </tr>
         </table>

@@ -1165,6 +1165,7 @@ quantite=$quantite, id_modification=$userid, date_modification=UTC_TIMESTAMP()";
 				$this -> creer_ligne_ecriture_comptable($id_ecriture, $id_journal_caisse, $id_compte_caisse, $id_organisme, $id_individu, $debit, $credit, $id_type_reglement, null, $date_reglement, null);
 			}
 			elseif ($id_type_reglement == 2)
+			{
 			// virement
 			$id_ecriture = $this->creer_ecriture_comptable($id_organisme, $id_journal_banque_courant, $libelle,$date_reglement);
 			$record["id_ecriture_reglement_2"] = $id_ecriture;
@@ -1174,7 +1175,7 @@ quantite=$quantite, id_modification=$userid, date_modification=UTC_TIMESTAMP()";
 			$debit = $record["montant_versement_2"];
 			$credit = 0;
 			$this -> creer_ligne_ecriture_comptable($id_ecriture, $id_journal_banque_courant, $id_compte_banque, $id_organisme, $id_individu, $debit, $credit, $id_type_reglement, $numero_piece, $date_reglement, $id_type_banque);
-				
+			}		
 		return;
 	}
 

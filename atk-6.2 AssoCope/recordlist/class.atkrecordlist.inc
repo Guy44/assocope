@@ -590,7 +590,7 @@
             }
 
             $mra .= '</select>&nbsp;'.$this->getCustomMraHtml().
-                       '<input type="button" class="btn" value="'.atktext("submit").'" onclick="atkSubmitMRA(\''.$listName.'\', this.form, \''.$target.'\')">';
+                       '<input type="button" class="btn_valideraction" value="'.atktext("Valider").'" onclick="atkSubmitMRA(\''.$listName.'\', this.form, \''.$target.'\')">';
           }
 
           /* one action -> only the submit button */
@@ -600,7 +600,7 @@
             {
               $mra .= '&nbsp; <input type="hidden" name="'.$listName.'_atkaction" value="'.$list["mra"][0].'">'.
               $this->getCustomMraHtml().
-                         '<input type="button" class="btn" value="'.atktext($list["mra"][0],$this->m_node->m_module, $this->m_node->m_type).'" onclick="atkSubmitMRA(\''.$listName.'\', this.form, \''.$target.'\')">';
+                         '<input type="button" class="btn_valideraction" value="'.atktext($list["mra"][0],$this->m_node->m_module, $this->m_node->m_type).'" onclick="atkSubmitMRA(\''.$listName.'\', this.form, \''.$target.'\')">';
             }
           }
         }

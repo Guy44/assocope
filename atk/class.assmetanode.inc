@@ -286,7 +286,7 @@ class assMetaNode extends atkMetaNode {
 			
 			
 		$descripteur_operations="".$this->table_operations($this->m_module.".".$this->m_type, $this->m_table, $record["id"]);
-		$descripteur_operations.= " - ".'<span  style="color: white; background:blue;" >  ' .$source." ".$schema." ".$datarecord." ".$editrecord." ".$atk_record." ".$traduction." ".$log." ".$aide.'&nbsp;</span>';
+		$descripteur_operations.= " - ".'<span  style="color: white; background:orange;" >&nbsp;&nbsp;' .$source."&nbsp;&nbsp;".$schema."&nbsp;&nbsp;".$datarecord."&nbsp;&nbsp;".$editrecord."&nbsp;&nbsp;".$atk_record."&nbsp;&nbsp;".$traduction."&nbsp;&nbsp;".$log."&nbsp;&nbsp;".$aide.'&nbsp;&nbsp;</span>';
 		
 		// GG ATTENTION shnt des aides
 		
@@ -4029,7 +4029,7 @@ if ($abrege_o_n=='n')
 					'<img class="recordlist" border="0" src="./themes/assocope/icons/assocope/google_icon.png" alt="Exporter vers Google" title="Exporter vers Google" target="_blank">',
 					SESSION_NESTED,	false, ' target="_blank"') : $retour.='';
 		}
-		($data[0]["file_size"]>0) ? $retour.=" (<b>".$file_size."</b> octets)" :null;
+	//	($data[0]["file_size"]>0) ? $retour.=" (<b>".$file_size."</b> octets)" :null;
 		// texte
 		$popup=atkPopup(atkconfig("atkroot").'atk/popups/htmlpopup.inc','table='.$table.'&id='.$id.'&field='.$field,'Contenu html',650,650,'yes','no');
 		(!empty($data[0]["contenu_html"])) ? $retourtexte='<a href="'.$popup.'"><img class="recordlist" border="0" src="./themes/assocope/icons/assocope/txt.png" alt="Texte riche"

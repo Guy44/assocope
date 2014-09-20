@@ -591,7 +591,7 @@
             }
 
             $mra .= '</select>&nbsp;'.$this->getCustomMraHtml().
-                       '<input type="button" class="btn" value="'.atktext("submit").'" onclick="atkSubmitMRA(\''.$listName.'\', this.form, \''.$target.'\')">';
+                       '<input type="button" class="btn_ValiderAction" value="'.atktext("Valider").'" onclick="atkSubmitMRA(\''.$listName.'\', this.form, \''.$target.'\')">';
           }
 
           /* one action -> only the submit button */

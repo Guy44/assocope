@@ -27,11 +27,11 @@ ATK.TabbedPane = {
   	  if (tab.hasClassName(tabName)) {
   	    tab.addClassName('activetab');
   	    tab.removeClassName('passivetab');
-  	  tab.setStyle({color:'black'});
+  	  tab.firstChild.setStyle({color:'black'});
   	  } else {
   	    tab.addClassName('passivetab');
   	    tab.removeClassName('activetab');
-  	  tab.setStyle({color:'white'});
+  	  tab.firstChild.setStyle({color:'white'});
   	  }
   	});    
   }

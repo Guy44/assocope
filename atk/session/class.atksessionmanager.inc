@@ -1153,11 +1153,11 @@
    */
   function atksession($namespace = "default", $usestack=true)
   {
-    atkdebug("appel de ATKSESSION");
+    atkdebug("appel de ATKSESSION. Namespace=".$namespace.", Usestack =".$usestack);
   	global $ATK_VARS, $g_sessionManager, $g_sessionData, $atkprevlevel;
 
     $g_sessionManager = atknew('atk.session.atksessionmanager', $namespace, $usestack);
-
+    atkdebug("appel de ATKSESSION. Retour de création de g_sessionManager");
     atkDataDecode($_REQUEST);
     $ATK_VARS = array_merge($_GET, $_POST);
     atkDataDecode($ATK_VARS);

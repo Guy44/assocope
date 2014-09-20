@@ -511,7 +511,7 @@ class atkDGList extends atkDGComponent
           $mra .= '<option value="'.$name.'">'.atktext($name).'</option>';
 
         $mra .= '</select>&nbsp;'.$this->getCustomMraHtml().
-                   '<input type="button" class="btn" value="'.atktext("submit").'" onclick="atkSubmitMRPA(\''.$listName.'\', this.form, \''.$target.'\')">';
+                   '<input type="button" class="btn_ValiderAction" value="'.atktext("Valider").'" onclick="atkSubmitMRPA(\''.$listName.'\', this.form, \''.$target.'\')">';
       }
 
       /* one action -> only the submit button */
@@ -579,7 +579,8 @@ class atkDGList extends atkDGComponent
 
         $embedded = $this->getGrid()->isEmbedded() ? 'true' : 'false';
         $mra .= '</select>&nbsp;'.$this->getCustomMraHtml().
-                   '<input type="button" class="btn" value="'.atktext("submit").'" onclick="atkSubmitMRA(\''.$listName.'\', this.form, \''.$target.'\', '.$embedded.', false)">';
+        '<input type="button" class="btn_ValiderAction" value="'.atktext("Valider").'" onclick="atkSubmitMRA(\''.$listName.'\', this.form, \''.$target.'\', '.$embedded.', false)">';
+        //GG                   '<input type="button" class="btn" value="'.atktext("submit").'" onclick="atkSubmitMRA(\''.$listName.'\', this.form, \''.$target.'\', '.$embedded.', false)">';
       }
 
       /* one action -> only the submit button */
@@ -599,7 +600,7 @@ class atkDGList extends atkDGComponent
           $embedded = $this->getGrid()->isEmbedded() ? 'true' : 'false';
           $mra .= '<input type="hidden" name="'.$listName.'_atkaction" value="'.$name.'">'.
           $this->getCustomMraHtml().
-                     '<input type="button" class="btn" value="'.atktext($actionKeys,$grid->getNode()->m_module, $grid->getNode()->m_type).'" onclick="atkSubmitMRA(\''.$listName.'\', this.form, \''.$target.'\', '.$embedded.', false)">';
+                     '<input type="button" class="btn_ValiderAction" value="'.atktext($actionKeys,$grid->getNode()->m_module, $grid->getNode()->m_type).'" onclick="atkSubmitMRA(\''.$listName.'\', this.form, \''.$target.'\', '.$embedded.', false)">';
         }
       }
     }
