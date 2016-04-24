@@ -1556,6 +1556,7 @@ class atkDataGrid
     if ($force || ($this->getRecords() === null && $this->getSelectHandler() === null))
     {
       $records = $this->selectRecords();
+  
       $this->setRecords($records);
     }
 

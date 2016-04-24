@@ -81,6 +81,7 @@ class atkMetaNode extends atkNode
       $this->_constructFromPolicy();
     
     $this->postMeta();
+
   }
   
   /**

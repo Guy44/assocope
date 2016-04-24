@@ -9,6 +9,8 @@
    * @package atk
    * @subpackage recordlist
    *
+   * @ GG TODO vérifier les GG
+   * 
    * @copyright (c)2000-2004 Ibuildings.nl BV
    * @license http://www.achievo.org/atk/licensing ATK Open Source License
    *
@@ -167,7 +169,7 @@
           $this->m_node->m_priority_max = $this->m_node->m_priority_min + count($list["rows"]) - 1;
       }
 
-      $orientation  = atkconfig('recordlist_orientation', $theme->getAttribute("recordlist_orientation"));
+      $orientation  = atkconfig('recordlist_orientation', $theme->getatkcustomrecordlistAttribute("recordlist_orientation"));
       $vorientation = trim(atkconfig('recordlist_vorientation', $theme->getAttribute("recordlist_vorientation")));
 
       $ui = &$this->m_node->getUi();
@@ -289,7 +291,9 @@
         $searchstart=""; $searchend="";
         if (!hasFlag($flags, RL_NO_SEARCH))
         {
-          $button = '<input type="submit" class="btn_search" value="'.atktext("search").'">';
+          // GG
+          $button = '<input type="submit" class="btn_search" value="..." title="'.atktext("search").'">';
+          // GG FIN
           if (!hasFlag($flags, RL_NO_EXTENDED_SEARCH)&&!$this->m_node->hasFlag(NF_NO_EXTENDED_SEARCH))
           {
             $button .= '<br>'.href(atkSelf()."?atknodetype=".$this->getMasterNodeType()."&atkaction=".$node->getExtendedSearchAction(),"(".atktext("search_extended").")",SESSION_NESTED);
@@ -381,7 +385,9 @@
         {
           $actionloader.="\nrl_a['".$listName."']['previous'] = '".$navigation["previous"]["url"]."';";
         }
-
+        //GG
+  //      $atkrecordtotalnumber=$grid->getCount();
+        //GG
         for ($i = 0, $_i = count($list["rows"]); $i < $_i; $i++)
         {
           $record = array();
@@ -407,6 +413,15 @@
           $record["rownum"] = $i;
           $record["id"] = $listName.'_'.$i;
           $record["type"] = $list["rows"][$i]["type"];
+  // GG      
+         $method = "pageBreak";
+      $pbrk = "";
+      if (method_exists($this->m_node, $method))
+      {
+      	$pbrk = $this->m_node->$method($recordset[$i], $i);
+      	$record["pagebreak"] = $pbrk;
+      }
+      // GG FIN
 
           /* multi-record-priority-actions -> priority selection */
           if (hasFlag($flags, RL_MRPA))
@@ -449,6 +464,15 @@
 
           foreach ($list["rows"][$i]["actions"] as $name => $url)
           {
+          	// GG
+ //         	$atkrecordnumber=$list["rows"][$i]["data"]["#"];
+ //         	if ($atkrecordnumber>0)
+ //         	{	$atkrecordnumber+=1;
+  //        	$url.="&atkrecordnumber=$atkrecordnumber&atkrecordtotalnumber=$atkrecordtotalnumber" ;
+ //         	}
+          	// GG
+          	
+          	
             if (substr($url, 0, 11) == 'javascript:')
             {
               $call = substr($url, 11);
@@ -474,8 +498,10 @@
             $confirmtext= "false";
             if (atkconfig("recordlist_javascript_delete") && $name=="delete")
             $confirmtext = "'".$this->m_node->confirmActionText($name)."'";
-            $str_actions.='<a href="'."javascript:rl_do('$listName',$i,'$name',$confirmtext);".'">'.$link.'</a>&nbsp;';
-          }
+// GG           $str_actions.='<a href="'."javascript:rl_do('$listName',$i,'$name',$confirmtext);".'">'.$link.'</a>&nbsp;';
+            $str_actions.='<a href="'."javascript:rl_do('$listName',$i,'$name',$confirmtext);".'">'.$link.'</a>';
+   // GG FIN
+                 }
 
           $str_actions.="</span>";
           /* actions (left) */
@@ -575,6 +601,10 @@
                       '<a href="javascript:updateSelection(\''.$listName.'\', document.forms[\''.$formName.'\'], \'invert\')">'.atktext("select_invert").'</a> '
                      :
                       '');
+          
+          //GG
+          $mra .= '<input type="hidden" name="atknodetype" value="'.$this->m_node->atkNodeType().'" />';
+          // GG FIN
 
           /* multiple actions -> dropdown */
           if (count($list["mra"]) > 1)
@@ -589,10 +619,12 @@
                 $mra .= '<option value="'.$name.'">'.atktext($name, $this->m_node->m_module, $this->m_node->m_type).'</option>';
               }
             }
-
-            $mra .= '</select>&nbsp;'.$this->getCustomMraHtml().
-                       '<input type="button" class="btn_ValiderAction" value="'.atktext("Valider").'" onclick="atkSubmitMRA(\''.$listName.'\', this.form, \''.$target.'\')">';
-          }
+// GG        $mra .= '</select>&nbsp;'.$this->getCustomMraHtml().
+//                       '<input type="button" class="btn_valideraction" value="'.atktext("Valider").'" onclick="atkSubmitMRA(\''.$listName.'\', this.form, \''.$target.'\')">';
+         $mra .= '</select>&nbsp;'.$this->getCustomMraHtml().
+         '<input type="button" class="btn" value="'.atktext("submit").'" onclick="atkSubmitMRA(\''.$listName.'\', this.form, \''.$target.'\')">';
+  // GG FIN
+                  }      
 
           /* one action -> only the submit button */
           else

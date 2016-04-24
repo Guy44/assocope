@@ -18,7 +18,7 @@ class financement extends assMetaNode {
 //		$this->add(new atkDummyAttribute("descripteur_reglement",0,AF_COMPACT),NULL,6);
 		$this->add(new atkAttribute("id_ecriture_recette",AF_HIDE_ADD|AF_HIDE_EDIT|AF_FORCE_LOAD),NULL,7);
 		$this->add(new atkAttribute("id_ecriture_reglement",AF_HIDE_ADD|AF_HIDE_EDIT|AF_FORCE_LOAD),NULL,7);
-		$this->add(new atkParserAttribute("presence_compta", "env", AF_NO_LABEL | AF_HIDE_LIST), NULL, 1);
+//		$this->add(new atkParserAttribute("presence_compta", "env", AF_NO_LABEL | AF_HIDE_LIST), NULL, 1);
 		$this->add(new atgOManyToOneRelation("id_organisme", "organisme.organisme", AF_SEARCHABLE | AF_OBLIGATORY | AF_RELATION_AUTOLINK | AF_RELATION_AUTOCOMPLETE|AF_FORCE_LOAD), NULL, 100);
 		$this->add(new atgOManyToOneRelation("id_organisme_financeur", "organisme.organisme", AF_SEARCHABLE | AF_OBLIGATORY | AF_RELATION_AUTOLINK | AF_RELATION_AUTOCOMPLETE|AF_FORCE_LOAD), NULL, 110);
 		$this->add(new atkManyToOneRelation("id_individu", "individu.individu", AF_SEARCHABLE | AF_RELATION_AUTOLINK | AF_RELATION_AUTOCOMPLETE|AF_FORCE_LOAD), NULL, 115);
@@ -68,16 +68,16 @@ class financement extends assMetaNode {
 			if ($record["id_reglement"]["id"]==1 && $record["id_banque"]["id"]=="")
 			{
 				atkTriggerError($record, $this->getAttribute("id_banque"), "En cas de règlement par chèque il faut préciser la banque");
-			}
+			return false;}
 			
 			if ($record["id_reglement"]["id"]!=1 && $record["numero_cheque"]!="")
 			{
 				atkTriggerError($record, $this->getAttribute("numero_cheque"), "Numéro de chèque alors que le mode de règlement précise que ce n'est pas un règlement par chèque");
-			}
+			return false;}
 			if ($record["id_reglement"]["id"]==1 && $record["numero_cheque"]=="")
 			{
 				atkTriggerError($record, $this->getAttribute("numero_cheque"), "Pas de numéro de chèque alors que le mode de règlement précise que c'est un règlement par chèque");
-			}
+			return false;}
 			
 			if (count($record['atkerror']) > 0)
 			{
@@ -87,7 +87,7 @@ class financement extends assMetaNode {
 		{
 		
 			atkTriggerError($record, $this->getAttribute("montant_financement"), "Pas de montant ou montant nul ?");
-		}
+		return false;}
 		if (parent::validate($record, $mode)==true)
 		{
 			if ($mode=="update") $this->supprimer_ecritures($record);
@@ -116,8 +116,9 @@ class financement extends assMetaNode {
 	}
 
 	function presence_compta_edit($record, $mode) {
-		//		$this->p($record);
-		$id_organisme = $record["id_organisme"];
+		return true;
+		$id_organisme = $record["id_organisme"] ;
+		
 		$db = & atkGetDb();
 		$sql = "SELECT o.nom as nom, date_initialisation_comptabilite  from organisme o
 				where o.id ='" . $id_organisme . "'";

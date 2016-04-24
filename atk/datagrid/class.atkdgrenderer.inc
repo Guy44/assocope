@@ -56,7 +56,8 @@ class atkDGRenderer extends atkDGComponent
     if (!$this->getGrid()->isUpdate() && !$this->getGrid()->isEmbedded()) 
     {
       $result = 
-        '<form id="'.$this->getGrid()->getFormName().'" name="'.$this->getGrid()->getFormName().'" method="post" action="'.atkSelf().'">'.
+        '<form id="'.$this->getGrid()->getFormName().'" ACCEPT-CHARSET="utf-8" 
+ name="'.$this->getGrid()->getFormName().'" method="post" action="'.atkSelf().'">'.
           session_form().
           $result.
         '</form>';

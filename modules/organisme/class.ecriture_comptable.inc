@@ -43,8 +43,9 @@ class ecriture_comptable extends assMetaNode {
 				where l.id_ecriture=[table].id
 				', 0, 0), null, 130);
 		$this->add(new atgOManyToOneRelation("id_organisme", "organisme.organisme", AF_READONLY | AF_SEARCHABLE),null,200);
-		// $this->add(new atgOManyToOneRelation("id_organisme", "organisme.organisme", AF_HIDE_ADD | AF_FORCE_LOAD), null,40);
-		$this->add(new atkManyToOneRelation("id_journal", "organisme.journal_comptable", AF_SEARCHABLE | AF_READONLY), null, 160);
+		
+	$this->add(new atkManyToOneRelation("id_journal", "organisme.journal_comptable", AF_SEARCHABLE ), null, 160);
+		
 		//				$this->add(new atkNumberAttribute("id_ecriture_organisme"), null, 60);
 		$this->add(new atkDateAttribute("date_ecriture", "Y-m-d", "Y-m-d", 0, 0, AF_DATE_STRING | AF_OBLIGATORY), null, 115);
 
@@ -60,6 +61,12 @@ class ecriture_comptable extends assMetaNode {
 		(!empty($record["id_organisme"])) ? $retour=$this->descripteur_organisme($record["id_organisme"]["id"],'n') : $retour="";
 		return $retour;
 	}
+/*	function id_journal_display($record, $mode) {
+	 	//$this->p($record);
+		(!empty($record["id_journal"])) ? $retour=$this->descripteur_journal_comptable($record["id_journal"],'n') : $retour="";
+		return $retour;
+	}
+	*/
 	function id_origine_ecriture_display($record, $mode)
 	{
 		switch ($record["id_type_ecriture"]["id"])
@@ -372,13 +379,13 @@ class ecriture_comptable extends assMetaNode {
 				id from organisme_ecriture_comptable where id_type_ecriture is null");
 		$n11=count($data);
 		echo 'ecritures sans origine : '.$n11.'<br />';
-		echo 'Traitement terminé';
-		atkhalt('Fin de mise à jour des origines écritures','report');
+		echo 'Traitement terminé'.'<br />';
+		die('Fin de mise à jour des origines écritures');
+
+		
 	}
 	function preAdd(& $record) {
-		// atk_var_dump($record);
-		//				print_r ($this->m_postvars);
-		//		die ();
+
 		$id_journal = $record['id_journal']['id'];
 		// $id_organisme = $record['id_organisme']['id'];
 		$db = & atkGetDb();
@@ -418,31 +425,27 @@ class ecriture_comptable extends assMetaNode {
 		if ($record["debit"] != $record["credit"])
 			return $this->couleurrouge;
 	}
-	function initial_values() {
-		/*
-		 * javascript:atkSubmit("___12Fassociation_12F
-		 * dispatch.php_13Fatknodetype_13D
-		 * organisme.ecriture_comptable_126
-		 * atkaction_13Dadd_126
-		 * atkfilter_13Did_journal.id_1253D_1252793_12527_126
-		 * atklevel_13D2_126
-		 * atkprevlevel_13D1_126
-		 * atkstackid_13D526654644337c_126")
-		 */
+/*	function initial_values() {
+	
 		$init_vals = array ();
-//		$this->p( $this->m_postvars);
+
 		$journal = explode('=', $this->m_postvars['atkfilter']);
-//		$this->p( $journal);
-		if ($journal[0] == 'id_journal.id' || $journal[0] == 'id_journal') {
+			if ($journal[0] == 'id_journal.id' || $journal[0] == 'id_journal') {
 			if ($journal[0] == 'id_journal.id')
 			{$id_journal = $journal[1];}
 			else 
 			{
 				$id_journal =substr($journal[1], 0,stripos($journal[1], ' and '));
 			}
+	//		$this->p( $id_journal);
 			$db = & atkGetDb();
 			$data = $db->getrows("SELECT oj.id_organisme, o.nom as nom FROM organisme_journal_comptable oj, organisme o where oj.id=$id_journal and oj.id_organisme=o.id");
 			$init_vals["id_organisme"] = $data[0]["id_organisme"];
+			$init_vals["id_journal"] = $id_journal;
+		if (strpos($this->m_postvars['atkfilter'], "and") >0)
+		{$this->m_postvars['atkfilter']=substr($this->m_postvars['atkfilter'], 0,strpos($this->m_postvars['atkfilter'], "and"));}
+
+			
 		} else {
 			echo "L'ajout d'écriture n'est possible qu'à partir de la sélection d'un journal";
 			die();
@@ -450,6 +453,8 @@ class ecriture_comptable extends assMetaNode {
 
 		return $init_vals;
 	}
+	*/
+
 	function id_display($record, $mode) {
 		return $this-> descripteur_ecriture_comptable($record["id"]);
 	}

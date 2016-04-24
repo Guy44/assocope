@@ -50,6 +50,9 @@ class v_organisme_inscription extends assMetaNode {
 		$this->add(new atkAttribute("type", 0), NULL, 100);
 		$this->add(new atkAttribute("nombre", AF_HIDE_LIST  | AF_FORCE_LOAD ), NULL, 200);
 		$this->add(new atkDummyAttribute("nombre_cotisations_dues", "Cotisations_dûes", AF_DUMMY_SHOW_LABEL|AF_HIDE_LIST), NULL, 201);
+		$this->add(new atkDummyAttribute("nombre_sans_courriel", "Sans_courriel", AF_DUMMY_SHOW_LABEL|AF_HIDE_LIST), NULL, 202);
+		$this->add(new atkDummyAttribute("nombre_sans_adresse_postale", "Sans adresse", AF_DUMMY_SHOW_LABEL|AF_HIDE_LIST), NULL, 203);
+		$this->add(new atkDummyAttribute("nombre_sans_licence_golf", "Sans licence golf", AF_DUMMY_SHOW_LABEL|AF_HIDE_LIST), NULL, 204);
 
 		$this->add(new atkBoolAttribute("lettre_o_n", AF_HIDE_LIST), NULL, 300);
 		$this->add(new atkBoolAttribute("infolettre_o_n", AF_HIDE_LIST), NULL, 400);
@@ -257,7 +260,102 @@ class v_organisme_inscription extends assMetaNode {
 			return "";
 		}
 	}
-
+	function nombre_sans_courriel_display ($record, $mode) {
+		$db = & atkGetDb();
+			
+		$sql="SELECT COUNT(ii.id_individu) as nombre from individu_inscription ii
+				where ii.id_type_inscription=".$record["id_type_inscription"]."
+						and ii.id_organisme=".$record["id_organisme"]."
+								and ii.date_radiation is null
+								and ii.id_individu  in
+								(
+								SELECT id from individu where
+								(courriel is null or courriel='') )"		;
+	
+	
+		$data = $db->getrows($sql);
+		$nombre=$data[0]["nombre"];
+	//$this->p($nombre);
+		$filter=" individu_inscription.id_type_inscription=".$record["id_type_inscription"]."
+				and individu_inscription.id_organisme=".$record["id_organisme"]."
+						and individu_inscription.date_radiation is null
+						and individu_inscription.id_individu  in
+								(
+								SELECT id from individu where
+								(courriel is null or courriel='') ) ";
+	
+		if ($nombre > 0) {
+			return href(dispatch_url("individu.inscription_i", "admin", array (
+					'atkfilter' => $filter
+			), "dispatch.php"), text($nombre), SESSION_NESTED);
+		} else {
+			return "";
+		}
+	}
+	function nombre_sans_adresse_postale_display ($record, $mode) {
+	$db = & atkGetDb();
+			
+		$sql="SELECT COUNT(ii.id_individu) as nombre from individu_inscription ii
+				where ii.id_type_inscription=".$record["id_type_inscription"]."
+						and ii.id_organisme=".$record["id_organisme"]."
+								and ii.date_radiation is null
+								and ii.id_individu not in
+								(
+								SELECT id_individu from individu_lieu where
+								(adresse_defaut_o_n='1' and	adresse_personnelle_o_n='1') )"		;
+	
+	
+		$data = $db->getrows($sql);
+		$nombre=$data[0]["nombre"];
+	//$this->p($sql);
+		$filter=" individu_inscription.id_type_inscription=".$record["id_type_inscription"]."
+				and individu_inscription.id_organisme=".$record["id_organisme"]."
+						and individu_inscription.date_radiation is null
+						and individu_inscription.id_individu not in
+								(
+								SELECT id_individu from individu_lieu where
+								(adresse_defaut_o_n='1' and	adresse_personnelle_o_n='1') )" ;
+	
+		if ($nombre > 0) {
+			return href(dispatch_url("individu.inscription_i", "admin", array (
+					'atkfilter' => $filter
+			), "dispatch.php"), text($nombre), SESSION_NESTED);
+		} else {
+			return "";
+		}
+	}
+	function nombre_sans_licence_golf_display ($record, $mode) {
+	$db = & atkGetDb();
+			
+		$sql="SELECT COUNT(ii.id_individu) as nombre from individu_inscription ii
+				where ii.id_type_inscription=".$record["id_type_inscription"]."
+						and ii.id_organisme=".$record["id_organisme"]."
+								and ii.date_radiation is null
+								and ii.id_individu  in
+								(
+								SELECT id from individu where
+								(golf_licence is null or golf_licence='') )"		;
+	
+	
+		$data = $db->getrows($sql);
+		$nombre=$data[0]["nombre"];
+	//$this->p($nombre);
+		$filter=" individu_inscription.id_type_inscription=".$record["id_type_inscription"]."
+				and individu_inscription.id_organisme=".$record["id_organisme"]."
+						and individu_inscription.date_radiation is null
+						and individu_inscription.id_individu  in
+								(
+								SELECT id from individu where
+								(golf_licence is null or golf_licence='') ) ";
+	
+		if ($nombre > 0) {
+			return href(dispatch_url("individu.inscription_i", "admin", array (
+					'atkfilter' => $filter
+			), "dispatch.php"), text($nombre), SESSION_NESTED);
+		} else {
+			return "";
+		}
+	}
 	function nombre_cotisations_payees_display ($record, $mode) {
 		$db = & atkGetDb();
 		$sql="SELECT cotisation_organisme_o_n from individu_inscription ii, type_inscription ti
@@ -298,6 +396,10 @@ class v_organisme_inscription extends assMetaNode {
 			return "";
 		}
 	}
+	
+	// nombre sans courriel
+	// nombre sans adresse postale
+	
 
 	function action_cotisation_due() {
 		if (is_array($this->m_postvars["atkselector"])) {
@@ -578,7 +680,12 @@ class v_organisme_inscription extends assMetaNode {
 		$retour.="<br /><br />".$this->descripteur_organisme($record["id_organisme"],'n','o','50');
 		($this->nombre_display ($record, $mode)!="") ? $retour.="<br /></b>Inscriptions : <b>".$this->nombre_display ($record, $mode) : null;
 		($this->nombre_cotisations_dues_display ($record, $mode)!="") ? $retour.="<br /></b>Cotisations payées / dues : <b>".$this->nombre_cotisations_payees_display ($record, $mode)." / ".$this->nombre_cotisations_dues_display ($record, $mode): null;
+				($this->nombre_sans_adresse_postale_display($record, $mode) !="") ? $retour.='<br /><font color="Coral"> <b>Sans adresse : '.$this->nombre_sans_adresse_postale_display($record, $mode).'</font>': null;
+		
+				($this->nombre_sans_courriel_display($record, $mode) !="") ? $retour.='<br /><font color="Coral"> <b>Sans courriel : '.$this->nombre_sans_courriel_display($record, $mode).'</font>': null;
+			($this->nombre_sans_licence_golf_display($record, $mode) !="") ? $retour.='<br /> <b>Sans licence golf : '.$this->nombre_sans_licence_golf_display($record, $mode): null;
 		($this->rappels_display ($record, $mode)!="") ? $retour.="<br /></b>Rappels : <b>".$this->rappels_display ($record, $mode): null;
+		
 
 
 		return $retour;

@@ -23,8 +23,8 @@ class rencontre_choix extends assMetaNode
 		$this->atkMetaNode();
 		$this->atkNode("rencontre_choix", NF_ADDAFTERADD | NF_ADD_LINK | NF_MRA | NF_COMPACT);
 		$this->setSecurityAlias("organisme.organisme");
-		$this->add(new atkDummyAttribute("descripteur_rencontre_choix",0,AF_HIDE_ADD | AF_COMPACT),10);
-		$this->add(new atkDummyAttribute("descripteur_rencontre",0,AF_HIDE_ADD | AF_COMPACT),11);
+		$this->add(new atkDummyAttribute("descripteur_rencontre_choix",0,AF_HIDE_ADD | AF_COMPACT),NULL,11);
+		$this->add(new atkDummyAttribute("descripteur_rencontre",0,AF_HIDE_ADD | AF_COMPACT),NULL, 10);
 	//	$this->add(new atkDummyAttribute("descripteur_rencontre",0,AF_HIDE_ADD | AF_COMPACT),15);
 $this->add(new atkNumberAttribute("cout", AF_OBLIGATORY, 12, 2), NULL,30);
 		$this->add(new atkAttribute("libelle", AF_OBLIGATORY),NULL,20);
@@ -32,8 +32,8 @@ $this->add(new atkNumberAttribute("cout", AF_OBLIGATORY, 12, 2), NULL,30);
 		$this->add(new atkManyToOneRelation("id_rencontre","organisme.rencontre",AF_SEARCHABLE|AF_OBLIGATORY|AF_RELATION_AUTOLINK | AF_FORCE_LOAD),NULL,40);
 		
 		include_once(atkconfig("atkroot")."modules/include/association.inc");
-		$this->add(new atkDummyAttribute("descripteur_module_estampillage",'text',AF_HIDE_ADD | AF_HIDE_EDIT  | AF_NO_LABEL | AF_COMPACT),null,50);
-	}
+		$this->add(new atkDummyAttribute("descripteur_module_estampillage",'text',AF_HIDE_ADD | AF_HIDE_EDIT  | AF_NO_LABEL | AF_COMPACT),NULL, 100);
+	$this->setOrder("libelle asc");}
 
 	function descriptor_def()
 	{

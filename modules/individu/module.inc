@@ -60,6 +60,8 @@ class mod_individu extends associationModule
 	 $res[]= $module."."."v_individu_lieu";
 	 $res[]= $module."."."web_i";
 	 $res[]= $module."."."correspondant";
+	 $res[]= $module."."."individu_rencontre_remboursement";
+	 $res[]= $module."."."individu_rencontre_paiement";
 
 	 return $res;
 	}

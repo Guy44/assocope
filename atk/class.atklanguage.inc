@@ -190,7 +190,8 @@
       if ($string=='') return '';
       if ($lng=="") $lng = atkLanguage::getLanguage();
       $lng = strtolower($lng);
-      $atklanguage =& atkLanguage::getInstance();
+ // TODO GG     $atklanguage =& atkLanguage::getInstance();
+      $atklanguage =atkLanguage::getInstance();
 
       // If only one string given, process it immediatly
       if (!is_array($string))

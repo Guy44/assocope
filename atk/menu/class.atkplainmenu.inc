@@ -99,8 +99,27 @@
               //$menu .=text("menu_$name").$config_menu_delimiter;
             }
             /* normal menu item */
-            else if ($enable) $menu .= href($url,$this->getMenuTranslation($name,$modname),SESSION_NEW,false,$theme->getAttribute('menu_params',atkconfig('menu_params','target="main"'))).$delimiter;
-            else
+            else if ($enable) 
+            	  // GG
+            {      $target='target="main" ';
+ 
+ 
+                if (substr($url,0,12)=='target_blank')
+                {$target='target="_blank" ';
+               $url=substr($url,12);}
+                   if (substr($url,0,11)=='target_menu')
+                {$target='target="menu" ';
+               $url=substr($url,11);}
+               if (substr($name,0,1)=='/') 
+            {$name=substr($name,1);
+            	$delimiter="";
+            }
+           
+              // GG fin
+ //             $menu .= href($url,$this->getMenuTranslation($name,$modname),SESSION_NEW,false,$theme->getAttribute('menu_params',atkconfig('menu_params','target="main"'))).$delimiter;
+                $menu .= href($url,$this->getMenuTranslation($name,$modname),SESSION_NEW,false,$target).$delimiter; 
+             }
+             else
             {
               //$menu .= text("menu_$name").$config_menu_delimiter;
             }

@@ -799,6 +799,7 @@ class contact_i extends assMetaNode {
 		$res2.='</th></tr>';
 		$res2.='</thead>';
 		$res2.='<tbody>';
+		
 		for ($i=0;$i<count($data);$i++)
 		{
 			$idindividus.=$data[$i]["id_individu_contactant"].",";
@@ -815,8 +816,9 @@ class contact_i extends assMetaNode {
 			($data[$i]["attente_reponse_o_n"]=="1") ? $prevu="Oui" : $prevu="Non";
 			$res2.='</td><td>'.$prevu;
 			$res2.='</td><td>'.$data[$i]["date_realisee"];
+			
 		$res2.='</td><td>'.$this->descripteur_module_estampillage($data[$i]["id_entite"], 'n');
-//			$res2.='</td><td> ';
+	//		$res2.='</td><td> ';
 			$res2.='</td></tr>';
 		}
 //		echo "fini";die();

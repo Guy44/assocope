@@ -1,5 +1,5 @@
 
-<table id="editform" width="100%" class="bordfineditform">
+<table id="editform" width="100%" class="bordfin">
   {if (count($errors)>0)}
     <tr>
       <td colspan="2" class="error">

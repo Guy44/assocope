@@ -12,6 +12,7 @@
    *
    * @version $Revision: 6320 $
    * $Id: class.atkdocumentwriter.inc 6354 2009-04-15 02:41:21Z mvdam $
+   * @GG Filtre str_replace('&#39;', "'", $result[$key]);
    */
 
   /**
@@ -125,6 +126,10 @@
           $result[$key] = $node->$funcname($record, "plain");
         else
           $result[$key] = $p_attrib->display($record, "plain");
+        // GG
+        $result[$key]=filter_var(  $result[$key], FILTER_SANITIZE_STRING);
+        $result[$key]=str_replace('&#39;', "'", $result[$key]);
+        // GG FIN
       }
 
       // Return the array containing attributename=>displayvalue pairs
@@ -156,6 +161,7 @@
      */
     function assignDocumentMultiRecord(&$node, $records, $prefix = "")
     {
+
       // Assign all labels to the documentwriter
       $this->_assignLabels($node, $prefix);
 
@@ -175,6 +181,14 @@
         $this->m_taglist .= "[$prefix{$node->m_type}.$key]\n";
       $this->m_taglist .= "You can use these tags in a table. More info: http://www.achievo.org/wiki/AtkDocumentWriter\n";
       $this->m_taglist .= "\n";
+      
+ /*     echo "<pre>";
+      print_r ($displayvalues);
+      echo "<br/>TAGLIST<br/>";
+      print_r ($this->m_taglist);
+      die ("ggggg");
+      */
+
     }
 
     /**

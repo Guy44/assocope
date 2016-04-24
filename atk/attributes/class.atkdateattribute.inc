@@ -671,8 +671,35 @@
       elseif (!empty($current) && !empty($maximum) && $current > $maximum) $current = $maximum;
       elseif (empty($current)  && !empty($minimum) && time() < $minimum) $current = $minimum;
       elseif (empty($current)  && !empty($maximum) && time() > $maximum) $current = $maximum;
-      elseif (empty($current)) $current = time();
+      elseif (empty($current)) 
+      //GG
+      {
+      	global $g_sessionManager;
+      	$g_tz_offset_google = $g_sessionManager->getValue("tz_offset_google", "globals");
+      	if ($g_tz_offset_google<0) $sign='-';
+      	else $sign='+';
+      	$h=abs($g_tz_offset_google);
+      	$dst=true;
+      	if ($dst==true) {
+      		$daylight_saving = date('I');
+      		if ($daylight_saving){
+      			if ($sign == "-"){ $h=$h-1;  }
+      			else { $h=$h+1; }
+      		}
+      	}
+      	$hm = $h * 60;
+      	$ms = $hm * 60;
+      	if ($sign == "-"){ $timestamp = time()-($ms); }
+      	else { $timestamp = time()+($ms); }
+      	//$default_date=gmdate("Y-m-d", $timestamp);
+      	//$default_time=gmdate("G:i", $timestamp);
+      	$current = $timestamp;
+      }
+      //     $current=time();
+      //GG
+      
       return $current;
+      
     }
 
     /**

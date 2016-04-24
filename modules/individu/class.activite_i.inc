@@ -19,7 +19,7 @@ class activite_i extends assMetaNode {
 		$this->add ( new atkDummyAttribute ( "descripteur_activite_reglement" ), NULL, 2 );
 		$this->add ( new atgTextLibelleAttribute ( "libelle", AF_SEARCHABLE | AF_OBLIGATORY ), null, 140 );
 		
-		$this->add ( new atkParserAttribute ( "presence_compta", "env", AF_NO_LABEL | AF_HIDE_LIST ), NULL, 1 );
+	//	$this->add ( new atkParserAttribute ( "presence_compta", "env", AF_NO_LABEL | AF_HIDE_LIST ), NULL, 1 );
 		$this->add ( new atkManyToOneRelation ( "id_individu", "individu.individu", AF_SEARCHABLE | AF_OBLIGATORY | AF_RELATION_AUTOLINK ), null, 50 );
 		$this->add ( new atkManyToOneRelation ( "id_type_activite", "table.activite", AF_SEARCHABLE | AF_OBLIGATORY | AF_RELATION_AUTOLINK ), null, 150 );
 		$organisme = &$this->add ( new atgOManyToOneRelation ( "id_organisme", "organisme.organisme", AF_SEARCHABLE | AF_OBLIGATORY | AF_RELATION_AUTOLINK | AF_RELATION_AUTOCOMPLETE ), null, 20 );
@@ -204,6 +204,7 @@ class activite_i extends assMetaNode {
 		return $init_vals;
 	}
 	function presence_compta_edit($record, $mode) {
+		return true;
 		$id_organisme = $record ["id_organisme"] ["id"];
 		$db = & atkGetDb ();
 		$sql = "SELECT nom as nom, date_initialisation_comptabilite  from organisme
@@ -254,42 +255,49 @@ class activite_i extends assMetaNode {
 		$this->RazDestinationFilters ();
 		if (($record ["nombre_heures"] + $record ["nombre_kilometres"] + $record ["montant_peage"] + $record ["montant_parking"] + $record ["montant_transport_en_commun"] + $record ["montant_repas"] + $record ["montant_hotel"] + $record ["montant_fournitures_diverses"] + $record ["montant_frais_divers"] + $record ["montant_remboursement"]) == 0) {
 			triggerError ( $record, "nombre_heures", 'Valeurs', atktext ( "Toutes les valeurs sont à zéro", "atk" ) );
+			return false;
 		}
 		if (empty ( $record ["id_organisme"] ["id"] )) {
 			triggerError ( $record, "id_organisme", 'Valeurs', atktext ( "L'organisme n'est pas renseigné", "atk" ) );
+			return false;
 		}
 		
 		if ($record ["montant_remboursement"] > 0) {
 			if ($record ["date_reglement"] == "") {
 				atkTriggerError ( $record, $this->getAttribute ( "date_reglement" ), "En cas de règlement vous devez préciser la date" );
+				return false;
 			}
 			if ($record ["id_compte_financier"] ["id"] == "") {
 				atkTriggerError ( $record, $this->getAttribute ( "id_compte_financier" ), "Vous devez choisir un compte de finance" );
+				return false;
 			}
 			if ($record ["id_reglement"] ["id"] == "") {
 				atkTriggerError ( $record, $this->getAttribute ( "id_reglement" ), "Vous devez choisir un type de règlement" );
+				return false;
 			}
 			
 			if ($record ["id_reglement"] ["id"] != 1 && $record ["numero_cheque"] != "") {
 				atkTriggerError ( $record, $this->getAttribute ( "numero_cheque" ), "Numéro de chèque alors que le mode de règlement précise que ce n'est pas un règlement par chèque" );
+			return false;
 			}
 			if ($record ["id_reglement"] ["id"] == 1 && $record ["numero_cheque"] == "") {
 				atkTriggerError ( $record, $this->getAttribute ( "numero_cheque" ), "Pas de numéro de chèque alors que le mode de règlement précise que c'est un règlement par chèque" );
+			return false;
 			}
 		} else {
 			if ($record ["date_reglement"] != "") {
 				atkTriggerError ( $record, $this->getAttribute ( "date_reglement" ), "Pas de montant règlé et date de règlement ?" );
-			}
+			return false;}
 			if ($record ["id_compte_financier"] ["id"] != "") {
 				atkTriggerError ( $record, $this->getAttribute ( "id_compte_financier" ), "Pas de montant règlé et un compte de finance ?" );
-			}
+			return false;}
 			if ($record ["id_reglement"] ["id"] != "") {
 				atkTriggerError ( $record, $this->getAttribute ( "id_reglement" ), "Pas de montant règlé et un type de règlement ?" );
-			}
+			return false;}
 			
 			if ($record ["numero_cheque"] != "") {
 				atkTriggerError ( $record, $this->getAttribute ( "numero_cheque" ), "Pas de montant règlé et un numéro de chèque ?" );
-			}
+			return false;}
 		}
 		if (parent::validate ( $record, $mode ) == true) {
 			if ($mode == "update")

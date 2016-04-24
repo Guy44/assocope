@@ -238,7 +238,7 @@ class contrat extends assMetaNode {
 			$row[] =$data[$i]["motif_resiliation"];
 			$row[] =$lien_document;
 			$row[] =$lien_lieu;
-			$row[] =$this->descripteur_module_estampillage($data[$i]["id_entite"], 'n');
+			$row[] =$this->descripteur_module_estampillage($this->get_record_info($data[$i]["id_entite"]), 'n');
 			$datatableau[] = $row;
 		}
 		$criteres=$this->m_postvars["atkfiltre"];

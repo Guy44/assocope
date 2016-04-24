@@ -126,7 +126,7 @@ public function score_brut_validate(&$record, $mode)
 ($record["score_brut"]=="x" || $record["score_brut"]=="X" )  ? $record["score_brut"]=$record["par_net"]+2 :null;
     if ($record["score_brut"]!="X" && $record["score_brut"]!="" && $record["score_brut"]<1 ) {
         atkTriggerError($record, $this->getAttribute("score_brut"), "Valeur incorrecte pour un score : numérique ou 'X'");
-    }
+    return false;}
  
 }
 

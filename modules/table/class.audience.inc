@@ -31,7 +31,8 @@ class audience extends assMetaNode {
 				"infolettres"
 			)
 		), AF_NO_LABEL));
-		$this->add(new atgTextLibelleAttribute("libelle", AF_SEARCHABLE | AF_UNIQUE));
+		
+		$this->add(new atgTextLibelleAttribute("libelle", AF_SEARCHABLE | AF_UNIQUE),NULL,100);
 		$this->add(new atkOneToManyRelation("rencontres", "organisme.rencontre", "id_type_audience", AF_HIDE_LIST));
 		$this->add(new atkOneToManyRelation("gazettes", "organisme.gazette", "id_type_audience", AF_HIDE_LIST));
 		$this->add(new atkOneToManyRelation("infolettres", "organisme.infolettre", "id_type_audience", AF_HIDE_LIST));

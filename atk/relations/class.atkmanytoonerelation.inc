@@ -629,9 +629,9 @@ class atkManyToOneRelation extends atkRelation
     return $this->m_noneLabel;
     $nodename = $this->m_destInstance->m_type;
     $modulename = $this->m_destInstance->m_module;
-    $ownermodulename = $this->m_ownerInstance->m_module;
-    $label = atktext($this->fieldName() . '_select_none', $ownermodulename, $this->m_owner, "", "", true);
-    if ($label == "")
+   // $ownermodulename = $this->m_ownerInstance->m_module;
+   // $label = atktext($this->fieldName() . '_select_none', $ownermodulename, $this->m_owner, "", "", true);
+  //  if ($label == "")
     $label = atktext('select_none', $modulename, $nodename);
 
     return $label;
@@ -1858,8 +1858,15 @@ class atkManyToOneRelation extends atkRelation
       $table = $table.'_AE_'.$this->fieldName();
     }
     else
-    {
-      $table = $this->fieldName();
+    
+    { 
+    	// ************* Patrick **********
+// returning the field instead of the table name.
+       $table = $this->fieldName();  // old Line
+
+ //     $table = $this->m_ownerInstance->m_table; // New Line
+
+// **********************************  
     }
 
     if (!empty($extra) && in_array($extra, $this->m_listColumns))
@@ -1867,7 +1874,13 @@ class atkManyToOneRelation extends atkRelation
       return $this->getDestination()->getAttribute($extra)->getOrderByStatement('', $table, $direction);
     }
 
-    $order = $this->m_destInstance->getOrder();
+    // /************** Patrick **********
+     $order = $this->m_destInstance->getOrder();  // Old Line
+
+ //   $order = $this->fieldName(); // new Line
+
+// ******************************
+
 
     if (!empty($order))
     {
@@ -2217,6 +2230,14 @@ class atkManyToOneRelation extends atkRelation
 
     // create the widget
     $links = $this->createSelectAndAutoLinks($id, $record);
+    
+    //GG
+    
+    $dropdown_width = atkconfig('dropdown_width');
+    if ($this->m_destInstance->m_dropdown_width > '0')
+    {
+    	$dropdown_width = $this->m_destInstance->m_dropdown_width;
+    }
 
     $result =
         '<input type="hidden" id="'.$id.'" name="'.$id.'" value="'.$value.'" />
@@ -2240,7 +2261,12 @@ class atkManyToOneRelation extends atkRelation
    */
   function partial_autocomplete($mode)
   {
-    $searchvalue = $this->m_ownerInstance->m_postvars['value'];
+
+    //     $searchvalue = $this->m_ownerInstance->m_postvars['value'];
+    // GG
+    $searchvalue = atk_iconv("UTF-8", atktext("charset"), $this->m_ownerInstance->m_postvars['value']);
+    // GG
+    atkdebug("searchvalue ".$this->m_ownerInstance->m_postvars['value']."");
     if (atk_strlen($searchvalue) < $this->m_autocomplete_minchars)
     {
       return '<ul><li class="minimum_chars">'.sprintf($this->text('autocomplete_minimum_chars'), $this->m_autocomplete_minchars).'</li></ul>';
@@ -2256,7 +2282,8 @@ class atkManyToOneRelation extends atkRelation
     $this->addDestinationFilter($filter);
 
     $records = $this->_getSelectableRecords($record, 'select');
-
+    // GG
+    atkdebug("records ".count($records) ."");
     if (count($records) == 0)
     {
       if(in_array($this->m_autocomplete_searchmode,array("exact","startswith","contains")))
@@ -2271,17 +2298,57 @@ class atkManyToOneRelation extends atkRelation
     foreach ($records as $rec)
     {
       $option = atk_htmlentities($this->m_destInstance->descriptor($rec));
+      //        $highlightedOption = preg_replace('/('.preg_quote($searchvalue).')/i', '<span class="atkmanytoone_highlite">\\1</span>', $option);
       $value = $this->m_destInstance->primaryKey($rec);
       $highlightedOption = $this->highlight_search_result_match($searchvalue, $option);
-      $result .= '
+      // GG spécial taxinomie
+           
+        if ($this->m_destInstance->m_table=="biodiversite_taxinomie")
+        {
+        	$array_temp=explode("=", $value);
+        	$id_taxinomie=$array_temp[1];
+        	$sql="Select count(id) as nombre from biodiversite_observation_detail where id_taxinomie=$id_taxinomie";
+          	$data=$db->getrows($sql);
+        	$nombre=$data[0]["nombre"];
+        	$posslash=strripos("$option","/");
+        	$cd_ref=substr($option,$posslash+1,strlen($option)-$posslash);
+        	$posstiret=strripos("$option","-");
+        	$cd_nom=substr($option,$posstiret+1,$posslash-$posstiret-1);
+        	
+        	
+        	if ($cd_ref==$cd_nom)
+        	{
+ /*       		$highlightedOption = '<span style="font-weight: bold ; color: Red  ">('.$nombre.') 	</span>'
+        		.preg_replace('/('.preg_quote($searchvalue).')/i', '<span class="atkmanytoone_highlite">\\1</span>', substr($option, 0, $posstiret)).
+        		 '<span style="font-weight: bold ; color: Green  ">'.substr($option, $posstiret).' </span>';
+        		 */
+        		$highlightedOption = '<span style="font-weight: bold ; color: Red  ">('.$nombre.') 	</span>'
+        		.'<span style=" color: Green  ">'.preg_replace('/('.preg_quote($searchvalue).')/i', '<span class="atkmanytoone_highlite">\\1</span>', $option).'</span>';
+        	}
+        	else {
+        	$highlightedOption = '<span style="font-weight: bold ; color: Red  ">('.$nombre.') </span>'
+        	.preg_replace('/('.preg_quote($searchvalue).')/i', '<span class="atkmanytoone_highlite">\\1</span>', $option);
+        	}    
+        
+        	//$highlightedOption ='tiret '.$posstiret.'slash '.$posslash.'cd_nom '.$cd_nom. 'cd_ref '.$cd_ref.$option;
+        	
+        }
+        
+        // si $this->m_table=="biodiversite_taxinomie"
+        // voir si id_taxinomie==$value existe dans table biodiversite_observation_detail
+        // si oui $highlightedOption="<i>".$highlightedOption."</i>" pour montrer que cette espèce a déjà été observée
+        
+        // GG spécial taxinomie
+        $result .= '
           <li title="'.$option.'">
             '.$highlightedOption.'
             <span class="selection" style="display: none">'.$option.'</span>
             <span class="value" style="display: none">'.$value.'</span>
           </li>';
-    }
-
-    return "<ul>$result</ul>";
+      }
+// GG
+atkdebug("result ".$result ."");
+      return "<ul>$result</ul>";
   }
 
   function highlight_search_result_match($search_value, $result)

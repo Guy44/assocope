@@ -94,6 +94,20 @@
               }
               else // normal menuitem
               {
+              	// GG
+              	$target='target="main" ';
+              	if (substr($url,0,12)=='target_blank')
+              	{$target='target="_blank" ';
+              	
+              	$url=substr($url,12);}
+              	if (substr($url,0,11)=='target_menu')
+              	{$target='target="menu" ';
+              	$url=substr($url,11);}
+              	if (substr($name,0,1)=='/')
+              	{$name=substr($name,1);
+              	$delimiter="";
+              	}
+              	// GG fin
                 $menu .= href($url,$this->getMenuTranslation($name,$modname),SESSION_NEW,false,'target="main"').$delimiter;
               }
             }

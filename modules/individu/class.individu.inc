@@ -722,7 +722,10 @@ function descripteur_individu_edit($record, $mode)
 
 		function initial_values() {
 			return array (
-			"date_deces" => null
+			"date_deces" => null,
+					"identifiant_google"=> null,
+					"code_google"=> null,
+					"tz_offset_google"=> null
 			);
 		}
 		function rowColor($record) {

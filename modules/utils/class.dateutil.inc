@@ -30,7 +30,9 @@
 
     function str2arr($strdate)
     {
-      return array("year"=>substr($strdate,0,4), "month"=>substr($strdate,4,2), "day"=>substr($strdate,6,2));
+     //GG
+     // GG
+      return array("year"=>substr($strdate,0,4), "month"=>substr($strdate,5,2), "day"=>substr($strdate,8,2), "hours"=>substr($strdate,11,2), "minutes"=>substr($strdate,14,2), "seconds"=>substr($strdate,17,2));
     }
 
     function str2stamp($strdate)

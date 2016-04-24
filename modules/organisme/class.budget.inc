@@ -49,7 +49,7 @@ class budget extends assMetaNode
 		if (count($data)>0)
 		{
 			atkTriggerError($record, $this->getAttribute("an_budget"), "Il existe déjà un budget pour cette année : ".$record["an_budget"]);
-		}
+		return false;}
 		
 		if (parent::validate($record, $mode)==true)
 		{return true;		}

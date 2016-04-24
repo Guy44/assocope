@@ -40,7 +40,7 @@ $this->add(new atkDummyAttribute("descripteur_tournoi",0,AF_COMPACT),NULL,20);
 		$this->add(new atkDummyAttribute("descripteur_module_estampillage",'text',AF_HIDE_ADD | AF_HIDE_EDIT  | AF_NO_LABEL | AF_COMPACT),null,25);
 
 		$this->setSecurityAlias("individu.individu");
-		$this->setOrder("id_individu.nom, id_individu.prenom");
+$this->setOrder("id_individu.nom, id_individu.prenom");
 
 	}
 	function descriptor_def()

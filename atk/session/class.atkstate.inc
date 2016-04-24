@@ -139,6 +139,7 @@ class atkState
    */
   protected static function _set_using_cookie($key,$value)
   {
+    atkdebug ("<b> atkstate set_using_cookie </b> Setcookie key/value : ". $key." / ".$value);
     setcookie($key, $value, time()+60*(atkconfig("state_cookie_expire")));
   }
 

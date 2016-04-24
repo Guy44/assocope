@@ -115,7 +115,7 @@ function id_organisme_referencement_display($record, $mode) {
 					$row[] =$data[$i]["motif_resiliation"];
 					$row[] =$data[$i]["date_modification"];
 					$row[] =$this->descripteur_individu_utilisateur($data[$i]["id_modification"],'o');
-					$row[] =$this->descripteur_module_estampillage($data[$i]["id_entite"], 'n');
+					$row[] =$this->descripteur_module_estampillage($this->get_record_info($data[$i]["id_entite"]), 'n');
 					$datatableau[] = $row;
 				}
 				$criteres=$this->m_postvars["atkfiltre"];

@@ -186,6 +186,11 @@ class mod_table extends associationModule {
 		$this->menuitem("demandes_t"."#".$nombre_type_demande, dispatch_url("table.type_demande", "admin"), "Tables", true);
 		// Documents
 		$this->menuitem("documents_t"."#".$nombre_type_document, dispatch_url("table.type_document", "admin"), "Tables", true);
+		// Domaines internet
+		$data = $db->getrows("SELECT count(id) as nombre from organisme_domaine ");
+		$nombre_organisme_domaine = $data[0]["nombre"];
+		// Domaines internet o
+		$this->menuitem("Domaines_internet_o"."#".$nombre_organisme_domaine, dispatch_url("organisme.domaine", "admin"), "Tables", true);
 		// Entités
 		$this->menuitem("entités_t"."#".$nombre_type_entite, dispatch_url("table.type_entite", "admin"), "Tables", true);
 		// Type Ecriture comptable

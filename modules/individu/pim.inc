@@ -57,6 +57,7 @@
   {
     global $g_user;
 
+   
     $userutilisateur = $g_user["id"];
     
     $db = &atkGetDb();
@@ -68,6 +69,7 @@
     $rencontrenode = &atkGetNode("individu.rencontre_i");
     $rencontrenode->m_flags |= NF_NO_SEARCH;
     $rencontrenode->m_action="admin";
+
      $actions = array();
     $actions["edit"] = "dispatch.php?atknodetype=individu.rencontre_i&atkaction=edit&atkselector=[pk]";
 $ilyaunesemaine = mktime(0,0,0,date("m")+1,date("d"),date("Y"));
@@ -75,15 +77,18 @@ $ilyaunesemaine=date("Y-md", $ilyaunesemaine);
     $recs = $rencontrenode->selectDb("individu_rencontre.id_individu='$userindividu' AND" .
     		" individu_rencontre.id_rencontre IN " .
     		" (SELECT id from organisme_rencontre where date_debut >= UTC_DATE() and date_debut < '".$ilyaunesemaine."')");
+   
     $rencontre_assignedtome = atktext("rencontre_ou_vous_etes_inscrit").":<br>";
     if (count($recs)>0)
     {
-      $rencontre_assignedtome.= $rl->render($rencontrenode,$recs,$actions,RL_NO_EXTENDED_SEARCH|RL_NO_SEARCH|RL_NO_SORT, array(),"todoassignedtoyou",array(),"todoassignedtoyou");
+ $rencontre_assignedtome.= $rl->render($rencontrenode,$recs,$actions,RL_NO_EXTENDED_SEARCH|RL_NO_SEARCH|RL_NO_SORT, array(),"todoassignedtoyou",array(),"todoassignedtoyou");
+
     }
     else
     {
       $rencontre_assignedtome.= atktext("pas_de_rencontre")."<br>";
     }
+
     
     $res = '<table border="0">';
     $res.= '<tr>';

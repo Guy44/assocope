@@ -16,17 +16,29 @@
    */
 
   /** @internal includes */
+   require_once($GLOBALS['config_atkroot'].'atk/include/basics.inc');
+   atkdebug("<b>initial.inc</b> Fin de require_once atk/include/basics.inc");
   require_once($GLOBALS['config_atkroot'].'atk/modules/atkmoduletools.inc');
-  require_once($GLOBALS['config_atkroot'].'atk/include/basics.inc');
+  atkdebug("<b>initial.inc</b> Fin de require_once atk/modules/atkmoduletools.inc");
   require_once($GLOBALS['config_atkroot'].'atk/include/compatibility.inc');
+  atkdebug("<b>initial.inc</b> Fin de require_once atk/include/compatibility.inc");
   if (atkconfig('autoload_classes',    true)) require_once($GLOBALS['config_atkroot'].'atk/include/autoload.inc');
+  atkdebug("<b>initial.inc</b> Fin de require_once atk/include/autoload.inc");
   if (atkconfig('use_atkerrorhandler', true)) require_once($GLOBALS['config_atkroot'].'atk/include/errorhandler.inc');
+  atkdebug("<b>initial.inc</b> Fin de require_once atk/include/errorhandler.inc");
   require_once($GLOBALS['config_atkroot'].'atk/ui/class.atkoutput.inc');
+  atkdebug("<b>initial.inc</b> Fin de require_once atk/ui/class.atkoutput.inc");
   require_once($GLOBALS['config_atkroot'].'atk/session/class.atksessionmanager.inc');
+  atkdebug("<b>initial.inc</b> Fin de require_once atk/include/class.atksessionmanager.inc");
   require_once($GLOBALS['config_atkroot']."atk/utils/class.atkstring.inc");
+  atkdebug("<b>initial.inc</b> Fin de require_once atk/include/class.atkstring.inc");
   require_once($GLOBALS['config_atkroot'].'atk/include/security.inc');
+  atkdebug("<b>initial.inc</b> Fin de require_once atk/include/security.inc");
   require_once($GLOBALS['config_atkroot'].'atk/include/debugging.inc');
+  atkdebug("<b>initial.inc</b> Fin de require_once atk/include/debugging.inc");
   if (atkconfig('lock_type')!=="") require_once($GLOBALS['config_atkroot'].'atk/lock/class.atklock.inc');
+  atkdebug("<b>initial.inc</b> Fin de require_once atk/lock/class.atklock.inc");
   atkPreloadModules();
+  atkdebug("<b>initial.inc</b> Fin de atkPreloadModules");
 
 ?>

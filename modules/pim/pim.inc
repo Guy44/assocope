@@ -64,9 +64,14 @@
 
 
     $rl = &atknew("atk.recordlist.atkrecordlist");
+;
     $rencontrenode = &atkGetNode("individu.rencontre_i");
+
     $rencontrenode->m_flags |= NF_NO_SEARCH;
+
     $rencontrenode->m_action="admin";
+
+    
      $actions = array();
     $actions["edit"] = "dispatch.php?atknodetype=individu.rencontre_i&atkaction=edit&atkselector=[pk]";
 

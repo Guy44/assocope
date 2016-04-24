@@ -12,8 +12,8 @@
    * @copyright (c)2000-2004 Ibuildings.nl BV
    * @license http://www.achievo.org/atk/licensing ATK Open Source License
    *
-   * @version $Revision: 6320 $
-   * $Id: class.atkmenu.inc 6354 2009-04-15 02:41:21Z mvdam $
+   * @version $Revision: 5206 $
+   * $Id: class.atkmenu.inc 5206 2007-08-29 07:45:54Z ivo $
    */
 
   /**
@@ -45,16 +45,11 @@
    */
   class atkMenu
   {
-    /**
-     * Convert the layout name to a classname
-     *
-     * @param string $layout The layout name
-     * @return string The classname
-     */
+
     function layoutToClass($layout)
     {
       // Check if the menu config is one of the default atk menus (deprecated)
-      if (in_array($layout, array("plain","frames","outlook","dhtml","modern","cook","dropdown")))
+      if (in_array($layout, array("plain","frames","outlook","dhtml","modern","cook")))
       {
         $classname = "atk.menu.atk".$layout."menu";
       }
@@ -73,11 +68,6 @@
       return $classname;
     }
 
-    /**
-     * Get the menu class
-     *
-     * @return string The menu classname
-     */
     function getMenuClass()
     {
       // Get the configured layout class
@@ -101,6 +91,7 @@
       }
 
       // Return the layout class name
+      atkdebug("GG menu class: $classname");
       return $classname;
     }
 
@@ -109,16 +100,17 @@
      *
      * @return object Menu class object
      */
-    function &getMenu()
+    function &getMenu($atkmenutop)
     {
-      static $s_instance = NULL;
-      if ($s_instance==NULL)
+  static $s_instance = NULL;
+       if ($s_instance==NULL)
       {
         atkdebug("Creating a new menu instance");
         $classname = atkMenu::getMenuClass();
 
 
         $filename = getClassPath($classname);
+        atkdebug("GG menu class: $filename");
         if (file_exists($filename)) $s_instance = atknew($classname);
         else
         {
@@ -135,9 +127,9 @@
         $c = &atkinstance("atk.atkcontroller");
         $c->setPhpFile($dispatcher);
 
-        atkHarvestModules("getMenuItems");
+  //      atkHarvestModules("getMenuItems",$atkmenutop);
       }
-
+      atkHarvestModules("getMenuItems",$atkmenutop);
       return $s_instance;
     }
 

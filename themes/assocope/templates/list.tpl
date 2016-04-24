@@ -1,5 +1,5 @@
 {if isset($formstart)}{$formstart}{/if}
-<table class="bordfineditform" cellspacing="0" cellpadding="5" width="100%">
+<table class="bordfin" cellspacing="0" cellpadding="5" width="100%">
   {atkmessages}
   {if count($atkmessages)}
     <tr>
@@ -16,30 +16,30 @@
   {/if}  
   {if (isset($header) && !empty($header))}
   <tr >
-    <td valign="top" align="left" class="listentete" ><b>{$header}</b><br></td>
+    <td valign="top" align="left"><b>{$header}</b><br></td>
   </tr>
   {/if}
   {if (isset($index) && !empty($index))}
   <tr>
-    <td valign="top" align="left" class="listentete">{$index}<br><br></td>
+    <td valign="top" align="left">{$index}<br><br></td>
   </tr>
   {/if}
   {if (isset($navbar) && !empty($navbar))}
   <tr>
-    <td valign="top" align="left" class="listentete">{$navbar}<br></td>
+    <td valign="top" align="left">{$navbar}<br></td>
   </tr>
   {/if}
-  <tr class="listcorps">
+  <tr>
     <td valign="top" align="left">{$list}</td>
   </tr>
   {if (isset($navbar) && !empty($navbar))}
   <tr>
-    <td valign="top" align="left" class="listpied">{$navbar}<br></td>
+    <td valign="top" align="left">{$navbar}<br></td>
   </tr>
   {/if}
   {if (isset($footer) && !empty($footer))}
   <tr>
-    <td valign="top" align="left" class="listpied">{$footer}<br></td>
+    <td valign="top" align="left">{$footer}<br></td>
   </tr>
   {/if}
 </table>

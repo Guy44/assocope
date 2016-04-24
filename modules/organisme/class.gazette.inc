@@ -75,7 +75,8 @@ class gazette extends assMetaNode {
 			$row[] = $this->decoupe_affichage_colonne($this->descripteur_document_sans_lien("organisme",$data1[$i]["id_document"]), 50);
 			$row[] = '<b>'.$data1[$i]["date_prevue"].'</b>';
 			$row[] = '<b>'.$data1[$i]["date_envoi"].'</b>';
-			$row[] =$this->descripteur_module_estampillage($data1[$i]["id_entite"],'n');
+			
+			$row[] =$this->descripteur_module_estampillage($this->get_record_info($data1[$i]["id_entite"]), 'n');
 			$data[] = $row;
 		}
 		$criteres=$this->m_postvars["atkfiltre"];

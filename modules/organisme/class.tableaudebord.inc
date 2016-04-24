@@ -1683,11 +1683,11 @@ class tableaudebord extends assMetaNode {
 			LEFT JOIN app_utilisateur ut ON lo.userid=ut.id
 			LEFT JOIN individu i ON ut.id_individu=i.id
 			WHERE  lo.stamp >0
-			AND LENGTH(node) >0
 			AND node!='.'
 			AND LENGTH(action) >0
 			AND lo.stamp>='$stamp_min'
 			ORDER by i.nom,i.prenom";
+
 		}
 		if ($contenu_log=="error")
 		{
@@ -2769,7 +2769,7 @@ class tableaudebord extends assMetaNode {
 			$critere1=" stamp>'$stamp_min'			";
 		}
 
-		($contenu_log=="utilisateur") ? $type=" userid='$id_utilisateur' AND LENGTH(node) >0
+		($contenu_log=="utilisateur") ? $type=" userid='$id_utilisateur' 
 		AND node!='.'
 		AND LENGTH(action) >0 " : null;
 

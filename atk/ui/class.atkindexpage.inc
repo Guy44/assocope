@@ -115,6 +115,9 @@
      */
     function atkGenerateMenu()
     {
+    	//GG
+     return;
+     //GG
       /* general menu stuff */
       /* load menu layout */
       atkimport("atk.menu.atkmenu");

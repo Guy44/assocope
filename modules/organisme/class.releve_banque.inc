@@ -131,7 +131,9 @@ class releve_banque extends assMetaNode {
 		if (empty ($idreleve)) {
 			return;
 		}
-		$idcompte = $record["id_compte_banque"]["id"];
+		//$this->p($record);
+	//	$idcompte = $record["id_compte_banque"]["id"];
+		($mode=="view")? $idcompte = $record["id_compte_banque"]["id"] : $idcompte = $record["id_compte_banque"];
 		$db = & atkGetDb();
 		$data = $db->getrows("SELECT sum(lec.debit - lec.credit) as solde from organisme_ligne_ecriture_comptable lec
 				where  ( lec.id_compte = $idcompte and lec.id_releve is not null and lec.id_releve< $idreleve)");
@@ -166,7 +168,9 @@ class releve_banque extends assMetaNode {
 		if (empty ($idreleve)) {
 			return;
 		}
-		$idcompte = $record["id_compte_banque"]["id"];
+		$idcompte = $record["id_compte_banque"];
+		($mode=="view")? $idcompte = $record["id_compte_banque"]["id"] : $idcompte = $record["id_compte_banque"];
+		
 		$db = & atkGetDb();
 		$data = $db->getrows("SELECT sum(lec.credit) as debit_banque from organisme_ligne_ecriture_comptable lec
 				where  ( lec.id_compte = $idcompte and lec.id_releve = $idreleve)");
@@ -195,7 +199,9 @@ class releve_banque extends assMetaNode {
 		if (empty ($idreleve)) {
 			return;
 		}
-		$idcompte = $record["id_compte_banque"]["id"];
+	//	$idcompte = $record["id_compte_banque"];
+		($mode=="view")? $idcompte = $record["id_compte_banque"]["id"] : $idcompte = $record["id_compte_banque"];
+		
 		$db = & atkGetDb();
 		$data = $db->getrows("SELECT sum(lec.debit) as credit_banque from organisme_ligne_ecriture_comptable lec
 				where  ( lec.id_compte = $idcompte and lec.id_releve = $idreleve)");
@@ -224,7 +230,9 @@ class releve_banque extends assMetaNode {
 		if (empty ($idreleve)) {
 			return;
 		}
-		$idcompte = $record["id_compte_banque"]["id"];
+	//	$idcompte = $record["id_compte_banque"];
+		($mode=="view")? $idcompte = $record["id_compte_banque"]["id"] : $idcompte = $record["id_compte_banque"];
+		
 		$db = & atkGetDb();
 		$data = $db->getrows("SELECT sum(lec.debit - lec.credit) as solde from organisme_ligne_ecriture_comptable lec
 				where  ( lec.id_compte = $idcompte and lec.id_releve is not null and lec.id_releve < $idreleve)");
@@ -306,7 +314,8 @@ class releve_banque extends assMetaNode {
 		$idreleve = $record["id"];
 		global $g_user;
 		$userid = $g_user["id"];
-		if ($record["date_cloture_releve"]["year"] > 0) {
+		// GG if ($record["date_cloture_releve"]["year"] > 0) {
+		if ($record["date_cloture_releve"] > 0) {
 			echo "Le relevé a été clôturé. Il est impossible de le supprimer.";
 			die();
 		}
@@ -336,7 +345,8 @@ class releve_banque extends assMetaNode {
 			echo "Relevé déjà clos.";
 			die();
 		}
-		$record['id_compte_banque']['id'] = $data[0]["id_compte_banque"];
+//		$record['id_compte_banque']['id'] = $data[0]["id_compte_banque"];
+		$record['id_compte_banque'] = $data[0]["id_compte_banque"];
 		$solde_initial_observe = $this->solde_initial_observe_edit($record,null);
 		$total_debits_observe = $this->total_debits_observe_edit($record,null);
 		$total_credits_observe = $this->total_credits_observe_edit($record,null);

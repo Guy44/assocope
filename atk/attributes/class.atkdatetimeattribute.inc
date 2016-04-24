@@ -99,7 +99,36 @@
 
       if($default_date=="") { $default_date = ""; }
       if($default_time=="") { $default_time = ""; }
-
+      // GG
+      if($default_date=="" && $default_time=="")
+      {
+      
+      	// $this->m_default   = $default;
+      	if ($default=="")
+      	{
+      		global $g_sessionManager;
+      		$g_tz_offset_google = $g_sessionManager->getValue("tz_offset_google", "globals");
+      		if ($g_tz_offset_google<0) $sign='-';
+      		else $sign='+';
+      		$h=abs($g_tz_offset_google);
+      		$dst=true;
+      		if ($dst==true) {
+      			$daylight_saving = date('I');
+      			if ($daylight_saving){
+      				if ($sign == "-"){ $h=$h-1;  }
+      				else { $h=$h+1; }
+      			}
+      		}
+      		$hm = $h * 60;
+      		$ms = $hm * 60;
+      		if ($sign == "-"){ $timestamp = time()-($ms); }
+      		else { $timestamp = time()+($ms); }
+      		$default_date=gmdate("Y-m-d", $timestamp);
+      		$default_time=gmdate("G:i", $timestamp);
+      
+      	}
+      }
+      //GG
       $this->m_time = new atkTimeattribute($name,0,23,$default_steps,$default_time, $flags);
       $this->m_date = new atkDateattribute($name,'','',0,0,$flags);
 

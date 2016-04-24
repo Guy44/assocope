@@ -200,12 +200,14 @@ class atkString
    */
   public static function htmlentities($str, $quote_style=ENT_COMPAT, $charset=null)
   {
-    if ($charset===null) $charset = atkGetCharset();
-		
+  	 	
+  	if ($charset===null) $charset = atkGetCharset();
+	
     // check if charset is allowed, else use default charset for this function
     if(!in_array(strtolower($charset),self::$s_acceptedCharsets)) $charset = 'iso-8859-1';
 
-    return htmlentities($str, $quote_style, $charset);
+  
+return htmlentities($str, $quote_style, $charset);
   }
 	
 	/**
@@ -220,7 +222,20 @@ class atkString
    */ 
   public static function iconv($in_charset, $out_charset, $str)
   {
-    if(function_exists("iconv"))
+ /*
+  * 
+ 	// GG
+  	if (substr_count($str, "é")>0)
+  	{
+  		echo "atkstring iconv "."<br/>";
+  		echo "Trouvé : ". $str."<br/>";
+  		echo "in_charset : ". $in_charset."<br/>";
+  		echo "out_charset: ". $out_charset."<br/>";
+  		die();
+  	  	}
+  	// GG
+  	 */   
+  	if(function_exists("iconv"))
     {
       $str = iconv($in_charset,$out_charset,$str);
     }

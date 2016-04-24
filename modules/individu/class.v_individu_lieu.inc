@@ -67,6 +67,8 @@ function v_individu_lieu ()
     
     case 2 :
    $records = $this->selectDb($this->m_postvars["atkfilter"], "", "", $this->m_viewExcludes, "", "document");
+   // $this->p($records);
+   
    $documentWriter->assignDocumentMultiRecord($this, $records, $prefix = "");
    $documentWriter->assignDocumentGenericVars();
     break;

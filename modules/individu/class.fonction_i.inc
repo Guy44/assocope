@@ -23,7 +23,7 @@ class fonction_i extends assMetaNode {
 		$this->add(new atkDateAttribute("date_fin", "Y-m-d", "Y-m-d", 0, 0, AF_DATE_STRING| AF_FORCE_LOAD),160);
 		include_once (atkconfig("atkroot") . "modules/include/association.inc");
 		$this->add(new atkDummyAttribute("descripteur_module_estampillage",'text',AF_HIDE_ADD | AF_HIDE_EDIT  | AF_NO_LABEL| AF_COMPACT),null,6 );
-		$this->setOrder("individu_fonction.id_individu asc, individu_fonction.date_creation DESC");
+$this->setOrder("individu_fonction.id_individu asc, individu_fonction.date_creation DESC");
 		$this->m_securityMap["liste_organismes_representes"] = "view";
 		$this->m_securityMap["admin_liste"] = "view";
 		global $ATK_VARS, $g_user;

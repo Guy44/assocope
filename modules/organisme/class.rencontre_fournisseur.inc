@@ -11,9 +11,9 @@ class rencontre_fournisseur extends assMetaNode {
 	}
 	function rencontre_fournisseur() {
 		$this->atkMetaNode();
-		$this->atkNode("rencontre_fournisseur", NF_ADD_LINK | NF_TRACK_CHANGES | NF_COMPACT);
+		$this->atkNode("rencontre_fournisseur", NF_ADD_LINK  | NF_COMPACT);
 		$this->setSecurityAlias("organisme.organisme");
-		$this->add(new atkParserAttribute("presence_compta", "env", AF_NO_LABEL | AF_HIDE_LIST), NULL, 1);
+	//	$this->add(new atkParserAttribute("presence_compta", "env", AF_NO_LABEL | AF_HIDE_LIST), NULL, 1);
 		$this->add(new atkManyToOneRelation("id_organisme_fournisseur", "organisme.organisme", AF_SEARCHABLE | AF_OBLIGATORY | AF_RELATION_AUTOLINK | AF_RELATION_AUTOCOMPLETE|AF_FORCE_LOAD));
 		$this->add(new atkManyToOneRelation("id_individu", "individu.individu", AF_SEARCHABLE | AF_RELATION_AUTOLINK | AF_RELATION_AUTOCOMPLETE|AF_FORCE_LOAD));
 		$this->add(new atkAttribute("libelle", AF_OBLIGATORY));
@@ -32,12 +32,12 @@ class rencontre_fournisseur extends assMetaNode {
 		$c11 = & $this->add(new atkManyToOneRelation("id_compte_charge", "organisme.compte", AF_RELATION_AUTOLINK|AF_FORCE_LOAD));
 		$c11->addDestinationFilter(" ( code like '61%' ) and usuel='1' and id_organisme in (select id_organisme from organisme_rencontre where id ='[id_rencontre.id]' ) ");
 		$this->add(new atgFileManyToOneRelation("id_document_facture", "organisme.document", AF_SEARCHABLE | AF_RELATION_AUTOLINK | AF_RELATION_AUTOCOMPLETE|AF_FORCE_LOAD));
-		include_once (atkconfig("atkroot") . "modules/include/association.inc");
 		$this->add(new atkDummyAttribute("descripteur_rencontre_fournisseur","descripteur_rencontre_fournisseur",AF_HIDE_ADD | AF_HIDE_EDIT  | AF_NO_LABEL | AF_COMPACT),NULL,5);
 		$this->add(new atkDummyAttribute("descripteur_rencontre","descripteur_rencontre",AF_HIDE_ADD | AF_HIDE_EDIT  | AF_NO_LABEL | AF_COMPACT),NULL,10);
-		$this->add(new atkAttribute("id_ecriture_depense",AF_HIDE_ADD|AF_HIDE_EDIT|AF_FORCE_LOAD),null,20 );
-		$this->add(new atkAttribute("id_ecriture_reglement",AF_HIDE_ADD|AF_HIDE_EDIT|AF_FORCE_LOAD),null,30 );
-		$this->add(new atkDummyAttribute("descripteur_module_estampillage",'text',AF_HIDE_ADD | AF_HIDE_EDIT  | AF_NO_LABEL | AF_COMPACT),null,40 );
+	//	$this->add(new atkAttribute("id_ecriture_depense",AF_HIDE_ADD|AF_HIDE_EDIT|AF_FORCE_LOAD),null,20 );
+	//	$this->add(new atkAttribute("id_ecriture_reglement",AF_HIDE_ADD|AF_HIDE_EDIT|AF_FORCE_LOAD),null,30 );
+	//	$this->add(new atkDummyAttribute("descripteur_module_estampillage",'text',AF_HIDE_ADD | AF_HIDE_EDIT  | AF_NO_LABEL | AF_COMPACT),null,40 );
+		include_once (atkconfig("atkroot") . "modules/include/association.inc");
 		$this->setOrder("organisme_rencontre_fournisseur.libelle ");
 	}
 	function descripteur_rencontre_display($record, $mode) {
@@ -62,7 +62,8 @@ class rencontre_fournisseur extends assMetaNode {
 	}
 
 	function presence_compta_edit($record, $mode) {
-		$id_rencontre = $record["id_rencontre"]["id"];
+		return true;
+		$id_rencontre = $record["id_rencontre"];
 		$db = & atkGetDb();
 		$sql = "SELECT o.nom as nom, date_initialisation_comptabilite  from organisme o
 				, organisme_rencontre r where r.id_organisme=o.id and r.id='" . $id_rencontre . "'";
@@ -82,7 +83,9 @@ class rencontre_fournisseur extends assMetaNode {
 	function postUpdate($record)
 	{
 		$this->mise_a_jour_type_ecriture($record);
+		
 		parent::postUpdate($record);
+//		$this->p($record);
 		return true;
 	}
 	function postAdd($record)
@@ -96,7 +99,8 @@ class rencontre_fournisseur extends assMetaNode {
 	}
 	function mise_a_jour_type_ecriture($record)
 	{
-		if (!empty($record["id_ecriture_depense"]))
+
+				if (!empty($record["id_ecriture_depense"]))
 		{
 			$this->ecriture_type_origine_maj($record["id_ecriture_depense"],$this->type_ecriture_rencontre_fournisseur,$record["id"]);
 		}
@@ -115,7 +119,7 @@ class rencontre_fournisseur extends assMetaNode {
 		$db = & atkGetDb();
 		$id_ecriture_depense = $record["id_ecriture_depense"];
 		$id_ecriture_reglement = $record["id_ecriture_reglement"];
-		if ($id_ecriture_reglement == "") {
+		if ($id_ecriture_reglement == "" && $id_ecriture_depense=="") {
 			return true;
 		}
 		if (isset ($id_ecriture_depense)) {
@@ -124,22 +128,11 @@ class rencontre_fournisseur extends assMetaNode {
 		if (isset ($id_ecriture_reglement)) {
 			$this->supprimer_ecriture_comptable($id_ecriture_reglement);
 		}
+		$record["id_ecriture_depense"]='';
+		$record["id_ecriture_reglement"]='';
 		return true;
 	}
-/*	function preAdd(& $record) {
-		if ($record["montant_fourniture"] > 0) {
-			$this->creer_ecritures_comptables($record);
-		}
-		parent :: preAdd($record);
-	}
-	function preUpdate(& $record) {
-		$this->supprimer_ecritures($record);
-		if ($record["montant_fourniture"] > 0) {
-			$this->creer_ecritures_comptables($record);
-		}
-		parent :: preUpdate($record);
-	}
-	*/
+
 	function validate(&$record, $mode)
 	{
 //$this->p($record);
@@ -148,28 +141,28 @@ class rencontre_fournisseur extends assMetaNode {
 			if ($record["date_reglement"]=="")
 			{				
 				atkTriggerError($record, $this->getAttribute("date_reglement"), "En cas de règlement vous devez préciser la date");
-			}
+			return false;}
 			if ($record["id_compte_financier"]["id"]=="")
 			{
 				atkTriggerError($record, $this->getAttribute("id_compte_financier"), "Vous devez choisir un compte de finance");
-			}
+			return false;}
 			if ($record["id_reglement"]["id"]=="")
 			{
 				atkTriggerError($record, $this->getAttribute("id_reglement"), "Vous devez choisir un type de règlement");
-			}
+			return false;}
 				
 			if ($record["id_reglement"]["id"]!=1 && $record["numero_cheque"]!="")
 			{
 				atkTriggerError($record, $this->getAttribute("numero_cheque"), "Numéro de chèque alors que le mode de règlement précise que ce n'est pas un règlement par chèque");
-			}
+			return false;}
 			if ($record["id_reglement"]["id"]==1 && $record["numero_cheque"]=="")
 			{
 				atkTriggerError($record, $this->getAttribute("numero_cheque"), "Pas de numéro de chèque alors que le mode de règlement précise que c'est un règlement par chèque");
-			}
+			return false;}
 			if ($record["id_compte_charge"]["id"]=="")
 			{
 				atkTriggerError($record, $this->getAttribute("id_compte_charge"), "Vous devez choisir un compte de dépense");
-			}
+			return false;}
 			
 			if (count($record['atkerror']) > 0)
 			{
@@ -178,35 +171,41 @@ class rencontre_fournisseur extends assMetaNode {
 			{
 				if ($mode=="update") $this->supprimer_ecritures($record);
 				$this->creer_ecritures_comptables($record);
+
+				
 			}
 				
 				
 		} else 
 		{
+			
+			$this->supprimer_ecritures($record);
 			if ($record["date_reglement"]!="")
 			{
 				atkTriggerError($record, $this->getAttribute("date_reglement"), "Pas de montant règlé et date de règlement ?");
-			}
+			return false;}
 			if ($record["id_compte_financier"]["id"]!="")
 			{
 				atkTriggerError($record, $this->getAttribute("id_compte_financier"), "Pas de montant règlé et un compte de finance ?");
-			}
+			return false;}
 			if ($record["id_reglement"]["id"]!="")
 			{
 				atkTriggerError($record, $this->getAttribute("id_reglement"), "Pas de montant règlé et un type de règlement ?");
-			}
+			return false;}
 			
 			if ($record["numero_cheque"]!="")
 			{
 				atkTriggerError($record, $this->getAttribute("numero_cheque"), "Pas de montant règlé et un numéro de chèque ?");
-			}
+			return false;}
 		
 			if ($record["id_compte_charge"]["id"]!="")
 			{
 				atkTriggerError($record, $this->getAttribute("id_compte_charge"), "Pas de montant règlé et un compte de dépense ?");
-			}		
+			return false;}		
 		}
-//		parent::validate($record, $mode);
+// GG
+//	parent::validate($record, $mode);
+
 		
 	}
 
@@ -292,6 +291,7 @@ class rencontre_fournisseur extends assMetaNode {
 			$debit = 0;
 			$this -> creer_ligne_ecriture_comptable($id_ecriture, $id_journal_banque_courant, $id_compte_financier, $id_organisme, $id_individu, $debit, $credit, $id_type_reglement, $numero_cheque, $date_reglement,null);
 		}
+	//	
 		return;
 	}
 	function descriptor_def() {

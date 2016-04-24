@@ -13,7 +13,7 @@
    * @license http://www.achievo.org/atk/licensing ATK Open Source License
    *
    * @version $Revision: 5798 $
-   * $Id: class.atktablerenderer.inc 6398 2009-06-04 07:38:49Z sandy $
+   * $Id: class.atktablerenderer.inc 5798 2008-03-05 13:41:26Z guido $
    */
 
   /**
@@ -24,7 +24,9 @@
   define("TBL_ALTERNATE", 4); // Should each row alternate in color? If you want to use this
                               // flag, you should provide a style.
   define("TBL_DATA", TBL_HEADER|TBL_ALTERNATE); // Alias for easy rendering of data tables.
-
+  //GG
+ define("TBL_CLASS_IN_FIRST_CELL", 8); // La classe du rang est stockée dans la première cellule du row
+ //
   define("TBL_LEFT", 1);
   define("TBL_RIGHT", 2);
   define("TBL_CENTER", 4);
@@ -59,7 +61,6 @@
     var $m_maxWidth = 0;
     var $m_flags = 0;
     var $m_style = '';
-		var $m_tableMatrix = null;
 
     /**
      * Constructs a new table renderer
@@ -245,48 +246,14 @@
      * @param aray $data table data
      * @return int max number of rows
      */
-    function _getMaxCols($data,$rownr='')
+    function _getMaxCols($data)
     {
-    	if(is_null($this->m_tableMatrix))
-			{
-	    	$this->m_tableMatrix = array();
-				
-				foreach ($data as $row => $entry)
-				{
-				  foreach ($entry as $cell => $text)
-					{
-						$colspan = isset($this->m_span[$row][$cell]['colspan']) ? $this->m_span[$row][$cell]['colspan'] : 1;
-						$rowspan = isset($this->m_span[$row][$cell]['rowspan']) ? $this->m_span[$row][$cell]['rowspan'] : 1;;
-						
-						$x = $cell;
-						$y = $row;
-						
-						for ($i = $x; $i < $x + $colspan; $i++)
-						{
-							for ($j = $y; $j < $y + $rowspan; $j++)
-							{
-								$this->m_tableMatrix[$j][] = true;
-							}
-						}
-					}
-				}
-			}
-				
-			
-			$max = 0;
-			if($rownr!='')
-			{
-        $max = max(array_keys($this->m_tableMatrix[$rownr]));				
-			}
-			else
-			{
-				foreach ($this->m_tableMatrix as $row)
-				{
-					$max = max($max, max(array_keys($row)));
-				}
-			}
-			
-			return $max;
+      $max = 0;
+      for($i=0, $_i=count($data); $i<$_i; $i++)
+      {
+        $max = max(count($data[$i]), $max);
+      }
+      return $max;
     }
 
     /**
@@ -376,10 +343,9 @@
       $rowOffset=0;
       
       $this->m_maxWidth = $this->_getMaxCols($data);
-			
       $class = $this->_getTableStyleStr();
 
-      $output = "\n<table {$class}>";
+      $output = "\n<table border='1' {$class}>";
 
       // should render a header?
       if (hasFlag($this->m_flags, TBL_HEADER))
@@ -452,7 +418,9 @@
     {
       $span     = $this->getSpan($row, $col);
       $spanstr  = $this->_spanStr($span);
-      $alignstr = $this->_alignmentStr($this->getAlignment($row, $col));
+      $alignstr = 'align="left"';
+      
+//      $alignstr = $this->_alignmentStr($this->getAlignment($row, $col));
       $idstr    = $this->_getIdStr($data);
       $class    = $this->_classStr($this->getClass($row, $col));
 
@@ -500,7 +468,7 @@
      */
     function _getRowClassStr($row)
     {
-      if (is_string($row))
+ if (is_string($row))
       {
         return 'class="'.$row.'"';
       }
@@ -524,20 +492,28 @@
      */
     function _renderRow($data, $row, $columntype='td')
     {
-      $class = $this->_getRowClassStr($row);
+      
+    	      if (hasFlag($this->m_flags, TBL_CLASS_IN_FIRST_CELL))
+      {
+      	
+      	 $class =$this->_getRowClassStr($data[0]);
+      	$first_col=1;
+      }
+   else
+   {  $class = $this->_getRowClassStr($row);
+   $first_col=0;}
 
       $output = "\n<tr {$class}>";
 
       // render all cells inside
       $colCount = count($data);
-			
-      for ($col=0; $col<$colCount; $col++)
+      for ($col=$first_col; $col<$colCount; $col++)
       {
         $output .= $this->_renderCell($data[$col], $row, $col, $columntype);
       }
 
       // fill up remaining space
-      $filling = $this->m_maxWidth - ($this->_getMaxCols(array(),$row));
+      $filling = $this->m_maxWidth - $colCount;
       if ($filling > 0)
       {
         $output .= $this->_renderFillingCell($filling, $columntype);

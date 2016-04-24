@@ -165,14 +165,18 @@
       $this->m_resize = $resize;
       $this->m_margin = $margin;
     }
-    
+    function setId($id)
+    {
+    	$this->m_id = $id;
+    	return $this;
+    }
     /**
      * Render the frame to html     
      * @return String
      */
     function render()
     {
-      return '<frame name="'.$this->m_name.'" scrolling="'.$this->m_scrolling.'" '.(!$this->m_resize?"noresize":"").
+      return '<frame name="'.$this->m_name.'" id="'.$this->m_id.'" scrolling="'.$this->m_scrolling.'" '.(!$this->m_resize?"noresize":"").
                        ' src="'.$this->m_src.'" marginwidth="'.$this->m_margin.'" marginheight="'.$this->m_margin.'">'."\n";
     }
         

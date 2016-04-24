@@ -167,11 +167,11 @@ return $lat_lon;
 		if ($record["latitude"]!="" && preg_match($latitude_regexp, $record["latitude"])==false)
 		{
 			echo atkTriggerError($record,  $this->getAttribute("latitude"), "latitude incorrecte");
-		}
+		return false;}
 	if ($record["longitude"]!="" && $record["latitude"]!="" && preg_match($longitude_regexp, $record["longitude"])==false)
 		{
 			atkTriggerError($record,  $this->getAttribute("longitude"), "longitude incorrecte");
-		}
+		return false;}
 	if ($record["longitude"]==""	&& $record["latitude"]=="")
 	{
 /*		include_once (moduleDir("utils") . "class.googlemapapi.inc");

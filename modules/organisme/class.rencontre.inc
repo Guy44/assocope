@@ -993,6 +993,12 @@ function action_renseignements_voyage()
 
 		(!empty($this->m_postvars['atkfilter']))? $rencontre=$this->m_postvars['atkfilter'] : null;
 		(!empty($this->m_postvars['atkselector']))? $rencontre=$this->m_postvars['atkselector'] : null;
+		$rencontre_id=explode("=", $rencontre);
+		$rencontre_id=$rencontre_id[1];
+	/*	echo "<pre>";
+		print_r(explode('=', $this->m_postvars['atkselector']));
+		die();
+	*/	
 		//		$this->p($rencontre);
 		$db = & atkGetDb();
 		$query = & $db->createQuery();
@@ -1115,7 +1121,8 @@ function action_renseignements_voyage()
 		global $g_nomutilisateur;
 		$g_nomutilisateur = $g_sessionManager->getValue("atgNomUtilisateur", "globals");
 		$res= "Cette liste valable au " . gmdate(c) . " et imprimée par " . $g_nomutilisateur . " est strictement confidentielle<br /><br />";
-		$res.=$this->descripteur_rencontre($stuff[0]["id_rencontre_organisme"],'n')."<br />";
+		
+		$res.=$this->descripteur_rencontre($rencontre_id,'n')."<br />";
 		$res .= $tbl->render($data, 0, "recordlist");
 		$res.= "<br / >Cette liste valable au " . gmdate(c) . " et imprimée par " . $g_nomutilisateur . " est strictement confidentielle";
 		/*		$id_document=$this->stocker_document_individu('Participants_rencontre', $res, '148');

@@ -76,7 +76,7 @@ class inscription_i extends assMetaNode {
 						"e2",
 						"p3",
 						"e3",
-						"p4",
+						"pid_4",
 						"e4",
 						"p5",
 						"e5",
@@ -174,12 +174,13 @@ class inscription_i extends assMetaNode {
 		$this->add(new atkBoolAttribute("adhesion_et_pas_de_cotisation_o_n"));
 		/*		$this->add(new atkDummyAttribute("courriel", "Courriel", AF_SEARCHABLE));
 		 $this->add(new atkDummyAttribute("telephone_fixe", "Telephone_fixe", AF_SEARCHABLE));
-		$this->add(new atkDummyAttribute("telephone_mobile", "Telephone_mobile", AF_SEARCHABLE));
+		$this->add(new atkDummyAttribute("telephone_mobile", "Telephone_mobile", AF_SEARCHABLE)); 
 		*/
 		include_once (atkconfig("atkroot") . "modules/include/association.inc");
 		$this->add(new atkDummyAttribute("descripteur_module_estampillage",'text',AF_HIDE_ADD | AF_HIDE_EDIT  | AF_NO_LABEL | AF_COMPACT),null,101 );
 		$this->m_securityMap["admin_liste"] = "view";
-		$this->setOrder("individu_inscription.id_individu");
+// $this->setOrder(" id_individu");
+$this->setTable($table);
 
 		global $ATK_VARS, $g_user;
 		if ($ATK_VARS["atknodetype"] == "individu.inscription_i" && in_array($ATK_VARS["atkaction"], array (

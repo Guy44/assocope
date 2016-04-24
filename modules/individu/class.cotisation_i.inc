@@ -236,21 +236,24 @@ class cotisation_i extends assMetaNode {
 	*/
 	public function validate(&$record, $mode)
 	{
+
 		$id_organisme = $record["id_organisme"]["id"];
+		$id_individu = $record['id_individu']['id'];
 		$db = & atkGetDb();
 		$data = $db->getrows("SELECT date_initialisation_comptabilite, nom  from organisme
 				where id ='" . $id_organisme . "'");
-		if (isset ($data[0]["date_initialisation_comptabilite"]["year"])) {
+//		if (isset ($data[0]["date_initialisation_comptabilite"]["year"])) {
+		if (isset ($data[0]["date_initialisation_comptabilite"])) {
 		} else {
 			atkTriggerError($record, $this->getAttribute("id_organisme"), "La saisie de montant verse ne sera pas prise en compte dans la comptabilite :
 					la comptabilite n\'ayant pas ete initialisee pour " . $data[0]["nom"]);
-		}
+		return false;}
 
 		global $g_user;
 		$userutilisateur = $g_user["id"];
 		$tableautemp = array ();
 		$db = & atkGetDb();
-		$id_organisme = $record["id_organisme"]["id"];
+//		$id_organisme = $record["id_organisme"]["id"];
 		$data = $db->getrows("SELECT eclater_cotisations_dons_o_n from organisme where  id ='" . $id_organisme . "'");
 		$eclater_cotisations_dons_o_n = $data[0]["eclater_cotisations_dons_o_n"];
 		$tableautemp["userid"] = $userutilisateur;
@@ -258,15 +261,15 @@ class cotisation_i extends assMetaNode {
 		if (empty($record['id_cotisation']))
 		{
 			atkTriggerError($record, $this->getAttribute("id_cotisation"), "Vous n'avez pas sélectionné de cotisation.");
-		}
-		$id_individu = $record['id_individu']['id'];
+		return false;}
+		
 		$data = $db->getrows("SELECT id_cotisation, id_individu  FROM individu_cotisation
 				where id_cotisation = $id_cotisation_organisme and id_individu=$id_individu");
 		$res = $data[0]["id_individu"];
 		if (isset ($res)) {
 			atkTriggerError($record, $this->getAttribute("id_cotisation"), "La cotisation pour cette personne a déjà été réglée.");
-		}
-		$id_organisme = $record['id_organisme']['id'];
+		return false;}
+	//	$id_organisme = $record['id_organisme']['id'];
 		$montant_versement = $record['montant_versement'];
 		$tableautemp["id_individu"] = $id_individu;
 		$tableautemp["montant_versement"] = $montant_versement;
@@ -274,7 +277,7 @@ class cotisation_i extends assMetaNode {
 		$data = $db->getrows("SELECT montant,montant_1, montant_2, montant_3, annee, id_organisme FROM organisme_cotisation where id=$id_cotisation_organisme ");
 		if ($id_organisme != $data[0]["id_organisme"]) {
 			atkTriggerError($record, $this->getAttribute("id_cotisation"), "Incompatibilité entre organisme et cotisation : modifier organisme ou cotisation.");
-		}
+		return false;}
 		$tableautemp["id_organisme"] = $id_organisme;
 		$montant_cotisation_organisme_0 = $data[0]["montant"];
 		$montant_cotisation_organisme_1 = $data[0]["montant_1"];
@@ -289,12 +292,12 @@ class cotisation_i extends assMetaNode {
 		$data = $db->getrows($sql);
 		if (count($data) == 0) {
 			atkTriggerError($record, $this->getAttribute("id_individu"), "Non inscrit à l'organisme ou radié : faire d'abord l'inscription.");
-		}
+		return false;}
 		else
 		{
 			if ($data[0]["date_adhesion"] == null) {
 				atkTriggerError($record, $this->getAttribute("id_individu"), "Pas de date d'adhésion : saisir date adhésion dans inscription.");
-			}
+			return false;}
 		}
 		// doit on payer une cotisation fédération
 		$data = $db->getrows("SELECT ti.tarif, ti.cotisation_federation_o_n, ti.cotisation_organisme_o_n from individu_inscription ii, type_inscription ti" . "
@@ -314,12 +317,12 @@ class cotisation_i extends assMetaNode {
 			if (count($data) == 0) {
 				atkTriggerError($record, $this->getAttribute("id_individu"), "Non inscrit à la fédération ou radié : faire d'abord l'inscription.<br/>
 						L'inscription se fait automatiquement si on choisit un type d'inscription mentionnant l'inscription à une fédération.<br>");
-			}
+			return false;}
 		}
 		if ($tarif ==''){
 			atkTriggerError($record, $this->getAttribute("id_cotisation"), "Tarif non renseigné<br/>
 					Vérifier type inscription et type cotisation.");
-		}
+		return false;}
 		if ($tarif == '0') {
 			$montant_cotisation_organisme = $montant_cotisation_organisme_0;
 		}
@@ -334,7 +337,7 @@ class cotisation_i extends assMetaNode {
 		}
 		if (($cotisation_organisme_o_n == 0) && ($cotisation_federation_o_n == 0)) {
 			atkTriggerError($record, $this->getAttribute("id_cotisation"), "Le type d'inscription précise qu'il n'y a pas de cotisation organisme ou fédération : changer le type d'inscription ou ne pas saisir de cotisation.");
-		}
+		return false;}
 		if ($cotisation_organisme_o_n == 0) {
 			$montant_cotisation_organisme = 0;
 		}
@@ -348,7 +351,7 @@ class cotisation_i extends assMetaNode {
 			$montant_cotisation_federation = $data[0]["montant"];
 			if (!isset ($montant_cotisation_federation)) {
 				atkTriggerError($record, $this->getAttribute("id_cotisation"), "La cotisation fédération n'a pas été créée");
-			}
+			return false;}
 			$id_cotisation_federation = $data[0]["id"];
 			$id_organisme_federation = $data[0]["id_organisme_federation"];
 		}
@@ -375,7 +378,7 @@ class cotisation_i extends assMetaNode {
 			$data = $db->getrows("SELECT ii.id from individu_inscription ii" . " where ii.id_individu=$id_individu and ii.id_organisme=$id_organisme_federation ");
 			if (count($data) == 0) {
 				atkTriggerError($record, $this->getAttribute("id_individu"), "Non inscrit à la fédération.");
-			}
+			return false;}
 			$data = $db->getrows("SELECT ic.id from individu_cotisation ic" . " where ic.id_individu=$id_individu and ic.id_cotisation=$id_cotisation_federation ");
 			if (count($data) == 0) {
 				$data = $db->query("INSERT into individu_cotisation" . " (id_organisme, id_individu, id_cotisation, montant_versement, montant_cotisation_organisme,id_creation, id_modification, date_creation, date_modification)" . "VALUES ( $id_organisme_federation, $id_individu,$id_cotisation_federation,$montant_cotisation_federation,$montant_cotisation_federation,$userutilisateur,$userutilisateur,UTC_DATE(),UTC_DATE())");
@@ -389,19 +392,19 @@ class cotisation_i extends assMetaNode {
 		if ($record["id_reglement"]=="")
 		{
 			atkTriggerError($record, $this->getAttribute("id_reglement"), "Vous devez choisir un type de règlement");
-		}
+		return false;}
 		if ($record["id_reglement"]["id"]==1 && $record["id_banque"]["id"]=="")
 		{
 			atkTriggerError($record, $this->getAttribute("id_banque"), "Pas de banque et le mode de règlement précise que c'est un règlement par chèque");
-		}
+		return false;}
 		if ($record["id_reglement"]["id"]!=1 && $record["numero_cheque"]!="")
 		{
 			atkTriggerError($record, $this->getAttribute("numero_cheque"), "Numéro de chèque alors que le mode de règlement précise que ce n'est pas un règlement par chèque");
-		}
+		return false;}
 		if ($record["id_reglement"]["id"]==1 && $record["numero_cheque"]=="")
 		{
 			atkTriggerError($record, $this->getAttribute("numero_cheque"), "Pas de numéro de chèque alors que le mode de règlement précise que c'est un règlement par chèque");
-		}
+		return false;}
 
 		if	(parent::validate($record, $mode)==true)
 		{
@@ -611,9 +614,10 @@ class cotisation_i extends assMetaNode {
 		//Créer une ligne don avec crédit= montant_don
 		// créer une ligne fédaération avec crédit = montant officiel
 		// créer une ligne cotisation fédé avec débit = montant officiel
+		$libelle = 'Cotisation ' . $tableau["annee_cotisation_organisme"] . ' ' . $individu[0]["nom"] . ' ' . $individu[0]["prenom"];
 		if ($id_type_reglement == 1) {
 			// chéque à remettre en banque
-			$libelle = 'Cotisation ' . $tableau["annee_cotisation_organisme"] . ' ' . $individu[0]["nom"] . ' ' . $individu[0]["prenom"];
+			
 			$id_ecriture = $this->creer_ecriture_comptable($id_organisme, $id_journal_banque_courant, $libelle, $date_reglement);
 			$record["id_ecriture_reglement"] = $id_ecriture;
 			$credit = $record["montant_versement"];
@@ -622,10 +626,9 @@ class cotisation_i extends assMetaNode {
 			$debit = $record["montant_versement"];
 			$credit = 0;
 			$this -> creer_ligne_ecriture_comptable($id_ecriture, $id_journal_banque_courant, $id_compte_banque, $id_organisme, $id_individu, $debit, $credit, $id_type_reglement, $numero_piece, $date_reglement, $id_type_banque);
-		} else {
-			if ($id_type_reglement == 3) {
+		} elseif ($id_type_reglement == 3) {
 				// epèces reçues en caisse
-				$libelle = 'Cotisation ' . $tableau["annee_cotisation_organisme"] . ' ' . $individu[0]["nom"] . ' ' . $individu[0]["prenom"];
+				
 				$id_ecriture = $this->creer_ecriture_comptable($id_organisme, $id_journal_caisse, $libelle,$date_reglement);
 				$record["id_ecriture_reglement"] = $id_ecriture;
 				$credit = $record["montant_versement"];
@@ -635,7 +638,18 @@ class cotisation_i extends assMetaNode {
 				$credit = 0;
 				$this -> creer_ligne_ecriture_comptable($id_ecriture, $id_journal_caisse, $id_compte_caisse, $id_organisme, $id_individu, $debit, $credit, $id_type_reglement, null, $date_reglement, null);
 			}
-		}
+			elseif ($id_type_reglement == 2) {
+				// virement
+				$id_ecriture = $this->creer_ecriture_comptable($id_organisme, $id_journal_banque_courant, $libelle,$date_reglement);
+				$record["id_ecriture_reglement"] = $id_ecriture;
+				$credit = $record["montant_versement"];
+				$debit = 0;
+				$this -> creer_ligne_ecriture_comptable($id_ecriture, $id_journal_banque_courant, $id_compte_adherents, $id_organisme, $id_individu, $debit, $credit, null, null, null, null);
+				$debit = $record["montant_versement"];
+				$credit = 0;
+				$this -> creer_ligne_ecriture_comptable($id_ecriture, $id_journal_banque_courant, $id_compte_banque, $id_organisme, $id_individu, $debit, $credit, $id_type_reglement, $numero_piece, $date_reglement, $id_type_banque);
+			}
+		
 		// Créer écriture banque
 		// obtenir un numéro écriture
 		// le stocker dans id_ecriture_reglement

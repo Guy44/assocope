@@ -80,12 +80,12 @@ class budget_ligne extends assMetaNode
 		if (count($data)==0)
 		{
 			atkTriggerError($record, $this->getAttribute("date_budget"), "La date doit être dans l'année du budget : ".$record["id_budget"]["an_budget"]);
-		}
+		return false;}
 		// Vérifier renseignement débi/crédit
 		if (($record["debit"]=="" || $record["debit"]==0) && ($record["credit"]=="" || $record["credit"]==0))
 		{
 			atkTriggerError($record, $this->getAttribute("debit"), "Crédit ou débit doivent être renseignés");
-		}
+		return false;}
 		if (parent::validate($record, $mode)==true)
 		{
 			return true;

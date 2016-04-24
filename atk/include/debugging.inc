@@ -17,7 +17,8 @@
    */
   if (atk_value_in_array($GLOBALS['config_smart_debug']))
   {
-    $GLOBALS['config_debug'] = atkConfig::smartDebugLevel($GLOBALS['config_debug'], $GLOBALS['config_smart_debug']);
+  //  $GLOBALS['config_debug'] = atkConfig::smartDebugLevel($GLOBALS['config_debug'], $GLOBALS['config_smart_debug']);
+  $GLOBALS['config_debug'] =(new atkConfig)->smartDebugLevel($GLOBALS['config_debug'], $GLOBALS['config_smart_debug']);
   }
 
   if ($GLOBALS['config_debug'] > 0)

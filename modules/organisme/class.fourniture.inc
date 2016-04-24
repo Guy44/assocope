@@ -55,7 +55,7 @@ class fourniture extends assMetaNode {
 				$this->add(new atgTextLibelleAttribute("libelle", AF_SEARCHABLE | AF_OBLIGATORY| AF_FORCE_LOAD));
 				$this->setSecurityAlias("organisme.organisme");
 				$this->add(new atkBoolAttribute("reglement_seul_o_n"));
-				$this->add(new atkParserAttribute("presence_compta", "env", AF_NO_LABEL | AF_HIDE_LIST), NULL, 1);
+	//			$this->add(new atkParserAttribute("presence_compta", "env", AF_NO_LABEL | AF_HIDE_LIST), NULL, 1);
 				$this->add(new atgOManyToOneRelation("id_organisme", "organisme.organisme", AF_SEARCHABLE | AF_OBLIGATORY | AF_RELATION_AUTOLINK | AF_RELATION_AUTOCOMPLETE| AF_FORCE_LOAD));
 				$this->add(new atgOManyToOneRelation("id_organisme_tiers", "organisme.organisme", AF_SEARCHABLE | AF_OBLIGATORY | AF_RELATION_AUTOLINK | AF_RELATION_AUTOCOMPLETE| AF_FORCE_LOAD));
 				$this->add(new atkManyToOneRelation("id_individu", "individu.individu", AF_SEARCHABLE | AF_RELATION_AUTOLINK | AF_RELATION_AUTOCOMPLETE| AF_FORCE_LOAD));
@@ -135,24 +135,24 @@ class fourniture extends assMetaNode {
 			if ($record["date_reglement"]=="")
 			{				
 				atkTriggerError($record, $this->getAttribute("date_reglement"), "En cas de règlement vous devez préciser la date");
-			}
+			return false;}
 			if ($record["id_compte_financier"]["id"]=="")
 			{
 				atkTriggerError($record, $this->getAttribute("id_compte_financier"), "Vous devez choisir un compte de finance");
-			}
+			return false;}
 			if ($record["id_reglement"]["id"]=="")
 			{
 				atkTriggerError($record, $this->getAttribute("id_reglement"), "Vous devez choisir un type de règlement");
-			}
+			return false;}
 				
 			if ($record["id_reglement"]["id"]!=1 && $record["numero_cheque"]!="")
 			{
 				atkTriggerError($record, $this->getAttribute("numero_cheque"), "Numéro de chèque alors que le mode de règlement précise que ce n'est pas un règlement par chèque");
-			}
+			return false;}
 			if ($record["id_reglement"]["id"]==1 && $record["numero_cheque"]=="")
 			{
 				atkTriggerError($record, $this->getAttribute("numero_cheque"), "Pas de numéro de chèque alors que le mode de règlement précise que c'est un règlement par chèque");
-			}
+			return false;}
 /*			if ($record["id_compte_charge"]["id"]=="")
 			{
 				atkTriggerError($record, $this->getAttribute("id_compte_charge"), "Vous devez choisir un compte de dépense");
@@ -161,11 +161,11 @@ class fourniture extends assMetaNode {
 			if ($record["id_compte_tiers"]["id"]=="")
 			{
 				atkTriggerError($record, $this->getAttribute("id_compte_tiers"), "Vous devez choisir un compte tiers");
-			}
+			return false;}
 		} else 
 		{
 			atkTriggerError($record, $this->getAttribute("montant_fourniture"), "Pas de montant ?");
-		}
+		return false;}
 		if (parent::validate($record, $mode)==true)
 		{
 			if ($mode=="update") $this->supprimer_ecritures($record);
@@ -177,6 +177,7 @@ class fourniture extends assMetaNode {
 		
 	}
 	function presence_compta_edit($record, $mode) {
+		return true;
 		$id_organisme = $record["id_organisme"];
 		$db = & atkGetDb();
 		$sql = "SELECT o.nom as nom, date_initialisation_comptabilite  from organisme o

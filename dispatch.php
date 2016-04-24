@@ -30,10 +30,29 @@
  * @internal Setup the system
  */
 $config_atkroot = "./";
+//atkdebug("<b>dispatch.php</b> : début avant include atk.inc");
 include_once("atk.inc");
-atkdebug("avant atksession (dispatch.php)");
-atksession();
+atkdebug("<b>dispatch.php après include atk.inc</b> _REQUEST : 
+		<br/>atknodetype :".$_REQUEST["atknodetype"].
+		"<br/>atkaction :".$_REQUEST["atkaction"].
+		"<br/>atklevel :".$_REQUEST["atklevel"].
+		"<br/>atkprevlevel :".$_REQUEST["atkprevlevel"].
+		"<br/>assocope :".$_REQUEST["assocope"]);
 
+/*echo "<b>dispatch.php après include atk.inc</b> _REQUEST : 
+		<br/>";
+echo "<pre>";
+print_r ($_REQUEST);
+echo "</pre>";
+die();
+*/
+
+
+atkdebug("<b>dispatch.php</b> : avant atksession");
+atkdebug ("<b>dispatch.php : </b> atklevel de GLOBALS : ".$GLOBALS["atklevel"]. ". \$atklevel ".$atklevel);
+atksession();
+atkdebug("<b>dispatch.php</b> : après atksession");
+atkdebug ("<b>dispatch.php : </b> atklevel de GLOBALS : ".$GLOBALS["atklevel"]. ". \$atklevel ".$atklevel);
 $session = &atkSessionManager::getSession();
 $output = &atkOutput::getInstance();
 // GG
@@ -57,14 +76,28 @@ $data = $db->getrows("SELECT google_map_key, ubio_keycode, tracer_mysqldb_query_
 
 if($ATK_VARS["atknodetype"]=="" && $session["login"]==1)
 {
-	echo "Action terminée";
+
+	echo (atkdebug("<b> dispatch.php</b> : no nodetype passed and session not expired. atknodetype ".$ATK_VARS["atknodetype"].", login ".$session["login"]));
+	echo "Loggé et pas de atknodetype (dispatch.php)";
+//	echo "<pre>";
+//	echo "POST<br/>";
+//	print_r ($_POST);
+	/*
+	echo "GET<br/>";
+	print_r ($_GET);
+	echo "ATK VARS<br/>";
+	print_r ($ATK_VARS);
+	echo "REQUEST<br/>";
+	print_r ($_REQUEST);
+	*/
+//	echo "</pre>";
 	die();
 }
-// GG FIN
+
 if($ATK_VARS["atknodetype"]=="" || $session["login"]!=1)
 {
 	// no nodetype passed, or session expired
-
+	atkdebug("<b> dispatch.php</b> : no nodetype passed, or session expired. atknodetype ".$ATK_VARS["atknodetype"].", login ".$session["login"]);
 	$page = &atknew("atk.ui.atkpage");
 	$ui = &atkinstance("atk.ui.atkui");
 	$theme = &atkTheme::getInstance();
@@ -90,6 +123,7 @@ if($ATK_VARS["atknodetype"]=="" || $session["login"]!=1)
 else
 {
 	atksecure();
+	atkdebug("<b> dispatch.php</b> : atksecure");
 	atkimport("atk.ui.atkpage");
 
 	$lockType = atkconfig("lock_type");
@@ -102,11 +136,8 @@ else
 	$controller = &atkinstance("atk.atkcontroller");
 	else
 	$controller = &atkinstance($ATK_VARS["atkcontroller"]);
-
-	//Handle http request
-	//   $value = atk_iconv("UTF-8",atktext("charset"),$field['html']);
-
-
+	atkdebug("<b>dispatch.php</b> : avant appel de atkcontroller->dispatch. atknodetype ".$ATK_VARS["atknodetype"].", login ".$session["login"]);
+	atkdebug ("<b>dispatch.php : </b> atklevel de GLOBALS : ".$GLOBALS["atklevel"]. ". \$atklevel ".$atklevel);
 	$controller->dispatch($ATK_VARS, $flags);
 
 
@@ -120,15 +151,19 @@ if($user["id"]=='0')
 $output->output('$_GET : '.p($_GET));
 $output->output('$_POST : '.p($_POST));
 $output->output('$_REQUEST : '.p($_REQUEST));}
+
 //$output->output(" <script type='text/javascript' src='./modules/development/javascript/wz_tooltip.js'></script>
 //        <script type='text/javascript' src='./modules/development/javascript/tip_balloon.js'></script> ");
+
 $time_fin=gettimeofday(true);
 //GG
 global $g_sessionManager;
 $administrateur = $g_sessionManager->getValue("atgAdministrateur_o_n", "globals");
 $stats_page_o_n = $g_sessionManager->getValue("stats_page_o_n", "globals");
+atkdebug("<b> dispatch.php</b> : doit-on afficher les stats de fin de page.  ? stats_page_o_n = $stats_page_o_n.");
 if ($stats_page_o_n=='1')
 {
+atkdebug("<b> dispatch.php</b> : afficher les stats (request/output/sql/page)");
 $stats="(request/output/sql/page) : ".(substr(($time_fin-$time_debut), 0,5))." | ".(substr((gettimeofday(true)-$time_debut),0,5))." | ".$g_compteur_appels_mysql_query." | ".$html_page_output_size."<br/>";
 $output->output($stats);
 $output->output($g_trace_atklanguage);
@@ -151,6 +186,8 @@ $parametres=escapeSQL(print_r($ATK_VARS,true));
 $selector=escapeSQL($ATK_VARS["atkselector"]);
 // $g_trace_mysql_query=escapeSQL($g_trace_mysql_query);
 // activer trace en décommentant dans atkmysqldb.inc
+atkdebug("<b> dispatch.php</b> : avant atk_log_event");
+atkdebug ("<b>dispatch.php : </b> atklevel de GLOBALS : ".$GLOBALS["atklevel"]. ". \$atklevel ".$atklevel);
 atk_log_event($origine, $node, $action, $parametres, $selector, null, null,$dispatch_ms_time,$dispatch_ms_elapsed_time,$g_compteur_appels_mysql_query,$html_page_output_ms_time,$html_page_output_size);
 
 

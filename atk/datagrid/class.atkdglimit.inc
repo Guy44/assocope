@@ -34,7 +34,7 @@ class atkDGLimit extends atkDGComponent
   {
     $defaultLimit = $this->getGrid()->getDefaultLimit();
     $limit = $this->getGrid()->getLimit();    
-    $values = array(5, 10, 15, 20, 25, 30, 40, 50, 100, $defaultLimit, $limit);
+    $values = array(5, 10, 15, 20, 25, 30, 40, 50, 100, 250, 500, 1000, $defaultLimit, $limit);
     $values = array_diff($values, array(-1));
     $values = array_unique($values);
     sort($values);    
@@ -61,11 +61,14 @@ class atkDGLimit extends atkDGComponent
     }   
     
     //Add 'show all' option.
+    /*
     if ($this->getOption('showAll', false))
     {
       $options[] = array('title' => $this->text('all'), 'value' => -1, 'current' => $limit == -1);
     }
-    
+    */
+    if (atkconfig("enable_showall")==true)
+    $options[] = array('title' => $this->text('all'), 'value' => -1, 'current' => $limit == -1);
     return $options;
   }    
   

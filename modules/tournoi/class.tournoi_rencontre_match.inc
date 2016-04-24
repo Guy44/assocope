@@ -96,10 +96,14 @@ class tournoi_rencontre_match extends assMetaNode
 
 	function action_maj() {
 
+		
 		$db = & atkGetDb();
 		global $g_user;
 		$userid = $g_user["id"];
 		$selection=$this->get_row_selection_information(false);
+		
+//	$this->p($this->m_postvars);
+	
 		foreach ($selection["node_ids"] as $id)
 		{
 		$remarque_1=escapeSQL($this->m_postvars["data"][$id]["remarque_1"]) ;
@@ -110,7 +114,7 @@ class tournoi_rencontre_match extends assMetaNode
 		( is_numeric($score_2) || $score_2=="") ? null : die ("valeur de score 2 non numérique") ;
 		( (is_numeric($score_1) && $score_2=="") || (is_numeric($score_2) && $score_1=="")) ?  die ("les deux scores doivent être numériques") : null ;
 		$date_rencontre_effective=$this->m_postvars["data"][$id]["date_rencontre_effective"]["date"];
-//		$this->p($this->m_postvars);
+
 		if ($date_rencontre_effective!="")
 		{		$sql="UPDATE tournoi_rencontre_match set date_rencontre_effective='$date_rencontre_effective',
 				id_modification=$userid, date_modification=UTC_TIMESTAMP() where id=".$id."";
@@ -137,7 +141,6 @@ class tournoi_rencontre_match extends assMetaNode
 				id_modification=$userid, date_modification=UTC_TIMESTAMP() where id=$id_tre_2";
 		$db->query($sql);}
 		}
-
 		$sql="select tr.id_tournoi from tournoi_rencontre tr, tournoi_rencontre_match trm where trm.id=$id and trm.id_tournoi_rencontre =tr.id ";
 		$data=$db->getrows($sql);
 		$tournoi_id=$data[0]["id_tournoi"];
@@ -159,7 +162,7 @@ class tournoi_rencontre_match extends assMetaNode
 	{
 		if ($mode != 'list')
 		return $this->getAttribute('score_1')->display($record, $mode);
-		$this->p($record);
+//		$this->p($record);
 		$db = & atkGetDb();
 		$id=$record["id"];
 		$sql="SELECT  score,remarque
@@ -254,7 +257,7 @@ class tournoi_rencontre_match extends assMetaNode
 
 	function action_admin(& $handler) {
 		global $config_recordsperpage;
-		$config_recordsperpage = 50;
+		$config_recordsperpage = 200;
 		return $handler->action_admin();
 	}
 

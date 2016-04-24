@@ -55,6 +55,13 @@
       }
 
       $record = $this->getRejectInfo(); // Check reject info first
+      
+      // GG
+      $arraylimit = array ();
+      $arraylimit ["offset"] = atkArrayNvl ( $this->m_postvars, 'atkstartat', "" );
+      $arraylimit ["limit"] = atkArrayNvl ( $this->m_postvars, 'atklimit', "" );
+      $recordtotalnumber = atkArrayNvl ( $this->m_postvars, 'atkrecordtotalnumber', "" );
+      // GG FIN
 
       if ($record == null) // If reject info not set -  do select
       {

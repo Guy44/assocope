@@ -133,7 +133,8 @@ class utilisateur extends assMetaNode {
 	function validate($record, $mode)
 	{
 		if ($record["acces_restreint_o_n"]==1 && $record["url_acces_restreint"]=="")
-		{		atkTriggerError($record, $this->getAttribute("url_acces_restreint"), "En cas d\'accès restreint vous devez préciser l\'url à lancer");}
+		{		atkTriggerError($record, $this->getAttribute("url_acces_restreint"), "En cas d\'accès restreint vous devez préciser l\'url à lancer");
+		return false;}
 		
 		if (parent::validate($record, $mode)==true)
 		{

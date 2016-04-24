@@ -21,7 +21,7 @@ class tournoi extends assMetaNode
 	function tournoi()
 	{
 		$this->atkMetaNode();
-		$this->atkNode("tournoi", NF_ADD_LINK |NF_EDITAFTERADD | NF_MRA | NF_COMPACT_NULL);
+		$this->atkNode("tournoi", NF_ADD_LINK |NF_EDITAFTERADD | NF_MRA | NF_COMPACT);
 		$this->add(new atkTabbedPane("Pane1", array (
 				"Général" => array (
 						"id_organisme",
@@ -814,7 +814,8 @@ class tournoi extends assMetaNode
 			//			($iequipe== count($equipe)-1) ? $row[]="<b>".str_replace('.', ',',$totalindex) : $row[]="";
 			if ($iequipe== count($equipe)-1)
 			{
-				$index_moyen_summary=$totalindex/2;
+				// Index moyen
+				$index_moyen_summary=($totalindex/2);
 				$index_equipe_summary=str_replace('.', ',',$index_moyen_summary);
 				$row[]="<b>".$index_equipe_summary;
 			}
@@ -939,9 +940,10 @@ class tournoi extends assMetaNode
 				if ($iequipe== count($equipe2)-1)
 				{
 					$index_moyen=$totalindex/2;
-					//				$coups_rendus=($index_moyen_summary-$index_moyen)*3/4;
-					$coups_rendus=($index_moyen_summary-$index_moyen)*1;
-					($coups_rendus<0) ? $coups_rendus=floor($coups_rendus) : $coups_rendus=ceil($coups_rendus) ;
+								$coups_rendus=($index_moyen_summary-$index_moyen)*3/4;
+								$coups_rendus=round(($index_moyen_summary-$index_moyen)*3/4);
+					//$coups_rendus=($index_moyen_summary-$index_moyen)*1;
+					//($coups_rendus<0) ? $coups_rendus=floor($coups_rendus) : $coups_rendus=ceil($coups_rendus) ;
 					$index_equipe=str_replace('.', ',',$index_moyen)." / ".$coups_rendus;
 					$row[]="<b>".$index_equipe;
 				}
@@ -1004,9 +1006,9 @@ class tournoi extends assMetaNode
 				$row[]=$row_index;
 				//				$row_totalindex="<b>".str_replace('.', ',',$totalindex/2);
 				$index_moyen=$totalindex/2;
-				//			$coups_rendus=($index_moyen_summary-$index_moyen)*3/4;
-				$coups_rendus=($index_moyen_summary-$index_moyen)*1;
-				($coups_rendus<0) ? $coups_rendus=floor($coups_rendus) : $coups_rendus=ceil($coups_rendus) ;
+				$coups_rendus=round(($index_moyen_summary-$index_moyen)*3/4);
+				//$coups_rendus=($index_moyen_summary-$index_moyen)*1;
+				//($coups_rendus<0) ? $coups_rendus=floor($coups_rendus) : $coups_rendus=ceil($coups_rendus) ;
 				$row[]=str_replace('.', ',',$index_moyen)." / ".$coups_rendus;
 
 				//			$row[]=$row_totalindex." / ".ceil($totalindex/2);

@@ -59,7 +59,7 @@ $output = &atkOutput::getInstance();
 /*
  * Traitement menu assocope
  */
-$user = getUser();
+$user = atkGetUser();
 $id = $user["id"];
 $db = & atkGetDb();
 
@@ -74,8 +74,13 @@ $data = $db->getrows("SELECT id_individu from app_utilisateur where id=" . $id .
 $id_individu = $data[0]["id_individu"];
 $selectedsearchstring_2=atkArrayNvl($_REQUEST, "searchstring_2");
 $selectedindividu = atkArrayNvl($_REQUEST, "selectedindividu");
-//print_r ($_REQUEST);
-//die ();
+/* GG
+ * 
+ echo "<pre>";
+print_r ($_REQUEST);
+echo "</pre>";
+die ();
+*/
 if ($selectedindividu>='0') {
 	if (!empty($selectedsearchstring_2))
 	{
@@ -147,7 +152,6 @@ lfr.cols ="220, *";
 
 ';
 /*
- *
 		window.top.document.getElementById("blocio").innerHTML="";
 
  */

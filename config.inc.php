@@ -11,7 +11,8 @@ $config_db["default"]["db"]       = "association";
 $config_db["default"]["user"]     = "webmaster";
 $config_db["default"]["password"] = "rf1930";
 //$config_db["default"]["charset"]  = "utf8";
-//$config_default_charset = "utf-8";
+$config_default_charset = "iso-8859-1";
+
 $config_db["schema"]["driver"] = "mysql";
 $config_db["schema"]["host"]     = "mysql.wikiservas.net";
 $config_db["schema"]["db"]       = "information_schema";
@@ -24,6 +25,7 @@ $config_db["association"]["db"]       = "association";
 $config_db["association"]["user"]     = "webmaster";
 $config_db["association"]["password"] = "rf1930";
 
+
 $config_db["assocopewiki"]["driver"] = "mysql";
 $config_db["assocopewiki"]["host"]     = "mysql.wikiservas.net";
 $config_db["assocopewiki"]["db"]       = "assocopewiki";
@@ -34,6 +36,17 @@ $config_allowed_includes[]="./atk/popups/htmlpopup.inc";
 $config_allowed_includes[]="./atk/popups/qrpopup.inc";
 $config_allowed_includes[]="./dispatch.php";
 
+/**
+ * Cache table meta data and compiled meta node code.
+ *
+ * On development environments this option should be set to false, but
+ * on production environments you should really enable it. If you enable
+ * this option and your table structure changes you should manually clear
+ * the cache in the atktmp directory!
+ *
+ * @var bool
+ */
+$config_meta_caching = false;
 
 // -------------------------------------------
 //           LAYOUT CONFIGURATION
@@ -43,11 +56,17 @@ $config_recordlist_orientation  = "left";
 $config_recordlist_vorientation = "middle";
 $config_recordlist_icons = "true";
 $config_tabs = true;
-$config_stacktrace = false;
+$config_stacktrace = true;
+/**
+ * Add a 'show all' option to the records per page selector.
+ * @var boolean
+ */
+$config_enable_showall=true;
+
 $config_top_frame = 1;
 $config_recordsperpage=50;
 $config_defaulttheme = "assocope";
-$config_force_theme_recompile=false;
+$config_force_theme_recompile=true;
 $config_language="fr";
 $config_atkroot="./";
 $config_extended_search_action = "smartsearch";
@@ -95,7 +114,7 @@ $config_manytoone_autocomplete_large = false;
 $config_manytoone_search_autocomplete = true;
 //   * Controls how many characters a user must enter before an auto-completion
 //  * search is being performed.
-$config_manytoone_autocomplete_minchars = 4;
+$config_manytoone_autocomplete_minchars =2;
 //   * The search mode of the autocomplete fields. Can be 'startswith', 'exact' or 'contains'.
 //  $config_manytoone_autocomplete_searchmode = "contains";
 //   * Value determines wether the search of the autocompletion is case-sensitive.
@@ -136,8 +155,7 @@ $config_session_init = true;
 
 // GG
 $config_identifier = "assocope"; 
-//$config_session_name = "assocope";
-//$config_identifier = "wikiassoc";
+$config_session_name = "assocope";
 $config_top_frame = 1;
 $config_authorization = "db";
 $config_authentication = "db";
@@ -172,7 +190,7 @@ $config_tplcompiledir = $config_atktempdir."compiled/tpl/";
 // $config_durationformat = 0;
 $config_defaultfavico = "./images/ilco1.ico";
 $config_corporate_module_base = "modules.associationmodule";
-$config_logging=2;
+$config_logging=0;
 $config_logfile=$config_atktempdir."atksecurity.log";
 
 // The application root
@@ -195,7 +213,7 @@ $config_mailreport = "guy.gourmellet@gmail.com";
 //  1 - Print some debug information at the bottom of each screen
 //  2 - Print debug information, and pause before redirects
 //  3 - Like 2, but also adds trace information to each statement
-$config_debug =0;
+$config_debug =-1;
 $config_debuglog=$config_atktempdir."debug.log";
 
 // Smart debug parameters. Is used to dynamically enable debugging for

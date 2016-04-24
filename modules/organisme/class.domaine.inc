@@ -95,6 +95,24 @@ class domaine extends assMetaNode {
 		$this->setOrder(" organisme_domaine.date_creation DESC ");
 		//		$this->setIndex("libelle");
 	}
+	function rowColor($record)
+	{
+		include_once (moduleDir("utils") . "class.dateutil.inc");
+		$curdate = date("Ymd");
+		$date_echeance = $record['date_registrar_fin']["year"] . $record['date_registrar_fin']["month"] . $record['date_registrar_fin']["day"];
+		$difference=dateutil :: date_diff($curdate, $date_echeance);
+		
+		if ($difference <-365 )
+		{
+			return $this->couleurarchive;
+		}
+		if ($difference< 30)
+			return $this->couleursemaine;
+		
+			return $this->couleurplusmois;
+		
+	}
+	
 	function descriptor_def() {
 		return " [libelle] ";
 	}

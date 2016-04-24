@@ -11,6 +11,8 @@
    * @copyright (c)2000-2004 Ivo Jansch
    * @license http://www.achievo.org/atk/licensing ATK Open Source License
    *
+   *@GG Traitement spécial de nodetitle
+   *
    * @version $Revision: 6309 $
    * $Id: class.atkui.inc 6715 2010-02-10 18:26:57Z mvdvelden $
    */
@@ -349,8 +351,16 @@
         {
           $keys = array('title_'.$module.'_'.$nodetype, 'title_'.$nodetype, $nodetype);
           $label = $node->text($keys);
+                 
+// GG
+          // Majuscule en début
+          $label=ucfirst($label);
+          // Remplacer les _ par espace
+          $label=str_replace("_", " ", $label);
           if ($action != NULL)
-            $label .= " - ".$node->text($actionKeys);
+          	//  $label .= " - ".atktext($actionKeys, $module);
+          	$label .= "(".atktext($actionKeys, $module).")";
+          // GG FIN
         }
       }
       return $label;

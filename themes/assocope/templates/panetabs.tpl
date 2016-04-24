@@ -10,11 +10,11 @@
                              
             {foreach from=$tabs key=tabName item=tab}
               <td class="{$tabName} tabbedPaneTab {if $tab.selected}activetab{else}passivetab{/if}" valign="middle" align="left" nowrap="nowrap">	
-                <a href="javascript:void(0)"  onclick="ATK.TabbedPane.showTab('{$paneName}', '{$tabName}'); return false;">{$tab.title}</a>
+                <a href="javascript:void(0)" onclick="ATK.TabbedPane.showTab('{$paneName}', '{$tabName}'); return false;">{$tab.title}</a>
               </td>          
               <td class="intertab" >&nbsp;</td>
             {/foreach}
-<td class="intertab" width="2000px" ></td>
+<td class="intertab" width="100%" ></td>
 
           </tr>
         </table>

@@ -52,7 +52,7 @@ class atkHiddenAttribute extends atkDummyAttribute
     {
         $id = $id = $this->getHtmlId($fieldprefix);
         $result = '<input type="hidden" id="'.$id.'" name="'.$fieldprefix.$this->formName().'" value="'.
-                       htmlspecialchars($this->m_text).'">';
+                       htmlspecialchars($this->m_text, null, atkGetCharset()).'">';
          return $result;
     }
 }

@@ -124,8 +124,7 @@
     else if ($errtype == E_NOTICE)
     {
       // Just show notices
-      // TODO décommenter en dessous pas de ligne à cause du nombre des traductions
- //     atkdebug("[$errortypestring] $errstr in $errfile (line $errline)", DEBUG_NOTICE);
+      atkdebug("[$errortypestring] $errstr in $errfile (line $errline)", DEBUG_NOTICE);
       return;
     }
     else if (defined('E_DEPRECATED') && ($errtype & (E_DEPRECATED|E_USER_DEPRECATED)) > 0)
@@ -267,22 +266,8 @@
   function atkdebug($txt, $flags = 0)
   {
     global $g_debug_msg;
-  /* TODO
-   * 
-    global $g_sessionManager;
-	if (atkGetSessionManager())
-	{
-		if ($g_sessionManager->getValue("debug_o_n", "globals")=="1")
-		{$level =2;} 
-		else $level = atkconfig("debug");
-	}
-		
-	
-	else
-	 */
-	{$level = atkconfig("debug");}
-
-	    if ($level>=0)
+    $level = atkconfig("debug");
+    if ($level>=0)
     {
       if (hasFlag($flags, DEBUG_HTML))
         $txt = atk_htmlentities($txt);
@@ -306,8 +291,7 @@
       }
       else if (!hasFlag($flags,DEBUG_NOTICE))
       {
-        // GG 2016-01-04
-      	$g_debug_msg[]=$line;
+        $g_debug_msg[]=$line;
       }
     }
 
@@ -391,8 +375,6 @@
    */
   function atkGetTrace($format="html")
   {
-  	//TODO GG DD
-  	return true;
     // Return if the debug_backtrace function doesn't exist
     if(!function_exists("debug_backtrace"))
       return "Incorrect php-version for atk_get_trace()";
@@ -444,8 +426,7 @@
       $functionParamArr = array();
 
       // Parse any arguments into the array
- 
-     if(isset($traceArr[$i]["args"]))
+      if(isset($traceArr[$i]["args"]))
       {
         foreach($traceArr[$i]["args"] as $val)
         {
@@ -479,7 +460,6 @@
           $functionParamArr[] = $theSpacer."  ".$stringval;
         }
       }
-   
       $functionParams = implode(",\n", $functionParamArr);
 
       $ret .= $theSpacer."@".$location."\n";
@@ -492,12 +472,12 @@
 
     // If html format should be used, replace the html special chars with html entities and put the backtrace within preformat tags.
     if ($format=="html")
-      $ret = "<pre>" . htmlspecialchars($ret,null, atkGetCharset()) . "</pre>";
+      $ret = "<pre>" . htmlspecialchars($ret) . "</pre>";
 
     // Return the generated trace
     return $ret;
   }
- 
+  
   function atkGetTracePremierNiveau($format="html")
   {
   	// Return if the debug_backtrace function doesn't exist
@@ -597,7 +577,7 @@
   
   	// If html format should be used, replace the html special chars with html entities and put the backtrace within preformat tags.
   	if ($format=="html")
-  		$ret = "<pre>" . htmlspecialchars($ret,null, atkGetCharset()) . "</pre>";
+  		$ret = "<pre>" . htmlspecialchars($ret) . "</pre>";
   
   		// Return the generated trace
   		return $ret;
@@ -1343,14 +1323,9 @@
   	* atkdb (db) 545
   	* atktools 159, 171, 1003
   	*/
-  	
-  	
-  	$e = new Exception;
-  	$error_message.="<br/><b>Trace :: </b>"."\n".$e->getTraceAsString();
   	$error_message =escapeSQL($error_message);
   	$origine='atk_log_error';
   	atk_log_event($origine, $node, $action, $parametres, $selector, $error_message, null);
-  	die();
   	// GG FIN
   }
   // GG
@@ -1396,20 +1371,6 @@
   	$userid=$user["id"];}
   
   	$db = &atkGetDb(atkconfig("auth_database"));
-  	if (is_array($_COOKIE))
-  	{
-  		$session_id= "
-  				<br/>_COOKIE
-  				".str_repeat("-",70)."
-  						";
-  		foreach ($_COOKIE as $key=>$value)
-  		{
-  			$session_id.="<br/>".$key." = ".$value."
-  					";
-  		}
-  	}
- 	$session_id=escapeSQL($session_id);
-
   	$parametres=escapeSQL($parametres);
   	($action=="wiki")? $selector=escapeSQL($parametres) : $selector=escapeSQL($selector);
   	$host=escapeSQL($_SERVER['HTTP_HOST']);
@@ -1419,7 +1380,7 @@
   	$referer=escapeSQL($_SERVER['HTTP_REFERER']);
   	$query_string=escapeSQL($_SERVER['QUERY_STRING']);
   	$nextid=$db->nextid("atkeventlog");
-  	$sql="INSERT INTO atkeventlog (id, userid, stamp,origine, node, action, parametres, session_id,
+  	$sql="INSERT INTO atkeventlog (id, userid, stamp,origine, node, action, parametres,
   	selector,
   	host,
   	remote_address,
@@ -1434,7 +1395,7 @@
   	html_page_output_ms_time,
   	html_page_output_size
   	)
-  	VALUES('$nextid', '$userid', UTC_TIMESTAMP, '$origine', '$node', '$action', '$parametres','$session_id', '$selector' ,'$host',
+  	VALUES('$nextid', '$userid', UTC_TIMESTAMP, '$origine', '$node', '$action', '$parametres','$selector' ,'$host',
   	'$remote_address',
   	'$user_agent',
   	'$accept_language',
@@ -1447,16 +1408,15 @@
   	($html_page_output_ms_time==0 || $html_page_output_ms_time=="") ? $sql.="NULL  ," : $sql.="'$html_page_output_ms_time', ";
   	($html_page_output_ms_time==0 || $html_page_output_size=="") ? $sql.="NULL  " : $sql.="'$html_page_output_size' ";
   	$sql.=")";
-/*  		if ($origine=='atk_log_error')
+  
+  	$db->query($sql);
+  	/*	if ($admin_o_n=="1")
   	 {echo "Atklogevent";
   	echo "   Log : ".$log_o_n;
   	echo " <br/>  sql : ".$sql;
   	die();}
-  */
-  	$db->query($sql);
-
+  	*/
   	$db->commit();
-  	
   }
   
   // GG
@@ -1722,7 +1682,6 @@
    */
   function exportFile($file, $filename,$mimetype="", $detectmime=true)
   {
-
     include_once(atkconfig("atkroot")."atk/atkbrowsertools.inc");
     $browser = getBrowserInfo();
     if (preg_match("/ie/i", $browser["browser"]))
@@ -2021,24 +1980,24 @@
    */
   function atkTrace($msg="")
   {
-    global $_SERVER, $_SESSION, $_GET, $_COOKIE, $_POST;
+    global $HTTP_SERVER_VARS, $HTTP_SESSION_VARS, $HTTP_GET_VARS, $HTTP_COOKIE_VARS, $HTTP_POST_VARS;
 
     $log = "\n".str_repeat("=", 5)."\n";
     $log.= "Trace triggered: ".$msg."\n";
     $log.= date("r")."\n";
-    $log.= $_SERVER["REMOTE_ADDR"]."\n";
-    $log.= $_SERVER["SCRIPT_URL"]."\n";
+    $log.= $HTTP_SERVER_VARS["REMOTE_ADDR"]."\n";
+    $log.= $HTTP_SERVER_VARS["SCRIPT_URL"]."\n";
     $log.= "\nSessioninfo: "."session_name(): ".session_name()." session_id(): ".session_id()." SID: ".SID." REQUEST: ".$_REQUEST[session_name()]." COOKIE: ".$_COOKIE[session_name()]."\n";
-    $log.= "\n\n_SERVER:\n";
-    $log.= var_export($_SERVER, true);
-    $log.= "\n\n_SESSION:\n";
-    $log.= var_export($_SESSION, true);
-    $log.= "\n\n_COOKIE:\n";
-    $log.= var_export($_COOKIE, true);
-    $log.= "\n\n_POST:\n";
-    $log.= var_export($_POST, true);
-    $log.= "\n\n_GET:\n";
-    $log.= var_export($_GET, true);
+    $log.= "\n\nHTTP_SERVER_VARS:\n";
+    $log.= var_export($HTTP_SERVER_VARS, true);
+    $log.= "\n\nHTTP_SESSION_VARS:\n";
+    $log.= var_export($HTTP_SESSION_VARS, true);
+    $log.= "\n\nHTTP_COOKIE_VARS:\n";
+    $log.= var_export($HTTP_COOKIE_VARS, true);
+    $log.= "\n\nHTTP_POST_VARS:\n";
+    $log.= var_export($HTTP_POST_VARS, true);
+    $log.= "\n\nHTTP_GET_VARS:\n";
+    $log.= var_export($HTTP_GET_VARS, true);
 
     $log.= "\n\nSession file info:\n";
     $log.= var_export(stat(session_save_path()."/sess_".session_id()), true);
@@ -2342,8 +2301,7 @@
    */
   function atk_htmlentities($string, $quote_style=ENT_COMPAT, $charset=null)
   {
-   
-  	return atkString::htmlentities($string, $quote_style, $charset);
+    return atkString::htmlentities($string, $quote_style, $charset);
   }
 
   /**
@@ -2527,8 +2485,7 @@
    */
   function atk_iconv($in_charset, $out_charset, $str)
   {
- 
-  			return atkString::iconv($in_charset,$out_charset,$str);
+  	return atkString::iconv($in_charset,$out_charset,$str);
   }
 
   /**

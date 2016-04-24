@@ -241,6 +241,7 @@ class google_feed extends assMetaNode {
 	}
 	function	google_contacts_sync($id_individu,$userid,$origine)
 	{
+		return false;
 		$db = & atkGetDb();
 		$sql="SELECT  id, identifiant_google, code_google
 			from individu

@@ -36,7 +36,7 @@
       // Load and instantiate the documentwriter
       atkimport("atk.document.atkdocumentwriter");
       $openDocumentWriter = &atkDocumentWriter::getInstance("opendocument");
-
+    
       // ATKSelector must be available to perform this action
       if ($this->m_postvars["atkselector"] == "")
       {
@@ -69,14 +69,16 @@
 
       // Assign the record variables to the OpenOffice.org DocumentWriter
       if (method_exists($this->m_node, "assignDocumentVars"))
-        $this->m_node->assignDocumentVars($openDocumentWriter, $this->m_postvars["atkselector"]);
+    $this->m_node->assignDocumentVars($openDocumentWriter, $this->m_postvars["atkselector"]);
+
       else
+      	
         $this->assignDocumentVars($openDocumentWriter, $this->m_postvars["atkselector"]);
-
-      // Send the document to the browser
+// Send the document to the browser
+         
       if (!$openDocumentWriter->display($tpl_file, $this->m_postvars["atkdoctpl"]))
-        return false;
-
+      {return false;}
+   
       // Halt further execution to prevent atk rendering it's interface causing to corrupt the opendocument file
       exit;
     }
@@ -90,6 +92,7 @@
      */
     function assignDocumentVars(&$documentWriter, $selector)
     {
+    	
       // Load the selected record from the database
       $record = $this->m_node->selectDb($selector, "", "", $this->m_viewExcludes, "", "document");
 
@@ -98,6 +101,7 @@
 
       // Also assign the generic (date) vars tot the documentWriter
       $documentWriter->assignDocumentGenericVars();
+      
     }
 
     /**

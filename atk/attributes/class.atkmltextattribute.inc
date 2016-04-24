@@ -75,7 +75,7 @@
       /* default language */
       $result.= '<textarea name="'.$prefix.$this->formName().'['.$languages[0].']"'.
                ' rows="10" wrap="virtual"'.($this->m_size > 0 ? ' cols="'.$this->m_size.'"' : '').'>'.
-               htmlspecialchars($record[$this->fieldName()][$languages[0]]).
+               htmlspecialchars($record[$this->fieldName()][$languages[0]], null, atkGetCharset()).
                '</textarea>';
 
       return $result;

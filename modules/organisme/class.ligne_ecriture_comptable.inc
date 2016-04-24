@@ -10,7 +10,7 @@ class ligne_ecriture_comptable extends assMetaNode {
 	}
 	function ligne_ecriture_comptable() {
 		$this->atkMetaNode();
-		$this->atkNode("ligne_ecriture_comptable", NF_ADD_LINK | NF_MRA |NF_ADDAFTERADD | NF_COMPACT_NULL );
+		$this->atkNode("ligne_ecriture_comptable", NF_ADD_LINK | NF_MRA |NF_ADDAFTERADD | NF_COMPACT );
 		$this->setSecurityAlias("organisme.organisme");
 		$this->add(new atkTabbedPane("Pane1", array (
 				"Général" => array (
@@ -87,14 +87,15 @@ class ligne_ecriture_comptable extends assMetaNode {
 	}
 	function action_admin($handler) {
 		global $config_recordsperpage;
-		$config_recordsperpage = 20;
+		$config_recordsperpage = 100;
 		return $handler->action_admin();
 	}
 
 	function initial_values() {
 		$init_vals = array ();
 		$ecriture = explode('=', $this->m_postvars['atkfilter']);
-		if ($ecriture[0] == 'id_ecriture') {
+//		$this->p($this->m_postvars);
+		if ($ecriture[0] == 'id_ecriture' ||  $ecriture[0] == 'organisme_ligne_ecriture_comptable.id_ecriture') {
 			$id_ecriture = $ecriture[1];
 			$db = & atkGetDb();
 			$data = $db->getrows("SELECT e.id_organisme, e.id_journal, DAYOFMONTH(e.date_ecriture) as jour,

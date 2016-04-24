@@ -86,7 +86,8 @@ class mod_global extends associationModule {
 		include (atkconfig("atkroot") . "version.inc");
 		$title = '<b>' . $wikiassoc_user . ' avec' . href("http://www.wikistoma.org/wiki", atktext($wikiassoc_name), SESSION_NEW, false, 'target="_blank"')
 		. ' <br /> version : ' . $wikiassoc_version . ' ' . $wikiassoc_state . ' du ' . $wikiassoc_date . '<br />'.
-		href("http://www.atk-framework.com/wiki/ATK", atktext("Atk"), SESSION_NEW, false, 'target="_blank"') .'('. atkversion() . ')</b>';
+		href("http://www.atk-framework.com/wiki/ATK", atktext("Atk"), SESSION_NEW, false, 'target="_blank"') .'('. atkversion() . ')'.
+		' <br /> Php version : ' . phpversion() ;
 
 		global $g_sessionManager;
 		$administrateur = $g_sessionManager->getValue("atgAdministrateur_o_n", "globals");
@@ -2116,8 +2117,6 @@ class mod_global extends associationModule {
 			// 
 			$this->menuitem("-", null, "Rencontres", true);
 			// Nom Rencontre
-
-
 			$data=$node->descripteur_rencontre($rencontreid,'n','n','n') ;
 			$this->menuitem("!".$data, null, "Rencontres", true);
 
@@ -2136,68 +2135,103 @@ class mod_global extends associationModule {
 			"atkselector" => "organisme_rencontre.id ='" . $rencontreid . "'"
 			)), "Rencontres", true); }
 				
-				
-				$data = $db->getrows("SELECT count(id) as nombre from organisme_rencontre_choix where  id_rencontre ='" . $rencontreid . "'");
-				$nombre_rencontre_choix = $data[0]["nombre"];
-				// Fournisseurs
-				$this->menuitem("Choix_r"."#".$nombre_rencontre_choix, dispatch_url("organisme.rencontre_choix", "admin", array (
-						"atkfilter" => "organisme_rencontre_choix.id_rencontre ='" . $rencontreid . "'"
+			// Choix
+			$data = $db->getrows("SELECT count(id) as nombre from organisme_rencontre_choix where  id_rencontre ='" . $rencontreid . "'");
+			$nombre_rencontre_choix = $data[0]["nombre"];
+						$this->menuitem("Choix_r"."#".$nombre_rencontre_choix, dispatch_url("organisme.rencontre_choix", "admin", array (
+						"atkfilter" => "organisme_rencontre_choix.id_rencontre =" . $rencontreid
 				)), "Rencontres", true);
-		/*		$actions["balance_carree"] = session_url("dispatch.php?atknodetype=" . $this->atkNodeType() . "&atkaction=balance_carree&atkselector=[pk]", SESSION_NESTED);
-		
+						
+						$this->menuitem("-", "", "Rencontres", true);
 
-		*/
-				
+			// Participants	
 			$data = $db->getrows("SELECT count(id) as nombre from individu_rencontre where  id_rencontre ='" . $rencontreid . "'");
 			$nombre_rencontre_participant = $data[0]["nombre"];
-			// Participants
+			
 			$this->menuitem("Participants_r"."#".$nombre_rencontre_participant, dispatch_url("individu.rencontre_i", "admin", array (
-			"atkfilter" => "individu_rencontre.id_rencontre ='" . $rencontreid . "'"
+			"atkfilter" => "individu_rencontre.id_rencontre =$rencontreid "
 			)), "Rencontres", true);
+			
 			// Liste des Participants
 			$this->menuitem("Liste_Participants_r"."#".$nombre_rencontre_participant, dispatch_url("organisme.rencontre", "liste_participants", array (
-			"atkfilter" => "organisme_rencontre.id ='" . $rencontreid . "'"
+					"atkfilter" => "organisme_rencontre.id ='" . $rencontreid . "'"
 			)), "Rencontres", true);
-
-			// Compte rendu
-			$this->menuitem("Compte_rendu_r", dispatch_url("organisme.rencontre", "compte_rendu", array (
-			"atkfilter" => "organisme_rencontre.id ='" . $rencontreid . "'"
+			
+			// Paiements participants
+			$data = $db->getrows("SELECT count(id) as nombre from individu_rencontre_paiement where  id_rencontre ='" . $rencontreid . "'");
+			$nombre_rencontre_paiement = $data[0]["nombre"];
+	//		if ($nombre_rencontre_paiement>0)
+			$this->menuitem("Paiements participants"."#".$nombre_rencontre_paiement, dispatch_url("individu.individu_rencontre_paiement", "admin", array (
+					"atkfilter" => "individu_rencontre_paiement.id_rencontre =$rencontreid"
 			)), "Rencontres", true);
-
+			
+				
+				
+			// Remboursements participants
+			$data = $db->getrows("SELECT count(id) as nombre from individu_rencontre_remboursement where  id_rencontre ='" . $rencontreid . "'");
+			$nombre_rencontre_remboursement = $data[0]["nombre"];
+			if ($nombre_rencontre_remboursement>0)
+			{
+			$this->menuitem("Remboursements participants"."#".$nombre_rencontre_remboursement, dispatch_url("individu.individu_rencontre_remboursement", "admin", array (
+					"atkfilter" => "individu_rencontre_remboursement.id_rencontre ='" . $rencontreid . "'"
+			)), "Rencontres", true);
+			}
 			// Enveloppes
-
+			
 			$this->menuitem("Enveloppes_Participants_r"."#".$nombre_rencontre_participant, dispatch_url("individu.v_individu_lieu", "document", array (
-			"atkselector" => "organisme_id='" . $organisme_rencontre_id . "'",
-			"atkfilter" => "v_individu_lieu.adresse_defaut_o_n='1' and v_individu_lieu.id in 
+					"atkselector" => "organisme_id='" . $organisme_rencontre_id . "'",
+					"atkfilter" => "v_individu_lieu.adresse_defaut_o_n='1' and v_individu_lieu.id in
 (select distinct id_individu from individu_rencontre where id_rencontre ='" . $rencontreid . "')",
-			"atkdoctpl" => "enveloppe_individus_organisme.odt",
-			"atkdoctpl_prefix_id" => "1",
-			"atkcode" => "1",
-			"id" => $organisme_rencontre_id
+					"atkdoctpl" => "enveloppe_individus_organisme.odt",
+					"atkdoctpl_prefix_id" => "1",
+					"atkcode" => "1",
+					"id" => $organisme_rencontre_id
 			)), "Rencontres", true);
+
+			$this->menuitem("-", "", "Rencontres", true);
+				
+				// Fournisseurs
 			$data = $db->getrows("SELECT count(id) as nombre from organisme_rencontre_fournisseur where  id_rencontre ='" . $rencontreid . "'");
 			$nombre_rencontre_fournisseur = $data[0]["nombre"];
-			// Fournisseurs
 			$this->menuitem("Fournisseurs_r"."#".$nombre_rencontre_fournisseur, dispatch_url("organisme.rencontre_fournisseur", "admin", array (
-			"atkfilter" => "organisme_rencontre_fournisseur.id_rencontre ='" . $rencontreid . " order by organisme_rencontre_fournisseur.libelle '"
+			"atkfilter" => "organisme_rencontre_fournisseur.id_rencontre ='" . $rencontreid . "'"
 			)), "Rencontres", true);
+			
+			$this->menuitem("-", "", "Rencontres", true);
+				
+			// Communications
 			$data = $db->getrows("SELECT count(id) as nombre from organisme_rencontre_communication where  id_rencontre ='" . $rencontreid . "'");
 			$nombre_rencontre_communication = $data[0]["nombre"];
-			// Communications
 			$this->menuitem("Communications_r"."#".$nombre_rencontre_communication, dispatch_url("organisme.rencontre_communication", "admin", array (
 			"atkfilter" => "organisme_rencontre_communication.id_rencontre ='" . $rencontreid . "'"
 			)), "Rencontres", true);
 			
+			$this->menuitem("-", "", "Rencontres", true);
+				
+			// tableau dépenses/recettes
 			$this->menuitem("Dépenses/recettes rencontre", dispatch_url("organisme.rencontre", "depenses_recettes", array (
 					"atkfilter" => "organisme_rencontre.id ='" . $rencontreid . "'"
 			)), "Rencontres", true);
+			
+			// tableau balance carrée participants
 			$this->menuitem("Balance carrée participants_r", dispatch_url("organisme.rencontre", "balance_carree", array (
 					"atkfilter" => "organisme_rencontre.id ='" . $rencontreid . "'"
 			)), "Rencontres", true);
+			
+			$this->menuitem("-", "", "Rencontres", true);
+				
+			// Renseignements voyage
 			$this->menuitem("Renseignements voyage_r", dispatch_url("organisme.rencontre", "renseignements_voyage", array (
 					"atkfilter" => "organisme_rencontre.id ='" . $rencontreid . "'"
 			)), "Rencontres", true);
-			
+			$this->menuitem("-", "", "Rencontres", true);
+				
+
+			// Compte rendu
+			$this->menuitem("Compte_rendu_r", dispatch_url("organisme.rencontre", "compte_rendu", array (
+					"atkfilter" => "organisme_rencontre.id ='" . $rencontreid . "'"
+			)), "Rencontres", true);
+				
 			
 			// Joueurs golf
 			$data = $db->getrows("SELECT count(id) as nombre from individu_carte_golf where  id_rencontre ='" . $rencontreid . "'");
@@ -3034,7 +3068,12 @@ cpv.id_pays=p.id ) ");
 			$this->menuitem("Xhtml", "http://www.w3.org/TR/2003/WD-xhtml2-20030506/", "Rd", true);
 			// Xml
 			$this->menuitem("Xml", "http://www.w3.org/TR/2000/REC-xml-20001006", "Rd", true);
-				
+
+			$this->menuitem('-', "", "Rd", true);
+			$this->menuitem("!<b>Google-api-php-client</b>", "", "Rd", true);
+			$this->menuitem("-", "", "Rd", true);
+			
+			$this->menuitem("Google-api-php-client", "http://www.wikiservas.net/association/modules/google-api-php-client/examples/index.php", "Rd", true);
 			$this->menuitem('-', "", "Rd", true);
 			$this->menuitem("!<b>Google API</b>", "", "Rd", true);
 			$this->menuitem("-", "", "Rd", true);

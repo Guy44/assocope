@@ -62,7 +62,6 @@ class rencontre_i extends assMetaNode {
 						"id_ecriture_participation",
 						"id_ecriture_reglement",
 
-						"presence_compta"
 				),
 				"Second règlement" => array (
 						"montant_versement_2",
@@ -73,6 +72,13 @@ class rencontre_i extends assMetaNode {
 						"id_ecriture_participation_2",
 						"id_ecriture_reglement_2",
 				),
+				/*"Règlements" => array (
+						"paiement"
+				),
+				"Remboursements" => array (
+						"remboursement"
+				),
+				*/
 				"Intervenant" => array (
 
 						"intervenant_o_n",
@@ -91,7 +97,7 @@ class rencontre_i extends assMetaNode {
 		$this->setSecurityAlias("individu.individu");
 		$this->add(new atkAttribute("id",0,AF_HIDE_ADD|AF_HIDE_EDIT|AF_FORCE_LOAD));
 		$attr = $this->add(new atkManyToOneRelation("id_rencontre", "organisme.rencontre", AF_SEARCHABLE | AF_OBLIGATORY | AF_RELATION_AUTOLINK | AF_RELATION_AUTOCOMPLETE |AF_FORCE_LOAD),NULL,115);
-		$this->add(new atkParserAttribute("presence_compta", "env", AF_NO_LABEL | AF_HIDE_LIST), NULL, 1);
+//		$this->add(new atkParserAttribute("presence_compta", "env", AF_NO_LABEL | AF_HIDE_LIST), NULL, 1);
 		$this->add(new atkAttribute("id",AF_HIDE_ADD|AF_HIDE_EDIT|AF_FORCE_LOAD),NULL,120);
 		$this->add(new atkDummyAttribute("descripteur_rencontre","",AF_HIDE_ADD|AF_HIDE_EDIT|AF_COMPACT),NULL,45);
 		$this->add(new atkManyToOneRelation("id_individu", "individu.individu", AF_SEARCHABLE | AF_OBLIGATORY | AF_RELATION_AUTOLINK | AF_RELATION_AUTOCOMPLETE | AF_FORCE_LOAD),NULL,111);
@@ -137,6 +143,9 @@ class rencontre_i extends assMetaNode {
 		//	$this->add(new atkDummyAttribute("ecritures"),NULL,1200);
 		$this->add(new atkAttribute("id_ecriture_participation_2",0,AF_FORCE_LOAD),NULL,53);
 		$this->add(new atkAttribute("id_ecriture_reglement_2",0,AF_FORCE_LOAD),NULL,54);
+		
+	//	$this->add(new atkOneToManyRelation("paiement", "individu.individu_rencontre_paiement", "id_individu_rencontre", AF_HIDE_LIST));
+	//	$this->add(new atkOneToManyRelation("remboursement", "individu.individu_rencontre_remboursement", "id_individu_rencontre", AF_HIDE_LIST));
 
 		$this->add(new atgFileManyToOneRelation("id_document_intervenant", "organisme.document", AF_RELATION_AUTOLINK | AF_RELATION_AUTOCOMPLETE,0,AF_FORCE_LOAD),NULL,325);
 		$rapp=$this->add(new atkOneToManyRelation("id_rapport_activite", "individu.activite_i" ,"id_individu_rencontre", AF_FORCE_LOAD),NULL,800);
@@ -157,7 +166,9 @@ class rencontre_i extends assMetaNode {
 		$this->add(new atkDummyAttribute("descripteur_module_estampillage",'text',AF_HIDE_ADD | AF_HIDE_EDIT  | AF_NO_LABEL| AF_COMPACT),null,55 );
 		//		$this->setOrder("id_rencontre.date_debut desc,id_individu.nom,id_individu.prenom");
 		//		$this->setOrder(" organisme_rencontre.date_debut desc ");
-		$this->setOrder("individu_rencontre.id_individu asc , date_debut_rencontre desc ");
+//		$this->setOrder("individu_rencontre.id_individu asc , date_debut desc ");
+$this->setOrder(" id_individu.nom,id_individu.prenom , date_debut desc ");
+		
 		//		$this->m_securityMap["participation"] = "participation";
 		$this->m_securityMap["inscrit"] = "view";
 		$this->m_securityMap["organisme_participant"] = "view";
@@ -279,7 +290,8 @@ class rencontre_i extends assMetaNode {
 	$id_rencontre=$record["id_rencontre"]["id"];
 		$sql="SELECT orc.id, orc.libelle, orc.cout
 		from organisme_rencontre_choix orc
-		where orc.id_rencontre=$id_rencontre" ;
+		where orc.id_rencontre=$id_rencontre
+		order by orc.libelle asc" ;
 	//	$this->p($sql);
 		$data=$db->getrows($sql);
 		$total_total=0;
@@ -295,13 +307,13 @@ class rencontre_i extends assMetaNode {
 //$this->p($sql1);
 			$data1=$db->getrows($sql1);
 			(count($data1)>0)? $option["quantite"]=$data1[0]["quantite"] : $option["quantite"]=0;
-		
+			$total_ligne=$option["quantite"]*$option["cout"];
 			$option["quantite"]=number_format($option["quantite"],0,",",".");
 			$option["cout"]=number_format($option["cout"],2,",",".");
 			
 			$input_quantite='<input type="text" id='.$prefix.'quantite name='.$prefix.'quantite class="atkNumberAttribute" value="'.$option["quantite"].'" 
 					size="7" maxlength="7">';
-			$total_ligne=$option["quantite"]*$option["cout"];
+			
 			$total_total+=$total_ligne;
 			$total_ligne=number_format($total_ligne,2,",",".");
 			
@@ -316,16 +328,31 @@ class rencontre_i extends assMetaNode {
 		$sql1="select ir.montant_versement,ir.montant_versement_2 
 		from individu_rencontre ir
 		where ir.id = $id ";
-		//$this->p($sql1);
 		$data1=$db->getrows($sql1);
-		(count($data1)>0 && $data1[0]["montant_versement"]!='')? $montant_versement=$data1[0]["montant_versement"] : $montant_versement=0;
+		$montant_versement=0;
+		(count($data1)>0 && $data1[0]["montant_versement"]!='')? $montant_versement=$data1[0]["montant_versement"] : null;
 		(count($data1)>0 && $data1[0]["montant_versement_2"]!='')? $montant_versement+=$data1[0]["montant_versement_2"] : null;
-		$solde=$total_total-$montant_versement;
+	// GG
+		$sql1="select sum(irp.montant_versement) as montant_versement
+		from individu_rencontre_paiement irp
+		where irp.id_individu_rencontre = $id ";
+		$data1=$db->getrows($sql1);
+		(count($data1)>0 && $data1[0]["montant_versement"]!='')? $montant_versement+=$data1[0]["montant_versement"] : null;
+		
+		$montant_remboursements=0;
+		$sql1="select sum(irr.montant_fourniture) as montant_remboursement
+		from individu_rencontre_remboursement irr
+		where irr.id_individu_rencontre = $id ";
+		$data1=$db->getrows($sql1);
+		(count($data1)>0 && $data1[0]["montant_remboursement"]!='')? $montant_remboursements+=$data1[0]["montant_remboursement"] : null;
+		
+		$solde=$total_total-$montant_versement+$montant_remboursements;
 		
 		$montant_versement=number_format($montant_versement,2,",",".");
 		
 		
 		$retour.="<tr><td><b>Versements : </b></td><td></td><td></td><td class='alnright'><b>".$montant_versement."</b></td></tr>";
+		$retour.="<tr><td><b>Remboursements : </b></td><td></td><td></td><td class='alnright'><b>".$montant_remboursements."</b></td></tr>";
 		($solde>0)? $texte="A percevoir :" : null;
 		($solde<0)? $texte="Trop perçu :" : null;
 		($solde==0)? $texte="Equilibré :" : null;
@@ -670,7 +697,7 @@ quantite=$quantite, id_modification=$userid, date_modification=UTC_TIMESTAMP()";
 			return atktext("youareinthearchive") . " " . href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=active', atktext('clicktoviewactiverecords', $this->m_module, $this->m_type),SESSION_DEFAULT, false, ' style="color: white; background:blueviolet;" ') . "<br>" . $legende . $retour;
 		}
 	}
-	function presence_compta_edit($record, $mode) {
+	/*function presence_compta_edit($record, $mode) {
 		//		$this->p($record);
 		$id_rencontre = $record["id_rencontre"]["id"];
 		$db = & atkGetDb();
@@ -683,6 +710,8 @@ quantite=$quantite, id_modification=$userid, date_modification=UTC_TIMESTAMP()";
 			return '<font color="Red"> <b> La comptabilité n\'ayant pas été initialisée pour ' . $data[0]["nom"] . ', la saisie de montant versé ne sera pas prise en compte dans la comptabilité.';
 		}
 	}
+	*/
+	
 	function id_ecriture_participation_display($record, $mode) {
 	//	$retour=$this-> descripteur_ecriture_comptable($record["id_ecriture_participation"])
 	//	.$this-> descripteur_ecriture_comptable($record["id_ecriture_participation_2"]);
@@ -767,35 +796,35 @@ quantite=$quantite, id_modification=$userid, date_modification=UTC_TIMESTAMP()";
 		$res = $data[0]["id_individu"];
 		if (isset ($res)&& $mode=="add") {
 			atkTriggerError($record, $this->getAttribute("id_individu"), "Cette personne est déjà inscrite à la rencontre.");
-		}
+		return false;}
 		if ($record["montant_versement"] > 0 || $record["montant_versement"] < 0) {
 			if ($record["id_reglement"]["id"]==1 && $record["id_banque"]["id"]=="")
 			{
 				atkTriggerError($record, $this->getAttribute("id_banque"), "En cas de règlement par chèque il faut préciser la banque");
-			}
+			return false;}
 			if ($record["id_reglement"]["id"]!=1 && $record["numero_cheque"]!="")
 			{
 				atkTriggerError($record, $this->getAttribute("numero_cheque"), "Numéro de chèque alors que le mode de règlement précise que ce n'est pas un règlement par chèque");
-			}
+			return false;}
 			if ($record["id_reglement"]["id"]==1 && $record["numero_cheque"]=="")
 			{
 				atkTriggerError($record, $this->getAttribute("numero_cheque"), "Pas de numéro de chèque alors que le mode de règlement précise que c'est un règlement par chèque");
-			}
+			return false;}
 		}
 		if ($record["montant_versement_2"] > 0 || $record["montant_versement_2"] <0) {
 			if ($record["id_reglement_2"]["id"]==1 && $record["id_banque_2"]["id"]=="")
 			{
 				atkTriggerError($record, $this->getAttribute("id_banque_2"), "En cas de règlement par chèque il faut préciser la banque");
-			}
+			return false;}
 
 			if ($record["id_reglement_2"]["id"]!=1 && $record["numero_cheque_2"]!="")
 			{
 				atkTriggerError($record, $this->getAttribute("numero_cheque_2"), "Numéro de chèque alors que le mode de règlement précise que ce n'est pas un règlement par chèque");
-			}
+			return false;}
 			if ($record["id_reglement_2"]["id"]==1 && $record["numero_cheque_2"]=="")
 			{
 				atkTriggerError($record, $this->getAttribute("numero_cheque_2"), "Pas de numéro de chèque alors que le mode de règlement précise que c'est un règlement par chèque");
-			}
+			return false;}
 		}
 		if (parent::validate($record, $mode)==true)
 		{
@@ -1204,7 +1233,7 @@ quantite=$quantite, id_modification=$userid, date_modification=UTC_TIMESTAMP()";
 		//return $handler->action_delete();
 	}
 	function descriptor_def() {
-		return "[id_rencontre.libelle]";
+		return "[id_individu.nom] [id_individu.prenom] - [id_rencontre.libelle]";
 	}
 	function id_individu_display($record, $mode) {
 		(!empty($record["id_individu"])) ? $retour=$this->descripteur_individu($record["id_individu"]["id"],'n') : $retour="";
@@ -1256,6 +1285,7 @@ quantite=$quantite, id_modification=$userid, date_modification=UTC_TIMESTAMP()";
 	*/
 	function action_admin_liste() {
 		$db = & atkGetDb();
+		$db1 = & atkGetDb();
 		$id_organisme=$this->m_postvars["id_organisme"];
 		$estampille_o_n=$this->m_postvars["estampille_o_n"];
 		if ($estampille_o_n=="") $estampille_o_n="n";
@@ -1292,6 +1322,8 @@ quantite=$quantite, id_modification=$userid, date_modification=UTC_TIMESTAMP()";
 		where
 		$filtre
 		order by i.nom, i.prenom, ire.date_inscription	";
+	//	$this->p($sql);
+		
 		$data=$db->getrows($sql);
 		$res2= '<table class="toc  sortable">';
 		$res2.='<thead>';
@@ -1339,6 +1371,26 @@ quantite=$quantite, id_modification=$userid, date_modification=UTC_TIMESTAMP()";
 //			."<br/>";
 			$res2.='</td><td>'.$this->descripteur_reglement("participant_rencontre",$data[$i]["id_participant"],'n')
 			."<br/>".$this->descripteur_reglement("participant_rencontre_2",$data[$i]["id_participant"],'n');
+			
+			$id_participant=$data[$i]["id_participant"];
+			$sql6="select irp.id as id from individu_rencontre_paiement irp 
+			where irp.id_individu_rencontre=$id_participant";
+			$data6=$db1->getrows($sql6);
+			if (count($data6)>0)
+			{for ($i6=0;$i6<count($data6);$i6++)
+			{
+				$res2.="<br/>".$this->descripteur_rencontre_individu_paiement($data6[$i6]["id"],'n');
+			}
+			}
+			$sql7="select irr.id as id from individu_rencontre_remboursement irr
+			where irr.id_individu_rencontre=$id_participant";
+			$data7=$db1->getrows($sql7);
+			if (count($data7)>0)
+			{for ($i7=0;$i7<count($data7);$i7++)
+			{
+			$res2.="<br/>".$this->descripteur_rencontre_individu_remboursement($data7[$i7]["id"],'n');
+			}
+			}
 //				$res2.='</td><td>'.'<b>'.$arrayIndividu["date_deces"].'</b>';
 				$res2.='</td><td>'.$this->descripteur_module_estampillage($this->get_record_info($data[$i]["id_entite"]), 'n');
 			$res2.='</td></tr>';

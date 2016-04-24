@@ -55,7 +55,46 @@
       $this->m_endTime   = $endTime;
       if (is_array($steps))  $this->m_steps     = $steps;
       else                   $this->m_steps     = $this->intervalToSteps($steps);
-      $this->m_default   = $default;
+      // GG
+      // $this->m_default   = $default;
+      if ($default=="")
+      {
+      	global $g_sessionManager;
+      	$g_tz_offset_google = $g_sessionManager->getValue("tz_offset_google", "globals");
+      	if ($g_tz_offset_google<0) $sign='-';
+      	else $sign='+';
+      	$h=abs($g_tz_offset_google);
+      	$dst=true;
+      	if ($dst==true) {
+      		$daylight_saving = date('I');
+      		if ($daylight_saving){
+      			if ($sign == "-"){ $h=$h-1;  }
+      			else { $h=$h+1; }
+      		}
+      	}
+      	$hm = $h * 60;
+      	$ms = $hm * 60;
+      	if ($sign == "-"){ $timestamp = time()-($ms); }
+      	else { $timestamp = time()+($ms); }
+      	//       $gmdate = gmdate("m.d.Y. g:i A", $timestamp);
+      	$gmdate = gmdate("G:i", $timestamp);
+      	$this->m_default   = $gmdate;
+      	/*
+      	 $datum=false;
+      	 if($datum==true) {
+      	 return $gmdate;
+      	 }
+      	 else {
+      	 return $timestamp;
+      	 }
+      	 */
+      
+      }
+      else
+      {$this->m_default   = $default;}
+      
+      //GG
+      
     }
 
     /**

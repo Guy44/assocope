@@ -55,6 +55,7 @@ function id_organisme_display($record, $mode) {
 		where $filtre
 		order by p.date_acquisition";
 		$data = $db->getrows($sql);
+		
 		if (count($data)==0) return "";
 		$tbl = & atknew("atk.utils.atktablerenderer");
 		$datatableau = array ();
@@ -80,7 +81,8 @@ function id_organisme_display($record, $mode) {
 			$row[] ="<b>".$data[$i]["date_cession"]."</b>";
 			$row[] =$data[$i]["motif_cession"];
 			$row[] ="<b>".$data[$i]["montant_cession"]."</b>";
-			$row[] =$this->descripteur_module_estampillage($data[$i]["id_entite"], 'n');
+			$row[] =$this->descripteur_module_estampillage($this->get_record_info($data[$i]["id_entite"]), 'n');
+			
 			$datatableau[] = $row;
 		}
 		$criteres=$this->m_postvars["atkfiltre"];

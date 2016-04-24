@@ -10,8 +10,8 @@
    * @copyright (c) 2005 Ibuildings.nl BV
    * @license http://www.achievo.org/atk/licensing/ ATK open source license
    *
-   * @version $Revision: 6320 $
-   * $Id: class.atkopendocumentwriter.inc 6354 2009-04-15 02:41:21Z mvdam $
+   * @version $Revision: 5885 $
+   * $Id: class.atkopendocumentwriter.inc 5885 2008-04-21 09:04:18Z jvansluijs $
    */
 
   /**
@@ -48,7 +48,6 @@
       $processdir = atkconfig("atktempdir") . "documents";
       if (!is_dir($processdir)) mkdir($processdir);
       $this->m_tbsooo->SetProcessDir($processdir);
-			$this->m_tbsooo->SetDataCharset("UTF8");
     }
 
     /**
@@ -58,7 +57,6 @@
      * @param string $tpl_file Template file to parse
      * @param mixed $tpl_vars Array of template variables to merge into the template or null if you want to use the template vars set by calling Assign (which is default behaviour).
      * @param string $content_file default content.xml (open office), or word/document.xml for .docx
-     * @return bool Indication if parsing was succesfull
      */
     function _parse($tpl_file, $tpl_vars = null, $content_file="content.xml")
     {
@@ -68,7 +66,8 @@
 
       // Create a new copy of the opendocument template
       $this->m_tbsooo->NewDocFromTpl($tpl_file);
-
+ //     print_r($tpl_file);
+ //     die('tpl_vars');
       // Extract content-file from the template document
       if (!$this->m_tbsooo->LoadXmlFromDoc($content_file))
         return false;
@@ -77,13 +76,10 @@
       foreach($use_vars as $key => $value)
       {
         if (is_array($value)) {
-        	foreach ($value as $key => &$txtval) 
-					  $txtval = atk_iconv(atkGetCharset(),"UTF-8",$txtval);
           $this->m_tbsooo->MergeBlock($key, $value);
         }
         else
         {
-        	$value = atk_iconv(atkGetCharset(),"UTF-8",$value);
           $this->m_tbsooo->MergeField($key, $value);
         }
       }
@@ -183,8 +179,6 @@
     /**
      * Add predefined text-styles to xml file
      * And replace html style tags by xml style-tags
-     * 
-     * @param string $inputString
      */
     function addAndApplyStyles($inputString)
     {
@@ -199,12 +193,6 @@
       return $inputString;
     }
 
-    /**
-     * Add predefined styles
-     *
-     * @param string $inputString
-     * @return string The inputstring including the predefined styles
-     */
     function addPredefinedStyles($inputString)
     {
       // Add predefined styles to xml-file
@@ -219,12 +207,6 @@
       return $inputString;
     }
 
-    /**
-     * Convert firefox-html tags to xml tags
-     *
-     * @param string $inputString
-     * @return string The converted inputstring
-     */
     function convertFirefoxHtmlToXML($inputString)
     {
       /*****************************************
@@ -277,12 +259,6 @@
       return $inputString;
     }
 
-    /**
-     * Convert internet explorer-html tags to xml tags
-     *
-     * @param string $inputString
-     * @return string The converted inputstring
-     */
     function convertIEHtmlToXML($inputString)
     {
       /***************************************************
@@ -316,12 +292,6 @@
       return $inputString;
     }
     
-    /**
-     * Convert general-html tags to xml tags (same for IE and Firefox)
-     *
-     * @param string $inputString
-     * @return string The converted inputstring
-     */
     function convertGeneralHtmlToXML($inputString)
     {
       /**************************************************************

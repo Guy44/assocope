@@ -23,9 +23,7 @@
   filter_request_where_clause('atkfilter');
 
   // initialise g_ array.
-  //GG
-  //$GLOBALS['g_user'] = array();
-  //
+ $GLOBALS['g_user'] = array();
 
   /**
    * Calling this function will invoke the login process. Call this function in
@@ -66,7 +64,6 @@
     $session = &atkSessionManager::getSession();
     $user = "";
     $session_auth = is_object($sessionmanager) ? $sessionmanager->getValue("authentication", "globals") : array();
- 
     if (atkconfig("authentication_session") &&
         atkArrayNvl($session, "login", 0)==1 &&
         $session_auth["authenticated"]==1 &&

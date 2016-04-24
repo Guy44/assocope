@@ -13,6 +13,10 @@
    * @copyright (c)2000-2004 Ibuildings.nl BV
    * @license http://www.achievo.org/atk/licensing ATK Open Source License
    *
+   * @GG
+   * Ajout avertissement chrome et demande de rafraichir le cache dans le bas de la boîte de login 
+   * Ajouts de plusieurs atkdebug
+
    * @version $Revision: 6301 $
    * $Id: class.atksecuritymanager.inc 6657 2010-01-15 15:21:57Z mvdvelden $
    */
@@ -131,9 +135,11 @@
      */
     function atkSecurityManager($authentication_type="none", $authorization_type="none", $securityscheme="none")
     {
-      atkdebug("creating securityManager (authenticationtype: $authentication_type, authorizationtype: $authorization_type, scheme: $securityscheme)");
+      atkdebug("<b>atkSecurityManager</b> : creating securityManager (authenticationtype: $authentication_type, authorizationtype: $authorization_type, scheme: $securityscheme)");
 
       // required interface;
+      atkdebug("<b>atkSecurityManager</b> : import de atk.security.auth_interface");
+      
       atkimport("atk.security.auth_interface");
 
       $authentication = $this->_getAuthTypes($authentication_type);
@@ -141,7 +147,7 @@
       {
         if(!$obj = atknew($class))
         {
-          atkdebug("atkSecurityManager() unsupported authentication type or type no found for $class");
+          atkdebug("<b>atkSecurityManager</b> : unsupported authentication type or type no found for $class");
         }
         else $this->m_authentication[$class] = $obj;
       }
@@ -167,7 +173,7 @@
       $userrecords = $usernode->selectDb($selector, "", "", "", array(atkconfig("auth_userpk"), atkconfig("auth_emailfield"), atkconfig("auth_passwordfield")), "edit");
       if (count($userrecords) != 1)
       {
-        atkdebug("User '$username' not found.");
+        atkdebug("<b>atkSecurityManager mailPassword</b> : User '$username' not found.");
         return false;
       }
 
@@ -175,7 +181,7 @@
       $email = $userrecords[0][atkconfig("auth_emailfield")];
       if (empty($email))
       {
-        atkdebug("Email address for '$username' not available.");
+        atkdebug("<b>atkSecurityManager mailPassword</b> : Email address for '$username' not available.");
         return false;
       }
 
@@ -196,7 +202,7 @@
       $body.= atktext(atkconfig("auth_userfield")) . ": " . $username . "\n";
       $body.= atktext(atkconfig("auth_passwordfield")) . ": " . $newpassword . "\n";
       mail($email, $subject, $body);
-
+      atkdebug("<b>atkSecurityManager mailPassword</b> : Envoi du courriel.");
       // Return true
       return true;
     }
@@ -223,7 +229,10 @@
         $auth_user = isset($_SERVER["PHP_AUTH_USER"]) ? $_SERVER["PHP_AUTH_USER"] : null;
         $auth_pw = isset($_SERVER["PHP_AUTH_PW"]) ? $_SERVER["PHP_AUTH_PW"] : null;
       }
-      atkdebug (" User authenticated ".$auth_user);
+   // GG
+      atkdebug("<b>atkSecurityManager authenticate</b> :  User authenticated : $auth_user.");
+
+      // GG FIN
       // throw post login event?
       $throwPostLoginEvent = false;
 
@@ -239,8 +248,12 @@
         $cookiepath   = atkconfig("application_root");
         $cookiedomain = (atkconfig("cookiedomain") != "") ? atkconfig("cookiedomain") : NULL;
         session_set_cookie_params($cookie_params["lifetime"], $cookiepath, $cookiedomain);
-          @session_start();
-        atkdebug("après @session_start de la SESSION : ".session_id()."  (atksecuritymanager.authenticate) ",DEBUG_HTML);
+        atkdebug("<b>atkSecurityManager authenticate</b> : après session_set_cookie_params");
+         @session_start();
+         // GG
+         atkdebug("<b>atkSecurityManager authenticate</b> : après @session_start de la SESSION : ".$session['id']);
+          
+         // GG FIN
         $session = array();
         $session["relogin"]=1;
 
@@ -249,13 +262,15 @@
         {
           $cookiename = $this->_getAuthCookieName();
           if (!empty($_COOKIE[$cookiename])) setcookie($cookiename, "", 0);
+          atkdebug("<b>atkSecurityManager authenticate</b> : suppression du cookie : ".$_COOKIE[$cookiename]);
         }
 
         $this->notifyListeners("postLogout", $auth_user);
 
         if($ATK_VARS["atklogout"]>1)
         {
-          header("Location: logout.php");
+           atkdebug("<b>atkSecurityManager authenticate</b> : logout");
+           header("Location: logout.php");
           exit;
         }
       }
@@ -289,7 +304,7 @@
           // for security reasons administrator will never be cookied..
           if ($auth_user=="" && $user!="" && $user!="administrator")
           {
-            atkdebug("Using cookie to retrieve previously used userid/password");
+            atkdebug("<b>atkSecurityManager authenticate</b> : Using cookie to retrieve previously used userid/password");
             $auth_user = $user;
             $auth_pw = $passwd;
             $md5 = ($enc=="MD5"); // cookie may already be md5;
@@ -349,7 +364,7 @@
                 $response = $obj->validateUser($auth_user,$tmp_pw);
                 if($response==AUTH_SUCCESS)
                 {
-                  atkdebug("atkSecurityManager::authenticate() using $name authentication");
+                 atkdebug("<b>atkSecurityManager authenticate</b> : using $name authentication");
                   $authname=$name;
                   break;
                 }
@@ -363,7 +378,7 @@
               if (atkconfig("enable_ssl_encryption")) $this->m_user['PASS']=$auth_pw; // used by aktsecurerelation to decrypt an linkpass
               // for convenience, we also store the user as a global variable.
               (is_array($this->m_user['level'])) ? $dbg = implode(",",$this->m_user['level']) : $dbg = $this->m_user['level'];
-              atkdebug("Logged in user: ".$this->m_user["name"]." (level: ".$dbg.")");
+              atkdebug("<b>atkSecurityManager authenticate</b> : Logged in user: ".$this->m_user["name"]." (level: ".$dbg.")");
               $authenticated = true;
 
               // Remember that we are logged in..
@@ -397,7 +412,11 @@
                     $enc = "PLAIN";
                   }
                 }
-                setcookie($cookiename,base64_encode($enc.".".$auth_user.".".$tmppw), time()+60*(atkconfig("authentication_cookie_expire")));
+               // GG remplacement de , par 9 
+                $valeur_cookie=base64_encode($enc.".".$auth_user.".".$tmppw);
+   //      $valeur_cookie=str_replace(",", "9", $valeur_cookie) ;
+                setcookie($cookiename,$valeur_cookie, time()+60*(atkconfig("authentication_cookie_expire")));
+                atkdebug ("<b>atksecuritymanager authenticate</b> Création du cookie : ".$cookiename. " valeur ".$_COOKIE[$cookie_name]);
               }
             }
             else
@@ -430,7 +449,7 @@
             !empty($session_auth["user"]))
         {
           $this->m_user = $session_auth["user"];
-          atkdebug("Using session for authentication / user = ".$this->m_user["name"]);
+          atkdebug("<b>atkSecurityManager authenticate</b> : Using session for authentication / user = ".$this->m_user["name"]);
         }
         else
         {
@@ -457,7 +476,7 @@
           {
             $debugger = &atkinstance('atk.utils.atkdebugger');
             $debugger->setRedirectUrl($location);
-            atkdebug('Non-debug version would have redirected to <a href="'.$location.'">'.$location.'</a>');
+            atkdebug('<b>atkSecurityManager authenticate</b> : Non-debug version would have redirected to <a href="'.$location.'">'.$location.'</a>');
             $output = &atkOutput::getInstance();
             $output->outputFlush();
             exit();
@@ -492,17 +511,19 @@
 
       // return
       // g_user always lowercase
-      
+      // GG strtolower
       $this->m_user["name"] =  strtolower($this->m_user["name"]);
-      
+      // GG FIN
       //Send the username with the header
       //This way we can always retrieve the user from apache logs
       header('user: '.$this->m_user["name"]);
       $GLOBALS["g_user"] = $this->m_user;
-     global $g_sessionData ;
-      $g_sessionManager->globalVar("authentication",array("authenticated"=>1, "user"=>$this->m_user), true);
+       $g_sessionManager->globalVar("authentication",array("authenticated"=>1, "user"=>$this->m_user), true);
      sessionStore('loginattempts',''); //reset maxloginattempts
-      atkdebug("LOGIN terminé : ".$this->m_user["name"].' a été stocké dans $g_user["name"] et $g_sessionManager ["user"]["name"]' );
+   // GG
+     atkdebug('<b>atkSecurityManager authenticate</b> : LOGIN terminé : '.$this->m_user["name"].' a été stocké dans g_user["name"] et g_sessionManager ["user"]["name"]');
+   // GG FIN
+
       if ($throwPostLoginEvent)
         $this->notifyListeners("postLogin", $auth_user);
 
@@ -552,8 +573,8 @@
 
       sessionStore('loginattempts',$loginattempts);
 
-      atkdebug('LoginAttempts: '.$loginattempts);
-
+     atkdebug('<b>atkSecurityManager loginForm</b> : LoginAttempts: '.$loginattempts);
+    
       $page = &atkinstance("atk.ui.atkpage",true);
       $ui = &atkinstance("atk.ui.atkui");
 
@@ -589,8 +610,9 @@
         $tplvars["userfield"] = $userField;
         $tplvars["passwordfield"] = '<input class="loginform" type="password" size="15" name="auth_pw" value="" />';
         $tplvars["submitbutton"] = '<input name="login" class="button" type="submit" value="'.atktext('login').'" />';
+      // GG
         $tplvars["title"] = atktext("AssoCope");
-
+// GG FIN
         if ($lastresponse == AUTH_LOCKED)
         {
           $output.="<tr><td colspan=3 class=error>".atktext('auth_account_locked')."<br><br></td></tr>";
@@ -620,7 +642,9 @@
         $output.="<tr><td colspan=3 height=6></td></tr>";
         $output.="<tr><td valign=top>".atktext('password')."</td><td>:</td><td><input type=password size=15 name=auth_pw value='' /></td></tr>";
         $output.='<tr><td colspan="3" align="center" height="50" valign="middle">';
-        $output.='<input name="login" class="button" type="submit" value="'.atktext('login').'">';
+    // GG ajouts d'espaces
+        $output.='&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="login" class="button" type="submit" value="'.atktext('login').'">';
+ // GG FIN
         $tplvars["auth_enablepasswordmailer"] = atkconfig("auth_enablepasswordmailer", false);
         if (atkconfig("auth_enablepasswordmailer", false))
         {
@@ -628,7 +652,13 @@
           $tplvars["forgotpasswordbutton"] = '<input name="login" class="button" type="submit" value="'.atktext('password_forgotten').'">';
         }
         $output.='</td></tr>';
-
+        // GG
+        $output.='<tr><td colspan="3" align="center" height="6" valign="middle">';
+                 $output.='<center><b><a href="http://www.google.fr/chrome/intl/fr/more/" target="_blank"> Utiliser de préférence le navigateur Chrome</a>'.
+                 '<br/></b>'.'<b><a href="http://aide.quomodo.com/depannage/vider_le_cache_de_mon_navigateur.html" target="_blank" >Pensez à vider régulièrement le cache de votre navigateur internet pour mettre à jour les icônes et les mises en page</a></b>
+                 			'.' </b></td></tr></center>'
+                 		;
+// GG FIN
       }
 
       $output.='</table></form>';
@@ -789,7 +819,7 @@
         }
         else
         {
-          atkdebug("error opening logfile");
+          atkdebug('<b>atkSecurityManager log</b> : error opening logfile');
         }
       }
     }
@@ -802,8 +832,7 @@
      */
     function _getAuthCookieName()
     {
-    	// GG ajout de ."loc" pour test en local
-      return "atkauth_3".str_replace(" ","_",atktext("app_title")."loc");
+         return "atkauth_3".str_replace(" ","_",atktext("app_title"));
     }
   }
 

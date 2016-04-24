@@ -808,6 +808,7 @@
       }
       else
       {
+        atkdebug("GG wildcard : ".$value);
         return "UPPER(".$field.") LIKE UPPER('".str_replace("*","%",$value)."')";
       }
     }

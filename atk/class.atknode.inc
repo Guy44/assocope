@@ -4812,13 +4812,45 @@
      */
     public function validateFilter($filter)
     {
-      // If the filter is blank
+
+       // If the filter is blank
         // Or we can't find the target field
       if ($filter==='')
       {
         return $filter;
       }
-
+      
+     //GG
+      // Get the field that it applies to
+      // $relation holds the tablename and $field holds the field
+      list($relation, $field) = explode('.', $filter);
+      
+      // if the filter includes a tablename
+      if ($field != "")
+      {
+      	// check if the filter table is the same as the nodes table
+      	if (strtolower(trim($relation)) !== strtolower($this->m_table) && !in_array($relation, array_keys($this->m_attribList))) return "";
+      
+      	// go on to check the field
+      	$relation = $field;
+      }
+      
+      // All standard SQL operators
+      // GG ajout des opérateurs en minuscules
+      $sqloperators = array('=','<>','>','<','>=','<=','between','like','in', 'is', 'not in','BETWEEN','LIKE','IN', 'IS', 'NOT IN','&');
+      // GG
+      // Check the filter for every operator
+      foreach ($sqloperators as $sqloperator)
+      {
+      	// split the fieldname from the fieldvalue
+      	list($relation_new, $dummy) = explode($sqloperator, $relation);
+      
+      	// check if the fieldname is in the attriblist
+      	if (in_array(trim($relation_new), array_keys($this->m_attribList))) return $filter;
+      }
+      return "";
+     //GG
+/* GG
       $targetField = $this->getFirstTargetFieldFromFilterSql($filter);
       if (!$targetField)
       {
@@ -4843,6 +4875,7 @@
       if (strtolower(trim($targetTable)) !== strtolower($this->m_table) &&
           !($this->getAttribute($targetTable) instanceof atkManyToOneRelation))
       {
+              
         atkwarning($this->atkNodeType().'->'.__FUNCTION__."($filter): Disallowed because ".strtolower(trim($targetTable))." !== ".strtolower($this->m_table). ' and not a valid many-to-one relation.');
         return '';
       }
@@ -4852,9 +4885,11 @@
           !in_array($targetColumn, array_keys($this->m_attribList)))
       {
         atkwarning($this->atkNodeType().'->'.__FUNCTION__."($filter): Disallowed because target column $targetColumn isn't in node");
-        return "";
+      return "";
+        
       }
       return $filter;
+      */ 
     }
 
     /**
@@ -4865,20 +4900,23 @@
      */
     function getFirstTargetFieldFromFilterSql($sql)
     {
-      // All standard SQL operators
-  
-  
-// GG ajout des opérateurs en minuscules
+      // Pas d'appel car ne fonctionne pas
+  // GG ajout des opérateurs en minuscules
     	//    $sqloperators = array('=','<>','>','<','>=','<=','BETWEEN','LIKE','IN', 'IS', 'NOT IN','&');
-		$sqloperators = array('=','<>','>','<','>=','<=','between','like','in', 'is', 'not in','BETWEEN','LIKE','IN', 'IS', 'NOT IN','&');
+		$sqloperators = array('=','<>','>','<','>=','<=','between','like','in','is','not in','BETWEEN','LIKE','IN','IS','NOT IN','&');
 		// GG
       $sqlOperatorsString = implode('|', array_map('preg_quote', $sqloperators));
       $matches = array();
-      preg_match("/^(\w.+?)\s*({$sqlOperatorsString})/", str_replace('`', '', trim($sql)), $matches);
+      preg_match("/^(\w.+?)\s*_({$sqlOperatorsString})/", str_replace('`', '', trim($sql)), $matches);
+      //preg_match("/^(\w.+?)\s*({$sqlOperatorsString})/", str_replace('`', '', trim($sql)), $matches);
 
-      if (count($matches) != 3) return '';
-
+      if (count($matches) != 3) 
+      {atkdebug("Filter : $sql <br/> Matches : $matches[1]");
+      return '';
+      }
+      atkdebug("Filter : $sql <br/> Matches : $matches[1]");
       return $matches[1];
+
     }
 
     /**

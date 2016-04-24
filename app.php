@@ -37,33 +37,20 @@
 $config_atkroot = "./";
  include_once ("atk.inc");
 
-// GG 2014-08-30
-// $id=$GLOBALS["g_user"]["id_individu"];
-/*/ DD
- echo " \$_SESSION : <br>";
-echo "<pre>";
-print_r ($_SESSION);
-echo "</pre>";
-echo "<br> \$GLOBALS : <br>";
-echo "<pre>";
-print_r ($GLOBALS);
-echo "</pre>";
-echo "<br> \$_COOKIE : <br>";
-echo "<pre>";
-print_r ($_COOKIE);
-echo "</pre>";
-die();
-*/
+atkdebug ("<b>app :</b> lancement de atksession");
 atksession ();
- atksecure ();
- 
- 
+atkdebug ("<b>app :</b> lancement de atksecure");
+atksecure ();
+atkdebug ("<b>app :</b> sortie de atksecure");
  include "theme.inc";
+ 
+global $g_sessionManager ;
 global $g_user;
+
 if ($g_user ["name"] != "administrator") {
 	$db = & atkGetDb ();
-	$user = getUser ();
-	$id = $user ["id"];
+//	$user = getUser ();
+	$id = $g_user ["id"];
 
 	$data = $db->getrows ( "SELECT google_map_key, ubio_keycode, tracer_mysqldb_query_o_n, en_travaux_o_n, debug_o_n from app_globales" );
 	$google_map_key = $data [0] ["google_map_key"];
@@ -203,8 +190,8 @@ if ($g_user ["name"] != "administrator") {
 	$g_sessionManager->globalVar ( "atgNomUtilisateur", $g_nomutilisateur, true );
 	$g_sessionManager->globalVar ( "atgIdIndividuUtilisateur", $g_id_individu_utilisateur, true );
 	$g_sessionManager->globalVar ( "atgProfilUtilisateur", $g_libelle_profil, true );
-	$db = & atkGetDb ();
 	
+	$db = & atkGetDb ();
 	global $g_utilisateur_individu;
 	$g_utilisateur_individu = array ();
 	$data = $db->getrows ( "SELECT id, id_individu FROM app_utilisateur " );
@@ -212,7 +199,7 @@ if ($g_user ["name"] != "administrator") {
 		$g_utilisateur_individu [$data [$i] ["id"]] = $data [$i] ["id_individu"];
 	}
 	$g_sessionManager->globalVar ( "utilisateur_individu", $g_utilisateur_individu, true );
-	
+	atkdebug ("<b>app :</b> fin de chargement des variables organisme et individu assocope avec globalVar");
 	// GG
 	// Les stockers dans un tableau
 	// Regarder ce tableau avant de traduire dans atklanguage
@@ -246,8 +233,12 @@ if ($g_user ["name"] != "administrator") {
 	}
 	$g_sessionManager->globalVar ( "traduction_texte", $g_traduction_texte, true );
 	$g_sessionManager->globalVar ( "traduction_tt", $g_traduction_tt, true );
-	// GG
+	atkdebug ("<b>app :</b> fin de chargement des textes et tooltips dans les globales");
+	
 }
+
+
+
 $res = '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">';
 $res .= "\n<html>\n <head>\n";
 $version = atkversion ();
@@ -256,7 +247,7 @@ if ("\$Name$" != "\$" . "Name:  $")
 $res .= '  <meta name="atkversion" content="' . $version . '" />' . "\n";
 // GG Pour test en local
 //$urlsite = 'http://' . atkHost () . '/association/';
-$urlsite = 'http://' . atkHost () . '/assocope/';
+$urlsite = 'http://' . atkHost () . '/association/';
 $res .= '<base href="' . $urlsite . '" />' . "\n";
 $res .= '<meta name="Author" content="Guy Gourmellet">';
 $res .= '<meta name="Copyright" content="AssoCope">';
@@ -311,29 +302,36 @@ if (isset ( $ATK_VARS ["atknodetype"] ) && isset ( $ATK_VARS ["atkaction"] )) {
 }
 if ($g_acces_restreint_o_n == 1) {
 	$topframe = new atkFrame ( "0", "top", "", FRAME_SCROLL_NO, true, 0, "ggtopframe" );
+	$topframe->setId("ggtopframe");
 	$menuframe = new atkFrame ( "0", "menu", "", $scrolling, true, 0, "ggmenuframe" );
+	$menuframe->setId("ggmenuframe");
 } else {
 	$topframe = new atkFrame ( $frame_top_height ? $frame_top_height : "65", "top", "top.php", FRAME_SCROLL_NO, true, 0, "ggtopframe" );
+	$topframe->setId("ggtopframe");
 	$menuframe = new atkFrame ( ($position == MENU_LEFT || $position == MENU_RIGHT ? ($frame_menu_width ? $frame_menu_width : 220) : $frame_menu_height), "menu", "menu.php", $scrolling, true, 0, "ggmenuframe" );
+	$menuframe->setId("ggmenuframe");
 }
-
+atkdebug ("<b>app :</b> fin de création des frames top et menu");
 $mainframe = new atkFrame ( "*", "main", $destination, FRAME_SCROLL_AUTO, true, 0, "ggmainframe" );
+$mainframe->setId("ggmainframe");
 $noframes = '<p>Your browser doesnt support frames, but this is required to run ' . atktext ( 'app_title' ) . "</p>\n";
 
 $root = new atkRootFrameset ();
 if (atkconfig ( "top_frame" )) {
 	$outer = new atkFrameSet ( "*", FRAMESET_VERTICAL, 1, $noframes, "topframe" );
+	$outer->setId("topframe");
 	$outer->addChild ( $topframe );
 	$root->addChild ( $outer );
 } else {
 	$outer = &$root;
 	$outer->m_noframes = $noframes;
 }
-
+atkdebug ("<b>app :</b> fin de création du frame main");
 $orientation = ($position == MENU_TOP || $position == MENU_BOTTOM ? FRAMESET_VERTICAL : FRAMESET_HORIZONTAL);
 
+// GG $wrapper = &new atkFrameSet ( "*", $orientation, 1, "", "leftframe" );
 $wrapper = new atkFrameSet ( "*", $orientation, 1, "", "leftframe" );
-
+$wrapper->setId("leftframe");
 if ($position == MENU_TOP || $position == MENU_LEFT) {
 	$wrapper->addChild ( $menuframe );
 	$wrapper->addChild ( $mainframe );
@@ -346,7 +344,7 @@ $outer->addChild ( $wrapper );
 
 $output .= $root->render ();
 $output .= "</html>";
-atkdebug("avant echo output",DEBUG_HTML);
+atkdebug("<b>app :</b> avant echo output",DEBUG_HTML);
 echo $output;
 
 ?>

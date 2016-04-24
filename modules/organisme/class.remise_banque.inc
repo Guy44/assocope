@@ -222,7 +222,7 @@ class remise_banque extends assMetaNode {
 					id_modification='$userid',
 					date_modification=UTC_TIMESTAMP()
 					where id_remise= $idremise");
-		}
+		}ATTENTION :
 		$this->redirect();
 	}
 	function imprimer_remise_edit($record, $mode) {
@@ -241,7 +241,7 @@ class remise_banque extends assMetaNode {
 			"id" => $record["id"],
 			"atkcode" => "1"
 	)), atktext("Impression des endos de chèques <br>", "core"), SESSION_NEW, false, 'target="_blank"');
-	return $url;
+	return $url;ATTENTION :
 
 	}
 	*/
@@ -373,12 +373,20 @@ class remise_banque extends assMetaNode {
 		$actions["imprimer"] = session_url("dispatch.php?atknodetype=" . $this->atkNodeType() . "&atkaction=imprimer&atkselector=[pk]&id=[pk]", SESSION_NESTED);
 	}
 	function action_pointer() {
+		
+/*		$select=array();
 		if (is_array($this->m_postvars["atkselector"])) {
 			$select = $this->m_postvars["atkselector"];
 		} else {
 			$select[0] = $this->m_postvars["atkselector"];
 		}
+	$this->p($this->m_postvars["atkselector"]);
+	*/
+	//	$this->p($select[0]);
+		$select = $this->m_postvars["atkselector"];
+		$chaineidfonction='';
 		foreach ($select as $id_variable) {
+			($chaineidfonction=='') ? $selecttmp=$id_variable : null;
 			$array_1 = explode('=', $id_variable);
 			$chaineidfonction .= $array_1[1] . ',';
 		}
@@ -386,7 +394,7 @@ class remise_banque extends assMetaNode {
 		$db = & atkGetDb();
 		$record = $db->getrows("SELECT id_organisme , id_compte_banque
 				FROM organisme_remise_banque
-				where $select[0]");
+				where $selecttmp");
 		$id_organisme = $record[0]["id_organisme"];
 		$id_compte_banque = $record[0]["id_compte_banque"];
 		$record = $db->getrows("SELECT max(id) as idmax from organisme_releve_banque where

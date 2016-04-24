@@ -1879,6 +1879,8 @@ class atkMetaPolicy
     $this->_setNodeTable($table);
 
     $db = atkGetDb($database);
+   /* GG
+    * 
     if ($table == null)
     {
       throw new Exception("No table found for meta node " . $this->getNode()->atkNodeType() . "! Are you sure you are connecting to the right database?");
@@ -1887,7 +1889,7 @@ class atkMetaPolicy
     {
       throw new Exception("Table {$table}, referenced by meta node " . $this->getNode()->atkNodeType() . ", does not exist! Are you sure you are connecting to the right database?");
     }
-
+*/ 
     $metaData = $db->tableMeta($table);
     $this->_setMetaData($metaData);
 

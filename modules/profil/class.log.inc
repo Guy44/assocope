@@ -32,20 +32,23 @@ class log  extends assMetaNode
 		$this->add(new atkNumberAttribute("html_page_output_size",AF_SEARCHABLE,12,3),205);	
 		$this->add(new atkAttribute("selector",AF_SEARCHABLE),210);
 		$this->add(new atkAttribute("node",AF_SEARCHABLE),205);
-		$this->add(new atkAttribute("parametres",AF_POPUP),400);
+		$this->add(new atkTextAttribute("parametres",5,AF_HIDE_LIST),400);
 		$this->add(new atkAttribute("host",AF_HIDE_LIST),410);
-		$this->add(new atkTextAttribute("remote_address",AF_SEARCHABLE),420);
-		$this->add(new atkTextAttribute("user_agent",5,AF_HIDE_LIST),430);
+		$this->add(new atkAttribute("remote_address",AF_SEARCHABLE),420);
+		$this->add(new atkAttribute("user_agent",5,AF_HIDE_LIST),430);
 		$this->add(new atkAttribute("accept_language",AF_HIDE_LIST),440);
-		$this->add(new atkTextAttribute("referer",5,AF_HIDE_LIST),450);
-		$this->add(new atkTextAttribute("query_string",5,AF_HIDE_LIST),460);
+		$this->add(new atkAttribute("referer",5,AF_HIDE_LIST),450);
+		$this->add(new atkTextAttribute("query_string",5,AF_HIDE_LIST),460);	
+		$this->add(new atkTextAttribute("session_id",5,AF_HIDE_LIST),465);
 		$this->add(new atkParserAttribute("ptr",href("?atknodetype=[node]&atkaction=view&atkselector=[parametres]", atktext("..."), SESSION_NESTED), AF_NO_LABEL|AF_HIDE_ADD), NULL, 10000);
 //	$this->add(new atkDummyAttribute("ptr"), NULL, 10000);
-		$this->add(new atkfckattribute("error_message", "", AF_HIDE_LIST, array (
+		$this->add(new atkTextAttribute("error_message",5,AF_HIDE_LIST),470);
+/*		$this->add(new atkfckattribute("error_message", "", AF_HIDE_LIST, array (
 			'ToolbarSet' => 'Default',
 			'Width' => '100%',
 			'Height' => '150px'
 		)));
+		*/
 		$this->m_securityMap["admin_liste"] = "view";
 		$this->addListener(atknew("atk.utils.atkeventlog"));
 		$this->setOrder("stamp DESC");
@@ -72,6 +75,11 @@ class log  extends assMetaNode
 		}
 
 	}
+	function referer_display($record, $mode) {
+		return html_entity_decode($record["referer"]);
+		
+	}
+	
 	
 	function descripteur_log_display ($record, $mode)
 	{

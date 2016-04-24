@@ -261,7 +261,7 @@
     {
       $arguments = func_get_args(); // Put arguments in a variable (php won't let us pass func_get_args() to other functions directly.
       // the first argument is $methodname, which we already defined by name.
-      array_shift($arguments);
+       array_shift($arguments);
 
       if ($this->m_node!==NULL && method_exists($this->m_node, $methodname))
       {
@@ -307,7 +307,7 @@
  // GG
        $origine='atkactionhandler';
 		$node = $this->m_node;
-		atk_log_event($origine, $node, $action, $parametres, $selector, $error_message, null);
+		// atk_log_event($origine, $node, $action, $parametres, $selector, $error_message, null);
 		
 		// GG FIN
 		 $actionhandler = new atkActionHandler(); // The default handler will automatically

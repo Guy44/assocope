@@ -12,6 +12,11 @@
    * @copyright (c)2000-2004 Ibuildings.nl BV
    * @license http://www.achievo.org/atk/licensing ATK Open Source License
    *
+   * @GG // GG
+            $value=strip_tags($value);
+            // GG fin
+   * 
+   * 
    * @version $Revision: 6323 $
    * $Id: class.atkcustomrecordlist.inc 6354 2009-04-15 02:41:21Z mvdam $
    */
@@ -134,6 +139,11 @@
             if (atkGetCharset() != "" && $decode) $value = atk_html_entity_decode(atk_htmlentities($value, ENT_NOQUOTES), ENT_NOQUOTES);
             $output.=$sof.($value==""?$empty:$value).$eof.$fsep;
 
+
+            // GG
+            $value=strip_tags($value);
+            // GG fin
+            
             // Calculate totals..
             if ($p_attrib->hasFlag(AF_TOTAL))
             {

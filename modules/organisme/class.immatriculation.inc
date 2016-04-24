@@ -72,7 +72,7 @@ class immatriculation extends assMetaNode {
 			$row[] ="<b>".$data[$i]["libelle"]."</b>";
 			$row[] ="<b>".$this->decoupe_affichage_colonne($data[$i]["immatriculation"], 60	)."</b>";
 			$row[] =$lien_reference;
-			$row[] =$this->descripteur_module_estampillage($data[$i]["id_entite"], 'n');
+			$row[] =$this->descripteur_module_estampillage($this->get_record_info($data[$i]["id_entite"]), 'n');
 			$datatableau[] = $row;
 		}
 		$criteres=$this->m_postvars["atkfiltre"];
