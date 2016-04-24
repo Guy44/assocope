@@ -1,0 +1,24 @@
+<?php
+	module("utils");
+	module("todo");
+	module("pim");
+	module("lesson_utils");
+	module("manuel");
+	module("table");
+	module("individu");
+	module("organisme");
+	module("profil");
+	module("global");
+	module("search");
+	module("editeur");
+	module("divers");
+	module("menu");
+	module("gis");
+	module("gkcode_generator");
+
+  module("gktools");
+  module("traitement");
+  module("wizard");
+  module("biodiversite");
+  module("tournoi");
+?>

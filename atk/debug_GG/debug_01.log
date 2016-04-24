@@ -1,0 +1,73 @@
+[12:29:57h / 2.91277s / 14.05MB / 0 Queries / 0 System Queries] GET 
+http://www.wikistoma.org/association/dispatch.php?
+atknodetype=table.activite&
+atkaction=admin&
+atklevel=-1&
+atkprevlevel=0&
+
+[+0.11301s / 0.00153s / 4.21MB] Loading module - tournoi
+[+0.11860s / 0.00559s / 4.37MB] dispatch.php : avant atksession
+[+0.11914s / 0.00014s / 4.37MB] dispatch.php : atklevel de GLOBALS : . $atklevel
+[+0.11959s / 0.00013s / 4.37MB] atksessionmanager atksession : count($GLOBAL) : 196. atklevel de GLOBALS : . $atklevel :
+[+0.11983s / 0.00024s / 4.38MB] atksessionmanager : Creating sessionManager (namespace: default)
+[+0.12005s / 0.00021s / 4.38MB] atksessionmanager atksession : atkDataDecode de _REQUEST
+
+ include_once("atk.inc");
+ 
+  * @version $Revision: 6301 $
+   * $Id: initial.inc 6771 2010-03-12 09:44:28Z peter $
+   */
+
+  /** @internal includes */
+  require_once($GLOBALS['config_atkroot'].'atk/modules/atkmoduletools.inc');
+  require_once($GLOBALS['config_atkroot'].'atk/include/basics.inc');
+  require_once($GLOBALS['config_atkroot'].'atk/include/compatibility.inc');
+  if (atkconfig('autoload_classes',    true)) require_once($GLOBALS['config_atkroot'].'atk/include/autoload.inc');
+  if (atkconfig('use_atkerrorhandler', true)) require_once($GLOBALS['config_atkroot'].'atk/include/errorhandler.inc');
+  require_once($GLOBALS['config_atkroot'].'atk/ui/class.atkoutput.inc');
+  require_once($GLOBALS['config_atkroot'].'atk/session/class.atksessionmanager.inc');
+  require_once($GLOBALS['config_atkroot']."atk/utils/class.atkstring.inc");
+  require_once($GLOBALS['config_atkroot'].'atk/include/security.inc');
+  require_once($GLOBALS['config_atkroot'].'atk/include/debugging.inc');
+  if (atkconfig('lock_type')!=="") require_once($GLOBALS['config_atkroot'].'atk/lock/class.atklock.inc');
+  atkPreloadModules();
+
+
+
+[12:54:49h / 0.32456s / 6.64MB / 5 Queries / 0 System Queries] GET 
+http://www.wikiservas.net/atkdemo-6.5.0/index.php?
+atknodetype=lesson1.employee&
+atkaction=admin&
+atklevel=-1&
+atkprevlevel=0&
+
+[+0.03802s / 0.00039s / 1.33MB] Loading module - lesson10
+[+0.03860s / 0.00014s / 1.33MB] atksessionmanager atksession : count($GLOBAL) : 170. atklevel de GLOBALS : -1. $atklevel :
+[+0.03884s / 0.00024s / 1.33MB] atksessionmanager : Creating sessionManager (namespace: default)
+[+0.03905s / 0.00021s / 1.33MB] atksessionmanager atksession : atkDataDecode de _REQUEST
+[+0.03920s / 0.00014s / 1.33MB] atksessionmanager atksession : fusion de _GET _POST dans ATK_VARS
+[+0.03936s / 0.00017s / 1.33MB] atksessionmanager atksession : atkDataDecode de ATK_VARS
+[+0.03949s / 0.00013s / 1.33MB] atksessionmanager atksession : de ATK_VARS 
+atknodetype lesson1.employee, 
+atkaction admin, 
+atklevel -1 , 
+atkprevlevel 0
+
+
+   * @version $Revision: 6301 $
+   * $Id: initial.inc 6771 2010-03-12 09:44:28Z peter $
+   */
+
+  /** @internal includes */
+  require_once($GLOBALS['config_atkroot'].'atk/modules/atkmoduletools.inc');
+  require_once($GLOBALS['config_atkroot'].'atk/include/basics.inc');
+  require_once($GLOBALS['config_atkroot'].'atk/include/compatibility.inc');
+  if (atkconfig('autoload_classes',    true)) require_once($GLOBALS['config_atkroot'].'atk/include/autoload.inc');
+  if (atkconfig('use_atkerrorhandler', true)) require_once($GLOBALS['config_atkroot'].'atk/include/errorhandler.inc');
+  require_once($GLOBALS['config_atkroot'].'atk/ui/class.atkoutput.inc');
+  require_once($GLOBALS['config_atkroot'].'atk/session/class.atksessionmanager.inc');
+  require_once($GLOBALS['config_atkroot']."atk/utils/class.atkstring.inc");
+  require_once($GLOBALS['config_atkroot'].'atk/include/security.inc');
+  require_once($GLOBALS['config_atkroot'].'atk/include/debugging.inc');
+  if (atkconfig('lock_type')!=="") require_once($GLOBALS['config_atkroot'].'atk/lock/class.atklock.inc');
+  atkPreloadModules();
