@@ -2170,12 +2170,12 @@ class mod_global extends associationModule {
 			// Remboursements participants
 			$data = $db->getrows("SELECT count(id) as nombre from individu_rencontre_remboursement where  id_rencontre ='" . $rencontreid . "'");
 			$nombre_rencontre_remboursement = $data[0]["nombre"];
-			if ($nombre_rencontre_remboursement>0)
-			{
+	//		if ($nombre_rencontre_remboursement>0)
+			
 			$this->menuitem("Remboursements participants"."#".$nombre_rencontre_remboursement, dispatch_url("individu.individu_rencontre_remboursement", "admin", array (
 					"atkfilter" => "individu_rencontre_remboursement.id_rencontre ='" . $rencontreid . "'"
 			)), "Rencontres", true);
-			}
+			
 			// Enveloppes
 			
 			$this->menuitem("Enveloppes_Participants_r"."#".$nombre_rencontre_participant, dispatch_url("individu.v_individu_lieu", "document", array (
