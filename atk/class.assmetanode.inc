@@ -1147,6 +1147,7 @@ $data [0]["date_creation"]=dateutil::str2arr($data [0]["date_creation"]);
 			$filter = $this->createSearchFilter ( $db_columns, $searchvalue, $db_table );
 			$sql = 'SELECT id, nom_binomial,inpn_nom_complet,nom_francais,cd_nom,cd_ref from ' . $db_table . '
 					where ' . $filter . '  ';
+	//		$this->p($sql);
 		}
 
 		$records = $db->getrows ( $sql );

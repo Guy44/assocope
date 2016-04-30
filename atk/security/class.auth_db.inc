@@ -135,12 +135,45 @@
        		atkdebug("Login de " . $data [0] ["prenom"] . " " . $data [0] ["nom"]." Email envoyé");
        		// DD
        		// GG TODO CONTACTS SYNC
-       		/*
-       		 if ($data [0] ["identifiant_google"] != "") {
-       		 $google_feed_node = newNode ( "individu.google_feed", true );
-       		 $google_feed_node->google_contacts_sync ( $idutilisateur, $id, "login" );
+       		return;
+       		
+      	
+       		if ($data [0] ["identifiant_google"] != "") {
+       			$google_feed_node = newNode ( "individu.google_feed", true );
+       			$google_feed_node->google_contacts_sync ( $idutilisateur, $id, "login" );
+       			
+       			
+       		include_once (atkconfig("atkroot")."modules/google-api-php-client/examples/templates/base.php");
+
+       		// session_start();
+       		require_once (atkconfig("atkroot")."modules/google-api-php-client/src/Google/autoload.php");
+       		/************************************************
+       		 ATTENTION: Fill in these values! Make sure
+       		 the redirect URI is to this page, e.g:
+       		 http://localhost:8080/user-example.php
+       		************************************************/
+       		$client_id = '<YOUR_CLIENT_ID>';
+       		$client_secret = '<YOUR_CLIENT_SECRET>';
+       		$redirect_uri = '<YOUR_REDIRECT_URI>';
+       		/************************************************
+       		 Make an API request on behalf of a user. In
+       		 this case we need to have a valid OAuth 2.0
+       		 token for the user, so we need to send them
+       		 through a login flow. To do this we need some
+       		 information from our API console project.
+       		 ************************************************/
+       		$client = new Google_Client();
+       		$client->setClientId($client_id);
+       		$client->setClientSecret($client_secret);
+       		$client->setRedirectUri($redirect_uri);
+       		$client->addScope("https://www.googleapis.com/auth/drive");
+       		$client->addScope("https://www.googleapis.com/auth/youtube");
+       		
+       		// GG FIN
+       		
+       		 
        		 }
-       		 */
+       		
        
        		atkdebug("Synchro des contacts Google à réactiver");
        	}

@@ -24,16 +24,9 @@ require_once realpath(dirname(__FILE__) . '/../src/Google/autoload.php');
   the redirect URI is to this page, e.g:
   http://localhost:8080/user-example.php
  ************************************************/
-/*
- * 
 $client_id = '<YOUR_CLIENT_ID>';
 $client_secret = '<YOUR_CLIENT_SECRET>';
 $redirect_uri = '<YOUR_REDIRECT_URI>';
- */
-$client_id = '951429208916-7h3h4gngmbpd1e2o68mfdmq0idbo9ckq.apps.googleusercontent.com';
-$client_secret = 'pFIGqZMLicc7_3yULne9Ohvw';
-$redirect_uri = 'http://www.wikistoma.org/association/modules/google-api-php-client/examples/user-example.php';
-
 
 $client = new Google_Client();
 $client->setClientId($client_id);
@@ -86,11 +79,9 @@ if ($client->getAccessToken()) {
 }
 
 echo pageHeader("User Query - Retrieving An Id Token");
-if (
-    $client_id == '<YOUR_CLIENT_ID>'
-    || $client_secret == '<YOUR_CLIENT_SECRET>'
-    || $redirect_uri == '<YOUR_REDIRECT_URI>') {
+if (strpos($client_id, "googleusercontent") == false) {
   echo missingClientSecretsWarning();
+  exit;
 }
 ?>
 <div class="box">

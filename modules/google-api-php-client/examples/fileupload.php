@@ -35,9 +35,9 @@ if (!file_exists(TESTFILE)) {
   the redirect URI is to this page, e.g:
   http://localhost:8080/fileupload.php
  ************************************************/
-$client_id = '951429208916-7h3h4gngmbpd1e2o68mfdmq0idbo9ckq.apps.googleusercontent.com';
-$client_secret = 'pFIGqZMLicc7_3yULne9Ohvw';
-$redirect_uri = 'http://www.wikistoma.org/association/modules/google-api-php-client/examples/fileupload.php';
+$client_id = '<YOUR_CLIENT_ID>';
+$client_secret = '<YOUR_CLIENT_SECRET>';
+$redirect_uri = '<YOUR_REDIRECT_URI>';
 
 $client = new Google_Client();
 $client->setClientId($client_id);
@@ -47,7 +47,7 @@ $client->addScope("https://www.googleapis.com/auth/drive");
 $service = new Google_Service_Drive($client);
 
 if (isset($_REQUEST['logout'])) {
-  unset($_SESSION['upload_token ']);
+  unset($_SESSION['upload_token']);
 }
 
 if (isset($_GET['code'])) {
@@ -95,7 +95,10 @@ if ($client->getAccessToken()) {
   $status = false;
   $handle = fopen(TESTFILE, "rb");
   while (!$status && !feof($handle)) {
-    $chunk = fread($handle, $chunkSizeBytes);
+    // read until you get $chunkSizeBytes from TESTFILE
+    // fread will never return more than 8192 bytes if the stream is read buffered and it does not represent a plain file
+    // An example of a read buffered file is when reading from a URL
+    $chunk = readVideoChunk($handle, $chunkSizeBytes);
     $status = $media->nextChunk($chunk);
   }
 
@@ -109,16 +112,30 @@ if ($client->getAccessToken()) {
   fclose($handle);
 }
 echo pageHeader("File Upload - Uploading a large file");
-if (
-    $client_id == '<YOUR_CLIENT_ID>'
-    || $client_secret == '<YOUR_CLIENT_SECRET>'
-    || $redirect_uri == '<YOUR_REDIRECT_URI>') {
+if (strpos($client_id, "googleusercontent") == false) {
   echo missingClientSecretsWarning();
+  exit;
+}
+function readVideoChunk ($handle, $chunkSize)
+{
+    $byteCount = 0;
+    $giantChunk = "";
+    while (!feof($handle)) {
+        // fread will never return more than 8192 bytes if the stream is read buffered and it does not represent a plain file
+        $chunk = fread($handle, 8192);
+        $byteCount += strlen($chunk);
+        $giantChunk .= $chunk;
+        if ($byteCount >= $chunkSize)
+        {
+            return $giantChunk;
+        }
+    }
+    return $giantChunk;
 }
 ?>
 <div class="box">
   <div class="request">
-<?php 
+<?php
 if (isset($authUrl)) {
   echo "<a class='login' href='" . $authUrl . "'>Connect Me!</a>";
 }
@@ -126,7 +143,7 @@ if (isset($authUrl)) {
   </div>
 
     <div class="shortened">
-<?php 
+<?php
 if (isset($result) && $result) {
   var_dump($result);
 }

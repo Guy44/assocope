@@ -2261,12 +2261,12 @@ class atkManyToOneRelation extends atkRelation
    */
   function partial_autocomplete($mode)
   {
-
+$db=atkGetDb();
     //     $searchvalue = $this->m_ownerInstance->m_postvars['value'];
     // GG
     $searchvalue = atk_iconv("UTF-8", atktext("charset"), $this->m_ownerInstance->m_postvars['value']);
     // GG
-    atkdebug("searchvalue ".$this->m_ownerInstance->m_postvars['value']."");
+   // atkdebug("searchvalue ".$this->m_ownerInstance->m_postvars['value']."");
     if (atk_strlen($searchvalue) < $this->m_autocomplete_minchars)
     {
       return '<ul><li class="minimum_chars">'.sprintf($this->text('autocomplete_minimum_chars'), $this->m_autocomplete_minchars).'</li></ul>';
@@ -2282,8 +2282,8 @@ class atkManyToOneRelation extends atkRelation
     $this->addDestinationFilter($filter);
 
     $records = $this->_getSelectableRecords($record, 'select');
-    // GG
-    atkdebug("records ".count($records) ."");
+    // GG @TODO
+
     if (count($records) == 0)
     {
       if(in_array($this->m_autocomplete_searchmode,array("exact","startswith","contains")))
@@ -2293,28 +2293,27 @@ class atkManyToOneRelation extends atkRelation
 
       return '<ul><li class="no_results">'.$str.'</li></ul>';
     }
-
+atkdebug('1 nombre de taxons : '.count($records));
     $result = '';
     foreach ($records as $rec)
     {
-      $option = atk_htmlentities($this->m_destInstance->descriptor($rec));
+      	      	$option = atk_htmlentities($this->m_destInstance->descriptor($rec));
       //        $highlightedOption = preg_replace('/('.preg_quote($searchvalue).')/i', '<span class="atkmanytoone_highlite">\\1</span>', $option);
       $value = $this->m_destInstance->primaryKey($rec);
       $highlightedOption = $this->highlight_search_result_match($searchvalue, $option);
       // GG spécial taxinomie
-           
         if ($this->m_destInstance->m_table=="biodiversite_taxinomie")
         {
-        	$array_temp=explode("=", $value);
+        	        	$array_temp=explode("=", $value);
         	$id_taxinomie=$array_temp[1];
         	$sql="Select count(id) as nombre from biodiversite_observation_detail where id_taxinomie=$id_taxinomie";
           	$data=$db->getrows($sql);
-        	$nombre=$data[0]["nombre"];
+           	$nombre=$data[0]["nombre"];
         	$posslash=strripos("$option","/");
         	$cd_ref=substr($option,$posslash+1,strlen($option)-$posslash);
         	$posstiret=strripos("$option","-");
         	$cd_nom=substr($option,$posstiret+1,$posslash-$posstiret-1);
-        	
+
         	
         	if ($cd_ref==$cd_nom)
         	{
@@ -2347,7 +2346,7 @@ class atkManyToOneRelation extends atkRelation
           </li>';
       }
 // GG
-atkdebug("result ".$result ."");
+atkdebug("5 result ".$result ."");
       return "<ul>$result</ul>";
   }
 
@@ -2399,9 +2398,7 @@ atkdebug("result ".$result ."");
     $searchfields = $this->m_destInstance->descriptorFields();
     else
     $searchfields = $this->m_autocomplete_searchfields;
-
     $parts = preg_split('/\s+/', $searchvalue);
-
     $mainFilter = array();
     foreach ($parts as $part)
     {
