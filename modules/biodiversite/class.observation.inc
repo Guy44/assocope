@@ -628,7 +628,7 @@ class observation extends assMetaNode {
 		$row[]="Vous pouvez retrouver ce tableau au format html dans vos documents (utilisateur/documents personnels/<b>$filename2</b>) ";
 		$dataentete[] = $row;
 		$row=array();
-		$row[]="Ce rapport a été créé par ".$data[0]["prenom"]." ".$data[0]["nom"]." le ".gmdate( 'd/m/Y ')." à ".gmdate("H:i:s")." TU.";
+		$row[]="Ce rapport a étécd_ref créé par ".$data[0]["prenom"]." ".$data[0]["nom"]." le ".gmdate( 'd/m/Y ')." à ".gmdate("H:i:s")." TU.";
 		$dataentete[] = $row;
 
 		// Liste observations
@@ -842,7 +842,9 @@ FROM
 				}
 
 				$urlcdrefinpn="http://inpn.mnhn.fr/isb/servlet/ISBServlet?action=Espece&typeAction=10&pageReturn=ficheEspeceDescription.jsp&numero_taxon=".$tableau_taxinomie["cd_ref"]."" ;
-				$tableau_taxinomie["cd_ref"]='<b><a href="' . $urlcdrefinpn .' " target="_blank" >'.$tableau_taxinomie["cd_ref"].'</a>';
+				$urlwikipedia="http://fr.wikipedia.org/wiki/".$tableau_taxinomie["nom_binomial"] ;
+				$tableau_taxinomie["cd_ref"]='<b><a href="' . $urlcdrefinpn .' " title="inpn"  target="_blank" >'.$tableau_taxinomie["cd_ref"].'</a>';
+				$tableau_taxinomie["nom_binomial"]='<b><a href="' . $urlwikipedia .' " title="wikipedia" target="_blank" >'.$tableau_taxinomie["nom_binomial"].'</a>';
 				$colllistes=(empty($protections) ? '' : 'Protections : '.'<br />'.$this->decoupe_affichage_colonne($protections,$lc_protection_intitule).'<br />')
 				.(empty($listes_rouges) ? '' : 'Listes rouges : '.'<br />'.$this->decoupe_affichage_colonne($listes_rouges,$lc_protection_intitule).'<br />')
 				.(empty($especes_determinantes) ? '' : 'Espèces déterminantes : '.'<br />'.$this->decoupe_affichage_colonne($especes_determinantes,$lc_protection_intitule));
