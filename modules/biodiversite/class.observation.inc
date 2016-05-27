@@ -708,6 +708,8 @@ class observation extends assMetaNode {
 		$row[]="<b>Nom<br />binomial</b>";
 		$row[]="<b>Nom<br />complet</b>";
 		if ($image_o_n=='oui') $row[]="<b>Image";
+
+		$row[]="<b>Sur le web</b>";
 		$row[]="<b>Nom<br />francais</b>";
 		$row[]="<b>Règne</b>";
 		//	$row[]="<b>Phylum</b>";
@@ -808,7 +810,10 @@ FROM
 				$tableau_taxinomie=$this->descripteur_biodiversite_taxinomie($id_taxinomie,$id_observation,'rapport');
 				//				$this->p($tableau_taxinomie);
 				$target=' target="_blank" ';
-				$tableau_taxinomie["image"]='<center><a href="'.$url_image. '"' .$target.'"><img src="'.$url_image.'" height="50" alt="'.$tableau_taxinomie["nom_binomial"].'" title="'.$tableau_taxinomie["nom_binomial"].'" /></a></center>' ;
+				$tableau_taxinomie["image"]='<center><a href="'.$url_image. '"' .$target.'"><img src="'.$url_image.'" height="200"
+						 alt="'.$tableau_taxinomie["nom_binomial"].'" title="'.$tableau_taxinomie["nom_binomial"]
+				.',  '. $tableau_taxinomie["nom_francais"]
+				.', '. $tableau_taxinomie["nom_anglais"].'" /></a></center>' ;
 				$concatenation=(empty($tableau_ascendance["Regnum"]) ? ' ' : $this->decoupe_affichage_colonne($tableau_ascendance["Regnum"], $lc_regnum)) .'@'
 				//				.(empty($tableau_ascendance["Phylum"]) ? ' ' : $this->decoupe_affichage_colonne($tableau_ascendance["Phylum"], $lc_phylum)) .'@'
 				.(empty($tableau_ascendance["Classis"]) ? ' ' : $this->decoupe_affichage_colonne($tableau_ascendance["Classis"], $lc_classis)).'@'
@@ -864,6 +869,7 @@ FROM
 				$row[]=$this->decoupe_affichage_colonne($tableau_taxinomie["nom_binomial"],$lc_nom_binomial);
 				$row[]=$this->decoupe_affichage_colonne($tableau_taxinomie["inpn_nom_complet"],$lc_nom_complet);
 				if ($image_o_n=='oui') $row[]=$tableau_taxinomie["image"];
+				$row[]=$this->descripteur_biodiversite_web_info($id_taxinomie,"rapport",'n');
 				//			$row[]=$tableau_taxinomie["auteur_an"];
 				$row[]=$this->decoupe_affichage_colonne($tableau_taxinomie["nom_francais"],$lc_nom_francais);
 				//			$row[]=$this->decoupe_affichage_colonne($tableau_ascendance["Regnum"], $lc_regnum);

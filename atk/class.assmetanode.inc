@@ -5648,10 +5648,10 @@ $data [0]["date_creation"]=dateutil::str2arr($data [0]["date_creation"]);
 					$rapport_departement = null;
 				}
 				
-				if ($data [$i] ["url_inpn"] != "") {
-					$urlcdprotectioninpn = $data [$i] ["url_inpn"];
-				} else if ($data [$i] ["url"] != "") {
+				if ($data [$i] ["url"] != "") {
 					$urlcdprotectioninpn = $data [$i] ["url"];
+				} else if ($data [$i] ["url_inpn"] != "") {
+					$urlcdprotectioninpn = $data [$i] ["url_inpn"];
 				} else {
 					$urlcdprotectioninpn = "";
 				}
@@ -6408,6 +6408,7 @@ $data [0]["date_creation"]=dateutil::str2arr($data [0]["date_creation"]);
 			$descripteur ["inpn_nom_complet"] = $inpn_nom_complet;
 			$descripteur ["nom_binomial"] = str_replace ( '_', ' ', $nom_binomial );
 			$descripteur ["nom_francais"] = str_replace ( '_', ' ', $nom_francais );
+			$descripteur ["nom_anglais"] = str_replace ( '_', ' ', $nom_anglais );
 			$descripteur ["auteur"] = str_replace ( '_', ' ', $auteur );
 			$descripteur ["auteur_an"] = $auteur_an;
 			$descripteur ["statut_inpn"] = str_replace ( '_', ' ', $statut );
@@ -6726,7 +6727,8 @@ $data [0]["date_creation"]=dateutil::str2arr($data [0]["date_creation"]);
 		$retourcold .= '<a href="' . $urlcold . '"' . $target . '"><font color="ForestGreen"><b>dynamic</b></font></a>';
 		$retourcold .= '<br /> ';
 		
-		$urlgbif = "http://data.gbif.org/ws/rest/taxon/list?scientificname=" . $nom_binomial_plus . "&hub=GlobalHub";
+		
+		$urlgbif = "http://www.gbif.org/species/search?q=" . $nom_binomial_plus ;
 		$retourgbif .= '<a href="' . $urlgbif . '"' . $target . '"><font color="ForestGreen"><b>Global_Biodiversity_Information_Facility</b></font></a>';
 		$retourgbif .= '<br /> ';
 		
@@ -6759,8 +6761,11 @@ $data [0]["date_creation"]=dateutil::str2arr($data [0]["date_creation"]);
 			$retouriucn .= '<a href="' . $urlconservation_nature . '"' . $target . '"><font color="ForestGreen"><b>International_Union_for_Conservation_of_Nature</b></font></a>';
 			$retouriucn .= '<br /> ';
 		}
-		
-		$urlxenocanto = "http://www.xeno-canto.org/browse.php?query=" . $nom_binomial . "&pagenumber=&order=taxonomy&view=4";
+
+	//	$urlxenocanto = "http://www.xeno-canto.org/explore?query=" . $nom_binomial . "&pagenumber=&order=taxonomy&view=4";
+	//	http://www.xeno-canto.org/species/Anthus-trivialis
+		$nom_binomial_xeno = str_replace ( ' ', '-', $nom_binomial );
+		$urlxenocanto = "http://www.xeno-canto.org/species/" . $nom_binomial_xeno ;
 		$retourxenocantho .= '<a href="' . $urlxenocanto . '"' . $target . '"><font color="ForestGreen"><b>Chants_xeno-canto.org</b></font></a>';
 		$retourxenocantho .= '<br />';
 		$urletymology = "http://dictionary.reference.com/search?q=" . $nom_binomial;
