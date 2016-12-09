@@ -374,8 +374,8 @@ class tournoi extends assMetaNode
 
 
 				$row_golf_index .= str_replace('.', ',',$equipe_rows[$j]["golf_index"])."</br>";
-				//	$row_total_index+=$equipe_rows[$j]["golf_index"];
-				($equipe_rows[$j]["golf_index"]>=36) ? $row_total_index+=36 : $row_total_index+=$equipe_rows[$j]["golf_index"];
+					$row_total_index+=$equipe_rows[$j]["golf_index"];
+				//($equipe_rows[$j]["golf_index"]>=36) ? $row_total_index+=36 : $row_total_index+=$equipe_rows[$j]["golf_index"];
 				//			$row_total_index=str_replace('.', ',',$row_total_index);
 				$row_score ="<b>". $score."</b>";
 				$row_nombre_matches="<b>". $nombre_matches."</b>";
@@ -809,7 +809,8 @@ class tournoi extends assMetaNode
 
 			$row[]="<b>".$equipe[$iequipe]["nom"]." ".$equipe[$iequipe]["prenom"];
 			$row[]="<b>".str_replace('.', ',',$equipe[$iequipe]["golf_index"]);
-			($equipe[$iequipe]["golf_index"]>=36) ? $totalindex+=36 : $totalindex+=$equipe[$iequipe]["golf_index"];
+		//	($equipe[$iequipe]["golf_index"]>=36) ? $totalindex+=36 : $totalindex+=$equipe[$iequipe]["golf_index"];
+			$totalindex+=$equipe[$iequipe]["golf_index"];
 
 			//			($iequipe== count($equipe)-1) ? $row[]="<b>".str_replace('.', ',',$totalindex) : $row[]="";
 			if ($iequipe== count($equipe)-1)
@@ -934,14 +935,16 @@ class tournoi extends assMetaNode
 				$row[]=$equipe2[$iequipe]["nom"]." ".$equipe2[$iequipe]["prenom"];
 				$row_index.=str_replace('.', ',',$equipe2[$iequipe]["golf_index"])."<br />";
 				$row[]=str_replace('.', ',',$equipe2[$iequipe]["golf_index"]);
-				//				$totalindex+=$equipe2[$iequipe]["golf_index"];
-				($equipe2[$iequipe]["golf_index"]>=36) ? $totalindex+=36 : $totalindex+=$equipe2[$iequipe]["golf_index"];
+						$totalindex+=$equipe2[$iequipe]["golf_index"];
+				// ($equipe2[$iequipe]["golf_index"]>=36) ? $totalindex+=36 : $totalindex+=$equipe2[$iequipe]["golf_index"];
 
 				if ($iequipe== count($equipe2)-1)
 				{
 					$index_moyen=$totalindex/2;
-								$coups_rendus=($index_moyen_summary-$index_moyen)*3/4;
-								$coups_rendus=round(($index_moyen_summary-$index_moyen)*3/4);
+								$coups_rendus=($index_moyen_summary-$index_moyen)*1;
+								$coups_rendus=round(($index_moyen_summary-$index_moyen)*1);
+								//$coups_rendus=($index_moyen_summary-$index_moyen)*3/4;
+								//$coups_rendus=round(($index_moyen_summary-$index_moyen)*3/4);
 					//$coups_rendus=($index_moyen_summary-$index_moyen)*1;
 					//($coups_rendus<0) ? $coups_rendus=floor($coups_rendus) : $coups_rendus=ceil($coups_rendus) ;
 					$index_equipe=str_replace('.', ',',$index_moyen)." / ".$coups_rendus;
@@ -1006,8 +1009,8 @@ class tournoi extends assMetaNode
 				$row[]=$row_index;
 				//				$row_totalindex="<b>".str_replace('.', ',',$totalindex/2);
 				$index_moyen=$totalindex/2;
-				$coups_rendus=round(($index_moyen_summary-$index_moyen)*3/4);
-				//$coups_rendus=($index_moyen_summary-$index_moyen)*1;
+		//		$coups_rendus=round(($index_moyen_summary-$index_moyen)*3/4);
+				$coups_rendus=round($index_moyen_summary-$index_moyen)*1;
 				//($coups_rendus<0) ? $coups_rendus=floor($coups_rendus) : $coups_rendus=ceil($coups_rendus) ;
 				$row[]=str_replace('.', ',',$index_moyen)." / ".$coups_rendus;
 

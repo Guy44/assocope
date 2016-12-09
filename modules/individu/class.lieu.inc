@@ -179,9 +179,9 @@ return $lat_lon;
 		$map->setAPIKey($this->get_map_key());
 		*/
 
-		include_once(moduleDir("utils") ."GoogleMap.php");
+//GG		include_once(moduleDir("utils") ."GoogleMap.php");
 //include_once(moduleDir("utils") ."JSmin.php");
-		$map = new GoogleMapAPI('map', 'association_map');
+//GG		$map = new GoogleMapAPI('map', 'association_map');
 
 		$id_ville=$record["id_ville"]["id"];
 		$db = & atkGetDb();
@@ -191,10 +191,27 @@ return $lat_lon;
 		where c.id= $id_ville ";
 		$r = $db->getrows("$select");
 		$address = $record['adresse1'] . ", " . $record['adresse2'] . ", " .$r[0]['code_postal'] . ", " . $r[0]['ville'] . ", " . $r[0]['pays'];
-		$coords = $map->geoGetCoords($address);
-					
-					$record["longitude"] = $coords["lon"];
-					$record["latitude"] = $coords["lat"];
+//GG	$coords = $map->geoGetCoords($address);
+// GG DEBUT
+		$address = str_replace(" ", "+", $address); // replace all the white space with "+" sign to match with google search pattern
+		$address=utf8_encode($address);
+		$url = "http://maps.google.com/maps/api/geocode/json?sensor=false&address=$address";
+		
+		$response = file_get_contents($url);
+		
+		$json = json_decode($response,TRUE); //generate array object from the response from the web
+		
+		
+		
+// GG FIN			
+	// $record["longitude"] = $coords["lon"];
+	// $record["latitude"] = $coords["lat"];
+		 
+			$record["latitude"] =$json['results'][0]['geometry']['location']['lat'];
+			$record["longitude"] =$json['results'][0]['geometry']['location']['lng'];
+			
+			
+		
 	}
 		
 		parent::validate($record, $mode);

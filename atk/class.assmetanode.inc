@@ -2901,10 +2901,10 @@ $data [0]["date_creation"]=dateutil::str2arr($data [0]["date_creation"]);
 	
  }</style><table class=\"toc  sortable\">";
 		$retour = "<tr><td><b>#</td><td><b>Nom</td>";
-		$sql = "SELECT orc.libelle, orc.cout, orc.id
+		$sql = "SELECT substring(orc.libelle, 1, 4) ,orc.libelle, orc.cout, orc.id
 		from organisme_rencontre_choix orc
 		where orc.id_rencontre=$id_rencontre
-		order by orc.libelle";
+		order by 1 COLLATE latin1_general_ci";
 		$tableau_id_choix=array ();
 		
 		$data = $db->getrows ( $sql );
@@ -2938,13 +2938,13 @@ $data [0]["date_creation"]=dateutil::str2arr($data [0]["date_creation"]);
 			$retour .= "<td><b>" . ($i + 1) . "</td><td><b>" . $nom . "</td>";
 			$id_individu = $data_individu [$i] ["id"];
 			$sql = "SELECT
-			orc.id, orc.cout, irc.quantite
+			substring(orc.libelle, 1, 4),orc.id, orc.cout, irc.quantite
 			from organisme_rencontre_choix orc LEFT JOIN  individu_rencontre_choix irc  ON orc.id=irc.id_organisme_rencontre_choix , individu_rencontre ir
 			where
 			ir.id_rencontre=$id_rencontre and
 			ir.id_individu=$id_individu and
 			ir.id=irc.id_individu_rencontre
-			order  by orc.libelle
+			order  by 1 COLLATE latin1_general_ci
 			";
 			$data_choix = $db->getrows ( $sql );
 			$total_prestations_individu = 0;
@@ -3001,7 +3001,12 @@ $data [0]["date_creation"]=dateutil::str2arr($data [0]["date_creation"]);
 			$retour .= "<td class='alnright'><b>$montant_remboursement</td>";
 			
 			$total_solde_individu += $solde;
-			$solde = number_format ( $solde, 2, ",", "." );
+	//		$legende.='<font color="'. $this->couleuranomalie.'"> <b> Anomalie ';
+	if ($solde>0)
+	{
+		$solde = '<font color="'. $this->couleuranomalie.'"> <b>'. number_format ( $solde, 2, ",", "." ) ;
+	}
+		else {	$solde = number_format ( $solde, 2, ",", "." );}
 			$retour .= "<td class='alnright'><b>$solde</td>";
 			$retour .= "</tr>";
 		}

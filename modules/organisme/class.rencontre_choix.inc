@@ -16,7 +16,7 @@ class rencontre_choix extends assMetaNode
 		$policy-> addFlags("commentaire","description",AF_HIDE_LIST);
 		$policy-> addFlags("id_creation","date_creation","id_modification","date_modification",AF_READONLY);
 
-		$policy->setOrder("libelle");
+		// $policy->setOrder(" SUBSTRING(libelle,1,5)");
 	}
 	function rencontre_choix()
 	{
