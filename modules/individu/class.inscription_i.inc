@@ -76,7 +76,7 @@ class inscription_i extends assMetaNode {
 						"e2",
 						"p3",
 						"e3",
-						"pid_4",
+						"p4",
 						"e4",
 						"p5",
 						"e5",
@@ -174,13 +174,12 @@ class inscription_i extends assMetaNode {
 		$this->add(new atkBoolAttribute("adhesion_et_pas_de_cotisation_o_n"));
 		/*		$this->add(new atkDummyAttribute("courriel", "Courriel", AF_SEARCHABLE));
 		 $this->add(new atkDummyAttribute("telephone_fixe", "Telephone_fixe", AF_SEARCHABLE));
-		$this->add(new atkDummyAttribute("telephone_mobile", "Telephone_mobile", AF_SEARCHABLE)); 
+		$this->add(new atkDummyAttribute("telephone_mobile", "Telephone_mobile", AF_SEARCHABLE));
 		*/
 		include_once (atkconfig("atkroot") . "modules/include/association.inc");
 		$this->add(new atkDummyAttribute("descripteur_module_estampillage",'text',AF_HIDE_ADD | AF_HIDE_EDIT  | AF_NO_LABEL | AF_COMPACT),null,101 );
 		$this->m_securityMap["admin_liste"] = "view";
-// $this->setOrder(" id_individu");
-$this->setTable($table);
+		$this->setOrder("individu_inscription.id_individu");
 
 		global $ATK_VARS, $g_user;
 		if ($ATK_VARS["atknodetype"] == "individu.inscription_i" && in_array($ATK_VARS["atkaction"], array (
@@ -238,7 +237,7 @@ $this->setTable($table);
 
 		$idindividus = substr($idindividus, 0, strlen($idindividus) - 1);
 		$idindividus=str_replace("'","",$idindividus);
-		$idorganisme = "";
+		(!empty($record["id_organisme"])) ? $idorganisme=$record["id_organisme"]["id"] : $idorganisme="";
 		return true;
 	}
 	function id_individu_display($record, $mode) {
@@ -422,7 +421,7 @@ $this->setTable($table);
 
 		return $handler->action_admin();
 	}
-	function dispatch(& $postvars, $fullpage = true) {
+/*	function dispatch(& $postvars, $fullpage = true) {
 
 		if ($postvars['atkaction'] != 'admin') {
 
@@ -442,10 +441,11 @@ $this->setTable($table);
 
 		$this->addFilter($postvars["atkfilter"]);
 		//	unset ($postvars["atkfilter"]);
+		$this->p($postvars);
 
 		return parent :: dispatch($postvars, $fullpage);
 	}
-
+*/
 
 
 	function action_lister() {
@@ -513,10 +513,10 @@ $this->setTable($table);
 		$legende='Légende des couleurs : ';
 		$legende.='<font color="'. $this->couleurarchive.'"> <b> Archive ';
 		if ($view == "active") {
-			return atktext("onlyactiverecordsareshown") . " " . href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=nonactive', atktext('clicktoviewarchive', $this->m_module, $this->m_type),SESSION_DEFAULT, false, ' style="color: white; background:blueviolet;" ') . "<br>"
+			return atktext("onlyactiverecordsareshown") . " " . href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=nonactive', atktext('clicktoviewarchive', $this->m_module, $this->m_type)) . "<br>"
 					.$legende.$retour;
 		} else {
-			return atktext("youareinthearchive") . " " . href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=active', atktext('clicktoviewactiverecords', $this->m_module, $this->m_type),SESSION_DEFAULT, false, ' style="color: white; background:blueviolet;" ') . "<br>"
+			return atktext("youareinthearchive") . " " . href('dispatch.php?atknodetype=' . $this->atkNodeType() . '&atkaction=' . $this->m_action . '&view=active', atktext('clicktoviewactiverecords', $this->m_module, $this->m_type)) . "<br>"
 					.$legende.$retour;
 		}
 	}

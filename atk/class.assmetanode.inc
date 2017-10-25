@@ -1,6 +1,6 @@
 <?php
-atkimport ( "atk.atkmetanode" );
-atkimport ( "atk.utils.atkmessagequeue" );
+atkimport("atk.atkmetanode");
+atkimport("atk.utils.atkmessagequeue");
 class assMetaNode extends atkMetaNode {
 	var $couleuranomalie = "Tomato";
 	var $couleurrequete = "MediumSpringGreen";
@@ -813,6 +813,7 @@ $data [0]["date_creation"]=dateutil::str2arr($data [0]["date_creation"]);
 		$url = dispatch_url ( "organisme.organisme", "listeecran", array (
 				"id" => $idorganisme,
 				"idindividus" => $idindividus,
+		    "idorganisme" => $idorganisme,
 				"atkcode" => '21' 
 		) );
 		header ( "Location: $url" );
@@ -2274,7 +2275,9 @@ $data [0]["date_creation"]=dateutil::str2arr($data [0]["date_creation"]);
 		$row1 = $db->getrows ( $sql );
 		$joueurs = "";
 		for($j = 0; $j < count ( $row1 ); $j ++) {
-			$joueurs .= $this->descripteur_individu ( $row1 [$j] ["individu"], 'n', 'n', 100, "tournoi_match", "n", "n" ) . "</br>";
+	//		$joueurs .= $this->descripteur_individu ( $row1 [$j] ["individu"], 'n', 'n', 100, "tournoi_match", "n", "n" ) . "</br>";
+         $joueurs .= $this->descripteur_individu($row1 [$j] ["individu"], $qr_o_n='n', $aide_o_n='n', $size=50, $origine_appel='tournoi', $long_o_n='o', $licence_golf_o_n='n', $sans_lien_o_n='n', $lat="", $long="", $sans_nom_o_n='n', $id_organisme)."</br>" ;
+			
 		}
 		
 		$descripteur = "</br></br>" . $equipe_texte . "</b></br>" . substr ( $joueurs, 0, strlen ( $joueurs ) - 5 );
@@ -2904,7 +2907,7 @@ $data [0]["date_creation"]=dateutil::str2arr($data [0]["date_creation"]);
 		$sql = "SELECT substring(orc.libelle, 1, 4) ,orc.libelle, orc.cout, orc.id
 		from organisme_rencontre_choix orc
 		where orc.id_rencontre=$id_rencontre
-		order by 1 COLLATE latin1_general_ci";
+		order by 1 ";
 		$tableau_id_choix=array ();
 		
 		$data = $db->getrows ( $sql );
@@ -5005,7 +5008,9 @@ $data [0]["date_creation"]=dateutil::str2arr($data [0]["date_creation"]);
 		}
 		$toutes_icones = 'non';
 		if ($g_icones_detaillees_o_n == 1 || $origine_appel == 'menu' || $origine_appel == 'popup') {
-			$toutes_icones = 'oui';
+// GG
+//$toutes_icones = 'oui';
+		    $toutes_icones = 'non';
 		}
 		$sql = "select nom , sigle, siret, courriel, site_internet, calendrier, calendrier_contacts_url, calendrier_contacts_refresh,
 		calendrier_rencontres_url, calendrier_rencontres_refresh, telephone  from organisme where id=$id_organisme";
@@ -5171,9 +5176,52 @@ $data [0]["date_creation"]=dateutil::str2arr($data [0]["date_creation"]);
 		$id_individu = $data [0] ["id"];
 		return $this->descripteur_individu ( $id_individu, 'n', 'n', $size = 100, "utilisateur", 'n', 'n', $sans_lien_o_n );
 	}
-	function descripteur_individu($id_individu, $qr_o_n = 'n', $aide_o_n = 'o', $size = 50, $origine_appel = 'commune', $long_o_n = 'o', $licence_golf_o_n = 'n', $sans_lien_o_n = 'n', $lat = "", $long = "", $sans_nom_o_n = 'n') {
-		if (! ($id_individu > 0))
+	function descripteur_individu_portrait($id_individu)
+	{
+	    $db = & atkGetDb ();
+	    $sql="select 
+         nom,
+         prenom,
+        id_document_portrait,
+        id_document_signature,
+        url_document,
+        file_content,
+        file_name,
+        file_size
+          from individu
+        LEFT JOIN organisme_document
+        ON  organisme_document.id=individu.id_document_portrait
+        
+        where individu.id=$id_individu";
+	    $data = $db->getrows($sql);
+	    if (!empty($data [0] ["id_document_portrait"]))
+	    {
+	        if (!empty($data [0] ["url_document"]))
+	        {
+	            
+	            $url=$data [0] ["url_document"];
+	            
+	        }
+	        else {
+	            $data[0]["file_content"]=base64_decode($data[0]["file_content"]);
+	            $filename=$data[0]["file_name"];
+	            $url="./documents/".$filename;
+	            $file =@fopen($url,"w");
+	            @fwrite($file,$data[0]["file_content"],$data[0]["file_size"]);
+	            @fclose($file);
+	            $data[0]["file_content"]="";
+	        }
+	    }
+	    ($data [0] ["id_document_portrait"] != "") ? $retour = " " . '<a href="'.$url. '" target="_blank" ><img style="vertical-align:middle" src="'.$url.'" height="20px" alt="Portrait" title="Portrait" /></a> '  : null;
+	    $retour.=$data[0]["nom"]." ".$data[0]["prenom"];
+	    return $retour;
+	}
+	function descripteur_individu($id_individu, $qr_o_n = 'n', $aide_o_n = 'o', $size = 50, $origine_appel = 'commune', $long_o_n = 'o', $licence_golf_o_n = 'n', $sans_lien_o_n = 'n', $lat = "", $long = "", $sans_nom_o_n = 'n',$id_organisme=0) {
+	    {
+	    if (! ($id_individu > 0))
 			return false;
+		
+			   
 		global $g_sessionManager;
 		$g_icones_detaillees_o_n = $g_sessionManager->getValue ( "icones_detaillees_o_n", "globals" );
 		$toutes_icones = 'non';
@@ -5188,12 +5236,89 @@ $data [0]["date_creation"]=dateutil::str2arr($data [0]["date_creation"]);
 			$toutes_icones = 'non';
 		}
 		$db = & atkGetDb ();
-		$data = $db->getrows ( "select golf_licence, golf_index, nom, prenom,sexe,
-				id_document_portrait, id_document_signature,courriel, calendrier, calendrier_contacts_url, calendrier_contacts_refresh,
-				calendrier_rencontres_url, calendrier_rencontres_refresh, telephone_fixe, telephone_mobile, date_naissance,site_internet, date_deces  from individu where id=$id_individu" );
-		$nomindividu = $data [0] ["nom"];
+		$cotisation_a_jour="";
+		if ($id_organisme > 0) 
+		{
+		   $sql="select ic.id as id_cotisation
+            from individu_cotisation ic, organisme_cotisation oc
+            where ic.id_organisme=$id_organisme
+            and ic.id_individu=$id_individu
+            and ic.id_cotisation=oc.id
+            and ( oc.annee=YEAR(CURDATE()) or oc.annee=YEAR(CURDATE())+1)
+";
+		   $data = $db->getrows($sql);
+	//	   $this->p($data);
+		   if ($data[0]["id_cotisation"]>0)
+		   {
+		       $cotisation_a_jour="oui";
+		   }
+		   else {
+		       $cotisation_a_jour="non";
+		   }
+/*		   if ($id_individu=='2791')
+		   {  $this->p( $cotisation_a_jour);
+		   
+		   }
+		   */
+		}
+	
+ $sql="select golf_licence,
+         golf_index,
+        id_golf_abonnement,
+         nom,
+         prenom,
+        sexe,
+        id_document_portrait,
+        id_document_signature,
+        url_document,
+        courriel,
+        calendrier,
+        calendrier_contacts_url,
+        calendrier_contacts_refresh,
+        calendrier_rencontres_url,
+        calendrier_rencontres_refresh,
+        telephone_fixe,
+        telephone_mobile,
+        date_naissance,
+        site_internet,
+        date_deces,
+        file_content,
+        file_name,
+        file_size
+          from individu
+        LEFT JOIN organisme_document
+        ON  organisme_document.id=individu.id_document_portrait
+
+        where individu.id=$id_individu";
+		
+		
+		$data = $db->getrows($sql);
+		
+		if (!empty($data [0] ["id_document_portrait"]))
+		{
+		    if (!empty($data [0] ["url_document"]))
+		    {
+		        
+		        $url=$data [0] ["url_document"];
+		        
+		    }
+		    else {
+		    $data[0]["file_content"]=base64_decode($data[0]["file_content"]);
+		    $filename=$data[0]["file_name"];
+		    $url="./documents/".$filename;
+		    $file =@fopen($url,"w");
+		    @fwrite($file,$data[0]["file_content"],$data[0]["file_size"]);
+		    @fclose($file);
+		    $data[0]["file_content"]="";
+		    }
+		    }
+		//
+		   
+
+		
 		$golflicence = $data [0] ["golf_licence"];
 		$golfindex = $data [0] ["golf_index"];
+		$idgolfabonnement = $data [0] ["id_golf_abonnement"];
 		$prenomindividu = $data [0] ["prenom"];
 		$calendrier_individu = $data [0] ["calendrier"];
 		$calendrier_contacts_url_individu = $data [0] ["calendrier_contacts_url"];
@@ -5206,9 +5331,8 @@ $data [0]["date_creation"]=dateutil::str2arr($data [0]["date_creation"]);
 		$qr_anniversaire = substr ( $data [0] ["date_naissance"], 0, 10 );
 		$qr_anniversaire_individu = str_replace ( '-', '', $qr_anniversaire );
 		
-		$nom_individu = "";
+		$nom_individu = $data [0] ["nom"];
 		
-		$nom_individu = $nomindividu;
 		if (! empty ( $prenomindividu ))
 			$nom_individu .= " " . $prenomindividu;
 		$courriel_individu = $data [0] ["courriel"];
@@ -5219,7 +5343,9 @@ $data [0]["date_creation"]=dateutil::str2arr($data [0]["date_creation"]);
 			$adresse_individu = $this->descripteur_adresse_individu ( $id_individu, 'n', 'n' );
 			$qr_adresse_individu = $this->descripteur_adresse_individu ( $id_individu, 'o', 'n' );
 		}
-		($data [0] ["sexe"] == 'F') ? $icon = 'individu_elle.png' : $icon = 'individu.png';
+		if ( $origine_appel!="tournoi")
+		
+		{($data [0] ["sexe"] == 'F') ? $icon = 'individu_elle.png' : $icon = 'individu.png';
 		
 		$popup = atkPopup ( atkconfig ( "atkroot" ) . 'atk/popups/qrpopup.inc', 'type=individu&id=' . $id_individu, 'Coordonnées de ' . $nom_individu, 700, 350, 'yes', 'no' );
 		$descripteur .= '<a href="' . $popup . '"><img class="recordlist" border="0" src="./themes/assocope/icons/assocope/' . $icon . '" alt="Coordonnées de ' . $nom_individu . '" title="Coordonnées de ' . $nom_individu . '" target="_blank"></img></a>' . '';
@@ -5234,15 +5360,28 @@ $data [0]["date_creation"]=dateutil::str2arr($data [0]["date_creation"]);
 				$descripteur .= '<b>' . $nom_individu . '</b>';
 			}
 		}
+		}
+		else 
+		{
+		    $descripteur .= '<b>' . $nom_individu . '</b>';
+		    
+		}
+			
 		$coordonnees = '<b>' . $nom_individu . '</b><br />';
 		($aide_o_n == 'o') ? $descripteur .= ' ' . $this->descripteur_aide ( 'Descripteur_individu', 'n' ) . '' : $descripteur = $descripteur . '';
+		
 		if ($long_o_n == 'o') {
 			if ($toutes_icones == 'oui') {
 				$descripteur .= '<br />';
+				($data [0] ["id_document_portrait"] != "") ? $descripteur .= " " . '<a href="'.$url. '" target="_blank" ><img style="vertical-align:middle" src="'.$url.'" height="20px" alt="Portrait" title="Portrait" /></a> '  : null;
+				
 			}
-			if (! empty ( $qr_adresse_individu )) {
+/*			if (! empty ( $qr_adresse_individu )) {
 				if ($toutes_icones == 'oui') {
-					$descripteur .= $adresse_individu;
+					
+					    $descripteur .= $adresse_individu;
+					    if (! $origine_appel=="tournoi")
+					        {
 					$descripteur .= atkHref ( dispatch_url ( "individu.individu", "googlemap", array (
 							"id" => "$id_individu" 
 					) ), '<img class="recordlist" border="0" src="./themes/assocope/icons/assocope/geolocalisation.png" alt="Où est-ce ? : ' . $qr_adresse_individu . '"
@@ -5253,15 +5392,19 @@ $data [0]["date_creation"]=dateutil::str2arr($data [0]["date_creation"]);
 					 * $descripteur.='<a href="'.$href.'">'.'<img class="recordlist" border="0" src="./themes/assocope/icons/assocope/geolocalisation.png" alt="Où est-ce ? : '.$qr_adresse_individu.'"
 					 * title="Où est-ce ? : '.$qr_adresse_individu.'" ></img></a>';
 					 */
+			/*
 					$href = "http:./dispatch.php?atknodetype=individu.v_individu_lieu&atkaction=document&atkselector=individu.id=" . $id_individu . "&id=&atkfilter=v_individu_lieu.id=" . $id_individu . "&atkdoctpl=enveloppe_individu.odt&atkdoctpl_prefix_id=0&atkcode=2&atklevel=-1&atkprevlevel=0&" . ' target="_blank"';
 					$descripteur .= '<a href="' . $href . '">' . '<img class="recordlist" border="0" src="./themes/assocope/icons/assocope/courrier.png" alt="Enveloppe : ' . $qr_adresse_individu . '"
 							title="Enveloppe : ' . $qr_adresse_individu . '" ></img></a>';
 					($lat != "" && $long != "") ? $descripteur .= $this->descripteur_itineraire_individu ( $id_individu, $lat, $long ) : null;
-				} else {
+					        }
+					        } else {
 					$descripteur .= "<br />" . $qr_adresse_individu;
 				}
 				$coordonnees .= $this->descripteur_adresse_individu ( $id_individu, 'c', 'n' ) . '<br />';
 			}
+			*/
+			
 			if (! empty ( $telephone_fixe_individu )) {
 				if ($toutes_icones == 'oui') {
 					$href = " tel:" . $telephone_fixe_individu;
@@ -5287,7 +5430,7 @@ $data [0]["date_creation"]=dateutil::str2arr($data [0]["date_creation"]);
 				$coordonnees .= $courriel_individu . '<br />';
 			}
 			
-			if (! empty ( $site_internet_individu )) {
+			if (! empty ( $site_internet_individu && ! $origine_appel=="tournoi" )) {
 				if ($toutes_icones == 'oui') {
 					$href = " " . $site_internet_individu . "";
 					$descripteur .= '<a href="' . $href . '"  target="_blank" >' . '<img class="recordlist" border="0" src="./themes/assocope/icons/assocope/blog.png" alt="Accès à : ' . $site_internet_individu . '"
@@ -5295,7 +5438,7 @@ $data [0]["date_creation"]=dateutil::str2arr($data [0]["date_creation"]);
 				}
 				$coordonnees .= $site_internet_individu . '<br />';
 			}
-			if (! empty ( $calendrier_individu )) {
+			if (! empty ( $calendrier_individu )&& ! $origine_appel=="tournoi" ) {
 				if ($toutes_icones == 'oui') {
 					$href = " " . $calendrier_individu;
 					$descripteur .= '<a href="' . $href . '"  target="_blank">' . '<img class="recordlist" border="0" src="./themes/assocope/icons/assocope/calendrier.png" alt="Calendrier : ' . $calendrier_individu . '"
@@ -5304,11 +5447,22 @@ $data [0]["date_creation"]=dateutil::str2arr($data [0]["date_creation"]);
 			}
 			
 			if ($toutes_icones == 'oui') {
+			
+			if ($id_organisme >0)
+			{ if ($cotisation_a_jour=="oui")
+			{$descripteur.=' <img class="recordlist" border="0" src="./themes/assocope/icons/assocope/table-edit-icon.png" alt="Cotisation à jour"
+			        title="Cotisation à jour" ></img>  ';}
+			    else if($cotisation_a_jour=="non")
+			    { $descripteur.=' <img class="recordlist" border="0" src="./themes/assocope/icons/assocope/travaux.png" alt="Cotisation non acquittée"
+			        title="Cotisation non acquittée" ></img>  ';}
+			    
 			}
-			$href = "http://www.google.fr/search?q=" . $nom_individu . "&ie=utf-8&oe=utf-8&aq=t&";
+			    
+			if (! $origine_appel=="tournoi")    
+			{$href = "http://www.google.fr/search?q=" . $nom_individu . "&ie=utf-8&oe=utf-8&aq=t&";
 			$descripteur .= '<a href="' . $href . '"  target="_blank">' . '<img class="recordlist" border="0" src="./themes/assocope/icons/assocope/notoriete.png" alt="Chercher avec Google"
 						title="Chercher avec Google" ></img></a>';
-			
+			}
 			$qr_individu = "MECARD:N:" . $qr_nom_individu . ";TEL:" . $telephone_fixe_individu . ";TEL:" . $telephone_mobile_individu . ";BDAY:" . $qr_anniversaire_individu . ";URL:" . $site_internet_individu . ";EMAIL:" . $courriel_individu . ";ADR:" . $qr_adresse_individu . ";;";
 			$qr_individu = str_replace ( ' ', '+', $qr_individu );
 			$qr_individu = str_replace ( "'", "/'", $qr_individu );
@@ -5336,8 +5490,9 @@ $data [0]["date_creation"]=dateutil::str2arr($data [0]["date_creation"]);
 			$retour = $descripteur;
 		}
 		($licence_golf_o_n == 'o') ? $retour .= "</b><br/> (Licence golf : <b>" . $golflicence . "</b>. Index : <b>" . $golfindex . "</b>)" : null;
-		
+		}
 		return $retour;
+	}
 	}
 	function descripteur_biodiversite_protection_texte($cd_protection, $aide_o_n = 'o') {
 		$db = & atkGetDb ();
@@ -7616,19 +7771,35 @@ where e.id_journal = $id_journal and l.id_ecriture=e.id and year(e.date_ecriture
 		return $an . "-" . str_pad ( $mois, 2, "0", STR_PAD_LEFT );
 	}
 	function getIndividuCoordinates($id_individu) {
-		$db = & atkGetDb ();
+		/*
+		
+		$sql="select id_document_portrait from individu where id=".$record["id"]." ";
+		$data=$db->getrows($sql);
+		$id_portrait=$data[0]["id_document_portrait"];
+		if (!empty($id_portrait))
+		{
+		    $sql="select file_content,file_name, file_size from organisme_document where id=$id_portrait";
+		    $data=$db->getrows($sql);
+		      */
+		    $db = & atkGetDb ();
 		$sql = "SELECT
-				nom,
-				prenom,
-				date_naissance,
-				date_deces,
-				courriel,
-				telephone_fixe,
-				telephone_mobile,
-				site_internet
+				i.nom,
+				i.prenom,
+                i.id_document_portrait,
+				i.date_naissance,
+				i.date_deces,
+				i.courriel,
+				i.telephone_fixe,
+				i.telephone_mobile,
+				i.site_internet,
+                od.file_content,
+                od.file_name, 
+                od.file_size
 				FROM
-				individu
-				WHERE id=$id_individu
+				individu i
+                LEFT JOIN organisme_document od
+				ON  od.id=i.id_document_portrait 
+                where i.id=$id_individu
 				";
 		$data = $db->getrows ( $sql );
 		$arrayIndividu = array ();
@@ -7637,7 +7808,20 @@ where e.id_journal = $id_journal and l.id_ecriture=e.id and year(e.date_ecriture
 		$arrayIndividu ["date_naissance"] = $data [0] ["date_naissance"];
 		$arrayIndividu ["date_deces"] = $data [0] ["date_deces"];
 		($data [0] ["date_deces"] != "") ? $arrayIndividu ["date_naissance"] .= '<br>-<br>(<b>' . $data [0] ["date_deces"] . '</b>)' : null;
-		
+		//
+		if (!empty($data [0] ["id_document_portrait"]))
+		{
+		$data[0]["file_content"]=base64_decode($data[0]["file_content"]);
+		$filename=$data[0]["file_name"];
+		$url="./documents/".$filename;
+		$file =@fopen($url,"w");
+		@fwrite($file,$data[0]["file_content"],$data[0]["file_size"]);
+		@fclose($file);
+		$data[0]["file_content"]="";
+		$arrayIndividu ["portrait"] ='<a href="'.$url. '" target="_blank" ><img style="vertical-align:middle" src="'.$url.'" height="32px" alt="Portrait" title="Portrait" /></a>' ;
+		}
+		//
+		($data [0] ["id_document_portrait"] != "") ? $arrayIndividu ["contacts"] .= " " . '<a href="'.$url. '" target="_blank" ><img style="vertical-align:middle" src="'.$url.'" height="32px" alt="Portrait" title="Portrait" /></a>'  : null;
 		($data [0] ["telephone_fixe"] != "") ? $arrayIndividu ["contacts"] .= " " . $this->affiche_telephone_fixe ( $data [0] ["telephone_fixe"] ) : null;
 		($data [0] ["telephone_mobile"] != "") ? $arrayIndividu ["contacts"] .= " " . $this->affiche_telephone_mobile ( $data [0] ["telephone_mobile"] ) : null;
 		($data [0] ["courriel"] != "") ? $arrayIndividu ["contacts"] .= " " . $this->affiche_courriel ( $data [0] ["courriel"] ) : null;
@@ -8001,6 +8185,7 @@ where e.id_journal = $id_journal and l.id_ecriture=e.id and year(e.date_ecriture
 			return $ret;
 		}
 	}
-}
-
+	}
+	
+	
 ?>

@@ -16,7 +16,7 @@ class tournoi extends assMetaNode
 		//$policy-> addFlags("libelle",AF_SEARCHABLE);
 		$policy-> addFlags("commentaire",AF_HIDE_LIST);
 		$policy-> addFlags("id_creation","date_creation","id_modification","date_modification",AF_READONLY);
-		//$policy->setOrder("libelle");
+		$policy->setOrder("date_creation DESC");
 	}
 	function tournoi()
 	{
@@ -67,12 +67,13 @@ class tournoi extends assMetaNode
 
 		include_once(atkconfig("atkroot")."modules/include/association.inc");
 		$this->add(new atkDummyAttribute("descripteur_module_estampillage",'text',AF_HIDE_ADD | AF_HIDE_EDIT  | AF_NO_LABEL | AF_COMPACT),null,15);
+		$this->setOrder ( " date_creation DESC " );
 		$this->setSecurityAlias("organisme.organisme");
 		$this->m_securityMap["inscrire_du_presse_papier"] = "view";
 		$this->m_securityMap["generer_equipes_et_rencontres"] = "view";
 		//			$this->m_securityMap["lister_les_participants"] = "view";
 		$this->m_securityMap["lister_les_equipes"] = "view";
-		$this->m_securityMap["lister_les_equipes_sans_coordonnées"] = "view";
+		$this->m_securityMap["lister_les_equipes_sans_coordonnees"] = "view";
 		$this->m_securityMap["lister_les_rencontres"] = "view";
 		$this->m_securityMap["lister_les_rencontres_par_equipe"] = "view";
 		$this->m_securityMap["lister_tout"] = "view";
@@ -102,7 +103,7 @@ class tournoi extends assMetaNode
 		$mraactions["lister_les_equipes"] ="lister_les_equipes";
 		$mraactions["lister_les_rencontres"] ="lister_les_rencontres";
 		$mraactions["lister_les_rencontres_par_equipe"] ="lister_les_rencontres_par_equipe";
-		$mraactions["lister_les_equipes_sans_coordonnées"] ="lister_les_equipes_sans_coordonnées";
+		$mraactions["lister_les_equipes_sans_coordonnees"] ="lister_les_equipes_sans_coordonnees";
 		$mraactions["lister_tout"] ="lister_tout";
 
 
@@ -178,14 +179,14 @@ class tournoi extends assMetaNode
 
 		$this->	lister_les_equipes(true);
 	}
-	function action_lister_les_equipes_sans_coordonnées() {
+	function action_lister_les_equipes_sans_coordonnees() {
 		$this->	lister_les_equipes(false);
 	}
 	function action_lister_tout() {
 
 		//$this->p($this->m_postvars["atkselector"]);
 		$this->action_lister_les_equipes();
-		$this->action_lister_les_equipes_sans_coordonnées();
+		$this->action_lister_les_equipes_sans_coordonnees();
 		$this->action_lister_les_rencontres();
 		$this->action_lister_les_rencontres_par_equipe();
 	}
@@ -314,13 +315,14 @@ class tournoi extends assMetaNode
 		for ($i = 0; $i < count($stuff); $i++) {
 			$id_equipe=$stuff[$i]["equipe"];
 			$score=$stuff[$i]["score"];
-			$nombre_matches=$stuff[$i]["nombre_matches"];
+			$nombre_matches=$stuff[$i]["nombre_matches"]; 
 
 			$sql="select
 			t.libelle,
+            t.id_organisme as id_organisme,
 			te.id,
 			te.nom_d_equipe,
-			i.id,
+			i.id as id_individu,
 			i.nom,
 			i.prenom,
 			i.courriel,
@@ -354,25 +356,33 @@ class tournoi extends assMetaNode
 			$row_nombre_matches="";
 			for ($j = 0; $j < count($equipe_rows); $j++)
 			{
-				$row = array ();
+				
+			    $row = array ();
 				//$tableaumatches=$this->matches_equipe($id_equipe,true);
 				( $j==0) ? $row_numero="<b>".($i+1) :null;
 				( $equipe_rows[$j-1]["nom_d_equipe"]==$equipe_rows[$j]["nom_d_equipe"]) ?null :$row_nom_equipe="<b>". $equipe_rows[$j]["nom_d_equipe"]."<br/>".$equipe_rows[$j]["libelle"]."</b>";
-
-				$enreg["id"]=$equipe_rows[$j]["id"];
-				$photo=$individu_node->portrait_display($enreg, $mode);
-				$photo=str_replace("<center>","",$photo);
-				$photo=str_replace("</center>","",$photo);
-				$photo=str_replace("100px","32px",$photo);
-				//GG en attendant mieux
-				$photo="";
-				//GG
-				$row_joueurs .="<b>".$photo.$equipe_rows[$j]["nom"]." ".$equipe_rows[$j]["prenom"]."</b></br>";
-				$row_courriel .= $equipe_rows[$j]["courriel"]."</br>";
-				$row_telephone_fixe .= $equipe_rows[$j]["telephone_fixe"]."</br>";
-				$row_telephone_mobile .= $equipe_rows[$j]["telephone_mobile"]."</br>";
-
-
+				
+					
+				// Guy octobre 2017
+				$id_organisme=$equipe_rows[$j]["id_organisme"];
+				$id_individu=$equipe_rows[$j]["id_individu"];
+				if ($complet_o_n==true)
+				    {	$arrayIndividu=$this->descripteur_individu($id_individu, $qr_o_n='n', $aide_o_n='n', $size=50, $origine_appel='tournoi', $long_o_n='o', $licence_golf_o_n='n', $sans_lien_o_n='n', $lat="", $long="", $sans_nom_o_n='n', $id_organisme) ;
+				}
+				else 
+				{	$arrayIndividu=$this->descripteur_individu_portrait($id_individu) ;
+				}
+				//		$row_joueurs .='<span style="vertical-align:middle; text-align=left;"><b>'."     ".$equipe_rows[$j]["prenom"]." ".$equipe_rows[$j]["nom"]."</b></span>  ";
+				$row_joueurs .="  ".$arrayIndividu."</br>";
+				//
+				
+				$href = "mailto:" . $equipe_rows[$j]["courriel"];
+				$row_courriel .= '<a href="' . $href . '">'.$equipe_rows[$j]["courriel"].'</a></br>';
+				$href = " tel:" . $equipe_rows[$j]["telephone_fixe"];
+				$row_telephone_fixe .= '<a href="' . $href . '">'.$equipe_rows[$j]["telephone_fixe"].'</a></br>';
+				$href = " tel:" . $equipe_rows[$j]["telephone_mobile"];
+				$row_telephone_mobile .= '<a href="' . $href . '">'.$equipe_rows[$j]["telephone_mobile"].'</a></br>';
+				
 				$row_golf_index .= str_replace('.', ',',$equipe_rows[$j]["golf_index"])."</br>";
 					$row_total_index+=$equipe_rows[$j]["golf_index"];
 				//($equipe_rows[$j]["golf_index"]>=36) ? $row_total_index+=36 : $row_total_index+=$equipe_rows[$j]["golf_index"];
@@ -498,6 +508,7 @@ class tournoi extends assMetaNode
 			te.id,
 			tre.score,
 			trm.date_rencontre_effective,
+            i.id as id_individu,
 			i.nom,
 			i.prenom,
 			i.golf_index,
@@ -573,8 +584,19 @@ class tournoi extends assMetaNode
 						$row[] = $stuff[$i]["nom_d_equipe"];
 					}
 				}
-				$row[] =$stuff[$i]["nom"]." ".$stuff[$i]["prenom"];
-				//			($stuff[$i]["score"]==0) ?  $row[] ="" : $row[] = $stuff[$i]["score"];
+				//$row[] =$stuff[$i]["prenom"]." ".$stuff[$i]["nom"];
+				//
+				$id_organisme=$stuff["id_organisme"];
+				$id_individu=$stuff[$i]["id_individu"];
+				$arrayIndividu=$this->descripteur_individu_portrait($id_individu);
+	//			$arrayIndividu=$this->descripteur_individu($id_individu, $qr_o_n='n', $aide_o_n='n', $size=50, $origine_appel='tournoi', $long_o_n='o', $licence_golf_o_n='n', $sans_lien_o_n='n', $lat="", $long="", $sans_nom_o_n='n', $id_organisme) ;
+//				$row_joueurs .='<span style="vertical-align:middle; text-align=left;"><b>'."     ".$equipe_rows[$j]["prenom"]." ".$equipe_rows[$j]["nom"]."</b></span>  ";
+				$row_joueurs .="  ".$arrayIndividu."</br>";
+		//		$arrayIndividu=$this->getIndividuCoordinates($stuff[$i]["id_individu"]);
+		//		$row_joueurs ='<span style="vertical-align:middle; text-align=left;"><b>'."     ".$stuff[$i]["prenom"]." ".$stuff[$i]["nom"]."</b></span>  ";
+		//		$row_joueurs .="  ".$arrayIndividu["contacts"]."</br>";
+				$row[] =$row_joueurs;
+				//
 				$row[] = str_replace('.', ',',$stuff[$i]["golf_index"]);
 				(
 				(
@@ -639,13 +661,16 @@ class tournoi extends assMetaNode
 		te.numero_d_equipe,
 		te.nom_d_equipe,
 		te.jour_rattrapage_o_n,
+        i.id as id_individu,
 		i.nom,
 		i.prenom,
 		i.courriel,
 		i.telephone_fixe,
 		i.telephone_mobile,
-		i.golf_index
+		i.golf_index,
+        ot.id_organisme as id_organisme
 		from
+        organisme_tournoi ot,
 		tournoi_equipe te
 		LEFT JOIN tournoi_equipe_participant tep
 		ON te.id=tep.id_tournoi_equipe
@@ -655,6 +680,7 @@ class tournoi extends assMetaNode
 		ON it.id_individu=i.id
 		where
 		te.id=$id
+		and it.id_tournoi=ot.id
 		order by te.numero_d_equipe, i.nom, i.prenom  ";
 		//		$this->p($sql);
 		$equipe=$db->getrows($sql);
@@ -806,8 +832,24 @@ class tournoi extends assMetaNode
 					$row[]='<b>'.$equipe[$iequipe]["nom_d_equipe"];
 				}
 			}
-
-			$row[]="<b>".$equipe[$iequipe]["nom"]." ".$equipe[$iequipe]["prenom"];
+/*
+ *$arrayIndividu=$this->getIndividuCoordinates($equipe_rows[$j]["id_individu"]);
+				$row_joueurs .='<span style="vertical-align:middle; text-align=left;"><b>'."     ".$equipe_rows[$j]["prenom"]." ".$equipe_rows[$j]["nom"]."</b></span>  ";
+				$row_joueurs .="  ".$arrayIndividu["contacts"]."</br>";
+ */
+			/*$arrayIndividu=$this->getIndividuCoordinates($equipe[$iequipe]["id_individu"]);
+			$row_joueurs .='<span style="vertical-align:middle; text-align=left;"><b>'."     ".$equipe[$iequipe]["prenom"]." ".$equipe[$iequipe]["nom"]."</b></span>  ";
+			$row_joueurs .="  ".$arrayIndividu["contacts"]."</br>";
+			$row[]=$row_joueurs;
+			*/
+			$id_organisme=$equipe[$iequipe]["id_organisme"];
+			$id_individu=$equipe[$iequipe]["id_individu"];
+			$arrayIndividu=$this->descripteur_individu($id_individu);
+	//		$arrayIndividu=$this->descripteur_individu($id_individu, $qr_o_n='n', $aide_o_n='n', $size=50, $origine_appel='tournoi', $long_o_n='o', $licence_golf_o_n='n', $sans_lien_o_n='n', $lat="", $long="", $sans_nom_o_n='n', $id_organisme) ;
+//			$row_joueurs .='<span style="vertical-align:middle; text-align=left;"><b>'."     ".$equipe_rows[$j]["prenom"]." ".$equipe_rows[$j]["nom"]."</b></span>  ";
+			$row_joueurs .="  ".$arrayIndividu."</br>";
+		
+			//$row[]="<b>".$equipe[$iequipe]["prenom"]." ".$equipe[$iequipe]["nom"];
 			$row[]="<b>".str_replace('.', ',',$equipe[$iequipe]["golf_index"]);
 		//	($equipe[$iequipe]["golf_index"]>=36) ? $totalindex+=36 : $totalindex+=$equipe[$iequipe]["golf_index"];
 			$totalindex+=$equipe[$iequipe]["golf_index"];
@@ -931,8 +973,18 @@ class tournoi extends assMetaNode
 						$row_nom_equipe='<b>'.$equipe2[$iequipe]["nom_d_equipe"];
 					}
 				}
-				$row_joueurs.=$equipe2[$iequipe]["nom"]." ".$equipe2[$iequipe]["prenom"]."<br />";
-				$row[]=$equipe2[$iequipe]["nom"]." ".$equipe2[$iequipe]["prenom"];
+			/*	$arrayIndividu=$this->getIndividuCoordinates($equipe2[$iequipe]["id_individu"]);
+				$row_joueurs .='<span style="vertical-align:middle; text-align=left;"><b>'."     ".$equipe2[$iequipe]["prenom"]." ".$equipe2[$iequipe]["nom"]."</b></span>  ";
+				$row_joueurs .="  ".$arrayIndividu["contacts"]."</br>";
+				$row[]=$row_joueurs;
+				*/
+				$id_organisme=$equipe2[$iequipe]["id_organisme"];
+				$id_individu=$equipe2[$iequipe]["id_individu"];
+				$arrayIndividu=$this->descripteur_individu($id_individu);
+	//			$arrayIndividu=$this->descripteur_individu($id_individu, $qr_o_n='n', $aide_o_n='n', $size=50, $origine_appel='tournoi', $long_o_n='o', $licence_golf_o_n='n', $sans_lien_o_n='n', $lat="", $long="", $sans_nom_o_n='n', $id_organisme) ;
+	//			$row_joueurs .='<span style="vertical-align:middle; text-align=left;"><b>'."     ".$equipe_rows[$j]["prenom"]." ".$equipe_rows[$j]["nom"]."</b></span>  ";
+				$row_joueurs .="  ".$arrayIndividu."</br>";
+	//			$row[]=$equipe2[$iequipe]["prenom"]." ".$equipe2[$iequipe]["nom"];
 				$row_index.=str_replace('.', ',',$equipe2[$iequipe]["golf_index"])."<br />";
 				$row[]=str_replace('.', ',',$equipe2[$iequipe]["golf_index"]);
 						$totalindex+=$equipe2[$iequipe]["golf_index"];
@@ -1100,7 +1152,7 @@ class tournoi extends assMetaNode
 			$libelle.=$rang["libelle"]." <br/>";
 		}
 		$ligne=array();
-		$ligne[]='<img  border="0" src="./logos/'.$row[0]["logo"].'" alt="Logo" title="Logo" ></img>';
+		$ligne[]='<img  border="0" src="./logos/'.$row[0]["logo"].'" width="100px" alt="Logo" title="Logo" ></img>';
 		$ligne[]="<b>".$nom."</br>".$libelle."</br></br>$sujet";
 		return $ligne;
 	}

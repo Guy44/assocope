@@ -91,10 +91,11 @@ var $table = "individu";
 				"etp_pulses_per_minute",
 				"etp_systole_mm_hg"
 				),
-									"Sport" => array (
+			"Sport" => array (
 				"golf_licence",
 				"golf_index",
 				"golf_url_federation",
+			    "id_golf_abonnement",
 				"lien"
 				),
 			"Etudes" => array (
@@ -204,6 +205,7 @@ var $table = "individu";
 			$this->add(new atkAttribute("golf_licence", AF_SEARCHABLE | AF_HIDE_LIST), null, 110);
 			$this->add(new atkNumberAttribute("golf_index", AF_SEARCHABLE | AF_HIDE_LIST, 5, 2), null, 120);
 			$this->add(new atkUrlAttribute("golf_url_federation", AF_POPUP | AF_HIDE_LIST), null, 130);
+			$this->add(new atkManyToOneRelation("id_golf_abonnement", "table.type_golf_abonnement", AF_RELATION_AUTOLINK  | AF_SEARCHABLE));
 			$this->add(new atkParserAttribute("lien", "<a href=\"[golf_url_federation]\" target=\"_blank\">Consulter</a>", AF_NO_LABEL | AF_HIDE_LIST), null, 130);
 			$this->m_securityMap["document"] = "view";
 			$this->m_securityMap["autocomplete"] = "view";
@@ -258,7 +260,7 @@ var $table = "individu";
 		@fwrite($file,$data[0]["file_content"],$data[0]["file_size"]);
 		@fclose($file);
 		$data[0]["file_content"]="";
-		$retour='<center><a href="'.$url. '" target="_blank" ><img src="'.$url.'" height="100px" alt="Portrait" title="Portrait" /></a></center>' ;
+		$retour='<center><a href="'.$url. '" target="_blank" ><img style="vertical-align:middle" src="'.$url.'" height="32px" alt="Portrait" title="Portrait" /></a></center>' ;
 	return $retour;
 			}
 	}

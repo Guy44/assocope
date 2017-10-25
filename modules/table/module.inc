@@ -51,6 +51,10 @@ class mod_table extends associationModule {
 		$nombre_type_demande = $data[0]["nombre"];
 		$data = $db->getrows("SELECT count(id) as nombre from type_document ");
 		$nombre_type_document = $data[0]["nombre"];
+		$data = $db->getrows("SELECT count(id) as nombre from organisme_document ");
+		$nombre_organisme_document = $data[0]["nombre"];
+		$data = $db->getrows("SELECT count(id) as nombre from individu_document ");
+		$nombre_individu_document = $data[0]["nombre"];
 		$data = $db->getrows("SELECT count(id) as nombre from type_entite ");
 		$nombre_type_entite = $data[0]["nombre"];
 		$data = $db->getrows("SELECT count(id) as nombre from type_envoi_groupe ");
@@ -118,7 +122,8 @@ class mod_table extends associationModule {
 		$nombre_type_titre= $data[0]["nombre"];
 		$data = $db->getrows("SELECT count(id) as nombre from type_zone_region_pays ");
 		$nombre_type_zone_region_pays= $data[0]["nombre"];
-
+		$data = $db->getrows("SELECT count(id) as nombre from type_golf_abonnement ");
+		$nombre_type_golf_abonnement= $data[0]["nombre"];
 
 
 		//		$this->menuitem("Tables", "", "main", true);
@@ -186,6 +191,8 @@ class mod_table extends associationModule {
 		$this->menuitem("demandes_t"."#".$nombre_type_demande, dispatch_url("table.type_demande", "admin"), "Tables", true);
 		// Documents
 		$this->menuitem("documents_t"."#".$nombre_type_document, dispatch_url("table.type_document", "admin"), "Tables", true);
+		$this->menuitem("organisme_documents_t"."#".$nombre_organisme_document, dispatch_url("organisme.document", "admin"), "Tables", true);
+		$this->menuitem("individu_documents_t"."#".$nombre_individu_document, dispatch_url("individu.document_i", "admin"), "Tables", true);
 		// Domaines internet
 		$data = $db->getrows("SELECT count(id) as nombre from organisme_domaine ");
 		$nombre_organisme_domaine = $data[0]["nombre"];
@@ -203,6 +210,8 @@ class mod_table extends associationModule {
 		$this->menuitem("etats_referencement_t"."#".$nombre_type_etat_referencement, dispatch_url("table.type_etat_referencement", "admin"), "Tables", true);
 		// Fonctions
 		$this->menuitem("fonctions_t"."#".$nombre_type_fonction, dispatch_url("table.fonction", "admin"), "Tables", true);
+		// golf abonnement
+		$this->menuitem("golf_abonnement_t"."#".$nombre_type_golf_abonnement, dispatch_url("table.type_golf_abonnement", "admin"), "Tables", true);
 		// Images
 		$this->menuitem("images_t"."#".$nombre_type_image, dispatch_url("table.type_image", "admin"), "Tables", true);
 		// Inscriptions
@@ -327,6 +336,7 @@ class mod_table extends associationModule {
 	 $res[]= $module."."."type_etat_referencement";
 	 $res[]= $module."."."type_etat_todo";
 	 $res[]= $module."."."type_frequence";
+	 $res[]= $module."."."type_golf_abonnement";
 	 $res[]= $module."."."type_icone";
 	 $res[]= $module."."."type_image";
 	 $res[]= $module."."."type_inscription";

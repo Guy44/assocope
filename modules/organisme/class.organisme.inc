@@ -23,12 +23,16 @@ class organisme extends assMetaNode {
 						"id_type_organisme",
 						
 						"telephone",
+						"id_type_pays",
 						"courriel_grp",
 						"calendrier_grp",
 						"site_internet_grp",
 						"acces_public_o_n",
 						"compte_bancaire",
 						"objectifs",
+						"id_organisme_federation",
+						"id_contact_federation",
+						"id_association_dans_federation",
 						"commentaire",
 						"id_creation",
 						"date_creation",
@@ -61,11 +65,6 @@ class organisme extends assMetaNode {
 				,
 				"Logo" => array (
 						"logo" 
-				),
-				"Fédération" => array (
-						"id_organisme_federation",
-						"id_contact_federation",
-						"id_association_dans_federation" 
 				),
 				"Traitements" => array (
 						
@@ -209,6 +208,7 @@ class organisme extends assMetaNode {
 		$this->add ( new atkUrlAttribute ( "calendrier", AF_POPUP | AF_SEARCHABLE ), 145 );
 		$this->add ( new atkAttribute ( "compte_bancaire", AF_SEARCHABLE, 50 ), 147 );
 		$this->add ( new atkUrlAttribute ( "site_internet", AF_POPUP | AF_SEARCHABLE ), 150 );
+		$this->add(new atkManyToOneRelation("id_type_pays", "table.pays", AF_SEARCHABLE| AF_RELATION_AUTOLINK | AF_RELATION_AUTOCOMPLETE), 151);
 		/*
 		 * $this->add(new atgNumberExpressionAttribute("fonctions", ' select count(id) from individu_fonction
 		 * where id_organisme =[table].id and date_fin is null
@@ -224,6 +224,9 @@ class organisme extends assMetaNode {
 				'Width' => '750px',
 				'Height' => '150px' 
 		) ), 170 );
+		$this->add ( new atkManyToOneRelation ( "id_organisme_federation", "organisme.organisme", AF_RELATION_AUTOLINK | AF_RELATION_AUTOCOMPLETE ), 152 );
+		$this->add ( new atkManyToOneRelation ( "id_contact_federation", "individu.individu", AF_RELATION_AUTOLINK | AF_HIDE_LIST | AF_RELATION_AUTOCOMPLETE ),153 );
+		// $this->add(new atkDateAttribute("date_synchronisation_federation", "Y-m-d", "Y-m-d", 0, 0, AF_DATE_STRING | AF_READONLY| AF_HIDE_LIST));
 		$this->add ( new atkTextAttribute ( "p_explication_carte", array (
 				'autoadjust' => 'yes',
 				'rows' => '2' 
@@ -282,9 +285,7 @@ class organisme extends assMetaNode {
 		$this->addFieldSet ( "calendrier_grp", " [calendrier.field] [calendrier_go.field] ", AF_HIDE_LIST | AF_HIDE_SEARCH, NULL );
 		$this->addFieldSet ( "site_internet_grp", " [site_internet.field] [site_internet_go.field] ", AF_HIDE_LIST | AF_HIDE_SEARCH, NULL );
 		
-		$this->add ( new atkManyToOneRelation ( "id_organisme_federation", "organisme.organisme", AF_RELATION_AUTOLINK | AF_RELATION_AUTOCOMPLETE ), "fédération" );
-		$this->add ( new atkManyToOneRelation ( "id_contact_federation", "individu.individu", AF_RELATION_AUTOLINK | AF_HIDE_LIST | AF_RELATION_AUTOCOMPLETE ), "fédération" );
-		// $this->add(new atkDateAttribute("date_synchronisation_federation", "Y-m-d", "Y-m-d", 0, 0, AF_DATE_STRING | AF_READONLY| AF_HIDE_LIST));
+		
 		$this->add ( new atkDateAttribute ( "date_initialisation_comptabilite", "Y-m-d", "Y-m-d", 0, 0, AF_DATE_STRING | AF_READONLY | AF_HIDE_LIST ) );
 		$this->add ( new atkDateAttribute ( "date_fin_exercice_comptable", "Y-m-d", "Y-m-d", 0, 0, AF_DATE_STRING | AF_HIDE_LIST ) );
 		
@@ -1881,13 +1882,13 @@ lors de son assemblée générale du ?????? ,
 				$row [] = "Fonction";
 				$row [] = "Nom";
 				$row [] = "Prénom";
-				$row [] = "Né(e) le";
-				$row [] = "à";
+				//$row [] = "Né(e) le";
+				//$row [] = "à";
 				$row [] = "Nationalité";
 				$row [] = "Profession";
-				$row [] = "Courriel";
-				$row [] = "Tél fixe";
-				$row [] = "Tél mobile";
+				//$row [] = "Courriel";
+				//$row [] = "Tél fixe";
+				//$row [] = "Tél mobile";
 				$row [] = "Rue";
 				$row [] = "Code postal";
 				$row [] = "Ville";
@@ -1898,6 +1899,7 @@ lors de son assemblée générale du ?????? ,
 					$row = array ();
 					// $row[] = $i +1;
 					// $row[] = $stuff[$i]["organisme"];
+					$stuff [$i] ["type_fonction"] = str_replace ( "Association - bureau - membre", "Membre du bureau", $stuff [$i] ["type_fonction"] );
 					$stuff [$i] ["type_fonction"] = str_replace ( "Association - bureau - ", "", $stuff [$i] ["type_fonction"] );
 					$stuff [$i] ["type_fonction"] = str_replace ( "Association - ", "", $stuff [$i] ["type_fonction"] );
 					$stuff [$i] ["type_fonction"] = str_replace ( "- membre", "", $stuff [$i] ["type_fonction"] );
@@ -1907,18 +1909,14 @@ lors de son assemblée générale du ?????? ,
 					
 					$row [] = $stuff [$i] ["nom"];
 					$row [] = $stuff [$i] ["prenom"];
-					$row [] = $stuff [$i] ["date_naissance"];
-					$row [] = $stuff [$i] ["lieu_naissance"];
+					//$row [] = $stuff [$i] ["date_naissance"];
+					// $row [] = $stuff [$i] ["lieu_naissance"];
 					$row [] = $stuff [$i] ["nationalite"];
 					$row [] = $stuff [$i] ["profession"];
-					$row [] = $stuff [$i] ["courriel"];
-					global $g_sessionManager;
-					global $g_nomutilisateur;
-					$g_nomutilisateur = $g_sessionManager->getValue ( "atgNomUtilisateur", "globals" );
-					$row [] = "<td colspan=4>Cette liste valable au " . gmdate ( c ) . " et sortie par " . $g_nomutilisateur . " est strictement confidentielle.</td>";
-					
-					$row [] = $stuff [$i] ["telephone_fixe"];
-					$row [] = $stuff [$i] ["telephone_mobile"];
+					//$row [] = $stuff [$i] ["courriel"];
+				
+					//$row [] = $stuff [$i] ["telephone_fixe"];
+					//$row [] = $stuff [$i] ["telephone_mobile"];
 					$row [] = $stuff [$i] ["adresse1"];
 					$row [] = $stuff [$i] ["code_postal"];
 					$row [] = $stuff [$i] ["ville"];
@@ -1926,6 +1924,11 @@ lors de son assemblée générale du ?????? ,
 					$row [] = $stuff [$i] ["pays"];
 					$data [] = $row;
 				}
+				global $g_sessionManager;
+				global $g_nomutilisateur;
+				$g_nomutilisateur = $g_sessionManager->getValue ( "atgNomUtilisateur", "globals" );
+	//			$row [] = "<td colspan=4>Cette liste valable au " . gmdate ( c ) . " et sortie par " . $g_nomutilisateur . " est strictement confidentielle.</td>";
+	//			$data [] = $row;
 				// render table.
 				
 				$res .= $tbl->render ( $data, 0, "navpers" );
@@ -2860,10 +2863,26 @@ Le président, <br /><br />                                    Le secrétaire,";
 				$db = & atkGetDb ();
 				$query = & $db->createQuery ();
 				$query->addTable ( "individu" );
+				$query->addJoin ( "organisme_document", "organisme_document", "individu.id_document_portrait=organisme_document.id", true );
+				$query->addJoin ( "type_golf_abonnement", "type_golf_abonnement", "individu.id_golf_abonnement=type_golf_abonnement.id", true );
+				//			id_golf_abonnement
 				$query->addField ( "individu.nom as nom" );
+				$query->addField ( "individu.id as id_individu" );
 				$query->addField ( "individu.prenom as prenom" );
-				$query->addField ( "individu.sexe as sexe" );
+				$query->addField ( "individu.telephone_fixe as telephone_fixe" );
+				$query->addField ( "individu.telephone_mobile as telephone_mobile" );
+				$query->addField ( "individu.courriel as courriel" );
+				$query->addField ( "individu.date_naissance as date_naissance" );
+				$query->addField ( "YEAR(individu.date_naissance) as annee_naissance" );
+				$query->addField ( "individu.golf_licence as golf_licence" );
+				$query->addField ( "individu.golf_index as golf_index" );
+				$query->addField ( "type_golf_abonnement.libelle as abonnement" );
+				$query->addField ( "individu.id_document_portrait as id_document_portrait" );
+				$query->addField ( "organisme_document.file_content as file_content" );
+				$query->addField ( "organisme_document.file_name as file_name" );
+				$query->addField ( "organisme_document.file_size as file_size" );
 				$query->addCondition ( "individu.id in ( " . $this->m_postvars ["idindividus"] . ")" );
+	
 				$query->addCondition ( "individu.date_deces is null" );
 				$query->addOrderBy ( "individu.nom, individu.prenom" );
 				$sql = $query->buildSelect ();
@@ -2874,17 +2893,105 @@ Le président, <br /><br />                                    Le secrétaire,";
 				$tbl->setRowClass ( 1, "superbold" );
 				$row = array ();
 				$row [] = "#";
+				$row [] = "Portrait";
+				$row [] = "Icônes";
 				$row [] = "Nom";
 				$row [] = "Prénom";
-				$row [] = "Sexe";
+				$row [] = "Date de naissance";
+				$row [] = "Age";
+				$row [] = "Courriel";
+				$row [] = "Téléphone fixe";
+				$row [] = "Téléphone mobile";
+				$row [] = "Type inscription";
+				$row [] = "Inscrit en";
+				$row [] = "Adhésion en";
+				$row [] = "Dernière cotisation";
+				$row [] = "Licence FFG";
+				$row [] = "Index FFG";
+				$row [] = "Abonnement";
+				
 				
 				$data [] = $row;
 				for($i = 0, $_i = count ( $stuff ); $i < $_i; $i ++) {
 					$row = array ();
 					$row [] = $i + 1;
+					if (!empty($stuff [$i] ["id_document_portrait"]))
+					{
+					    
+					    $stuff [$i]["file_content"]=base64_decode($stuff [$i]["file_content"]);
+					    $filename=$stuff [$i]["file_name"];
+					    $url_portrait="./documents/".$filename;
+					    $file =@fopen($url_portrait,"w");
+					    @fwrite($stuff [$i]["file_content"],$stuff [$i]["file_size"]);
+					    @fclose($file);
+					    $stuff [$i]["file_content"]="";
+					    
+					}
+					( $stuff [$i] ["id_document_portrait"] != "") ? $row [] .= " " . '<a href="'.$url_portrait. '" target="_blank" ><img style="vertical-align:middle" src="'.$url_portrait.'" height="300px" alt="Portrait" title="Portrait" /></a> '
+					    : $row []='<b><p style="color:#ff0000;">Pas de portrait</b></p>';			    
+					/* Inscrit depuis année
+					 * année dernière cotisation
+					 */
+					$id_individu=$stuff [$i] ["id_individu"];;
+					$id_organisme=$this->m_postvars ["idorganisme"];
+					$sql="SELECT
+`organisme`.`nom`,
+`individu`.`prenom`,
+`individu`.`nom`,
+YEAR(`individu_inscription`.`date_inscription`) as annee_inscription,
+`type_inscription`.`libelle`,
+MAX(YEAR(`individu_cotisation`.`date_reglement`)) as `derniere_cotisation`,
+MIN(YEAR(`individu_inscription`.`date_adhesion`)) as `annee_adhesion`
+
+FROM
+`individu`,
+`organisme_cotisation`,
+`type_inscription`,
+`individu_cotisation`,
+`individu_inscription`,
+`organisme`
+WHERE
+`individu`.`id`=".$id_individu."
+and
+`organisme`.`id`=".$id_organisme."
+and
+`organisme`.`id`=`individu_inscription`.`id_organisme`
+and
+`individu`.`id`=`individu_inscription`.`id_individu`
+and
+`individu`.`id`=`individu_cotisation`.`id_individu`
+and
+`individu_cotisation`.`id_cotisation`=`organisme_cotisation`.`id`
+and
+`individu_inscription`.`id_type_inscription`=`type_inscription`.`id`
+";
+					$cotis = $db->getrows ( $sql );
+					
+					$row [] = $this->descripteur_individu($id_individu, $qr_o_n='n', $aide_o_n='n', $size=50, $origine_appel='tournoi', $long_o_n='o', $licence_golf_o_n='n', $sans_lien_o_n='n', $lat="", $long="", $sans_nom_o_n='n', $id_organisme) ;
 					$row [] = $stuff [$i] ["nom"];
 					$row [] = $stuff [$i] ["prenom"];
-					$row [] = $stuff [$i] ["sexe"];
+					$row [] = $stuff [$i] ["date_naissance"];
+					if (!empty($stuff [$i] ["date_naissance"]))
+					{    $row [] = date('Y')-($stuff [$i] ["annee_naissance"]);					}
+					else 
+					{    $row [] = "";					}
+					$row [] = $stuff [$i] ["courriel"];
+					$row [] = $stuff [$i] ["telephone_fixe"];
+					$row [] = $stuff [$i] ["telephone_mobile"];
+					$row [] = $cotis[0]["libelle"];
+					$row [] = $cotis[0]["annee_inscription"];
+					$row [] = $cotis[0]["annee_adhesion"];
+					if (!empty($cotis[0]["derniere_cotisation"]))
+					{ if ($cotis[0]["derniere_cotisation"]<date('Y'))
+					{$row [] = '<b><p style="color:#ff0000;">'.$cotis[0]["derniere_cotisation"]."</b></p>";}
+					else {
+					$row [] = $cotis[0]["derniere_cotisation"];}
+					}
+					else
+					{    $row [] = "";					}
+					$row [] = $stuff [$i] ["golf_licence"];
+					$row [] = $stuff [$i] ["golf_index"];
+					$row [] = $stuff [$i] ["abonnement"];
 					
 					$data [] = $row;
 				}
@@ -3048,6 +3155,7 @@ Le président, <br /><br />                                    Le secrétaire,";
 				$query->addJoin ( "lieu", "", "individu_lieu.id_lieu = lieu.id", true );
 				$query->addJoin ( "type_cp_ville_pays", "", "lieu.id_ville = type_cp_ville_pays.id", true );
 				$query->addJoin ( "type_pays", "", "type_cp_ville_pays.id_pays = type_pays.id", true );
+				$query->addJoin ( "type_golf_abonnement" , "","individu.id_golf_abonnement=type_golf_abonnement.id", true );
 				// $query->addJoin("type_inscription", "", "individu_inscription.id_type_inscription = type_inscription.id", true);
 				// $query->addField("organisme.nom as organisme");
 				// $query->addField("individu_inscription.id as id_inscription");
@@ -3059,12 +3167,14 @@ Le président, <br /><br />                                    Le secrétaire,";
 				$query->addField ( "individu.telephone_mobile as telephone_mobile" );
 				$query->addField ( "individu.golf_index as golf_index" );
 				$query->addField ( "individu.golf_licence as golf_licence" );
+				
 				// $query->addField("type_inscription.libelle as type_inscription");
 				$query->addField ( "lieu.adresse1 as adresse1" );
 				$query->addField ( "type_cp_ville_pays.code_postal as code_postal" );
 				$query->addField ( "type_cp_ville_pays.ville as ville" );
 				$query->addField ( "type_cp_ville_pays.province_etat as province" );
 				$query->addField ( "type_pays.libelle_anglais as pays" );
+				$query->addField ( "type_golf_abonnement.libelle as golf_abonnement" );
 				// $query->addCondition("individu_inscription.id_organisme = " . $this->m_postvars["id"]);
 				// $query->addCondition("individu_inscription.date_radiation is null ");
 				$query->addCondition ( "individu_lieu.adresse_defaut_o_n='1' " );
@@ -3093,6 +3203,7 @@ Le président, <br /><br />                                    Le secrétaire,";
 				$row [] = "Prénom";
 				$row [] = "Index golf";
 				$row [] = "Licence golf";
+				$row [] = "Abonnement golf";
 				$row [] = "Courriel";
 				$row [] = "Fixe";
 				$row [] = "Mobile";
@@ -3110,6 +3221,7 @@ Le président, <br /><br />                                    Le secrétaire,";
 					$row [] = $stuff [$i] ["prenom"];
 					$row [] = $stuff [$i] ["golf_index"];
 					$row [] = '<a href="http://www.ffgolf.org/#" target="_blank">' . $stuff [$i] ["golf_licence"] . "</a>";
+					$row [] = $stuff [$i] ["golf_abonnement"];
 					$row [] = '<a href="mailto:' . $stuff [$i] ["courriel"] . '">' . $stuff [$i] ["courriel"] . "</a>";
 					$row [] = '<a href="tel:' . $stuff [$i] ["telephone_fixe"] . '">' . $stuff [$i] ["telephone_fixe"] . "</a>";
 					$row [] = '<a href="tel:' . $stuff [$i] ["telephone_mobile"] . '">' . $stuff [$i] ["telephone_mobile"] . "</a>";
@@ -3142,6 +3254,7 @@ Le président, <br /><br />                                    Le secrétaire,";
 				$query->addJoin ( "lieu", "", "individu_lieu.id_lieu = lieu.id", true );
 				$query->addJoin ( "type_cp_ville_pays", "", "lieu.id_ville = type_cp_ville_pays.id", true );
 				$query->addJoin ( "type_pays", "", "type_cp_ville_pays.id_pays = type_pays.id", true );
+				$query->addJoin ( "type_golf_abonnement" , "","individu.id_golf_abonnement=type_golf_abonnement.id", true );
 				// $query->addJoin("type_inscription", "", "individu_inscription.id_type_inscription = type_inscription.id", true);
 				// $query->addField("organisme.nom as organisme");
 				// $query->addField("individu_inscription.id as id_inscription");
@@ -3159,6 +3272,7 @@ Le président, <br /><br />                                    Le secrétaire,";
 				$query->addField ( "type_cp_ville_pays.ville as ville" );
 				$query->addField ( "type_cp_ville_pays.province_etat as province" );
 				$query->addField ( "type_pays.libelle_anglais as pays" );
+				$query->addField ( "type_golf_abonnement.libelle as golf_abonnement" );
 				// $query->addCondition("individu_inscription.id_organisme = " . $this->m_postvars["id"]);
 				// $query->addCondition("individu_inscription.date_radiation is null ");
 				$query->addCondition ( "individu_lieu.adresse_defaut_o_n='1' " );
@@ -3186,6 +3300,7 @@ Le président, <br /><br />                                    Le secrétaire,";
 				$row [] = "Prénom";
 				$row [] = "Index golf";
 				$row [] = "Licence golf";
+				$row [] = "Abonnement golf";
 				$row [] = "Courriel";
 				$row [] = "Fixe";
 				$row [] = "Mobile";
@@ -3204,6 +3319,7 @@ Le président, <br /><br />                                    Le secrétaire,";
 					$row [] = $stuff [$i] ["prenom"];
 					$row [] = $stuff [$i] ["golf_index"];
 					$row [] = $stuff [$i] ["golf_licence"];
+					$row [] = $stuff [$i] ["golf_abonnement"];
 					$row [] = $stuff [$i] ["courriel"];
 					$row [] = $stuff [$i] ["telephone_fixe"];
 					$row [] = $stuff [$i] ["telephone_mobile"];

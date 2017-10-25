@@ -125,7 +125,8 @@ class atkTabbedPane extends atkAttribute {
 	 */
 	function postInit() {
 		foreach ( array_keys ( $this->m_attribsList ) as $attrib ) {
-			$p_attr = &$this->m_ownerInstance->getAttribute ( $attrib );
+		   // print_r($attrib);
+		    $p_attr = &$this->m_ownerInstance->getAttribute ( $attrib );
 			$p_attr->addDisabledMode ( DISABLED_VIEW | DISABLED_EDIT );
 			$p_attr->setTabs ( $this->getTabs () );
 			$p_attr->setSections ( $this->getSections () );

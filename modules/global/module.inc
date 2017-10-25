@@ -806,7 +806,7 @@ class mod_global extends associationModule {
 			$this->menuitem("liste_fonctions_o", dispatch_url("organisme.organisme", "listeecran", array (
 			"atkcode" => "2",
 			"atkexport" => "n",
-				"idfonctions" => "1,2,4,5,6,7,8,9,10",
+				"idfonctions" => "1,2,3,4,5,6,7,8,9,10",
 			"id" => $organismeid
 			)), "Organismes", true);
 			// Globles
@@ -2157,6 +2157,19 @@ class mod_global extends associationModule {
 					"atkfilter" => "organisme_rencontre.id ='" . $rencontreid . "'"
 			)), "Rencontres", true);
 			
+			// TODO Données participants
+			// -> Inscription oui/non
+			// $data = $db->getrows("SELECT count(id) as nombre from individu_rencontre where  id_rencontre ='" . $rencontreid . "'");
+			// $nombre_rencontre_participant = $data[0]["nombre"];
+			// -> Cotisation oui/non
+			// -> Adresse postale oui/non
+			// -> Courriel oui/non
+			// -> Licence de golf oui/non
+			// -> Téléphone mobile oui/non
+			
+			
+			
+			
 			// Paiements participants
 			$data = $db->getrows("SELECT count(id) as nombre from individu_rencontre_paiement where  id_rencontre ='" . $rencontreid . "'");
 			$nombre_rencontre_paiement = $data[0]["nombre"];
@@ -3147,6 +3160,7 @@ cpv.id_pays=p.id ) ");
 			$this->menuitem("gbif", "http://www.wikistoma.org/association/modules/test/testubio_keycode.php", "Rd", true);
 			$this->menuitem("Rapports bio", dispatch_url("biodiversite.biodiversite_rapports", "observation"), "Rd", true);
 			$this->menuitem("Tests Guy", dispatch_url("test.testguy", "intro"), "Rd", true);
+			$this->menuitem("Tests MySql", dispatch_url("test.testmysql", "testmysql"), "Rd", true);
 			// Simpletest tutorial
 			$this->menuitem("db_search", "http://www.wikistoma.org/association/modules/search/db_search.php", "Rd", true);
 			$this->menuitem("Simpletest tutorial", "http://www.lastcraft.com/first_test_tutorial.php", "Rd", true);

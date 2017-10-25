@@ -1,12 +1,13 @@
 <?php
 
-  class mod_test extends associationModule
-  {
+class mod_test extends associationModule
+{
     function getNodes()
     {
-     // registerNode("test.testguy", array("admin", "add", "edit", "delete" ,"view" ,"view_all", "grantall", "getmodules", "intro"));
-   }
-
-
+        registerNode("test.testguy", array("admin", "add", "edit", "delete" ,"view" ,"view_all", "grantall", "getmodules", "intro"));
+        registerNode("test.testmysql", array("admin", "add", "edit", "delete" ,"view" ,"view_all", "grantall", "getmodules", "intro"));
+    }
+    
+    
 }
 ?>
