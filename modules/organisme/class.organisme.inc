@@ -2967,7 +2967,7 @@ and
 ";
 					$cotis = $db->getrows ( $sql );
 					
-					$row [] = $this->descripteur_individu($id_individu, $qr_o_n='n', $aide_o_n='n', $size=50, $origine_appel='tournoi', $long_o_n='o', $licence_golf_o_n='n', $sans_lien_o_n='n', $lat="", $long="", $sans_nom_o_n='n', $id_organisme) ;
+					$row [] = $this->descripteur_individu($id_individu, $qr_o_n='n', $aide_o_n='n', $size=50, $origine_appel='liste nom', $long_o_n='o', $licence_golf_o_n='n', $sans_lien_o_n='n', $lat="", $long="", $sans_nom_o_n='n', $id_organisme) ;
 					$row [] = $stuff [$i] ["nom"];
 					$row [] = $stuff [$i] ["prenom"];
 					$row [] = $stuff [$i] ["date_naissance"];
