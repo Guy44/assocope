@@ -5631,20 +5631,23 @@ class assMetaNode extends atkMetaNode
         $hauteur_icone = '';
         
         $lu_icone_aide .= $this->descripteur_aide('Descripteur_individu', 'n');
-        $href = " tel:" . $lu_telephone_fixe_individu;
+        
         if (! empty($lu_telephone_fixe_individu)) {
-            $lu_icone_telephone_fixe_individu = '<a href="' . $href . '">' . '<img class="recordlist"' . $hauteur_icone . ' border="0" src="./themes/assocope/icons/assocope/telephonefixe.png" alt="Appeler le : ' . $lu_telephone_fixe_individu . '"
+            $href = " tel:" . $lu_telephone_fixe_individu;
+            $lu_icone_telephone_fixe_individu = '<a href="' . $href . '"  target="_blank" >' . '<img class="recordlist"' . $hauteur_icone . ' border="0" src="./themes/assocope/icons/assocope/telephonefixe.png" alt="Appeler le : ' . $lu_telephone_fixe_individu . '"
 							title="Appeler le : ' . $lu_telephone_fixe_individu . '" ></img></a>';
         }
+        
         if (! empty($lu_telephone_mobile_individu)) {
-            $lu_icone_telephone_mobile_individu = '<a href="' . $href . '">' . '<img class="recordlist" ' . $hauteur_icone . 'border="0" src="./themes/assocope/icons/assocope/telephonemobile.png" alt="Appeler le : ' . $lu_telephone_mobile_individu . '"
+            $href = " tel:" . $lu_telephone_mobile_individu;
+            $lu_icone_telephone_mobile_individu = '<a href="' . $href . '"  target="_blank" >' . '<img class="recordlist" ' . $hauteur_icone . 'border="0" src="./themes/assocope/icons/assocope/telephonemobile.png" alt="Appeler le : ' . $lu_telephone_mobile_individu . '"
 							title="Appeler le : ' . $lu_telephone_mobile_individu . '" ></img></a>';
         }
         if (! empty($lu_courriel_individu)) {
             $href = "mailto:" . $lu_courriel_individu . "";
             // $lu_icone_courriel_individu = '<a href="' . $href . '">' . '<img class="recordlist" ' . $hauteur_icone . 'border="0" src="./themes/assocope/icons/assocope/courriel.png" alt="Courriel à : ' . $lu_courriel_individu . '"
             // title="Courriel à : ' . $lu_courriel_individu . '" ></img></a>';
-            $lu_icone_courriel_individu = '<a href="' . $href . '">' . '<img  class="recordlist"' . $hauteur_icone . 'border="0" src="./themes/assocope/icons/assocope/courriel.png" alt="Courriel à : ' . $lu_courriel_individu . '"
+            $lu_icone_courriel_individu = '<a href="' . $href . '"  target="_blank" >' . '<img  class="recordlist"' . $hauteur_icone . 'border="0" src="./themes/assocope/icons/assocope/courriel.png" alt="Courriel à : ' . $lu_courriel_individu . '"
 							title="Courriel à : ' . $lu_courriel_individu . '" ></img></a>';
         }
         if (! empty($lu_site_internet_individu)) {
@@ -5660,11 +5663,11 @@ class assMetaNode extends atkMetaNode
         }
         if ($id_organisme > 0) {
             if ($lu_cotisation_a_jour == "oui") {
-                $lu_icone_cotisation_a_jour = ' <img class="recordlist"' . $hauteur_icone . ' border="0" src="./themes/assocope/icons/assocope/table-edit-icon.png" alt="Cotisation à jour"
-	        title="Cotisation à jour" ></img>  ';
+                $lu_icone_cotisation_a_jour = '<img class="recordlist"' . $hauteur_icone . ' border="0" src="./themes/assocope/icons/assocope/table-edit-icon.png" alt="Cotisation à jour"
+	        title="Cotisation à jour" ></img>';
             } else if ($lu_cotisation_a_jour == "non") {
-                $lu_icone_cotisation_a_jour = ' <img class="recordlist"' . $hauteur_icone . ' border="0" src="./themes/assocope/icons/assocope/travaux.png" alt="Cotisation non acquittée"
-	        title="Cotisation non acquittée" ></img>  ';
+                $lu_icone_cotisation_a_jour = '<img class="recordlist"' . $hauteur_icone . ' border="0" src="./themes/assocope/icons/assocope/travaux.png" alt="Cotisation non acquittée"
+	        title="Cotisation non acquittée" ></img>';
             }
         }
         $href = "http://www.google.fr/search?q=" . $nom_individu . "&ie=utf-8&oe=utf-8&aq=t&";
@@ -5683,7 +5686,7 @@ class assMetaNode extends atkMetaNode
         )), '<img class="recordlist"' . $hauteur_icone . ' border="0" src="./themes/assocope/icons/assocope/geolocalisation.png" alt="Où est-ce ? : ' . $qr_adresse_individu . '"
               title="Où est-ce ? : ' . $qr_adresse_individu . '" ></img>', SESSION_NESTED, false, 'target="_blank"');
         $href = "http:./dispatch.php?atknodetype=individu.v_individu_lieu&atkaction=document&atkselector=individu.id=" . $id_individu . "&id=&atkfilter=v_individu_lieu.id=" . $id_individu . "&atkdoctpl=enveloppe_individu.odt&atkdoctpl_prefix_id=0&atkcode=2&atklevel=-1&atkprevlevel=0&" . ' target="_blank"';
-        $lu_icone_enveloppe .= '<a href="' . $href . '">' . '<img class="recordlist"' . $hauteur_icone . ' border="0" src="./themes/assocope/icons/assocope/courrier.png" alt="Enveloppe : ' . $qr_adresse_individu . '"
+        $lu_icone_enveloppe .= '<a href="' . $href . '"  target="_blank" >' . '<img class="recordlist"' . $hauteur_icone . ' border="0" src="./themes/assocope/icons/assocope/courrier.png" alt="Enveloppe : ' . $qr_adresse_individu . '"
                             title="Enveloppe : ' . $qr_adresse_individu . '" ></img></a>';
         
         ($lat != "" && $long != "") ? $descripteur .= $this->descripteur_itineraire_individu($id_individu, $lat, $long) : null;
@@ -5739,23 +5742,35 @@ class assMetaNode extends atkMetaNode
             
             $nom_invisible_avec_lien_sans_lien_i_a_s = 's';
             $icone_portrait_o_n = 'o';
-            $icone_ou_est_ce_o_n = 'o';
-            // GG ($long_lat_o_n == 'o') ? $retour.=$lu_golf_licence_index : null;
+            $icone_geolocalisation_o_n = 'o';
             $icone_courriel_o_n = 'o';
             $icone_telephone_fixe_o_n = 'o';
             $icone_telephone_mobile_o_n = 'o';
             $icone_site_internet_o_n = 'o';
         }
+        if ($option == "icones_publiques_golf") {
+            
+            $nom_invisible_avec_lien_sans_lien_i_a_s = 's';
+            $icone_portrait_o_n = 'o';
+            $icone_geolocalisation_o_n = 'o';
+            $icone_courriel_o_n = 'o';
+            $icone_telephone_fixe_o_n = 'o';
+            $icone_telephone_mobile_o_n = 'o';
+            $icone_cotisation_o_n = 'o';
+        }
+        
         if ($option == "icones_portrait_cotisation") {
             
             $nom_invisible_avec_lien_sans_lien_i_a_s = 's';
             $icone_portrait_o_n = 'o';
             $icone_cotisation_o_n = 'o';
         }
+        if ($option == "nom_portrait") {
+            
+            $nom_invisible_avec_lien_sans_lien_i_a_s = 's';
+            $icone_portrait_o_n = 'o';
+        }
         ($icone_genre_o_n == 'o') ? $retour .= $lu_icone_genre_popup . " " : null;
-        ($nom_invisible_avec_lien_sans_lien_i_a_s == '') ? null : $retour .= $lu_nom_individu . " ";
-        ($icone_aide_o_n == 'o') ? $retour .= $lu_icone_aide : null;
-        $retour .= "</br>";
         if ($icone_portrait_o_n == 'o' && (! empty($data[0]["id_document_portrait"]))) {
             $sql = "select file_content,file_name, file_size from organisme_document where id=$lu_id_document_portrait";
             $datap = $db->getrows($sql);
@@ -5768,6 +5783,10 @@ class assMetaNode extends atkMetaNode
             $datap[0]["file_content"] = "";
             $retour .= '<a href="' . $url . '" target="_blank" ><img class="recordlist" style="vertical-align:middle" class="recordlist" ' . $hauteur_icone . 'src="' . $url . '"alt="Portrait" title="Portrait" /></a>' . " ";
         }
+        ($nom_invisible_avec_lien_sans_lien_i_a_s == '') ? null : $retour .= $lu_nom_individu . " ";
+        
+        ($icone_aide_o_n == 'o') ? $retour .= $lu_icone_aide : null;
+        ($option == "nom_portrait") ? $retour .= "" : $retour .= "</br>";
         ($icone_geolocalisation_o_n == 'o') ? $retour .= $lu_icone_adresse_individu . " " : null;
         ($icone_ou_est_ce_o_n == 'o') ? $retour .= ($lu_icone_ou_est_ce . " ") : null;
         
