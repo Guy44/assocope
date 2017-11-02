@@ -491,6 +491,9 @@ class assMetaNode extends atkMetaNode
         $mraactions['courriels'] = "courriels";
         $mraactions['export_google'] = "export_google";
         $mraactions['noms'] = "noms";
+        $mraactions['trombinoscope_details'] = "trombinoscope_details";
+        $mraactions['trombinoscope_publique'] = "trombinoscope_publique";
+        $mraactions['noms'] = "noms";
         $mraactions['coordonnees'] = "coordonnees";
         $mraactions['vcards'] = "vcards";
         $mraactions['sans_courriel'] = "sans_courriel";
@@ -909,6 +912,42 @@ class assMetaNode extends atkMetaNode
             "idindividus" => $idindividus,
             "idorganisme" => $idorganisme,
             "atkcode" => '21'
+        ));
+        header("Location: $url");
+        exit();
+    }
+
+    function action_trombinoscope_details()
+    {
+        if (is_array($this->m_postvars["atkselector"])) {
+            $select = $this->m_postvars["atkselector"];
+        } else {
+            $select[0] = $this->m_postvars["atkselector"];
+        }
+        $this->traitement_select($select, $idorganisme, $idindividus);
+        $url = dispatch_url("organisme.organisme", "listeecran", array(
+            "id" => $idorganisme,
+            "idindividus" => $idindividus,
+            "idorganisme" => $idorganisme,
+            "atkcode" => '21'
+        ));
+        header("Location: $url");
+        exit();
+    }
+
+    function action_trombinoscope_publique()
+    {
+        if (is_array($this->m_postvars["atkselector"])) {
+            $select = $this->m_postvars["atkselector"];
+        } else {
+            $select[0] = $this->m_postvars["atkselector"];
+        }
+        $this->traitement_select($select, $idorganisme, $idindividus);
+        $url = dispatch_url("organisme.organisme", "listeecran", array(
+            "id" => $idorganisme,
+            "idindividus" => $idindividus,
+            "idorganisme" => $idorganisme,
+            "atkcode" => '2100'
         ));
         header("Location: $url");
         exit();
@@ -4719,7 +4758,8 @@ class assMetaNode extends atkMetaNode
         $href = href(dispatch_url("table.fonction", "edit", array(
             'atkselector' => "type_fonction.id='" . $data[0]["id_fonction"] . "'"
         ), "dispatch.php"), $data[0]["libelle"], SESSION_NESTED);
-        $retour .= $this->descripteur_individu($data[0]["id_individu"], 'n', 'n', '50') . "<br />";
+        // $retour .= $this->descripteur_individu($data[0]["id_individu"], 'n', 'n', '50') . "<br />";
+        $retour .= $this->descripteur_individu_new($id_individu = $data[0]["id_individu"], $id_organisme = null, $origine_appel = 'fonction', $option = "icones_privees", $size = "50") . "<br />";
         $retour .= '<img class="recordlist" border="0" src="./themes/assocope/icons/assocope/function_icon.png" alt="Fonction" title="Fonction" target="_blank"></img> <b>' . $href . "</b><br />";
         (! empty($data[0]["id_organisme_represente"])) ? $retour .= "</b>Organisme représenté : <b>" . $this->descripteur_organisme($data[0]["id_organisme_represente"], 'n', 'n', '50') . "<br />" : $retour .= '';
         
@@ -5870,6 +5910,7 @@ class assMetaNode extends atkMetaNode
     function descripteur_individu($id_individu, $qr_o_n = 'n', $aide_o_n = 'o', $size = 50, $origine_appel = 'commune', $long_o_n = 'o', $licence_golf_o_n = 'n', $sans_lien_o_n = 'n', $lat = "", $long = "", $sans_nom_o_n = 'n', $id_organisme = 0)
     {
         {
+            
             if (! ($id_individu > 0))
                 return false;
             

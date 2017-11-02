@@ -1,5 +1,4 @@
 <?php
-
 $this->m_securityMap["enveloppes"] = "view";
 $this->m_securityMap["datagrid_view"] = "view";
 $this->m_securityMap["datagrid_google_export"] = "view";
@@ -11,6 +10,8 @@ $this->m_securityMap["geolocalisations"] = "view";
 $this->m_securityMap["courriels"] = "view";
 $this->m_securityMap["export_google"] = "view";
 $this->m_securityMap["noms"] = "view";
+$this->m_securityMap["trombinoscope_details"] = "view";
+$this->m_securityMap["trombinoscope_publique"] = "view";
 $this->m_securityMap["coordonnees"] = "view";
 $this->m_securityMap["vcards"] = "view";
 $this->m_securityMap["exportations"] = "view";
@@ -29,6 +30,5 @@ $this->m_securityMap["competences"] = "view";
 $this->m_securityMap["synchro_google_contacts"] = "view";
 $this->m_securityMap["itineraires"] = "view";
 $this->m_securityMap["listedit"] = "view";
-
 
 ?>
