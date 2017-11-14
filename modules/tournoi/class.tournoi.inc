@@ -754,7 +754,8 @@ class tournoi extends assMetaNode
         if ($equipe[0]["nom_d_equipe"] == "Equipe quartier libre") {
             $row[] = "<b>Repos";
         } else {
-            $row[] = "<b>Equipe " . $equipe[0]["numero_d_equipe"] . "<br />" . $equipe[0]["nom"] . " " . $equipe[0]["prenom"] . "<br />" . $equipe[1]["nom"] . " " . $equipe[1]["prenom"];
+            // $row[] = "<b>Equipe " . $equipe[0]["numero_d_equipe"] . "<br />" . $equipe[0]["nom"] . " " . $equipe[0]["prenom"] . "<br />" . $equipe[1]["nom"] . " " . $equipe[1]["prenom"];
+            $row[] = "<b>Equipe " . $equipe[0]["numero_d_equipe"] . "<br />" . $this->descripteur_individu_new($equipe[0]["id_individu"], $id_organisme, $origine_appel = 'tournoi', "nom_portrait") . "<br />" . $this->descripteur_individu_new($equipe[1]["id_individu"], $id_organisme, $origine_appel = 'tournoi', "nom_portrait");
         }
         $row[] = "<b>Joueurs";
         $row[] = "<b>Index";

@@ -5663,13 +5663,6 @@ class assMetaNode extends atkMetaNode
         $popup = atkPopup(atkconfig("atkroot") . 'atk/popups/qrpopup.inc', 'type=individu&id=' . $id_individu, 'Coordonnées de ' . $nom_individu, 1000, 500, 'yes', 'no');
         $lu_icone_genre_popup = '<a href="' . $popup . '"><img class="recordlist" border="0" src="./themes/assocope/icons/assocope/' . $icon . '" alt="Coordonnées de ' . $nom_individu . '" title="Coordonnées de ' . $nom_individu . '" target="_blank"></img></a>' . '';
         
-        ($nom_invisible_avec_lien_sans_lien_i_a_s == "i") ? $lu_nom_individu = null : null;
-        ($nom_invisible_avec_lien_sans_lien_i_a_s == "s") ? $lu_nom_individu = $lu_nom_individu : null;
-        ($nom_invisible_avec_lien_sans_lien_i_a_s == "a") ? $lu_nom_individu = " " . atkHref(dispatch_url("individu.individu", "edit", array(
-            "atkselector" => "individu.id='" . $id_individu . "'"
-        )), '<b>' . $lu_nom_individu . '</b>', SESSION_NESTED, false, 'target="main"') : null;
-        $hauteur_icone = '';
-        
         $lu_icone_aide .= $this->descripteur_aide('Descripteur_individu', 'n');
         
         if (! empty($lu_telephone_fixe_individu)) {
@@ -5812,19 +5805,28 @@ class assMetaNode extends atkMetaNode
         }
         ($icone_genre_o_n == 'o') ? $retour .= $lu_icone_genre_popup . " " : null;
         if ($icone_portrait_o_n == 'o' && (! empty($data[0]["id_document_portrait"]))) {
-            $sql = "select file_content,file_name, file_size from organisme_document where id=$lu_id_document_portrait";
+            $sql = "select url_document, file_content,file_name, file_size from organisme_document where id=$lu_id_document_portrait";
             $datap = $db->getrows($sql);
-            $datap[0]["file_content"] = base64_decode($datap[0]["file_content"]);
-            $filename = $datap[0]["file_name"];
-            $url = "./documents/" . $filename;
-            $file = @fopen($url, "w");
-            @fwrite($file, $datap[0]["file_content"], $datap[0]["file_size"]);
-            @fclose($file);
-            $datap[0]["file_content"] = "";
+            if ($datap[0]["url_document"] == null) {
+                $datap[0]["file_content"] = base64_decode($datap[0]["file_content"]);
+                $filename = $datap[0]["file_name"];
+                $url = "./documents/" . $filename;
+                $file = @fopen($url, "w");
+                // @fwrite($file, $datap[0]["file_content"], $datap[0]["file_size"]);
+                @fwrite($file, $datap[0]["file_content"]);
+                @fclose($file);
+                $datap[0]["file_content"] = "";
+            } else {
+                $url = $datap[0]["url_document"];
+            }
             $retour .= '<a href="' . $url . '" target="_blank" ><img class="recordlist" style="vertical-align:middle" class="recordlist" ' . $hauteur_icone . 'src="' . $url . '"alt="Portrait" title="Portrait" /></a>' . " ";
         }
-        ($nom_invisible_avec_lien_sans_lien_i_a_s == '') ? null : $retour .= $lu_nom_individu . " ";
-        
+        ($nom_invisible_avec_lien_sans_lien_i_a_s == "i") ? $retour .= null : null;
+        ($nom_invisible_avec_lien_sans_lien_i_a_s == "s") ? $retour .= $lu_nom_individu : null;
+        ($nom_invisible_avec_lien_sans_lien_i_a_s == "a") ? $retour .= " " . atkHref(dispatch_url("individu.individu", "edit", array(
+            "atkselector" => "individu.id='" . $id_individu . "'"
+        )), '<b>' . $lu_nom_individu . '</b>', SESSION_NESTED, false, 'target="main"') : null;
+        $hauteur_icone = '';
         ($icone_aide_o_n == 'o') ? $retour .= $lu_icone_aide : null;
         ($option == "nom_portrait") ? $retour .= "" : $retour .= "</br>";
         ($icone_geolocalisation_o_n == 'o') ? $retour .= $lu_icone_adresse_individu . " " : null;

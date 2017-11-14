@@ -2949,6 +2949,7 @@ Le président, <br /><br />                                    Le secrétaire,";
                 $query->addField("type_golf_abonnement.libelle as abonnement");
                 $query->addField("individu.id_document_portrait as id_document_portrait");
                 $query->addField("organisme_document.file_content as file_content");
+                $query->addField("organisme_document.url_document as url_document");
                 $query->addField("organisme_document.file_name as file_name");
                 $query->addField("organisme_document.file_size as file_size");
                 $query->addCondition("individu.id in ( " . $this->m_postvars["idindividus"] . ")");
@@ -2985,14 +2986,18 @@ Le président, <br /><br />                                    Le secrétaire,";
                     $row = array();
                     $row[] = $i + 1;
                     if (! empty($stuff[$i]["id_document_portrait"])) {
-                        
-                        $stuff[$i]["file_content"] = base64_decode($stuff[$i]["file_content"]);
-                        $filename = $stuff[$i]["file_name"];
-                        $url_portrait = "./documents/" . $filename;
-                        $file = @fopen($url_portrait, "w");
-                        @fwrite($stuff[$i]["file_content"], $stuff[$i]["file_size"]);
-                        @fclose($file);
-                        $stuff[$i]["file_content"] = "";
+                        if ($stuff[$i]["url_document"] == null) {
+                            $stuff[$i]["file_content"] = base64_decode($stuff[$i]["file_content"]);
+                            $filename = $stuff[$i]["file_name"];
+                            $url_portrait = "./documents/" . $filename;
+                            $file = @fopen($url_portrait, "w") or die("Ouverture impossible!");
+                            // @fwrite($file, $stuff[$i]["file_content"], $stuff[$i]["file_size"]);
+                            @fwrite($file, $stuff[$i]["file_content"]);
+                            @fclose($file);
+                            $stuff[$i]["file_content"] = "";
+                        } else {
+                            $url_portrait = $stuff[$i]["url_document"];
+                        }
                     }
                     ($stuff[$i]["id_document_portrait"] != "") ? $row[] .= " " . '<a href="' . $url_portrait . '" target="_blank" ><img style="vertical-align:middle" src="' . $url_portrait . '" height="300px" alt="Portrait" title="Portrait" /></a> ' : $row[] = '<b><p style="color:#ff0000;">Pas de portrait</b></p>';
                     /*
@@ -3119,6 +3124,7 @@ individu_inscription.date_radiation is null
                 $query->addField("organisme_document.file_content as file_content");
                 $query->addField("organisme_document.file_name as file_name");
                 $query->addField("organisme_document.file_size as file_size");
+                $query->addField("organisme_document.url_document as url_document");
                 $query->addCondition("individu.id in ( " . $this->m_postvars["idindividus"] . ")");
                 
                 $query->addCondition("individu.date_deces is null");
@@ -3128,6 +3134,7 @@ individu_inscription.date_radiation is null
                 $tbl = & atknew("atk.utils.atktablerenderer");
                 $tbl->setTableStyle("toc sortable");
                 $data = array();
+                
                 $tbl->setRowClass(1, "superbold");
                 $row = array();
                 $row[] = "#";
@@ -3136,33 +3143,37 @@ individu_inscription.date_radiation is null
                 $row[] = "Nom";
                 $row[] = "Prénom";
                 // $row[] = "Date de naissance";
-                $row[] = "Age";
+                // $row[] = "Age";
                 // $row[] = "Courriel";
                 // $row[] = "Téléphone fixe";
                 // $row[] = "Téléphone mobile";
+                $row[] = "Organisme";
                 $row[] = "Type inscription";
-                $row[] = "Inscrit en";
-                $row[] = "Adhésion en";
-                $row[] = "Dernière cotisation";
-                $row[] = "Licence FFG";
-                $row[] = "Index FFG";
-                $row[] = "Abonnement";
+                // $row[] = "Inscrit en";
+                // $row[] = "Adhésion en";
+                // $row[] = "Dernière cotisation";
+                // $row[] = "Licence FFG";
+                // $row[] = "Index FFG";
+                // $row[] = "Abonnement";
                 
                 $data[] = $row;
                 for ($i = 0, $_i = count($stuff); $i < $_i; $i ++) {
                     $row = array();
                     $row[] = $i + 1;
                     if (! empty($stuff[$i]["id_document_portrait"])) {
-                        
-                        $stuff[$i]["file_content"] = base64_decode($stuff[$i]["file_content"]);
-                        $filename = $stuff[$i]["file_name"];
-                        $url_portrait = "./documents/" . $filename;
-                        $file = @fopen($url_portrait, "w");
-                        @fwrite($stuff[$i]["file_content"], $stuff[$i]["file_size"]);
-                        @fclose($file);
-                        $stuff[$i]["file_content"] = "";
+                        if ($stuff[$i]["url_document"] == null) {
+                            $stuff[$i]["file_content"] = base64_decode($stuff[$i]["file_content"]);
+                            $filename = $stuff[$i]["file_name"];
+                            $url_portrait = "./documents/" . $filename;
+                            $file = @fopen($url_portrait, "w") or die("Ouverture impossible!");
+                            @fwrite($file, $stuff[$i]["file_content"]);
+                            @fclose($file);
+                            $stuff[$i]["file_content"] = "";
+                        } else {
+                            $url_portrait = $stuff[$i]["url_document"];
+                        }
                     }
-                    ($stuff[$i]["id_document_portrait"] != "") ? $row[] .= " " . '<a href="' . $url_portrait . '" target="_blank" ><img style="vertical-align:middle" src="' . $url_portrait . '" height="300px" alt="Portrait" title="Portrait" /></a> ' : $row[] = '<b><p style="color:#ff0000;">Pas de portrait</b></p>';
+                    ($stuff[$i]["id_document_portrait"] != "") ? $row[] .= " " . '<center><b><a href="' . $url_portrait . '" target="_blank" ><img style="vertical-align:middle" src="' . $url_portrait . '" height="300px" alt="Portrait" title="Portrait" />' . '</br>' . $stuff[$i]["prenom"] . ' ' . $stuff[$i]["nom"] . '</a></center></b> ' : $row[] = '<b><center><p style="color:#ff0000;">Pas de portrait</center></b></p>';
                     /*
                      * Inscrit depuis année
                      * année dernière cotisation
@@ -3171,7 +3182,7 @@ individu_inscription.date_radiation is null
                     ;
                     $id_organisme = $this->m_postvars["idorganisme"];
                     $sql = "SELECT
-`organisme`.`nom`,
+`organisme`.`nom` as organisme_nom,
 `individu`.`prenom`,
 `individu`.`nom`,
 YEAR(`individu_inscription`.`date_inscription`) as annee_inscription,
@@ -3205,36 +3216,51 @@ individu_inscription.date_radiation is null
                     // $row[] = $this->descripteur_individu_new($id_individu, $id_organisme, $origine_appel = 'organisme', $option = 'icones_privees');
                     
                     $row[] = $stuff[$i]["nom"];
-                    $row[] = $stuff[$i]["prenom"];
+                    $row[] = "<b>" . $stuff[$i]["prenom"] . "</b>";
                     // $row[] = $stuff[$i]["date_naissance"];
-                    if (! empty($stuff[$i]["date_naissance"])) {
-                        $row[] = date('Y') - ($stuff[$i]["annee_naissance"]);
-                    } else {
-                        $row[] = "";
-                    }
+                    /*
+                     * if (! empty($stuff[$i]["date_naissance"])) {
+                     * $row[] = date('Y') - ($stuff[$i]["annee_naissance"]);
+                     * } else {
+                     * $row[] = "";
+                     * }
+                     */
                     // $row[] = $stuff[$i]["courriel"];
                     // $row[] = $stuff[$i]["telephone_fixe"];
                     // $row[] = $stuff[$i]["telephone_mobile"];
+                    $row[] = $cotis[0]["organisme_nom"];
                     $row[] = $cotis[0]["libelle"];
-                    $row[] = $cotis[0]["annee_inscription"];
-                    $row[] = $cotis[0]["annee_adhesion"];
-                    if (! empty($cotis[0]["derniere_cotisation"])) {
-                        if ($cotis[0]["derniere_cotisation"] < date('Y')) {
-                            $row[] = '<b><p style="color:#ff0000;">' . $cotis[0]["derniere_cotisation"] . "</b></p>";
-                        } else {
-                            $row[] = $cotis[0]["derniere_cotisation"];
-                        }
-                    } else {
-                        $row[] = "";
-                    }
-                    $row[] = $stuff[$i]["golf_licence"];
-                    $row[] = $stuff[$i]["golf_index"];
-                    $row[] = $stuff[$i]["abonnement"];
-                    
+                    // $row[] = $cotis[0]["annee_inscription"];
+                    // $row[] = $cotis[0]["annee_adhesion"];
+                    /*
+                     * if (! empty($cotis[0]["derniere_cotisation"])) {
+                     * if ($cotis[0]["derniere_cotisation"] < date('Y')) {
+                     * $row[] = '<b><p style="color:#ff0000;">' . $cotis[0]["derniere_cotisation"] . "</b></p>";
+                     * } else {
+                     * $row[] = $cotis[0]["derniere_cotisation"];
+                     * }
+                     * } else {
+                     * $row[] = "";
+                     * }
+                     * $row[] = $stuff[$i]["golf_licence"];
+                     * $row[] = $stuff[$i]["golf_index"];
+                     * $row[] = $stuff[$i]["abonnement"];
+                     */
                     $data[] = $row;
                 }
                 // render table.
-                $res = $tbl->render($data, TBL_HEADER, "toc sortable");
+                $analyics_code = "<!-- Google Analytics -->
+                <script>
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+                
+                ga('create', 'UA-3719797-12', 'auto');
+                ga('send', 'pageview');
+                </script>
+                <!-- End Google Analytics -->";
+                $res = $analyics_code . $tbl->render($data, TBL_HEADER, "toc sortable");
                 // h// h
                 $id_organisme = str_ireplace("'", "", $id_organisme);
                 $id_organisme = str_ireplace(" ", "", $id_organisme);
