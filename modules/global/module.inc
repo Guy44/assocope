@@ -231,7 +231,8 @@ class mod_global extends associationModule
             $qr_utilisateur = href("index.php", '<img src="http://chart.apis.google.com/chart?cht=qr&chs=150x150&chl=' . $qr_utilisateur . '" class="gwt-Image" style="">', SESSION_DEFAULT, false, 'target="_top"');
             
             // Nom Individu
-            $data = $node->descripteur_individu($idutilisateur, 'n', 'n', '0', 'menu');
+            // $data = $node->descripteur_individu($idutilisateur, 'n', 'n', '0', 'menu');
+            $data = $node->descripteur_individu_new($idutilisateur, null, "manu_utilisateur", $option = "icones_privees");
             $this->menuitem('!' . $data, null, "Utilisateur", true);
             /*
              * $this->menuitem($nomutilisateur, dispatch_url("individu.individu", "edit", array (
@@ -1742,7 +1743,9 @@ class mod_global extends associationModule
             $this->menuitem("-", null, "Individus", true);
             // Nom Individu
             
-            $data = $node->descripteur_individu($individuid, 'n', 'n', '0', 'menu');
+            // $data = $node->descripteur_individu($individuid, 'n', 'n', '0', 'menu');
+            $data = $node->descripteur_individu_new($individuid, null, "manu_individu", $option = "icones_privees");
+            
             $this->menuitem('!' . $data, null, "Individus", true);
             /*
              * $this->menuitem("@fiche_individu_i@".$fiche_individu, dispatch_url("individu.individu", "edit", array (
@@ -2922,6 +2925,7 @@ cpv.id_pays=p.id ) ");
                 "atkselector" => "organisme.id=2"
             )), "Rd", true);
             $this->menuitem("Tests descripteur_individu_new", dispatch_url("test.testmysql", "test_descripteur_individu"), "Rd", true);
+            $this->menuitem("Tests number_format", dispatch_url("test.testmysql", "test_number_format"), "Rd", true);
             
             $this->menuitem("!<b>Serveur web</b>", "", "Rd", true);
             

@@ -911,7 +911,7 @@ class assMetaNode extends atkMetaNode
             "id" => $idorganisme,
             "idindividus" => $idindividus,
             "idorganisme" => $idorganisme,
-            "atkcode" => '21'
+            "atkcode" => '2101'
         ));
         header("Location: $url");
         exit();
@@ -3154,7 +3154,7 @@ class assMetaNode extends atkMetaNode
 	
  }</style><table class=\"toc  sortable\">";
         $retour = "<tr><td><b>#</td><td><b>Nom</td>";
-        $sql = "SELECT substring(orc.libelle, 1, 4) ,orc.libelle, orc.cout, orc.id
+        $sql = "SELECT substring(orc.libelle, 1, 4) ,orc.libelle as libelle, orc.cout as cout, orc.id as id
 		from organisme_rencontre_choix orc
 		where orc.id_rencontre=$id_rencontre
 		order by 1 ";
@@ -3197,7 +3197,7 @@ class assMetaNode extends atkMetaNode
 			ir.id_rencontre=$id_rencontre and
 			ir.id_individu=$id_individu and
 			ir.id=irc.id_individu_rencontre
-			order  by 1 COLLATE latin1_general_ci
+			order  by 1
 			";
             $data_choix = $db->getrows($sql);
             $total_prestations_individu = 0;
@@ -5523,19 +5523,23 @@ class assMetaNode extends atkMetaNode
         
         where individu.id=$id_individu";
         $data = $db->getrows($sql);
+        if (! empty($data[0]["url_document"])) {
+            
+            $url = $data[0]["url_document"];
+        }
         if (! empty($data[0]["id_document_portrait"])) {
-            if (! empty($data[0]["url_document"])) {
-                
-                $url = $data[0]["url_document"];
-            } else {
+            
+            $filename = $data[0]["file_name"];
+            $url = "./documents/" . $filename;
+            
+            if (! filesize($url) == $data[0]["file_size"]) {
                 $data[0]["file_content"] = base64_decode($data[0]["file_content"]);
-                $filename = $data[0]["file_name"];
-                $url = "./documents/" . $filename;
                 $file = @fopen($url, "w");
                 @fwrite($file, $data[0]["file_content"], $data[0]["file_size"]);
                 @fclose($file);
-                $data[0]["file_content"] = "";
             }
+            
+            $data[0]["file_content"] = "";
         }
         ($data[0]["id_document_portrait"] != "") ? $retour = " " . '<a href="' . $url . '" target="_blank" ><img style="vertical-align:middle" src="' . $url . '" height="20px" alt="Portrait" title="Portrait" /></a> ' : null;
         $retour .= $data[0]["nom"] . " " . $data[0]["prenom"];
@@ -5714,12 +5718,12 @@ class assMetaNode extends atkMetaNode
         $qr_image_individu = href("index.php", '<img src="http://chart.apis.google.com/chart?cht=qr&chs=150x150&chl=' . $qr_individu . '" class="gwt-Image" style="">', SESSION_DEFAULT, false, 'target="_top"');
         $lu_golf_licence_index = "(Licence golf : <b>" . $lu_golflicence . "</b>. Index : <b>" . $lu_golfindex . "</b>)";
         
-        $lu_icone_ou_est_ce = atkHref(dispatch_url("individu.individu", "googlemap", array(
+        $qr_adresse_individu == "" ? $lu_icone_ou_est_ce = "" : $lu_icone_ou_est_ce = atkHref(dispatch_url("individu.individu", "googlemap", array(
             "id" => "$id_individu"
         )), '<img class="recordlist"' . $hauteur_icone . ' border="0" src="./themes/assocope/icons/assocope/geolocalisation.png" alt="Où est-ce ? : ' . $qr_adresse_individu . '"
               title="Où est-ce ? : ' . $qr_adresse_individu . '" ></img>', SESSION_NESTED, false, 'target="_blank"');
         $href = "http:./dispatch.php?atknodetype=individu.v_individu_lieu&atkaction=document&atkselector=individu.id=" . $id_individu . "&id=&atkfilter=v_individu_lieu.id=" . $id_individu . "&atkdoctpl=enveloppe_individu.odt&atkdoctpl_prefix_id=0&atkcode=2&atklevel=-1&atkprevlevel=0&" . ' target="_blank"';
-        $lu_icone_enveloppe .= '<a href="' . $href . '"  target="_blank" >' . '<img class="recordlist"' . $hauteur_icone . ' border="0" src="./themes/assocope/icons/assocope/courrier.png" alt="Enveloppe : ' . $qr_adresse_individu . '"
+        $qr_adresse_individu == "" ? $lu_icone_enveloppe = "" : $lu_icone_enveloppe .= '<a href="' . $href . '"  target="_blank" >' . '<img class="recordlist"' . $hauteur_icone . ' border="0" src="./themes/assocope/icons/assocope/courrier.png" alt="Enveloppe : ' . $qr_adresse_individu . '"
                             title="Enveloppe : ' . $qr_adresse_individu . '" ></img></a>';
         
         ($lat != "" && $long != "") ? $descripteur .= $this->descripteur_itineraire_individu($id_individu, $lat, $long) : null;
@@ -5804,22 +5808,29 @@ class assMetaNode extends atkMetaNode
             $icone_portrait_o_n = 'o';
         }
         ($icone_genre_o_n == 'o') ? $retour .= $lu_icone_genre_popup . " " : null;
-        if ($icone_portrait_o_n == 'o' && (! empty($data[0]["id_document_portrait"]))) {
+        if (($icone_portrait_o_n == 'o' || $portrait_grand_o_n == 'o') && (! empty($data[0]["id_document_portrait"]))) {
             $sql = "select url_document, file_content,file_name, file_size from organisme_document where id=$lu_id_document_portrait";
             $datap = $db->getrows($sql);
             if ($datap[0]["url_document"] == null) {
                 $datap[0]["file_content"] = base64_decode($datap[0]["file_content"]);
                 $filename = $datap[0]["file_name"];
+                $filesize = $datap[0]["file_size"];
                 $url = "./documents/" . $filename;
-                $file = @fopen($url, "w");
-                // @fwrite($file, $datap[0]["file_content"], $datap[0]["file_size"]);
-                @fwrite($file, $datap[0]["file_content"]);
-                @fclose($file);
+                if (! file_exists($url) || ! filesize($url) == $filesize) {
+                    $file = @fopen($url, "w");
+                    // @fwrite($file, $datap[0]["file_content"], $datap[0]["file_size"]);
+                    @fwrite($file, $datap[0]["file_content"]);
+                    @fclose($file);
+                }
                 $datap[0]["file_content"] = "";
             } else {
                 $url = $datap[0]["url_document"];
             }
-            $retour .= '<a href="' . $url . '" target="_blank" ><img class="recordlist" style="vertical-align:middle" class="recordlist" ' . $hauteur_icone . 'src="' . $url . '"alt="Portrait" title="Portrait" /></a>' . " ";
+            if ($icone_portrait_o_n == 'o')
+                $retour .= '<a href="' . $url . '" target="_blank" ><img class="recordlist" style="vertical-align:middle" class="recordlist" ' . $hauteur_icone . 'src="' . $url . '"alt="Portrait" title="Portrait" /></a>' . " ";
+            if ($portrait_grand_o_n == 'o')
+                $retour .= '<img  border="0" src="' . $url . '" alt="Portrait"
+				title="Portrait"></img>' . "</br>";
         }
         ($nom_invisible_avec_lien_sans_lien_i_a_s == "i") ? $retour .= null : null;
         ($nom_invisible_avec_lien_sans_lien_i_a_s == "s") ? $retour .= $lu_nom_individu : null;
@@ -5827,16 +5838,16 @@ class assMetaNode extends atkMetaNode
             "atkselector" => "individu.id='" . $id_individu . "'"
         )), '<b>' . $lu_nom_individu . '</b>', SESSION_NESTED, false, 'target="main"') : null;
         $hauteur_icone = '';
-        ($icone_aide_o_n == 'o') ? $retour .= $lu_icone_aide : null;
+        ($icone_aide_o_n == 'o') ? $retour .= " " . $lu_icone_aide : null;
         ($option == "nom_portrait") ? $retour .= "" : $retour .= "</br>";
         ($icone_geolocalisation_o_n == 'o') ? $retour .= $lu_icone_adresse_individu . " " : null;
-        ($icone_ou_est_ce_o_n == 'o') ? $retour .= ($lu_icone_ou_est_ce . " ") : null;
+        ($icone_ou_est_ce_o_n == 'o' && ! $lu_icone_ou_est_ce == "") ? $retour .= ($lu_icone_ou_est_ce . " ") : null;
         
         // GG ($long_lat_o_n == 'o') ? $retour.=$lu_golf_licence_index : null;
         ($icone_courriel_o_n == 'o') ? $retour .= $lu_icone_courriel_individu . " " : null;
         ($icone_telephone_fixe_o_n == 'o') ? $retour .= $lu_icone_telephone_fixe_individu . " " : null;
         ($icone_telephone_mobile_o_n == 'o') ? $retour .= $lu_icone_telephone_mobile_individu . " " : null;
-        ($icone_enveloppe_o_n == 'o') ? $retour .= $lu_icone_enveloppe . " " : null;
+        ($icone_enveloppe_o_n == 'o' && ! $lu_icone_enveloppe == "") ? $retour .= $lu_icone_enveloppe . " " : null;
         ($icone_site_internet_o_n == 'o') ? $retour .= $lu_icone_site_internet_individu . " " : null;
         ($icone_cotisation_o_n == 'o') ? $retour .= $lu_icone_cotisation_a_jour . " " : null;
         ($icone_notoriete_o_n == 'o') ? $retour .= $lu_icone_notoriete . "</br>" : null;
@@ -5846,22 +5857,22 @@ class assMetaNode extends atkMetaNode
         ($coordonnees_o_n == 'o') ? $retour .= "</br>" . $coordonnees . "</br>" : null;
         ($qr_o_n == 'o') ? $retour .= $qr_image_individu . "</br>" : null;
         ($icone_table_operations_o_n == 'o') ? $retour .= $lu_table_operations . "</br>" : null;
-        if ($portrait_grand_o_n == 'o' && (! empty($lu_id_document_portrait))) {
-            /*
-             *
-             */
-            $sql = "select file_content,file_name, file_size from organisme_document where id=$lu_id_document_portrait";
-            $datap = $db->getrows($sql);
-            $datap[0]["file_content"] = base64_decode($datap[0]["file_content"]);
-            $filename = $datap[0]["file_name"];
-            $url = "./documents/" . $filename;
-            $file = @fopen($url, "w");
-            @fwrite($file, $datap[0]["file_content"], $datap[0]["file_size"]);
-            @fclose($file);
-            $datap[0]["file_content"] = "";
-            $retour .= '<img  border="0" src="' . $url . '" alt="Portrait"
-				title="Portrait"></img>' . "</br>";
-        }
+        /*
+         * if ($portrait_grand_o_n == 'o' && (! empty($lu_id_document_portrait))) {
+         *
+         * $sql = "select file_content,file_name, file_size from organisme_document where id=$lu_id_document_portrait";
+         * $datap = $db->getrows($sql);
+         * $datap[0]["file_content"] = base64_decode($datap[0]["file_content"]);
+         * $filename = $datap[0]["file_name"];
+         * $url = "./documents/" . $filename;
+         * $file = @fopen($url, "w");
+         * @fwrite($file, $datap[0]["file_content"], $datap[0]["file_size"]);
+         * @fclose($file);
+         * $datap[0]["file_content"] = "";
+         * $retour .= '<img border="0" src="' . $url . '" alt="Portrait"
+         * title="Portrait"></img>' . "</br>";
+         * }
+         */
         if ($signature_o_n == 'o' && (! empty($lu_id_document_signature))) {
             $sql = "select file_content,file_name, file_size from individu_document where id=$lu_id_document_signature";
             $datas = $db->getrows($sql);
@@ -5984,20 +5995,19 @@ class assMetaNode extends atkMetaNode
         where individu.id=$id_individu";
             
             $data = $db->getrows($sql);
-            
+            if (! empty($data[0]["url_document"])) {
+                $url = $data[0]["url_document"];
+            }
             if (! empty($data[0]["id_document_portrait"])) {
-                if (! empty($data[0]["url_document"])) {
-                    
-                    $url = $data[0]["url_document"];
-                } else {
-                    $data[0]["file_content"] = base64_decode($data[0]["file_content"]);
-                    $filename = $data[0]["file_name"];
-                    $url = "./documents/" . $filename;
+                $filename = $data[0]["file_name"];
+                $url = "./documents/" . $filename;
+                if (! $data[0]["file_size"] == filesize($url)) {
                     $file = @fopen($url, "w");
+                    $data[0]["file_content"] = base64_decode($data[0]["file_content"]);
                     @fwrite($file, $data[0]["file_content"], $data[0]["file_size"]);
                     @fclose($file);
-                    $data[0]["file_content"] = "";
                 }
+                $data[0]["file_content"] = "";
             }
             //
             
@@ -8537,8 +8547,9 @@ where e.id_journal = $id_journal and l.id_ecriture=e.id and year(e.date_ecriture
 				";
         $data = $db->getrows($sql);
         $arrayIndividu = array();
-        $arrayIndividu["nom"] = $this->descripteur_individu($id_individu, 'n', 'n', 150, "tableaudebord", 'n', 'n', 'o');
-        // $arrayIndividu["prenom"]=$data[0]["prenom"];
+        // $arrayIndividu["nom"] = $this->descripteur_individu($id_individu, 'n', 'n', 150, "tableaudebord", 'n', 'n', 'o');
+        // $arrayIndividu["contacts"] = $this->descripteur_individu_new($id_individu, null, "tableaudebord", "icones_privees");
+        $arrayIndividu["nom"] = "<b>" . $data[0]["nom"] . " " . $data[0]["prenom"] . "</b>";
         $arrayIndividu["date_naissance"] = $data[0]["date_naissance"];
         $arrayIndividu["date_deces"] = $data[0]["date_deces"];
         ($data[0]["date_deces"] != "") ? $arrayIndividu["date_naissance"] .= '<br>-<br>(<b>' . $data[0]["date_deces"] . '</b>)' : null;
@@ -8619,8 +8630,20 @@ where e.id_journal = $id_journal and l.id_ecriture=e.id and year(e.date_ecriture
 
     function nombre_format($nombre, $options = "b", $decimales = 0, $blanc_si_zero = 'o')
     {
+        $nombre1 = $nombre;
+        
         $nombre = number_format(floatval($nombre), $decimales, ",", " ");
-        ($nombre == 0 && $blanc_si_zero == 'o') ? $nombre = "" : null;
+        /*
+         * if ($nombre1 == '-0.52') {
+         * echo " Nombre avant: " . $nombre1;
+         * echo " Nombre après: " . $nombre;
+         * echo " floatval avant : " . floatval($nombre1);
+         * echo " floatval après : " . floatval($nombre);
+         * die();
+         * }
+         */
+        (floatval($nombre1) == 0 && $blanc_si_zero == 'o') ? $nombre = "-" : null;
+        
         if ($options == "b") {
             $option1 = "<b>";
             $finoption1 = "</b>";
