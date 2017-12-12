@@ -413,7 +413,8 @@ class tableaudebord extends assMetaNode
         $data = $db->getrows($sql);
         $res .= '<table class="toc sortable">';
         $res .= '<thead>';
-        $res .= $this->getEnTete($AnMinimum, 'o');
+        $res .= $this->getEnTete($AnMinimum, 'o', 'n', null, null, 'o');
+        // $AnMinimum, $colonne_actuel_o_n='o', $resultats_comptables_o_n='n', $type_log='', $contenu_log='', $adhesion_o_n='n'
         $res .= '</thead><tbody>';
         $res .= "<tr><td " . $this->m_styleTitreLigne . ">Adhésions";
         $AnDepart = date("Y") + 1;
@@ -2074,7 +2075,7 @@ class tableaudebord extends assMetaNode
         }
     }
 
-    function getEnTete($AnMinimum, $colonne_actuel_o_n = 'o', $resultats_comptables_o_n = 'n', $type_log = '', $contenu_log = '')
+    function getEnTete($AnMinimum, $colonne_actuel_o_n = 'o', $resultats_comptables_o_n = 'n', $type_log = '', $contenu_log = '', $adhesion_o_n = 'n')
 	/*
 	 * 	type log : node_action, utilisateur
 	* contenu_log : total, heure, jour, mois
@@ -2082,9 +2083,12 @@ class tableaudebord extends assMetaNode
 	{
         
         // echo "<br/>type".$type_log."<br/>contenu".$contenu_log."<br/>anminimum".$AnMinimum;die();
-        $AnDepart = date("Y") + 1;
+        $AnDepart = date("Y");
+        if ($adhesion_o_n == 'o') {
+            $AnDepart = date("Y") + 1;
+        }
         if ($resultats_comptables_o_n == 'o') {
-            $AnDepart = date("Y");
+            $AnDepart = date("Y") + 1;
             $res = "<tr><th>#";
             $res .= "</th><th>Code";
             $res .= "</th><th>Libellé";
