@@ -171,7 +171,7 @@
   "forget_criteria" => "Remove selected search", // Missing string!!!
   "fri" => "Fre",
   "friday" => "Freitag",
-  "fsa_pleasemakeselection" => "Es wurden mehrere Treffer gefunden. Bitte wï¿½hlen Sie einen aus.",
+  "fsa_pleasemakeselection" => "Es wurden mehrere Treffer gefunden. Bitte wéhlen Sie einen aus.",
   "help" => "Hilfe",
   "import" => "Import data", // Missing string!!!
   "import_allfield" => "Use default value for one of the attributes (e.g. if the column is absent in the CSV file)", // Missing string!!!

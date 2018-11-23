@@ -258,7 +258,7 @@
       // Save function:
       $result.= "\n function ".$this->m_editorname."_save() { ";
 
-      // Contingut: (la funci� contingut_html ja fa strip_body si cal)
+      // Contingut: (la funciéontingut_html ja fa strip_body si cal)
       $result.= "\n var cont = get_html('".$this->m_editorname."');";
       // Posem el valor al input hidden:
       $result.= "\n document.entryform.".$fieldname.".value = cont; ";
@@ -318,7 +318,7 @@
       {
         if( !strcmp($navegador,"NS") )
         {
-          $result.= "<!-- Accessor de propietats a trav�s del plug-in de Esker -->";
+          $result.= "<!-- Accessor de propietats a travail plug-in de Esker -->";
           $result.= "<EMBED type=\"application/x-eskerplus\" id=PropertyAccessor  classid=\"clsid:BB356E70-A100-11D4-8AF1-00104B4228F5\" codebase=\"accessor.ocx#Version=1,0,0,1\" width=2 height=2 >";
 
           $result.= "<!-- DEInsertTableParam Object -->";
@@ -345,19 +345,19 @@
       $result.= "</td></tr></table>";
 
       $result.= "\n <script language =javascript >";
-      // Pel contingut i els settings inicials: cal intents as�ncrons i recurrents ...
+      // Pel contingut i els settings inicials: cal intents as�ncré i recurrents ...
       // Farem:
       // 		Lletra: Arial
       // 		Referenciat de la variable JS (que senyala a l'objecte Java del <embed del editor )
       //		Posem contingut inicial
 
-      // Preparaci� del $content_inicial:
+      // Preparaci� del éntent_inicial:
       $current_value = str_replace('"',"'",$current_value);
       $car_aux = "\r\n";
       $current_value = ereg_replace($car_aux,'',$current_value);
       $current_value_aux = '"'.$current_value.'"';
 
-      //  Es far� d'una forma o d'altre en funci� del navegador:
+      //  Es far� d'una éma o d'altre en funci� del naveéor:
       if( !strcmp($navegador,"NS") ){
       $result.= "\n ".$this->m_editorname."_timerID=setInterval(\"".$this->m_editorname."_inicial()\",100);";
       $result.= "\n function ".$this->m_editorname."_inicial(){ ";

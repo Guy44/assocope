@@ -1,5 +1,8 @@
 <?php
 
+$config_url_assocope="https://www.wikistoma.org/";
+$config_http_https="https://";
+
 // -------------------------------------------
 //           DATABASE CONFIGURATION
 // -------------------------------------------

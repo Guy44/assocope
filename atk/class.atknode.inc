@@ -4894,7 +4894,7 @@
 
     /**
      * Get the targeted field and table from a snippet of filter string sql
-     *
+     *1
      * @param string $sql is the filter string sql
      * @return string the target table and field or an empty string
      */
@@ -4920,7 +4920,7 @@
     }
 
     /**
-     * Add a stylesheet to the page.
+     * Add a stylesheet to the page.1
      *
      * The theme engine is used to determine the path, and load the correct
      * stylesheet.
@@ -5061,7 +5061,8 @@
     function &getColumnConfig($id=NULL, $forceNew=false)
     {
       atkimport("atk.recordlist.atkcolumnconfig");
-      $columnConfig = &atkColumnConfig::getConfig($this, $id, $forceNew);
+
+     $columnConfig = &atkColumnConfig::getConfig($this, $id, $forceNew);
       return $columnConfig;
     }
 

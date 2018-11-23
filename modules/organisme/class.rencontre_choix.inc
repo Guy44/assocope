@@ -33,7 +33,9 @@ $this->add(new atkNumberAttribute("cout", AF_OBLIGATORY, 12, 2), NULL,30);
 		
 		include_once(atkconfig("atkroot")."modules/include/association.inc");
 		$this->add(new atkDummyAttribute("descripteur_module_estampillage",'text',AF_HIDE_ADD | AF_HIDE_EDIT  | AF_NO_LABEL | AF_COMPACT),NULL, 100);
-	$this->setOrder("libelle asc");}
+		$this->setOrder(" organisme_rencontre_choix.libelle asc ");
+
+	}
 
 	function descriptor_def()
 	{

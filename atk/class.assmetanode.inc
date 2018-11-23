@@ -334,14 +334,19 @@ class assMetaNode extends atkMetaNode
             
             // $descripteur=$descripteur_operations;
         }
+    
         
         (is_string($record["id_creation"])) ? $id_creation = $record["id_creation"] : $id_creation = $record["id_creation"]["id"];
         (is_string($record["id_modification"])) ? $id_modification = $record["id_modification"] : $id_modification = $record["id_modification"]["id"];
         
         global $g_sessionManager;
         $g_utilisateur_individu = $g_sessionManager->getValue("utilisateur_individu", "globals");
-        $id_individu_creation = $g_utilisateur_individu[$id_creation];
-        $id_individu_modification = $g_utilisateur_individu[$id_modification];
+//        $id_individu_creation = $g_utilisateur_individu[$id_creation];
+//        $id_individu_modification = $g_utilisateur_individu[$id_modification];
+        $id_individu_creation = $id_creation;
+        $id_individu_modification = $id_modification;
+        
+
         if ($this->get_acces_restreint() == true) {
             $individu_creation = $this->descripteur_individu($id_individu_creation, 'n', 'n', 150, "sans_lien", 'n', 'n', 'o', '', '', 'o');
             $individu_modification = $this->descripteur_individu($id_individu_modification, 'n', 'n', 150, "sans_lien", 'n', 'n', 'o', '', '', 'o');
@@ -349,6 +354,7 @@ class assMetaNode extends atkMetaNode
             $individu_creation = $this->descripteur_individu($id_individu_creation, 'n', 'n', 150, "module_estampillage", 'n', 'n', 'n', '', '', 'o');
             $individu_modification = $this->descripteur_individu($id_individu_modification, 'n', 'n', 150, "module_estampillage", 'n', 'n', 'n', '', '', 'o');
         }
+//       $this->p($id_creation.' '.$id_modification.' '. $individu_creation.' '.$individu_modification);
         if ($this->get_acces_restreint() == false) {
             $edit_link = atkHref(dispatch_url($this->m_module . "." . $this->m_type, "edit", array(
                 "atkselector" => $this->m_table . ".id='" . $record["id"] . "'"
@@ -911,7 +917,7 @@ class assMetaNode extends atkMetaNode
             "id" => $idorganisme,
             "idindividus" => $idindividus,
             "idorganisme" => $idorganisme,
-            "atkcode" => '2101'
+            "atkcode" => '21'
         ));
         header("Location: $url");
         exit();
@@ -1988,7 +1994,6 @@ class assMetaNode extends atkMetaNode
         $retour = href(dispatch_url("search.search", "wiki", array(
             "title" => $texte
         )), $aide, SESSION_NEW, false, ' target="_blank"');
-        // $retour='<a href="http://www.wikistoma.org/wiki/index.php?title='.$texte.'"target="_blank">'.$aide."</a>";
         return $retour;
     }
 
@@ -3274,37 +3279,7 @@ class assMetaNode extends atkMetaNode
 			  where id_organisme_rencontre_choix=$id_choix and quantite>0)"
             ), "dispatch.php"), $total_choix[$k] . " (" . $total_choix_nombre[$k] . ")", SESSION_NESTED) . "</td>" . '<br />';
             
-            /*
-             * http://www.wikistoma.org/association/dispatch.php?
-             * atknodetype=individu.rencontre_i
-             * &atkaction=admin
-             * &atkfilter= individu_rencontre.id in
-             * (select id_individu_rencontre from individu_rencontre_choix
-             * where id_organisme_rencontre_choix%3D59%20%20%20and%20quantite%3E0%29%0A%09%09%09%09
-             *
-             * http://www.wikistoma.org/association/dispatch.php?
-             * atknodetype=individu.inscription_i
-             * &atkaction=admin_liste
-             * &atkfiltre=%3C%2Fb%3EOrganisme%20%3A%20%3Cb%3ELes%20Copains%20de%20l%27%EEle%3Cbr%2F%3E%3C%2Fb%3EAnn%E9e%20%3A%20%3Cb%3E2016&id=366
-             * &id_organisme=366
-             * &type=adhesion
-             * &atkfilter=individu_inscription.id_organisme%3D366%20and%20individu_inscription.date_adhesion%20is%20not%20null%0A%09%09%09%09%09%09and%20year%28individu_inscription.date_adhesion%29%3D2016&atklevel=1&atkprevlevel=0&atkstackid=56f969d8bc0e6&
-             *
-             * $tableau_id_choix[$i]=$data [$i] ["id"];
-             * http://www.wikistoma.org/association/dispatch.php
-             * ?atknodetype=individu.rencontre_i
-             * &atkaction=admin
-             * &atkfilter=%20individu_rencontre.id%20in%20%28select%20id_individu_rencontre%20from%20individu_rencontre_choix%20where%20id_organisme_rencontre_choix%3D60%20%20%20and%20quantite%3E0%29%0A%09%09%09%09&atklevel=1&atkprevlevel=0&atkstackid=56dd6c941e1bf&
-             *
-             *
-             * http://www.wikistoma.org/association/dispatch.php?
-             * atknodetype=individu.rencontre_i
-             * &atkaction=admin_liste
-             * &atkfilter=%20individu_rencontre.id_rencontre%20%3D%201638%20AND%20individu_rencontre.id_type_rencontre_participation%3D5
-             * &atklevel=2&atkprevlevel=1&atkstackid=56fcfe1c1477c&
-             *
-             */
-            // $retour .= "<td class='alncenter'><b>" . $total_choix [$k] . " (" . $total_choix_nombre [$k] . ")" . "</td>";
+          
             $total_ligne += $total_choix[$k];
         }
         $retour .= "<td class='alnright'><b>" . $total_ligne . " / " . $total_total_prestations_individu . "</td>";
@@ -4145,9 +4120,7 @@ class assMetaNode extends atkMetaNode
 				title="Album Picasa"  ></img></a>';
         $retour = '<img class="recordlist" border="0" src="./themes/assocope/icons/assocope/photos_album.png" alt="Album"
 				title="Album AssoCope"  ></img>' . ' <b>' . $href . " " . $hrefpicasa . " ";
-        /*
-         * http://www.wikistoma.org/association/dispatch.php?atknodetype=individu.google_photos&atkaction=admin&atkfilter=individu_google_photo.id_album%3D5131%20&atklevel=1&atkprevlevel=0&atkstackid=4f490f47b8e2e&
-         */
+ 
         $nombre_de_photos = number_format($data[0]["nombre_de_photos"], 0, "", ".");
         $taille = number_format($data[0]["taille_octets"], 0, "", ".");
         $href = href(dispatch_url("individu.google_photos", "admin", array(
@@ -5460,7 +5433,7 @@ class assMetaNode extends atkMetaNode
         $qr_organisme = str_replace(' ', '+', $qr_organisme);
         $qr_organisme = str_replace("'", "/'", $qr_organisme);
         $qr_organisme = utf8_encode($qr_organisme);
-        $qr_organisme = href("index.php", '<img src="http://chart.apis.google.com/chart?cht=qr&chs=150x150&chl=' . $qr_organisme . '" class="gwt-Image" style="">', SESSION_DEFAULT, false, 'target="_top"');
+        $qr_organisme = href("index.php", '<img src="https://chart.apis.google.com/chart?cht=qr&chs=150x150&chl=' . $qr_organisme . '" class="gwt-Image" style="">', SESSION_DEFAULT, false, 'target="_top"');
         // if ($size>0) $descripteur=$this->decoupe_affichage_colonne($descripteur, $size);
         // if (empty($size)) $descripteur=$this->decoupe_affichage_colonne($descripteur, 50);
         
@@ -5715,7 +5688,7 @@ class assMetaNode extends atkMetaNode
         $qr_individu = str_replace(' ', '+', $qr_individu);
         $qr_individu = str_replace("'", "/'", $qr_individu);
         $qr_individu = utf8_encode($qr_individu);
-        $qr_image_individu = href("index.php", '<img src="http://chart.apis.google.com/chart?cht=qr&chs=150x150&chl=' . $qr_individu . '" class="gwt-Image" style="">', SESSION_DEFAULT, false, 'target="_top"');
+        $qr_image_individu = href("index.php", '<img src="https://chart.apis.google.com/chart?cht=qr&chs=150x150&chl=' . $qr_individu . '" class="gwt-Image" style="">', SESSION_DEFAULT, false, 'target="_top"');
         $lu_golf_licence_index = "(Licence golf : <b>" . $lu_golflicence . "</b>. Index : <b>" . $lu_golfindex . "</b>)";
         
         $qr_adresse_individu == "" ? $lu_icone_ou_est_ce = "" : $lu_icone_ou_est_ce = atkHref(dispatch_url("individu.individu", "googlemap", array(
@@ -6150,9 +6123,8 @@ class assMetaNode extends atkMetaNode
                     $qr_individu = str_replace(' ', '+', $qr_individu);
                     $qr_individu = str_replace("'", "/'", $qr_individu);
                     $qr_individu = utf8_encode($qr_individu);
-                    $qr_individu = href("index.php", '<img src="http://chart.apis.google.com/chart?cht=qr&chs=150x150&chl=' . $qr_individu . '" class="gwt-Image" style="">', SESSION_DEFAULT, false, 'target="_top"');
+                    $qr_individu = href("index.php", '<img src="https://chart.apis.google.com/chart?cht=qr&chs=150x150&chl=' . $qr_individu . '" class="gwt-Image" style="">', SESSION_DEFAULT, false, 'target="_top"');
                     
-                    // http://www.wikistoma.org/association/dispatch.php?atknodetype=individu.individu&atkaction=fiche&id=104&atklevel=-1&atkprevlevel=0&
                     global $g_sessionManager;
                     $g_acces_restreint_o_n = $g_sessionManager->getValue("acces_restreint_o_n", "globals");
                     if ($toutes_icones == 'oui' && $g_acces_restreint_o_n = "0") {
@@ -8208,9 +8180,6 @@ where e.id_journal = $id_journal and l.id_ecriture=e.id and year(e.date_ecriture
                 $nombre_ecritures = $nombre_ecritures + $data[0]["nombre_ecriture"];
             }
             
-            // http://www.wikistoma.org/association/dispatch.php?atknodetype=organisme.ecriture_comptable&atkaction=add&atklevel=2&atkprevlevel=1&atkstackid=526cbe86c0d92&
-            
-            // }
             $res .= "</table>";
             
             $creer_ecriture = href(dispatch_url("organisme.ecriture_comptable", "admin", array(

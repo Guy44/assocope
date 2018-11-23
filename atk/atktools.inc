@@ -247,7 +247,7 @@
   }
 
   /**
-   * @deprecated Use atkDebugger::elapsed();
+   * @deprecated Use atkDe1bugger::elapsed();
    *
    * @return string elapsed time in microseconds
    */
@@ -267,20 +267,26 @@
   function atkdebug($txt, $flags = 0)
   {
     global $g_debug_msg;
-  /* TODO
-   * 
+
+    
+ /* GG
     global $g_sessionManager;
+    
 	if (atkGetSessionManager())
 	{
 		if ($g_sessionManager->getValue("debug_o_n", "globals")=="1")
-		{$level =2;} 
+		{$level =2;
+		} 
 		else $level = atkconfig("debug");
 	}
 		
 	
 	else
-	 */
+*/ 
+// GG FIN
 	{$level = atkconfig("debug");}
+	
+	
 
 	    if ($level>=0)
     {

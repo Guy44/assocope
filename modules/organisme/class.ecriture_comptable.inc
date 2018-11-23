@@ -6,13 +6,13 @@ useattrib("development.atgNumberExpressionAttribute");
 class ecriture_comptable extends assMetaNode {
 	var $table = "organisme_ecriture_comptable";
 	function meta(& $policy) {
-		$policy->addFlags("libelle", AF_SEARCHABLE);
+	    $policy->addFlags("libelle","id_ecriture_organisme", AF_SEARCHABLE);
 		$policy->addFlags("id_creation", "date_creation", "id_modification", "date_modification", AF_READONLY);
 		$policy->addFlags("commentaire", AF_HIDE_LIST);
 	}
 	function ecriture_comptable() {
 		$this->atkMetaNode();
-		$this->atkNode("ecriture_comptable", NF_ADD_LINK | NF_EDITAFTERADD);
+		$this->atkNode("ecriture_comptable", NF_ADD_LINK);
 		$this->setSecurityAlias("organisme.organisme");
 		$this->add(new atkTabbedPane("Pane1", array (
 				"Général" => array (
@@ -22,7 +22,7 @@ class ecriture_comptable extends assMetaNode {
 						"credit",
 						"id_organisme",
 						"id_journal",
-						//				"id_ecriture_organisme",
+						"id_ecriture_organisme",
 						"id_type_ecriture",
 						"id_origine_ecriture",
 						"date_ecriture",
@@ -35,7 +35,7 @@ class ecriture_comptable extends assMetaNode {
 				)
 		), AF_NO_LABEL));
 		$this->add(new atkAttribute("id", AF_SEARCHABLE | AF_FORCE_LOAD), null,4);
-		$this->add(new atgTextLibelleAttribute("libelle", AF_SEARCHABLE), null, 110);
+		$this->add(new atgTextLibelleAttribute("libelle", AF_SEARCHABLE | AF_OBLIGATORY), null, 110);
 		$this->add(new atgNumberExpressionAttribute("debit", ' select sum(debit) from organisme_ligne_ecriture_comptable l
 				where l.id_ecriture=[table].id
 				', 0, 0), null, 120);
@@ -45,8 +45,8 @@ class ecriture_comptable extends assMetaNode {
 		$this->add(new atgOManyToOneRelation("id_organisme", "organisme.organisme", AF_READONLY | AF_SEARCHABLE),null,200);
 		
 	$this->add(new atkManyToOneRelation("id_journal", "organisme.journal_comptable", AF_SEARCHABLE ), null, 160);
-		
-		//				$this->add(new atkNumberAttribute("id_ecriture_organisme"), null, 60);
+//	$this->add(new atkNumberAttribute("id_journal"), null, 60);
+	$this->add(new atkNumberAttribute("id_ecriture_organisme", AF_SEARCHABLE), null, 60);
 		$this->add(new atkDateAttribute("date_ecriture", "Y-m-d", "Y-m-d", 0, 0, AF_DATE_STRING | AF_OBLIGATORY), null, 115);
 
 		$this->add(new atkManyToOneRelation("id_type_ecriture", "table.type_ecriture", AF_SEARCHABLE | AF_READONLY), null, 140);
@@ -55,18 +55,22 @@ class ecriture_comptable extends assMetaNode {
 		include_once (atkconfig("atkroot") . "modules/include/association.inc");
 		$this->add(new atkDummyAttribute("descripteur_module_estampillage",'text',AF_HIDE_ADD | AF_HIDE_EDIT  | AF_NO_LABEL),null,10);
 		$this->m_securityMap["insertion_type_ecriture"] = "view";
-		$this->setOrder("id desc");
+		$this->setOrder("id_ecriture_organisme desc");
+	
 	}
 	function id_organisme_display($record, $mode) {
 		(!empty($record["id_organisme"])) ? $retour=$this->descripteur_organisme($record["id_organisme"]["id"],'n') : $retour="";
 		return $retour;
 	}
-/*	function id_journal_display($record, $mode) {
+// GG
+/*function id_journal_display($record, $mode) {
 	 	//$this->p($record);
 		(!empty($record["id_journal"])) ? $retour=$this->descripteur_journal_comptable($record["id_journal"],'n') : $retour="";
 		return $retour;
 	}
-	*/
+*/
+	// GG FIN
+	
 	function id_origine_ecriture_display($record, $mode)
 	{
 		switch ($record["id_type_ecriture"]["id"])
@@ -385,9 +389,8 @@ class ecriture_comptable extends assMetaNode {
 		
 	}
 	function preAdd(& $record) {
-
+	  
 		$id_journal = $record['id_journal']['id'];
-		// $id_organisme = $record['id_organisme']['id'];
 		$db = & atkGetDb();
 		$data = $db->getrows("SELECT id_organisme FROM organisme_journal_comptable where id=$id_journal ");
 		$id_organisme = $data[0]["id_organisme"];

@@ -45,7 +45,7 @@ class search extends assMetaNode {
 
 	}
 	function action_wiki(& $handler) {
-		$wiki_url="http://www.wikistoma.org/wiki/index.php?title=";
+	    $wiki_url=atkconfig("url_assocope")."wiki/index.php?title=";
 		$title=$this->m_postvars["title"];
 		$url=$wiki_url.$title;
 		$user = getUser();
@@ -118,7 +118,7 @@ class search extends assMetaNode {
 		for ($i = 0; $i < count($data); $i++)
 		{
 			$data[$j]["page_title"]=utf8_decode($data[$j]["page_title"]);
-			$lien_page_title="<a href=\"http://www.wikistoma.org/wiki/index.php?title=Fichier:".$data[$i]["page_title"]."\" target=\"_blank\">".$data[$i]["page_title"]."</a>";
+			$lien_page_title='<a href="'.atkconfig("url_assocope")."wiki/index.php?title=Fichier:".$data[$i]["page_title"]."\" target=\"_blank\">".$data[$i]["page_title"]."</a>";
 
 			$tableaumenus.=$lien_page_title." | ";
 			
@@ -217,7 +217,7 @@ global $g_compteur_appels_mysql_query;
 	}
 	function get_wiki_toc($query,$libelle)
 	{
-		$wikipedia = new Zend_Rest_Client('http://www.wikistoma.org/wiki/api.php');
+	    $wikipedia = new Zend_Rest_Client(atkconfig("url_assocope").'wiki/api.php');
 		$wikipedia->action('parse');
 		$wikipedia->page($query);
 		$wikipedia->format('xml');

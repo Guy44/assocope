@@ -115,29 +115,7 @@ function web_info_display($record, $mode)
 		}
 		return $retour;
 	}
-/*
-	function ascendance_display($record, $mode)
-	{
-//		
-		$idtaxinomie=trim($record["id_taxinomie"]["id"]);
-		$db = & atkGetDb();
-		$rows = $db->getrows("select id_parent from biodiversite_taxinomie where id ='" . $idtaxinomie . "' ");
-		$id_parent=$rows[0]["id_parent"];
-		$ascendance="";
-		while (isset($id_parent))
-		{
-			$sql="SELECT t.id,  id_parent, nom_binomial, nom_latin from biodiversite_taxinomie t , biodiversite_rang_taxinomique r where t.id='".$id_parent."' and t.id_rang_taxinomique=r.id";
-			$data=$db->getrows($sql);
-			//		http://www.wikistoma.org/association/dispatch.php?atknodetype=biodiversite.taxinomie&atkaction=view&atkselector=biodiversite_taxinomie.id%3D%2782568%27&atklevel=1&atkprevlevel=0&atkstackid=4a1107623cb41&
-			// <a target="main"  href="dispatch.php?atknodetype=table.type_placemark&atkaction=admin&atklevel=-1&atkprevlevel=0&">Types Repères</a>
-			$id_parent=$data[0]["id_parent"];
-			$ascendance='<a target="main" href="dispatch.php?atknodetype=biodiversite.taxinomie&atkaction=view&atkselector=biodiversite_taxinomie.id='.$data[0]["id"]. '&">'.$data[0]["nom_binomial"].'</a>'.'('.$data[0]["nom_latin"].') <br />'.$ascendance;
-		}
 
-		return $ascendance;
-
-	}
-*/
 
 	function action_admin($handler) {
 		global $config_recordsperpage;
@@ -149,17 +127,7 @@ function web_info_display($record, $mode)
 
 	}
 	function action_mapbiodiversite() {
-/*		echo 'Taxons : '.$this->m_postvars["taxons"].'<br />';
-		echo 'Zones : '.$this->m_postvars["zones"].'<br />';
-		echo 'date_observation_debut : '.$this->m_postvars["date_observation_debut"].'<br />';
-		echo 'date_observation_fin : '.$this->m_postvars["date_observation_fin"].'<br />';
-		echo 'heure_observation_debut : '.$this->m_postvars["heure_observation_debut"].'<br />';
-		echo 'heure_observation_fin : '.$this->m_postvars["heure_observation_fin"].'<br />';
-		echo 'organismes_commanditaire : '.$this->m_postvars["organismes_commanditaire"].'<br />';
-		echo 'organismes_observateur : '.$this->m_postvars["organismes_observateur"].'<br />';
-		echo 'individus_observateur : '.$this->m_postvars["individus_observateur"].'<br />';
-		die();
-		*/
+
 		$taxons = $this->m_postvars["taxons"];
 		if ($taxons!=0)
 		{
@@ -311,7 +279,7 @@ function web_info_display($record, $mode)
 		$db = & atkGetDb();
 		$r = $db->getrows("$select");
 		$site = atkHost();
-		$urlsite = 'http://' . $site;
+		$urlsite = atkconfig("http_https") . $site;
 		$sitesanswww = substr_replace($site, '', 0, 4);
 		for ($i = 0; $i < count($r); $i++) {
 			$title=$r[$i]['nom_binomial'].' ('.$r[$i]['nom_francais'].') ('.$r[$i]['date_observation'].' '.$r[$i]['heure_observation'].')';
@@ -411,24 +379,11 @@ function web_info_display($record, $mode)
 		$output .= "</td></tr>";
 		$output .= "</table>";
 		$output .= "<font face=\"arial\" size=\"1\" color=\"red\">";
-		//		$output .= $missing . " : non géolocalisables";
-		//		$output .= $missingnoms;
-		//		$output .= "<br />" . $missingadresse . " : sans adresse";
-		//		$output .= $missingadressenoms;
 		$output .= "</font></body>";
 		$output .= "</html>";
 		$output1->rawoutput($output);
 		$output1->outputFlush();
 	}
-/*
-	 * #  
-# FUNCTION recur($pere,$rang,$conn)
-# fonction récursive d'affichage de l'arbre
-# $pere :Element courant
-# $rang :Décallage de l'element
-# $conn :Index de la connexion a utiliser
-# 
-*/
 	
 
  function recur($pere,$rang=0)
@@ -443,17 +398,17 @@ $nblignes=count($r);
  {
  $parent=$r[$i]["id_parent"];
  $enfant=$r[$i]["id"];
-
+ 
  if ($parent==$pere)// si un élément a pour père : $pere
  {
- $result.= espace($rang)."<font color='blue'><b>".$enfant."</b></font><BR />"; // on l'affiche avec le décallage courrant et on recherche ses fils
- recur($enfant,$rang+1,$conn); // en rappelant la fonction recur() (+ incrémentation du décallage)
+     $result.= espace($rang)."<font color='blue'><b>".$enfant."</b></font><BR />"; // on l'affiche avec le décallage courrant et on recherche ses fils
+     recur($enfant,$rang+1,$conn); // en rappelant la fonction recur() (+ incrémentation du décallage)
  }
  }
  }
  return ($result);
  // /echo"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='red'><b>$recherche</b></font><br>";
- //recur($recherche,1,$conn); 
+ //recur($recherche,1,$conn);
  }
 
 }

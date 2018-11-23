@@ -106,6 +106,9 @@ class individu extends assMetaNode
             "Signature_courriel" => array(
                 "signature_courriel"
             ),
+            "Bio" => array(
+                "biographie"
+            ),
             "Google" => array(
                 "identifiant_google",
                 "code_google",
@@ -219,6 +222,11 @@ class individu extends assMetaNode
         $this->m_securityMap["rafraichir_calendrier_rencontres"] = "view";
         $this->add(new atgFileManyToOneRelation("id_document_portrait", "organisme.document", AF_RELATION_AUTOLINK | AF_HIDE_LIST | AF_RELATION_AUTOCOMPLETE));
         $this->add(new atgFileManyToOneRelation("id_document_signature", "individu.document_i", AF_RELATION_AUTOLINK | AF_HIDE_LIST | AF_RELATION_AUTOCOMPLETE));
+        $this->add(new atkfckattribute("biographie", "", AF_HIDE_LIST, array(
+            'ToolbarSet' => 'Default',
+            'Width' => '600px',
+            'Height' => '300px'
+        )));
         include_once (atkconfig("atkroot") . "modules/include/association.inc");
         $this->add(new atkDummyAttribute("descripteur_module_estampillage", 'text', AF_HIDE_ADD | AF_HIDE_EDIT | AF_NO_LABEL | AF_COMPACT), null, 5);
         $this->setOrder("nom,prenom");
@@ -1409,7 +1417,7 @@ class individu extends assMetaNode
         $missingadresse = 0;
         $missingadressenoms = "";
         $site = atkHost();
-        $urlsite = 'http://' . $site;
+        $urlsite = atkconfig("http_https") . $site;
         $sitesanswww = substr_replace($site, '', 0, 4);
         $photosdir = atkconfig("photosdir");
         for ($i = 0; $i < count($r); $i ++) {

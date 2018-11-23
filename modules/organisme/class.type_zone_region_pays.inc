@@ -83,7 +83,7 @@ class type_zone_region_pays extends assMetaNode {
 	function action_export_kml() {
 		// nom du site sur lequel ext l'appli
 		$site = atkHost();
-		$urlsite = 'http://' . $site;
+		$urlsite = atkconfig("http_https") . $site;
 		$sitesanswww = substr_replace($site, '', 0, 4);
 		// nom du répertoire des icones
 		$imagesdir = atkconfig("imagesdir");

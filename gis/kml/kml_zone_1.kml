@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.1"  creator="association - http://www.wikistoma.org" ><Document>
+<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.1"  creator="association - https://www.wikistoma.org" ><Document>
 				<description>Phares et balises <br></br>
 				<table style="font: 12px Arial; ">
 				<tr><td><b>Pays:</b> France<br></br>
-				  <b>Region:</b> Côte Atlantique<br></br>
+				  <b>Region:</b> CÃ© Atlantique<br></br>
 				<b>Zone:</b> Le Croisic - Saint Gildas<br></br>
-						<b><a href="http://maree.frbateaux.net/118"> Marées</a> </b><br></br><b><a href="http://www.wikistoma.org"> <img src="http://wikistoma.org/association/gis/photos/gis_photo_60.jpg" /></a> </b><br></br>
+						<b><a href="http://maree.frbateaux.net/118"> Marï¿½eÃ©a> </b><br></br><b><a href="https://www.wikistoma.org"> <img src="http://wikistoma.org/association/gis/photos/gis_photo_60.jpg" /></a> </b><br></br>
 				<div style="width:325px; padding: 2px; border: 1px solid #000; "><br></br>
 				<br></br></div>
 				</td></tr>
@@ -697,12 +697,12 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Ã©antique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Mouillage île Dumet (ne)<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°25'10"N 2°35'51"W <br></br>
+						<b>Repï¿½re :<Ã© Mouillage ï¿½le DumeÃ©ne)<br></br>
+						<b>Coordonnï¿½es GPS (DÃ©: </b>47ï¿½25'10"N 2ï¿½3Ã©1"W <br><Ã©>
 						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
-						<name>Mouillage île Dumet (ne)</name>
+						<name>Mouillage ï¿½le Dumet (ne)</Ã©e>
 						<styleUrl>#msn_icon40</styleUrl>
 						<Point>
 								<extrude>0</extrude>
@@ -712,11 +712,11 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br>Ã©r>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Grand Morven<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°23'37"N 2°32'48"W <br></br>
-						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
+						<b>Repï¿½re :</b> Grand MorvÃ©br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½Ã©37"N 2ï¿½32'48"W <br><Ã©>
+						<Ã©escription:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
 						<name>Grand Morven</name>
 						<styleUrl>#msn_icon5</styleUrl>
 						<Point>
@@ -731,13 +731,12 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
-						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Entrée sur Alignement Chenal<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°23'19"N 2°32'28"W <br></br>
-						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
-						<name>Entrée sur Alignement Chenal</name>
-						<styleUrl>#msn_icon3</styleUrl>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
+				Ã©b>Pays:</b> France<br></br>
+						<b>Repï¿½re :</b> Entrï¿½e sur AlignemenÃ©henal<br></brÃ©					<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½23'19"N 2ï¿½32Ã©"W <br></br>
+						<Ã©escriptioÃ©/b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
+						<name>Entrï¿½e sur Alignement Chenal</name>
+						<sÃ©eUrl>#msn_icon3</styleUrl>
 						<Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
@@ -754,11 +753,11 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
-						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Les Bayonnelles<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°22'43"N 2°35'12"W <br></br>
-						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
+						<b>Pays:</b>Ã©ance<br></br>
+						<b>Repï¿½re :</b> Les Bayonnelles<br></br>
+						<b>Ã©rdonnï¿½es GPS (DMS): </b>47ï¿½22'43"N 2ï¿½35'12"W <br></Ã©
+						<b>DescriptioÃ©/b> <br><Ã©><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
 						<name>Les Bayonnelles</name>
 						<styleUrl>#msn_icon20</styleUrl>
 						<Point>
@@ -781,11 +780,11 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
-						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Socle Ancienne Tourelle<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°22'30"N 2°34'12"W <br></br>
-						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
+						<b>Pays:</b> France<brÃ©br>
+						<b>Repï¿½re :</b> Socle Ancienne Tourelle<br></br>
+						<b>CoÃ©onnï¿½es GPS (DMS): </b>47ï¿½22'30"N 2ï¿½34'12"W <br></br>
+						Ã©Description:</b> <brÃ©br><b>AttÃ©uts:</b><br></br> ]]><![CDATA[ ]]></description>
 						<name>Socle Ancienne Tourelle</name>
 						<styleUrl>#msn_icon3</styleUrl>
 						<Point>
@@ -812,14 +811,14 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Entrée Sud de l'Anse Lerat<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°21'39"N 2°31'59"W <br></br>
-						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
-						<name>Entrée Sud de l'Anse Lerat</name>
+			Ã©<b>Repï¿½re :</b> Entrï¿½e Sud de l'Anse Lerat<br></br>
+						<b>Coordonnï¿½Ã©GPS (DMS): </Ã©7ï¿½21'39"N 2ï¿½31'59"W <br></br>
+						<b>DescriptiÃ©</b> <br></br><b>AttÃ©uts:</b><Ã©</br> ]]><![CDATA[ ]]></description>
+						<name>Entrï¿½e Sud de l'Anse Lerat</name>
 						<styleUrl>#msn_icon4</styleUrl>
-						<Point>
+						Ã©int>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
 								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
@@ -847,15 +846,15 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Entrée du Port de la Turballe<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°20'42"N 2°30'51"W <br></br>
-						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
-						<name>Entrée du Port de la Turballe</name>
+						<b>Repï¿½re :Ã©> Entrï¿½e du Port de la Turballe<br></br>
+						<b>Coordonnï¿½es GPS (DMSÃ©</b>47ï¿½20'42"Ã©ï¿½30'51"W <br></br>
+						<b>Description:</b> <br></Ã©<b>Attributs:</b><brÃ©br> ]]><!Ã©ATA[ ]]></description>
+						<name>Entrï¿½e du Port de la Turballe</name>
 						<styleUrl>#msn_icon4</styleUrl>
 						<Point>
-								<extrude>0</extrude>
+			Ã©		<extrude>0</extrude>
 								<tesselate>0</tesselate>
 								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
 								</Point><Point>
@@ -886,11 +885,11 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Hergo<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°18'40"N 2°31'36"W <br></br>
-						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
+						<b>Repï¿½re :</b> Hergo<br>Ã©r>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½18'40"N 2ï¿½31'36"W <br></br>
+Ã©			<b>Description:</b> <br></br><b>AttribÃ©:</b><br></br> ]]><!Ã©ATA[ ]]><Ã©scription>
 						<name>Hergo</name>
 						<styleUrl>#msn_icon14</styleUrl>
 						<Point>
@@ -929,11 +928,11 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Bonen du Four<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°18'35"N 2°39'13"W <br></br>
-						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
+						<b>Repï¿½re :</b> Bonen du Four<br></Ã©
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½18'35"N 2ï¿½39'13"W <br></br>
+		Ã©	<b>Description:</b> <br></br><b>Attributs:</b><bÃ©/br> ]]><![CDATA[ ]]Ã©descriptiÃ©
 						<name>Bonen du Four</name>
 						<styleUrl>#msn_icon19</styleUrl>
 						<Point>
@@ -976,16 +975,16 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Le Tréhic<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°18'33"N 2°31'20"W <br></br>
-						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
-						<name>Le Tréhic</name>
+						<b>Repï¿½re :</b> Le Trï¿½hic<br></br>
+						<b>CÃ©donnï¿½es GPS (DMS): </b>47ï¿½18'33"N 2ï¿½31'20"W <br></br>
+						<b>DescripÃ©n:</b> <br></bÃ©b>Attributs:</b><br></br> ]]><Ã©DATA[ ]]></descriptiÃ©
+						<nÃ©>Le Trï¿½hic</name>
 						<styleUrl>#msn_icon13</styleUrl>
 						<Point>
 								<extrude>0</extrude>
-								<tesselate>0</tesselate>
+								<tesselate>0</tesselÃ©>
 								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
@@ -1027,12 +1026,12 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Castouillet<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°18'11"N 2°34'17"W <br></br>
-						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
-						<name>Castouillet</name>
+						<b>Repï¿½re :</b> Castouillet<br></br>
+						<b>Coordonnï¿½es GÃ©(DMS): </b>47ï¿½18'11"N 2ï¿½34'17"W <br></br>
+						<b>Description:</b> <bÃ©/br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]>Ã©escription>
+						<nÃ©>CastouilÃ©</name>
 						<styleUrl>#msn_icon20</styleUrl>
 						<Point>
 								<extrude>0</extrude>
@@ -1082,17 +1081,17 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Phare du Four<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°17'55"N 2°37'58"W <br></br>
-						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[<b><font color="#0000ff">Hauteur:</font></b> 100 m<br></br>
-								<b><font color="#0000ff">Portée:</font></b> 100 km<br></br>
+						<b>Repï¿½re :</b> Phare du Four<br></br>
+						<b>Coordonnï¿½es GPS (DMS)Ã©/b>47ï¿½17'55"N 2ï¿½37'58"W <br></br>
+						<b>Description:</b> <br></br><Ã©ttributs:</b><br></br> ]]><![CDATA[<b><font colorÃ©0000ff">Hauteur:</foÃ©</b> 100 Ã©r></br>
+								<b><font color="#0000ff">Portï¿½e:</font></b> 100 km<br></br>
 								 ]]></description>
 						<name>Phare du Four</name>
 						<styleUrl>#msn_icon30</styleUrl>
 						<Point>
-								<extrude>0</extrude>
+Ã©					<extrude>0</extrude>
 								<tesselate>0</tesselate>
 								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
 								</Point><Point>
@@ -1143,13 +1142,13 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Milieu Arche Viaduc<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°17'10"N 2°10'10"W <br></br>
-						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
-						<name>Milieu Arche Viaduc</name>
-						<styleUrl>#msn_icon13</styleUrl>
+						<b>Repï¿½re :</b> Milieu Arche Viaduc<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>Ã©17'10"N 2ï¿½10'10"W <br></br>
+						<b>Description:</b> <br></br><b>AttrÃ©ts:</b><br></br> ]]><![CDATA[ ]]></description>
+						<Ã©e>Milieu Arche ViaduÃ©name>
+			Ã©<styleUrl>#msn_icon13</styleUrl>
 						<Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
@@ -1206,17 +1205,16 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Entrée Vieille Ecluse Sn<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°16'32"N 2°11'38"W <br></br>
-						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
-						<name>Entrée Vieille Ecluse Sn</name>
-						<styleUrl>#msn_icon3</styleUrl>
+						<b>Repï¿½re :</b> Entrï¿½e Vieille Ecluse Sn<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½16Ã©"N 2ï¿½11'38"W <br></br>
+						<b>Description:</b> <br></br><b>AttributsÃ©b><br></br> ]Ã©![CDATA[ ]]></description>
+						<name>Entrï¿½e Ã©ille Ecluse Sn</nameÃ©					<styÃ©rl>#msn_icon3</styleUrl>
 						<Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
+								<altitudemode>clamÃ©Ground</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
@@ -1273,13 +1271,13 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Basse Lovre<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°16'4"N 2°29'40"W <br></br>
-						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
+						<b>Repï¿½re :</b> Basse Lovre<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½16'4"N 2ï¿½29'40"W <br></br>
+		Ã©	<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ Ã©</description>
 						<name>Basse Lovre</name>
-						<styleUrl>#msn_icon20</styleUrl>
+	Ã©		<styleUrl>#msn_icoÃ©</styleUÃ©
 						<Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
@@ -1344,13 +1342,13 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Anse du Grand Traict<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°15'49"N 2°13'7"W <br></br>
-						<b>Description:</b> <br></br>
-								<b><a href="http://maree.frbateaux.net/117"> Marées</a> </b><br></br>
-								<b><a href="http://www.meteoconsult.fr/mar/port/apercu_port.php?langue=fr&num_site=171"> Météo</a> </b><br></br><b><a href="http://www.wikistoma.org"> <img src="http://wikistoma.org/association/gis/photos/gis_photo_60.jpg"></a> </b><br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
+						<b>Repï¿½re :</b> Anse du Grand Traict<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½15'49"N 2ï¿½13'7"W <br></br>
+			Ã©<b>Description:</b> <br></br>
+								<b><a href="http://maree.frbateaÃ©net/117"> Marï¿½es</a> </b><br></br>
+								<b><a href="hÃ©://www.meteoconsult.Ã©mar/port/Ã©rcu_port.php?langue=fr&num_site=171"> Mï¿½tï¿½o</a> </b><br></br><b><a href="https://www.wikistoma.org"> <img srcÃ©ttp://wikistoma.org/association/gis/photos/gis_photo_60.jpg"></a> </b><br></br><b>Attributs:</b><br></br> ]]><![CDATA[ Ã©<Ã©scription>
 						<name>Anse du Grand Traict</name>
 						<styleUrl>#msn_icon3</styleUrl>
 						<Point>
@@ -1421,17 +1419,17 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Tourelle des Morées<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°15'4"N 2°12'55"W <br></br>
-						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
-						<name>Tourelle des Morées</name>
-						<styleUrl>#msn_icon13</styleUrl>
-						<Point>
-								<extrude>0</extrude>
+						<b>Repï¿½re :</b> Tourelle des Morï¿½es<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½15'4"N 2ï¿½12'55"W <br></br>
+						<b>DescriptionÃ©b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
+Ã©			<name>Tourelle des MorÃ©</name>
+						<styleUrl>#msn_Ã©n13</styleUrl>
+					Ã©oint>
+		Ã©			<extrude>0</extrude>
 								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
+								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</Ã©rdinates>
 								</Point><Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
@@ -1500,18 +1498,16 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Mouillage alignement 25° feu<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°15'3"N 2°15'4"W <br></br>
-						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
-						<name>Mouillage alignement 25° feu</name>
-						<styleUrl>#msn_icon40</styleUrl>
-						<Point>
-								<extrude>0</extrude>
+						<b>Repï¿½re :</b> Mouillage alignement 25ï¿½ feu<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½15'3"N 2ï¿½15'4"W <br></br>
+						<b>Description:</b> Ã©></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
+						Ã©me>Mouillage alignement 25ï¿½ feu<Ã©me>
+						<styleUrl>#msn_icon40Ã©tyleUrl>
+						<PoinÃ©								Ã©trude>0</extrude>
 								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
-								</Point><Point>
+								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>Ã©						</Point><Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
 								<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
@@ -1583,18 +1579,17 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Goué Vas du Four<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°14'58"N 2°38'8"W <br></br>
-						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
-						<name>Goué Vas du Four</name>
-						<styleUrl>#msn_icon21</styleUrl>
-						<Point>
-								<extrude>0</extrude>
-								<tesselate>0</tesselate>
+						<b>Repï¿½re :</b> Gouï¿½ Vas du Four<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½14'58"N 2ï¿½38'8"W <br></br>
+						<b>Description:</b> <br></br><b>Attributs:</bÃ©r></br> ]]><![CDATA[ ]]></description>
+						<name>Gouï¿½ Vas du Four</nÃ©>
+						<styÃ©rl>#msn_icon21</styleUrl>
+						<Point>Ã©						<extrude>0</exÃ©de>
+					Ã©<tesselate>0</tesselate>
 								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
-								</Point><Point>
+					Ã©</Point><Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
 								<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
@@ -1670,16 +1665,15 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Mouillage de Saint Marc<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°14'56"N 2°15'22"W <br></br>
-						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
-						<name>Mouillage de Saint Marc</name>
+						<b>Repï¿½re :</b> Mouillage de Saint Marc<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½14'56"N 2ï¿½15'22"W <br></br>
+						<b>Description:</b> <br></br><b>Attributs:</b><br><Ã©> ]]><![CDATA[ ]]></description>
+						<name>Mouillage de Saint Marc</Ã©e>
 						<styleUrl>#msn_icon40</styleUrl>
 						<Point>
-								<extrude>0</extrude>
-								<tesselate>0</tesselate>
+			Ã©		<extrude>0</extrudÃ©								<Ã©selate>0</tesselate>
 								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
@@ -1761,17 +1755,15 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> La Vieille<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°14'4"N 2°19'25"W <br></br>
-						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
+						<b>Repï¿½re :</b> La Vieille<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½14'4"N 2ï¿½19'25"W <br></br>
+						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></dÃ©ription>
 						<name>La Vieille</name>
-						<styleUrl>#msn_icon21</styleUrl>
+						<styleUrl>#msn_icon21</stÃ©Url>
 						<Point>
-								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
+								<extrude>0</extrudeÃ©							<tesselate>0<Ã©sselate>Ã©						<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
@@ -1856,17 +1848,17 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Pointe de Chemoulin<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°14'1"N 2°17'49"W <br></br>
-						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
+						<b>Repï¿½re :</b> Pointe de Chemoulin<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½14'1"N 2ï¿½17'49"W <br></br>
+						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></deÃ©iption>
 						<name>Pointe de Chemoulin</name>
-						<styleUrl>#msn_icon3</styleUrl>
+						<styleUrl>#msn_icÃ©</styleUrl>
 						<Point>
 								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
+Ã©					<tesselate>0</tÃ©elate>
+	Ã©				<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
@@ -1955,17 +1947,16 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Le Caillou<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°13'43"N 2°19'5"W <br></br>
+						<b>Repï¿½re :</b> Le Caillou<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½13'43"N 2ï¿½19'5"W <br></br>
 						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
-						<name>Le Caillou</name>
+						<nÃ©>Le Caillou</name>
 						<styleUrl>#msn_icon19</styleUrl>
-						<Point>
-								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
+						<PointÃ©							<extrude>0</extrude>
+								<tesselateÃ©/tesselate>
+								Ã©titudemodÃ©lampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
@@ -2058,17 +2049,17 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> 10<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°13'41"N 2°16'3"W <br></br>
+						<b>Repï¿½re :</b> 10<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½13'41"N 2ï¿½16'3"W <br></br>
 						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
 						<name>10</name>
-						<styleUrl>#msn_icon6</styleUrl>
+				Ã©styleUrl>#msn_icon6</styleUrl>
 						<Point>
-								<extrude>0</extrude>
+								<extrude>0</extruÃ©
 								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
+				Ã©	<altitudemode>clampÃ©round</alÃ©udemode><coordinates>-2.5975,47.4195,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
@@ -2165,20 +2156,20 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Pierre Percée<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°13'28"N 2°20'34"W <br></br>
+						<b>Repï¿½re :</b> Pierre Percï¿½e<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½13'28"N 2ï¿½20'34"W <br></br>
 						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
-						<name>Pierre Percée</name>
+						<name>Pierre Percï¿½Ã©name>
 						<styleUrl>#msn_icon19</styleUrl>
 						<Point>
-								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
+								<exÃ©de>0</extrude>
+					Ã©<tesselate>0</tesselate>
+			Ã©		<altitudemode>clamÃ©Ground</aÃ©tudemode><coordinates>-2.5975,47.4195,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
-								<tesselate>0</tesselate>
+								<tesselate>0</tesseÃ©e>
 								<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
@@ -2276,17 +2267,16 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Petit Charpetier<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°13'23"N 2°18'50"W <br></br>
+						<b>Repï¿½re :</b> Petit Charpetier<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½13'23"N 2ï¿½18'50"W <br></br>
 						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
-						<name>Petit Charpetier</name>
-						<styleUrl>#msn_icon21</styleUrl>
+						<name>Petit Charpetier</name>Ã©				<styleUrl>#msn_icon21</styleUrl>
 						<Point>
-								<extrude>0</extrude>
+								<extrude>0<Ã©trude>
 								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
+								<altÃ©demode>clampToGroundÃ©ltitudemoÃ©<coordinates>-2.5975,47.4195,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
@@ -2391,17 +2381,17 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> NW Banche<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°12'55"N 2°30'56"W <br></br>
+						<b>Repï¿½re :</b> NW Banche<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½12'55"N 2ï¿½30'56"W <br></br>
 						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
 						<name>NW Banche</name>
-						<styleUrl>#msn_icon19</styleUrl>
+						<styleUrl>#msn_icÃ©9</styleUrl>
 						<Point>
 								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
+								<tesseÃ©e>0</tesselate>
+								<altitudemode>clampToÃ©und</altitudemode><cÃ©dinates>-Ã©975,47.4195,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
@@ -2510,17 +2500,17 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Phare du Grand Charpentier<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°12'53"N 2°19'2"W <br></br>
+						<b>Repï¿½re :</b> Phare du Grand Charpentier<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½12'53"N 2ï¿½19'2"W <br></br>
 						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
 						<name>Phare du Grand Charpentier</name>
-						<styleUrl>#msn_icon30</styleUrl>
+Ã©			<styleUrl>#msn_icon30</styleUrl>
 						<Point>
-								<extrude>0</extrude>
+								<extrude>0</Ã©rude>
 								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
+								<altitudemode>cÃ©pToGround</altitudemÃ©><coordinÃ©s>-2.5975,47.4195,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
@@ -2633,18 +2623,17 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> 5<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°12'43"N 2°16'30"W <br></br>
+						<b>Repï¿½re :</b> 5<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½12'43"N 2ï¿½16'30"W <br></br>
 						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
 						<name>5</name>
 						<styleUrl>#msn_icon15</styleUrl>
 						<Point>
-								<extrude>0</extrude>
+						Ã©extrude>0</extrude>
 								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
-								</Point><Point>
+								<altitudeÃ©e>clampToGround</altitudemode><coordiÃ©es>-2.5975,47.4195,0Ã©oordinateÃ©								</Point><Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
 								<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
@@ -2760,18 +2749,18 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Le Vert<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°12'33"N 2°15'52"W <br></br>
+						<b>Repï¿½re :</b> Le Vert<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½12'33"N 2ï¿½15'52"W <br></br>
 						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
 						<name>Le Vert</name>
 						<styleUrl>#msn_icon18</styleUrl>
 						<Point>
-								<extrude>0</extrude>
+				Ã©	<extrude>0</extrude>
 								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
-								</Point><Point>
+								<altituÃ©ode>clampToGround</altitudemode><coordinateÃ©2.5975,47.4195,0</coÃ©inates>
+	Ã©				</Point><Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
 								<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
@@ -2891,18 +2880,17 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> La Truie<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°12'7"N 2°13'16"W <br></br>
+						<b>Repï¿½re :</b> La Truie<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½12'7"N 2ï¿½13'16"W <br></br>
 						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
 						<name>La Truie</name>
 						<styleUrl>#msn_icon10</styleUrl>
 						<Point>
-								<extrude>0</extrude>
+								<extrÃ©>0</extrude>
 								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
-								</Point><Point>
+								<altitudemode>clÃ©ToGround</altitudemode><coordinates>-2.5975,Ã©4195,0</coordinates>Ã©						</Ã©nt><Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
 								<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
@@ -3026,18 +3014,18 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Banche W<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°11'42"N 2°32'19"W <br></br>
+						<b>Repï¿½re :</b> Banche W<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½11'42"N 2ï¿½32'19"W <br></br>
 						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
 						<name>Banche W</name>
 						<styleUrl>#msn_icon20</styleUrl>
 						<Point>
-								<extrude>0</extrude>
+								<extrude>0</exÃ©de>
 								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
-								</Point><Point>
+								<altitudemode>clampToGrouÃ©/altitudemode><coordinates>-2.5975,47.4195,0Ã©oordinates>
+								Ã©oint><PoiÃ©
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
 								<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
@@ -3165,19 +3153,17 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Euler<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°11'39"N 2°18'13"W <br></br>
+						<b>Repï¿½re :</b> Euler<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½11'39"N 2ï¿½18'13"W <br></br>
 						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
 						<name>Euler</name>
 						<styleUrl>#msn_icon21</styleUrl>
 						<Point>
 								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
-								</Point><Point>
-								<extrude>0</extrude>
+								<Ã©selate>0</tesselate>
+								<altitudemode>clampToGround</altitudemodeÃ©oordinates>-2.5975,47.4195,0</coordinatesÃ©							</Point><PoinÃ©								<Ã©rude>0</extrude>
 								<tesselate>0</tesselate>
 								<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
 								</Point><Point>
@@ -3308,19 +3294,19 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> 3<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°11'22"N 2°17'25"W <br></br>
+						<b>Repï¿½re :</b> 3<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½11'22"N 2ï¿½17'25"W <br></br>
 						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
 						<name>3</name>
 						<styleUrl>#msn_icon15</styleUrl>
 						<Point>
 								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
-								</Point><Point>
-								<extrude>0</extrude>
+								<tesselate>0</tesseÃ©e>
+								<altitudemode>clampToGround</altitudemode><coordinates>-2.5Ã©,47.4195,0</coordinates>
+								</PoÃ©><Point>
+								<exÃ©de>0</extÃ©e>
 								<tesselate>0</tesselate>
 								<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
 								</Point><Point>
@@ -3455,19 +3441,19 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> NW Lambarde<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°10'54"N 2°22'52"W <br></br>
+						<b>Repï¿½re :</b> NW Lambarde<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½10'54"N 2ï¿½22'52"W <br></br>
 						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
 						<name>NW Lambarde</name>
 						<styleUrl>#msn_icon20</styleUrl>
 						<Point>
 								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
-								</Point><Point>
-								<extrude>0</extrude>
+								<tesselatÃ©</tesselate>
+								<altitudemode>clampToGround</altitudemode><coordiÃ©es>-2.5975,47.4195,0</coordinates>
+								</PoÃ©><Point>
+								<exÃ©de>0</extÃ©e>
 								<tesselate>0</tesselate>
 								<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
 								</Point><Point>
@@ -3606,20 +3592,19 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Phare de la Banche<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°10'41"N 2°27'58"W <br></br>
+						<b>Repï¿½re :</b> Phare de la Banche<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½10'41"N 2ï¿½27'58"W <br></br>
 						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
 						<name>Phare de la Banche</name>
 						<styleUrl>#msn_icon30</styleUrl>
 						<Point>
 								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
-								</Point><Point>
-								<extrude>0</extrude>
-								<tesselate>0</tesselate>
+								<tessÃ©te>0</tesselate>
+								<altitudemode>clampToGround</altitudemode><coÃ©inates>-2.5975,47.4195,0</coordinates>
+								</PointÃ©oint>
+								<extruÃ©0</extrudÃ©								<tesselate>0</tesselate>
 								<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
@@ -3761,22 +3746,22 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Entrée Port de Comberge<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°10'37"N 2°9'55"W <br></br>
+						<b>Repï¿½re :</b> Entrï¿½e Port de Comberge<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½10'37"N 2ï¿½9'55"W <br></br>
 						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
-						<name>Entrée Port de Comberge</name>
+						<name>Entrï¿½e Port de Comberge</name>
 						<styleUrl>#msn_icon3</styleUrl>
 						<Point>
 								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
+								<tesselÃ©>0</tesselate>
+								<altitudemode>clampToGround</altitudemode><coorÃ©ates>-2.5975,Ã©4195,0</coordinates>
 								</Point><Point>
-								<extrude>0</extrude>
-								<tesselate>0</tesselate>
+Ã©					<extrude>0</extÃ©e>
+						Ã©tesselate>0</tesselate>
 								<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
-								</Point><Point>
+	Ã©				</Point><Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
 								<altitudemode>clampToGround</altitudemode><coordinates>-2.541333333,47.388833,0</coordinates>
@@ -3920,20 +3905,20 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Roche du Sud est<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°10'27"N 2°26'1"W <br></br>
+						<b>Repï¿½re :</b> Roche du Sud est<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½10'27"N 2ï¿½26'1"W <br></br>
 						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
 						<name>Roche du Sud est</name>
 						<styleUrl>#msn_icon18</styleUrl>
 						<Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
+								<Ã©itudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</Ã©rdinates>
 								</Point><Point>
-								<extrude>0</extrude>
-								<tesselate>0</tesselate>
+								<extrude>0Ã©xtrude>
+								<tesÃ©ate>0</teÃ©late>
 								<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
@@ -4083,21 +4068,21 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> SE Lambarde<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°10'6"N 2°20'42"W <br></br>
+						<b>Repï¿½re :</b> SE Lambarde<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½10'6"N 2ï¿½20'42"W <br></br>
 						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
 						<name>SE Lambarde</name>
 						<styleUrl>#msn_icon21</styleUrl>
 						<Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
-								</Point><Point>
+								<altitudemode>clampToÃ©und</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
+							Ã©Point><Point>
 								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
+				Ã©	<tesselate>0</tesseÃ©e>
+					Ã©<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
@@ -4250,21 +4235,21 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> 1 Grand Chenal<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°10'1"N 2°18'18"W <br></br>
+						<b>Repï¿½re :</b> 1 Grand Chenal<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½10'1"N 2ï¿½18'18"W <br></br>
 						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
 						<name>1 Grand Chenal</name>
 						<styleUrl>#msn_icon15</styleUrl>
 						<Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
-								</Point><Point>
+								<altitudemode>clampToGrouÃ©/altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
+								</PÃ©t><Point>
 								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
+								<teÃ©late>0</tesselate>
+	Ã©				<altÃ©demode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
@@ -4421,21 +4406,21 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> La Gravette<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°9'53"N 2°13'1"W <br></br>
+						<b>Repï¿½re :</b> La Gravette<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½9'53"N 2ï¿½13'1"W <br></br>
 						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
 						<name>La Gravette</name>
 						<styleUrl>#msn_icon19</styleUrl>
 						<Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
+								<altitudemode>clampToGround</altitudemode>Ã©ordinates>-2.5975,47.4195,0</coordinates>
 								</Point><Point>
-								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
+				Ã©	<extrude>0</extrude>
+								<tesselate>0</tesÃ©ate>
+								<altituÃ©ode>clamÃ©Ground</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
@@ -4596,21 +4581,21 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Le Cormier<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°9'33"N 2°10'46"W <br></br>
+						<b>Repï¿½re :</b> Le Cormier<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½9'33"N 2ï¿½10'46"W <br></br>
 						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
 						<name>Le Cormier</name>
 						<styleUrl>#msn_icon3</styleUrl>
 						<Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
+								<altitudemode>clampToGround</altitudemode><coordinatesÃ©.5975,47.4195,0</coordinates>
 								</Point><Point>
-								<extrude>0</extrude>
+								<extrudeÃ©/extrude>
 								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
+			Ã©		<altitudemode>clamÃ©Ground</Ã©itudemode><coordinates>-2.54683333,47.393833,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
@@ -4775,21 +4760,20 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Lancastria<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°8'56"N 2°20'19"W <br></br>
+						<b>Repï¿½re :</b> Lancastria<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½8'56"N 2ï¿½20'19"W <br></br>
 						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
 						<name>Lancastria</name>
 						<styleUrl>#msn_icon6</styleUrl>
 						<Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
+								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,4Ã©195,0</coordinates>
 								</Point><Point>
-								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
+								<extrude>0</extrudÃ©								<tesselate>0</tesselate>
+								<altiÃ©emode>clampToGround<Ã©titudemoÃ©<coordinates>-2.54683333,47.393833,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
@@ -4958,25 +4942,25 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Bouée de Préfailles<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°8'49"N 2°14'51"W <br></br>
+						<b>Repï¿½re :</b> Bouï¿½e de Prï¿½failles<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½8'49"N 2ï¿½14'51"W <br></br>
 						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
-						<name>Bouée de Préfailles</name>
+						<name>Bouï¿½e de Prï¿½failles</name>
 						<styleUrl>#msn_icon17</styleUrl>
 						<Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
+								<altitudemode>clampToGround</altitudemode><coordinates>Ã©5975,47.4195,0</coordinates>
+								</Point><Point>
+								<extrude>Ã©extrude>
+			Ã©		<tessÃ©te>0</tesselate>
+								<altitudeÃ©e>clampToGround</altÃ©demode><Ã©rdinates>-2.54683333,47.393833,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
-								</Point><Point>
-								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.541333333,47.388833,0</coordinates>
+								<tesselate>0</tessÃ©te>
+			Ã©		<altitudemode>clampToGround</altitudemode><coordinates>-2.541333333,47.388833,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
@@ -5145,25 +5129,25 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> La Couronnée<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°7'36"N 2°20'6"W <br></br>
+						<b>Repï¿½re :</b> La Couronnï¿½e<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½7'36"N 2ï¿½20'6"W <br></br>
 						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
-						<name>La Couronnée</name>
+						<name>La Couronnï¿½e</name>
 						<styleUrl>#msn_icon15</styleUrl>
 						<Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
 								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
+	Ã©				</Point><Point>
+								<extrude>0</extrude>
+								<tesselate>0<Ã©sselate>
+								<aÃ©tudemode>clampToGround</altiÃ©emode><coordinates>-Ã©4683333,Ã©393833,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
-								</Point><Point>
-								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.541333333,47.388833,0</coordinates>
+								<altitudemode>cÃ©pToGround</altitudemode><coordinates>-2.541333333,47.388833,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
@@ -5336,25 +5320,23 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Info St Nazaire<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°16'27"N 2°12'48"W <br></br>
+						<b>Repï¿½re :</b> Info St Nazaire<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½16'27"N 2ï¿½12'48"W <br></br>
 						<b>Description:</b> <br></br>
-								<b><a href="http://maree.frbateaux.net/117"> Marées</a> </b><br></br>
-								<b><a href="http://www.meteoconsult.fr/mar/port/apercu_port.php?langue=fr&num_site=171"> Météo</a> </b><br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
+								<b><a href="http://maree.frbateaux.net/117"> Marï¿½es</a> </b><br></br>
+								<b><a href="http://www.meteoconsult.fr/mar/port/apercu_port.php?langue=fr&num_site=171"> Mï¿½tï¿½o</a> </b><br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
 						<name>Info St Nazaire</name>
-						<styleUrl>#msn_icon45</styleUrl>
+						<styleUrl>#mÃ©icon45</styleUrl>
 						<Point>
 								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
+								<Ã©selate>0</tesselate>
+								<altitudemode>clampToGÃ©nd</altitudemode><coÃ©inates>-2Ã©75,47.4195,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
-								</Point><Point>
-								<extrude>0</extrude>
+								<tesselate>0</tesselatÃ©								<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
+								</Point><PÃ©tÃ©							<extrude>0</extrude>
 								<tesselate>0</tesselate>
 								<altitudemode>clampToGround</altitudemode><coordinates>-2.541333333,47.388833,0</coordinates>
 								</Point><Point>
@@ -5533,25 +5515,25 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Info Trentemoult<br></br>
-						<b>Coordonnées GPS (DMS): </b>47°11'38"N 1°34'40"W <br></br>
+						<b>Repï¿½re :</b> Info Trentemoult<br></br>
+						<b>Coordonnï¿½es GPS (DMS): </b>47ï¿½11'38"N 1ï¿½34'40"W <br></br>
 						<b>Description:</b> <br></br>
-								<b><a href=""> Marées</a> </b><br></br>
-								<b><a href="http://www.meteoconsult.fr/mar/port/apercu_port.php?langue=fr&num_site=170"> Météo</a> </b><br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
+								<b><a href=""> Marï¿½es</a> </b><br></br>
+								<b><a href="http://www.meteoconsult.fr/mar/port/apercu_port.php?langue=fr&num_site=170"> Mï¿½tï¿½o</a> </b><br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
 						<name>Info Trentemoult</name>
 						<styleUrl>#msn_icon45</styleUrl>
 						<Point>
+								<Ã©rude>0</extrude>
+								<tesselate>0</tesselate>
+								<altitudemodÃ©lampToGround</altitudemode><coordinates>-2.5975,47.4Ã©,0</coordinates>
+			Ã©		</PointÃ©oint>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
+								<altÃ©demode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
 								</Point><Point>
-								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
-								</Point><Point>
-								<extrude>0</extrude>
+								<Ã©rÃ©>0</extrude>
 								<tesselate>0</tesselate>
 								<altitudemode>clampToGround</altitudemode><coordinates>-2.541333333,47.388833,0</coordinates>
 								</Point><Point>
@@ -5734,31 +5716,30 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> test guy<br></br>
+						<b>Repï¿½re :</b> test guy<br></br>
 						<table border="1">
 				<tr>
-				<th>Coordonnées</th>
+				<th>Coordonnï¿½es</th>
 				<th>Distsuivant</th>
 				<th>Cumul</th>
 				<th>CapSuivant</th>
-				<th>DisPréc</th>
-				<th>CapPréc</th>
-				</tr><tr><td>2°20'43"W 47°10'2"N</td><td>4</td><td>4</td><td>47</td><td></td><td></td></tr><tr><td>2°18'15"W 47°11'36"N</td><td>0</td><td>4</td><td>17</td><td>4</td><td>227</td></tr><tr><td>2°18'12"W 47°11'43"N</td><td>0</td><td>4</td><td>22</td><td>0</td><td>197</td></tr><tr><td>2°18'8"W 47°11'49"N</td><td>0</td><td>4</td><td>32</td><td>0</td><td>202</td></tr><tr><td>2°17'59"W 47°11'59"N</td><td>0</td><td>4</td><td>22</td><td>0</td><td>212</td></tr><tr><td>2°17'52"W 47°12'9"N</td><td>0</td><td>4</td><td>12</td><td>0</td><td>202</td></tr><tr><td>2°17'49"W 47°12'17"N</td><td>0</td><td>4</td><td>10</td><td>0</td><td>192</td></tr><tr><td>2°17'49"W 47°12'20"N</td><td>0</td><td>4</td><td>22</td><td>0</td><td>190</td></tr><tr><td>2°17'43"W 47°12'30"N</td><td>5</td><td>9</td><td>231</td><td>0</td><td>202</td></tr><tr><td>2°21'3"W 47°10'43"N</td><td>9</td><td>18</td><td>77</td><td>5</td><td>51</td></tr><tr><td>2°14'5"W 47°11'44"N</td><td>1</td><td>19</td><td>158</td><td>9</td><td>257</td></tr><tr><td>2°13'35"W 47°10'53"N</td><td>2</td><td>21</td><td>34</td><td>1</td><td>338</td></tr><tr><td>2°12'30"W 47°11'58"N</td><td>1</td><td>22</td><td>335</td><td>2</td><td>214</td></tr><tr><td>2°12'59"W 47°12'41"N</td><td>2</td><td>24</td><td>309</td><td>1</td><td>155</td></tr><tr><td>2°14'10"W 47°13'22"N</td><td></td><td>24</td><td></td><td>2</td><td>129</td></tr></table>
-						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
+				<th>DisPrï¿½c</th>
+				<th>CapPrï¿½c</th>
+				</tr><tr><td>2ï¿½20'43"W 47ï¿½10'2"N</td><td>4</td><td>4</td><td>47</td><td></td><td></td></tr><tr><td>2ï¿½18'15"W 47ï¿½11'36"N</td><td>0</td><td>4</td><td>17</td><td>4</td><td>227</td></tr><tr><td>2ï¿½18'12"W 47ï¿½11'43"N</td><td>0</td><td>4</td><td>22</td><td>0</td><td>197</td></tr><tr><Ã©2ï¿½18'8"W 47ï¿½11'49"N</td><td>0</td><td>4</td><td>32</td><td>0</td><td>2Ã©/td></tr><tr><td>2ï¿½17'59"W 47ï¿½11'59"N</td><td>0</td><td>4</td><td>22</td><td>Ã©td><td>212</td></tr><tr><td>2ï¿½17'52"W 47ï¿½12'9"N</td><td>0</td><td>4</td><td>12</td><td>0<Ã©><td>202</td></tr><tÃ©td>2ï¿½17'49"W 47ï¿½12'17"N</Ã©<td>0</td>Ã©>4</td><td>10</td><td>0</td><td>192</td></tr><tr><td>2ï¿½17'49"W 47ï¿½12'20"N<Ã©><td>0</tdÃ©d>4</td><td>22</td><td>0</td><td>190</td></tr><tr><td>2ï¿½17'43"W 47ï¿½12'30"N</td>Ã©>5</td><tdÃ©/td><td>231</td><td>0</td><td>202</td></tr><tr><td>2ï¿½21'3"W 47ï¿½10'43"N</td><td>Ã©td><td>18Ã©d><td>77</td><td>5</td><td>51</td></tr><tr><td>2ï¿½14'5"W 47ï¿½11'44"N</td><td>1</tÃ©td>19</td>Ã©>158</td><td>9</td><td>257</td></tr><tr><td>2ï¿½13'35"W 47ï¿½10'53"N</td><td>2</td>Ã©>21</td><tÃ©4</td><td>1</td><td>338</td></tr><tr><td>2ï¿½12'30"W 47ï¿½11'58"N</td><td>1</td><tÃ©2</td><td>Ã©</td><td>2</td><td>214</td></tr><tr><td>2ï¿½12'59"W 47ï¿½12'41"N</td><td>2</td><td>Ã©/td><td>30Ã©td><td>1</td><td>155</td></tr><tr><td>2ï¿½14'10"W 47ï¿½13'22"N</td><td></td><td>24<Ã©><td></td>Ã©>2</td><td>129</td></tr></table>
+						<b>Description:</b> <br></br><b>AttributsÃ©b><br></bÃ©]]><![CDATA[ ]]></description>
 						<name>test guy</name>
-						<styleUrl>#msn_icon42</styleUrl>
+						<styleUrl>#msnÃ©on42</styÃ©rl>
 						<Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
-								</Point><Point>
+	Ã©				<altitÃ©mode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
+		Ã©			</PointÃ©oint>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
-								</Point><Point>
-								<extrude>0</extrude>
+								<altiÃ©emode>clamÃ©Ground</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
+								<Ã©int><PointÃ©							<extrude>0</extrude>
 								<tesselate>0</tesselate>
 								<altitudemode>clampToGround</altitudemode><coordinates>-2.541333333,47.388833,0</coordinates>
 								</Point><Point>
@@ -5945,33 +5926,32 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> test guy<br></br>
+						<b>Repï¿½re :</b> test guy<br></br>
 						<table border="1">
 				<tr>
-				<th>Coordonnées</th>
+				<th>Coordonnï¿½es</th>
 				<th>Distsuivant</th>
 				<th>Cumul</th>
 				<th>CapSuivant</th>
-				<th>DisPréc</th>
-				<th>CapPréc</th>
-				</tr><tr><td>2°20'43"W 47°10'2"N</td><td>4</td><td>4</td><td>47</td><td></td><td></td></tr><tr><td>2°18'15"W 47°11'36"N</td><td>0</td><td>4</td><td>17</td><td>4</td><td>227</td></tr><tr><td>2°18'12"W 47°11'43"N</td><td>0</td><td>4</td><td>22</td><td>0</td><td>197</td></tr><tr><td>2°18'8"W 47°11'49"N</td><td>0</td><td>4</td><td>32</td><td>0</td><td>202</td></tr><tr><td>2°17'59"W 47°11'59"N</td><td>0</td><td>4</td><td>22</td><td>0</td><td>212</td></tr><tr><td>2°17'52"W 47°12'9"N</td><td>0</td><td>4</td><td>12</td><td>0</td><td>202</td></tr><tr><td>2°17'49"W 47°12'17"N</td><td>0</td><td>4</td><td>10</td><td>0</td><td>192</td></tr><tr><td>2°17'49"W 47°12'20"N</td><td>0</td><td>4</td><td>22</td><td>0</td><td>190</td></tr><tr><td>2°17'43"W 47°12'30"N</td><td>5</td><td>9</td><td>231</td><td>0</td><td>202</td></tr><tr><td>2°21'3"W 47°10'43"N</td><td>9</td><td>18</td><td>77</td><td>5</td><td>51</td></tr><tr><td>2°14'5"W 47°11'44"N</td><td>1</td><td>19</td><td>158</td><td>9</td><td>257</td></tr><tr><td>2°13'35"W 47°10'53"N</td><td>2</td><td>21</td><td>34</td><td>1</td><td>338</td></tr><tr><td>2°12'30"W 47°11'58"N</td><td>1</td><td>22</td><td>335</td><td>2</td><td>214</td></tr><tr><td>2°12'59"W 47°12'41"N</td><td>2</td><td>24</td><td>309</td><td>1</td><td>155</td></tr><tr><td>2°14'10"W 47°13'22"N</td><td></td><td>24</td><td></td><td>2</td><td>129</td></tr></table>
-						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
-						<name>test guy</name>
-						<styleUrl>#msn_icon42</styleUrl>
+				<th>DisPrï¿½c</th>
+				<th>CapPrï¿½c</th>
+				</tr><tr><td>2ï¿½20'43"W 47ï¿½10'2"N</td><td>4</td><td>4</td><td>47</td><td></td><td></td></tr><tr><td>2ï¿½18'15"W 47ï¿½11'36"N</td><td>0</td><td>4</td><td>17</td><td>4</td><td>227</td></tr><tr><td>2ï¿½18'12"W 47ï¿½11'43"N</td><td>0</td><td>4</td><td>22</td><td>0</td><td>197</td></tr><tr><td>2ï¿½18'8"W 47ï¿½11'49"N</td><td>0</td><td>4</td><td>32</td><td>0</td><tÃ©02</td></tr><tr><td>2ï¿½17'59"W 47ï¿½11'59"N</td><td>0</td><td>4</td><td>2Ã©td><td>0</td><td>212</td></tr><tr><td>2ï¿½17'52"W 47ï¿½12'9"N</td><td>0</td><td>4Ã©d><td>12</td><td>0</td><td>202</td></tr><tr><td>2ï¿½17'49"W 47ï¿½12'17"N</td><td>0</td><td>4<Ã©><td>10</td><td>0</tÃ©td>192</td></tr><tr><td>2Ã©'49"W 47ï¿½1Ã©0"N</td><td>0</td><td>4</td><td>22</td><td>0</td><td>190</td></tr><tr><td>Ã©7'43"W 47ï¿½Ã©30"N</td><td>5</td><td>9</td><td>231</td><td>0</td><td>202</td></tr><tr><td>2ï¿½2Ã©"W 47ï¿½10'4Ã©</td><td>9</td><td>18</td><td>77</td><td>5</td><td>51</td></tr><tr><td>2ï¿½14'5"WÃ©ï¿½11'44"N<Ã©><td>1</td><td>19</td><td>158</td><td>9</td><td>257</td></tr><tr><td>2ï¿½13'35"W Ã©10'53"N</tÃ©td>2</td><td>21</td><td>34</td><td>1</td><td>338</td></tr><tr><td>2ï¿½12'30"W 47ï¿½Ã©58"N</td><Ã©1</td><td>22</td><td>335</td><td>2</td><td>214</td></tr><tr><td>2ï¿½12'59"W 47ï¿½1Ã©1"N</td><tÃ©</td><td>24</td><td>309</td><td>1</td><td>155</td></tr><tr><td>2ï¿½14'10"W 47ï¿½13'Ã©N</td><td>Ã©d><td>24</td><td></td><td>2</td><td>129</td></tr></table>
+						<b>Description:Ã©> <br></brÃ©>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
+						<name>test guy</naÃ©
+						<sÃ©eUrl>#msn_icon42</styleUrl>
 						<Point>
 								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
+								Ã©sselate>0Ã©esselate>
+								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,Ã©4195,0</coÃ©inates>
 								</Point><Point>
 								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
+								<tesselate>Ã©tesselate>Ã©						<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.39383Ã©</coordinaÃ©>
 								</Point><Point>
 								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.541333333,47.388833,0</coordinates>
+								<tesselate>0</tessÃ©te>
+						Ã©altitudemode>clampToGround</altitudemode><coordinates>-2.541333333,47.388833,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
@@ -6160,33 +6140,31 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> test guy<br></br>
+						<b>Repï¿½re :</b> test guy<br></br>
 						<table border="1">
 				<tr>
-				<th>Coordonnées</th>
+				<th>Coordonnï¿½es</th>
 				<th>Distsuivant</th>
 				<th>Cumul</th>
 				<th>CapSuivant</th>
-				<th>DisPréc</th>
-				<th>CapPréc</th>
-				</tr><tr><td>2°20'43"W 47°10'2"N</td><td>4</td><td>4</td><td>47</td><td></td><td></td></tr><tr><td>2°18'15"W 47°11'36"N</td><td>0</td><td>4</td><td>17</td><td>4</td><td>227</td></tr><tr><td>2°18'12"W 47°11'43"N</td><td>0</td><td>4</td><td>22</td><td>0</td><td>197</td></tr><tr><td>2°18'8"W 47°11'49"N</td><td>0</td><td>4</td><td>32</td><td>0</td><td>202</td></tr><tr><td>2°17'59"W 47°11'59"N</td><td>0</td><td>4</td><td>22</td><td>0</td><td>212</td></tr><tr><td>2°17'52"W 47°12'9"N</td><td>0</td><td>4</td><td>12</td><td>0</td><td>202</td></tr><tr><td>2°17'49"W 47°12'17"N</td><td>0</td><td>4</td><td>10</td><td>0</td><td>192</td></tr><tr><td>2°17'49"W 47°12'20"N</td><td>0</td><td>4</td><td>22</td><td>0</td><td>190</td></tr><tr><td>2°17'43"W 47°12'30"N</td><td>5</td><td>9</td><td>231</td><td>0</td><td>202</td></tr><tr><td>2°21'3"W 47°10'43"N</td><td>9</td><td>18</td><td>77</td><td>5</td><td>51</td></tr><tr><td>2°14'5"W 47°11'44"N</td><td>1</td><td>19</td><td>158</td><td>9</td><td>257</td></tr><tr><td>2°13'35"W 47°10'53"N</td><td>2</td><td>21</td><td>34</td><td>1</td><td>338</td></tr><tr><td>2°12'30"W 47°11'58"N</td><td>1</td><td>22</td><td>335</td><td>2</td><td>214</td></tr><tr><td>2°12'59"W 47°12'41"N</td><td>2</td><td>24</td><td>309</td><td>1</td><td>155</td></tr><tr><td>2°14'10"W 47°13'22"N</td><td></td><td>24</td><td></td><td>2</td><td>129</td></tr></table>
-						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
-						<name>test guy</name>
+				<th>DisPrï¿½c</th>
+				<th>CapPrï¿½c</th>
+				</tr><tr><td>2ï¿½20'43"W 47ï¿½10'2"N</td><td>4</td><td>4</td><td>47</td><td></td><td></td></tr><tr><td>2ï¿½18'15"W 47ï¿½11'36"N</td><td>0</td><td>4</td><td>17</td><td>4</td><td>227</td></tr><tr><td>2ï¿½18'12"W 47ï¿½11'43"N</td><td>0</td><td>4</td><td>22</td><td>0</td><td>197</td></tr><tr><td>2ï¿½18'8"W 47ï¿½11'49"N</td><td>0</td><td>4</td><td>32</td><td>0</td><td>202</td></tr><tr><td>2ï¿½17'59"W 47ï¿½11'59"N</td><td>0</td><td>4</td><tÃ©2</td><td>0</td><td>212</td></tr><tr><td>2ï¿½17'52"W 47ï¿½12'9"N</td><td>0Ã©d><td>4</td><td>12</td><td>0</td><td>202</td></tr><tr><td>2ï¿½17'49"W 47ï¿½12'17"Ã©td><td>0</td><td>4</td><td>10</td><td>0</td><td>192</td></tr><tr><td>2ï¿½17'49"W 47ï¿½12'20"NÃ©d><td>0</td><td>4</tÃ©td>22</td><td>0</td><td>1Ã©/td></tr><Ã©<td>2ï¿½17'43"W 47ï¿½12'30"N</td><td>5</td><td>9</td><td>231</td><td>0</td><tdÃ©2</td></trÃ©r><td>2ï¿½21'3"W 47ï¿½10'43"N</td><td>9</td><td>18</td><td>77</td><td>5</td><td>51<Ã©></tr><tr>Ã©>2ï¿½14'5"W 47ï¿½11'44"N</td><td>1</td><td>19</td><td>158</td><td>9</td><td>257</tdÃ©tr><tr><tÃ©ï¿½13'35"W 47ï¿½10'53"N</td><td>2</td><td>21</td><td>34</td><td>1</td><td>338</td><Ã©><tr><td>2Ã©'30"W 47ï¿½11'58"N</td><td>1</td><td>22</td><td>335</td><td>2</td><td>214</td></tÃ©tr><td>2ï¿½1Ã©9"W 47ï¿½12'41"N</td><td>2</td><td>24</td><td>309</td><td>1</td><td>155</td></trÃ©r><td>2ï¿½14Ã©"W 47ï¿½13'22"N</td><td></td><td>24</td><td></td><td>2</td><td>129</td></tr></tabÃ©
+						<b>Ã©cription:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></descriptionÃ©					<nameÃ©st guy</name>
 						<styleUrl>#msn_icon42</styleUrl>
 						<Point>
-								<extrude>0</extrude>
+								<extrÃ©>0</extruÃ©
 								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
+								<altitudemode>clampToGround</altitudeÃ©e><coordiÃ©es>-2.5975,47.4195,0</coordinates>
 								</Point><Point>
-								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
+								<extrude>0</exÃ©de>
+						Ã©tesselate>0</tesselate>
+								<altitudemode>clampToGround</altitudemode><coordÃ©tes>-2.546Ã©33,47.393833,0</coordinates>
 								</Point><Point>
-								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.541333333,47.388833,0</coordinates>
+								<extrude>0</extrude>Ã©						<tesÃ©ate>0</tesselate>
+								<altitudemode>clampToGround</altitudemode><coordinates>Ã©541333333,Ã©388833,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
@@ -6379,17 +6357,17 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> test guy<br></br>
+						<b>Repï¿½re :</b> test guy<br></br>
 						<table border="1">
 				<tr>
-				<th>Coordonnées</th>
+				<th>Coordonnï¿½es</th>
 				<th>Distsuivant</th>
 				<th>Cumul</th>
 				<th>CapSuivant</th>
-				<th>DisPréc</th>
-				<th>CapPréc</th>
+				<th>DisPrï¿½c</th>
+				<th>CapPrï¿½c</th>
 				</tr></table>
 						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
 						<name>test guy</name>
@@ -6401,13 +6379,13 @@
 								</Point><Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
+								<altitudemode>clampToGround</altitudemode><coordiÃ©es>-2.54683333,47.393833,0</coordinates>
 								</Point><Point>
-								<extrude>0</extrude>
+					Ã©<extrude>0</extrude>
 								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.541333333,47.388833,0</coordinates>
-								</Point><Point>
-								<extrude>0</extrude>
+								<altitudemode>cÃ©pToGround</altitudemode><coordinates>-2.541333333,47.388833,0</coordinates>
+								</PoiÃ©<Point>
+								<extÃ©e>0</extrude>
 								<tesselate>0</tesselate>
 								<altitudemode>clampToGround</altitudemode><coordinates>-2.58666667,47.378833,0</coordinates>
 								</Point><Point>
@@ -6602,35 +6580,35 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> test guy<br></br>
+						<b>Repï¿½re :</b> test guy<br></br>
 						<table border="1">
 				<tr>
-				<th>Coordonnées</th>
+				<th>Coordonnï¿½es</th>
 				<th>Distsuivant</th>
 				<th>Cumul</th>
 				<th>CapSuivant</th>
-				<th>DisPréc</th>
-				<th>CapPréc</th>
-				</tr><tr><td>2°20'43"W 47°10'2"N</td><td>4.42</td><td>4.42</td><td>47.1</td><td></td><td></td></tr><tr><td>2°18'15"W 47°11'36"N</td><td>0.23</td><td>4.65</td><td>17.6</td><td>4.42</td><td>227.1</td></tr><tr><td>2°18'12"W 47°11'43"N</td><td>0.21</td><td>4.86</td><td>22.4</td><td>0.23</td><td>197.6</td></tr><tr><td>2°18'8"W 47°11'49"N</td><td>0.39</td><td>5.25</td><td>32.6</td><td>0.21</td><td>202.4</td></tr><tr><td>2°17'59"W 47°11'59"N</td><td>0.36</td><td>5.61</td><td>22.9</td><td>0.39</td><td>212.6</td></tr><tr><td>2°17'52"W 47°12'9"N</td><td>0.27</td><td>5.88</td><td>12.8</td><td>0.36</td><td>202.9</td></tr><tr><td>2°17'49"W 47°12'17"N</td><td>0.1</td><td>5.98</td><td>10.5</td><td>0.27</td><td>192.8</td></tr><tr><td>2°17'49"W 47°12'20"N</td><td>0.32</td><td>6.3</td><td>22</td><td>0.1</td><td>190.5</td></tr><tr><td>2°17'43"W 47°12'30"N</td><td>5.57</td><td>11.87</td><td>231.8</td><td>0.32</td><td>202</td></tr><tr><td>2°21'3"W 47°10'43"N</td><td>9.37</td><td>21.24</td><td>77.8</td><td>5.57</td><td>51.8</td></tr><tr><td>2°14'5"W 47°11'44"N</td><td>1.74</td><td>22.98</td><td>158.4</td><td>9.37</td><td>257.8</td></tr><tr><td>2°13'35"W 47°10'53"N</td><td>2.51</td><td>25.49</td><td>34.7</td><td>1.74</td><td>338.4</td></tr><tr><td>2°12'30"W 47°11'58"N</td><td>1.53</td><td>27.02</td><td>335.7</td><td>2.51</td><td>214.7</td></tr><tr><td>2°12'59"W 47°12'41"N</td><td>2.03</td><td>29.05</td><td>309.8</td><td>1.53</td><td>155.7</td></tr><tr><td>2°14'10"W 47°13'22"N</td><td></td><td>29.05</td><td></td><td>2.03</td><td>129.8</td></tr></table>
-						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
-						<name>test guy</name>
+				<th>DisPrï¿½c</th>
+				<th>CapPrï¿½c</th>
+				</tr><tr><td>2ï¿½20'43"W 47ï¿½10'2"N</td><td>4.42</td><td>4.42</td><td>47.1</td><td></td><td></td></tr><tr><td>2ï¿½18'15"W 47ï¿½11'36"N</td><td>0.23</td><td>4.65</td><td>17.6</td><td>4.42</td><td>227.1</td></tr><tr><td>2ï¿½18'12"W 47ï¿½11'43"N</td><td>0.21</td><td>4.86</td><td>22.4</td><td>0.23</td><td>197.6</td></tr><tr><td>2ï¿½18'8"W 47ï¿½11'49"N</td><td>0.39</td><td>5.25</td><td>32.6</td><td>0.21</td><td>202.4</td></tr><tr><td>2ï¿½17'59"W 47ï¿½11'59"N</td><td>0.36</td><td>5.61</td><td>22.9</td><td>0.39</td><tdÃ©2.6</td></tr><tr><td>2ï¿½17'52"W 47ï¿½12'9"N</td><td>0.27</td><td>5.88</tdÃ©d>12.8</td><td>0.36</td><td>202.9</td></tr><tr><td>2ï¿½17'49"W 47ï¿½12'17"N</td><Ã©0.1</td><td>5.98</td><td>10.5</td><td>0.27</td><td>192.8</td></tr><tr><td>2ï¿½17'49"W 47ï¿½12Ã©"N</td><td>0.32</td>Ã©>6.3</td><td>22</td><td>0Ã©/td><td>19Ã©</td></tr><tr><td>2ï¿½17'43"W 47ï¿½12'30"N</td><td>5.57</td><td>11.87</td><td>231.8</tÃ©td>0.32</tÃ©td>202</td></tr><tr><td>2ï¿½21'3"W 47ï¿½10'43"N</td><td>9.37</td><td>21.24</td><td>77.8</td><td>Ã©7</td><td>Ã©8</td></tr><tr><td>2ï¿½14'5"W 47ï¿½11'44"N</td><td>1.74</td><td>22.98</td><td>158.4</td><td>9.37Ã©d><td>257Ã©/td></tr><tr><td>2ï¿½13'35"W 47ï¿½10'53"N</td><td>2.51</td><td>25.49</td><td>34.7</td><td>1.74</Ã©<td>338.4<Ã©></tr><tr><td>2ï¿½12'30"W 47ï¿½11'58"N</td><td>1.53</td><td>27.02</td><td>335.7</td><td>2.51</tdÃ©d>214.7</tÃ©/tr><tr><td>2ï¿½12'59"W 47ï¿½12'41"N</td><td>2.03</td><td>29.05</td><td>309.8</td><td>1.53</td>Ã©>155.7</tdÃ©tr><tr><td>2ï¿½14'10"W 47ï¿½13'22"N</td><td></td><td>29.05</td><td></td><td>2.03</td><td>129.8<Ã©></tr></taÃ©>
+						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></descriÃ©on>
+						Ã©me>test guy</name>
 						<styleUrl>#msn_icon42</styleUrl>
 						<Point>
-								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
+								<extrude>0</Ã©rude>
+			Ã©		<tesselate>0</tesselate>
+								<altitudemode>clampToGround</altitudemode><coordinates>-2Ã©75,47.419Ã©</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
-								</Point><Point>
+								<tesselate>0</tessÃ©te>
+						Ã©altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
+	Ã©				</PoinÃ©Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.541333333,47.388833,0</coordinates>
+								<altitudemode>claÃ©oGround</aÃ©tudemode><coordinates>-2.541333333,47.388833,0</coordinates>
 								</Point><Point>
-								<extrude>0</extrude>
+								<Ã©rude>0</exÃ©de>
 								<tesselate>0</tesselate>
 								<altitudemode>clampToGround</altitudemode><coordinates>-2.58666667,47.378833,0</coordinates>
 								</Point><Point>
@@ -6829,37 +6807,37 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> test guy<br></br>
+						<b>Repï¿½re :</b> test guy<br></br>
 						<table border="1">
 				<tr>
-				<th>Coordonnées</th>
+				<th>Coordonnï¿½es</th>
 				<th>Distsuivant</th>
 				<th>Cumul</th>
 				<th>CapSuivant</th>
-				<th>DisPréc</th>
-				<th>CapPréc</th>
-				</tr><tr><td>2°20'43"W 47°10'2"N</td><td>4.424</td><td>4.424</td><td>47</td><td></td><td></td></tr><tr><td>2°18'15"W 47°11'36"N</td><td>0.225</td><td>4.649</td><td>18.4</td><td>4.424</td><td>227</td></tr><tr><td>2°18'12"W 47°11'43"N</td><td>0.212</td><td>4.861</td><td>23.3</td><td>0.225</td><td>198.4</td></tr><tr><td>2°18'8"W 47°11'49"N</td><td>0.393</td><td>5.254</td><td>31.8</td><td>0.212</td><td>203.3</td></tr><tr><td>2°17'59"W 47°11'59"N</td><td>0.359</td><td>5.613</td><td>23.1</td><td>0.393</td><td>211.8</td></tr><tr><td>2°17'52"W 47°12'9"N</td><td>0.271</td><td>5.884</td><td>13.7</td><td>0.359</td><td>203.1</td></tr><tr><td>2°17'49"W 47°12'17"N</td><td>0.095</td><td>5.979</td><td>10.3</td><td>0.271</td><td>193.7</td></tr><tr><td>2°17'49"W 47°12'20"N</td><td>0.325</td><td>6.304</td><td>21.7</td><td>0.095</td><td>190.3</td></tr><tr><td>2°17'43"W 47°12'30"N</td><td>5.569</td><td>11.873</td><td>231.9</td><td>0.325</td><td>201.7</td></tr><tr><td>2°21'3"W 47°10'43"N</td><td>9.367</td><td>21.24</td><td>78</td><td>5.569</td><td>51.9</td></tr><tr><td>2°14'5"W 47°11'44"N</td><td>1.744</td><td>22.984</td><td>158.5</td><td>9.367</td><td>257.9</td></tr><tr><td>2°13'35"W 47°10'53"N</td><td>2.514</td><td>25.498</td><td>34.7</td><td>1.744</td><td>338.5</td></tr><tr><td>2°12'30"W 47°11'58"N</td><td>1.532</td><td>27.03</td><td>335.6</td><td>2.514</td><td>214.7</td></tr><tr><td>2°12'59"W 47°12'41"N</td><td>2.031</td><td>29.061</td><td>310</td><td>1.532</td><td>155.6</td></tr><tr><td>2°14'10"W 47°13'22"N</td><td></td><td>29.061</td><td></td><td>2.031</td><td>130</td></tr></table>
-						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
+				<th>DisPrï¿½c</th>
+				<th>CapPrï¿½c</th>
+				</tr><tr><td>2ï¿½20'43"W 47ï¿½10'2"N</td><td>4.424</td><td>4.424</td><td>47</td><td></td><td></td></tr><tr><td>2ï¿½18'15"W 47ï¿½11'36"N</td><td>0.225</td><td>4.649</td><td>18.4</td><td>4.424</td><td>227</td></tr><tr><td>2ï¿½18'12"W 47ï¿½11'43"N</td><td>0.212</td><td>4.861</td><td>23.3</td><td>0.225</td><td>198.4</td></tr><tr><td>2ï¿½18'8"W 47ï¿½11'49"N</td><td>0.393</td><td>5.254</td><td>31.8</td><td>0.212</td><td>203.3</td></tr><tr><td>2ï¿½17'59"W 47ï¿½11'59"N</td><td>0.359</td><td>5.613</td><td>23.1</td><td>0.393</td><td>211.8</td></tr><tr><td>2ï¿½17'52"W 47ï¿½12'9"N</td><td>0.271</tÃ©td>5.884</td><td>13.7</td><td>0.359</td><td>203.1</td></tr><tr><td>2ï¿½1Ã©9"W 47ï¿½12'17"N</td><td>0.095</td><td>5.979</td><td>10.3</td><td>0.271</td><tdÃ©3.7</td></tr><tr><td>2ï¿½17'49"W 47ï¿½12'20"N</td><td>0.325</td><td>6.304</td><td>21.7</td><tÃ©.095</td><td>190.3</Ã©</tr><tr><td>2ï¿½17'43"W 47Ã©'30"N</td>Ã©>5.569</td><td>11.873</td><td>231.9</td><td>0.325</td><td>201.7</td></tr><tr><td>2Ã©'3"W 47ï¿½10Ã©"N</td><td>9.367</td><td>21.24</td><td>78</td><td>5.569</td><td>51.9</td></tr><tr><td>2ï¿½14'5"Ã©7ï¿½11'44"N<Ã©><td>1.744</td><td>22.984</td><td>158.5</td><td>9.367</td><td>257.9</td></tr><tr><td>2ï¿½13'35"W Ã©10'53"N</Ã©<td>2.514</td><td>25.498</td><td>34.7</td><td>1.744</td><td>338.5</td></tr><tr><td>2ï¿½12'30"W 47Ã©'58"N</td>Ã©>1.532</td><td>27.03</td><td>335.6</td><td>2.514</td><td>214.7</td></tr><tr><td>2ï¿½12'59"W 47ï¿½12Ã©"N</td><tdÃ©031</td><td>29.061</td><td>310</td><td>1.532</td><td>155.6</td></tr><tr><td>2ï¿½14'10"W 47ï¿½13'22Ã©/td><td></Ã©<td>29.061</td><td></td><td>2.031</td><td>130</td></tr></table>
+						<b>Description:</b> <br><Ã©><b>AttribÃ©:</b><br></br> ]]><![CDATA[ ]]></description>
 						<name>test guy</name>
-						<styleUrl>#msn_icon42</styleUrl>
+						<styleUrl>#msn_Ã©n42</styleÃ©>
 						<Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
+								<altitudemoÃ©clampToGrÃ©d</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
+								</Point><Point>
+							Ã©xtrude>0<Ã©trude>
+								<tesselate>0</tesselate>
+								<altitudemode>clampToGround</altitudemode><coordiÃ©es>-2.5468Ã©3,47.393833,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
-								</Point><Point>
+								<tesselÃ©>0</tesselÃ©>
+								<altitudemode>clampToGround</altitudemode><coordinates>-2.541333333,47.388833,0</coordÃ©tes>
+					Ã©</Point><Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.541333333,47.388833,0</coordinates>
-								</Point><Point>
-								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.58666667,47.378833,0</coordinates>
+								<altitudeÃ©e>clampToGÃ©nd</altitudemode><coordinates>-2.58666667,47.378833,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
@@ -7060,9 +7038,9 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> Sans titre - Polygone<br></br>
+						<b>Repï¿½re :</b> Sans titre - Polygone<br></br>
 						
 						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
 						<name>Sans titre - Polygone</name>
@@ -7081,8 +7059,8 @@
 								<altitudemode>clampToGround</altitudemode><coordinates>-2.541333333,47.388833,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.58666667,47.378833,0</coordinates>
+								<tesselate>Ã©tesselate>
+								<altitudemode>clampToGround</altitudemode><coordinaÃ©>-2.58666667,47.378833,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
@@ -7292,44 +7270,44 @@
 						<Placemark>
 						<description><![CDATA[
 						<b>Region:</b> Le Croisic - Saint Gildas<br></br>
-						<b>Zone:</b> Côte Atlantique<br></br>
+						<b>Zone:</b> Cï¿½te Atlantique<br></br>
 						<b>Pays:</b> France<br></br>
-						<b>Repère :</b> La Pierre Percée St Florent<br></br>
+						<b>Repï¿½re :</b> La Pierre Percï¿½e St Florent<br></br>
 						<table border="1">
 				<tr>
-				<th>Coordonnées</th>
+				<th>Coordonnï¿½es</th>
 				<th>Distsuivant</th>
 				<th>Cumul</th>
 				<th>CapSuivant</th>
-				<th>DisPréc</th>
-				<th>CapPréc</th>
-				</tr><tr><td>1°23'14"W 47°16'53"N</td><td>1.445</td><td>1.445</td><td>16.2</td><td></td><td></td></tr><tr><td>1°22'55"W 47°17'36"N</td><td>1.388</td><td>2.833</td><td>52.5</td><td>1.445</td><td>196.2</td></tr><tr><td>1°22'5"W 47°18'3"N</td><td>1.534</td><td>4.367</td><td>65.9</td><td>1.388</td><td>232.5</td></tr><tr><td>1°21'1"W 47°18'22"N</td><td>2.282</td><td>6.649</td><td>38.1</td><td>1.534</td><td>245.9</td></tr><tr><td>1°19'56"W 47°19'18"N</td><td>1.97</td><td>8.619</td><td>51.8</td><td>2.282</td><td>218.1</td></tr><tr><td>1°18'45"W 47°19'56"N</td><td>1.067</td><td>9.686</td><td>38.8</td><td>1.97</td><td>231.8</td></tr><tr><td>1°18'14"W 47°20'22"N</td><td>2.002</td><td>11.688</td><td>82.5</td><td>1.067</td><td>218.8</td></tr><tr><td>1°16'43"W 47°20'29"N</td><td>1.302</td><td>12.99</td><td>93.2</td><td>2.002</td><td>262.5</td></tr><tr><td>1°15'44"W 47°20'27"N</td><td>1.102</td><td>14.092</td><td>77.5</td><td>1.302</td><td>273.2</td></tr><tr><td>1°14'54"W 47°20'34"N</td><td>1.45</td><td>15.542</td><td>64.6</td><td>1.102</td><td>257.5</td></tr><tr><td>1°13'54"W 47°20'54"N</td><td>0.708</td><td>16.25</td><td>57.2</td><td>1.45</td><td>244.6</td></tr><tr><td>1°13'27"W 47°21'6"N</td><td>1.625</td><td>17.875</td><td>79.5</td><td>0.708</td><td>237.2</td></tr><tr><td>1°12'14"W 47°21'15"N</td><td>1.16</td><td>19.035</td><td>72.1</td><td>1.625</td><td>259.5</td></tr><tr><td>1°11'23"W 47°21'26"N</td><td>1.233</td><td>20.268</td><td>59</td><td>1.16</td><td>252.1</td></tr><tr><td>1°10'35"W 47°21'46"N</td><td>1.489</td><td>21.757</td><td>62.7</td><td>1.233</td><td>239</td></tr><tr><td>1°9'34"W 47°22'7"N</td><td>1.002</td><td>22.759</td><td>66.9</td><td>1.489</td><td>242.6</td></tr><tr><td>1°8'52"W 47°22'19"N</td><td>1.126</td><td>23.885</td><td>114.5</td><td>1.002</td><td>246.9</td></tr><tr><td>1°8'5"W 47°22'5"N</td><td>0.602</td><td>24.487</td><td>105.5</td><td>1.126</td><td>294.5</td></tr><tr><td>1°7'38"W 47°22'0"N</td><td>1.622</td><td>26.109</td><td>80.1</td><td>0.602</td><td>285.5</td></tr><tr><td>1°6'25"W 47°22'8"N</td><td>1.192</td><td>27.301</td><td>94.7</td><td>1.622</td><td>260.1</td></tr><tr><td>1°5'30"W 47°22'5"N</td><td>1.166</td><td>28.467</td><td>67.9</td><td>1.192</td><td>274.7</td></tr><tr><td>1°4'41"W 47°22'19"N</td><td>0.899</td><td>29.366</td><td>107.6</td><td>1.166</td><td>247.9</td></tr><tr><td>1°4'1"W 47°22'11"N</td><td>0.657</td><td>30.023</td><td>97.1</td><td>0.899</td><td>287.6</td></tr><tr><td>1°3'31"W 47°22'8"N</td><td>1.033</td><td>31.056</td><td>116.1</td><td>0.657</td><td>277.1</td></tr><tr><td>1°2'49"W 47°21'54"N</td><td>1.342</td><td>32.398</td><td>89.7</td><td>1.033</td><td>296.1</td></tr><tr><td>1°1'47"W 47°21'54"N</td><td>0.571</td><td>32.969</td><td>82.4</td><td>1.342</td><td>269.7</td></tr><tr><td>1°1'21"W 47°21'57"N</td><td>0.737</td><td>33.706</td><td>102.3</td><td>0.571</td><td>262.4</td></tr><tr><td>1°0'48"W 47°21'52"N</td><td></td><td>33.706</td><td></td><td>0.737</td><td>282.3</td></tr></table>
-						<b>Description:</b> <br></br><b>Attributs:</b><br></br> ]]><![CDATA[ ]]></description>
-						<name>La Pierre Percée St Florent</name>
-						<styleUrl>#msn_icon42</styleUrl>
+				<th>DisPrï¿½c</th>
+				<th>CapPrï¿½c</th>
+				</tr><tr><td>1ï¿½23'14"W 47ï¿½16'53"N</td><td>1.445</td><td>1.445</td><td>16.2</td><td></td><td></td></tr><tr><td>1ï¿½22'55"W 47ï¿½17'36"N</td><td>1.388</td><td>2.833</td><td>52.5</td><td>1.445</td><td>196.2</td></tr><tr><td>1ï¿½22'5"W 47ï¿½18'3"N</td><td>1.534</td><td>4.367</td><td>65.9</td><td>1.388</td><td>232.5</td></tr><tr><td>1ï¿½21'1"W 47ï¿½18'22"N</td><td>2.282</td><td>6.649</td><td>38.1</td><td>1.534</td><td>245.9</td></tr><tr><td>1ï¿½19'56"W 47ï¿½19'18"N</td><td>1.97</td><td>8.619</td><td>51.8</td><td>2.282</td><td>218.1</td></tr><tr><td>1ï¿½18'45"W 47ï¿½19'56"N</td><td>1.067</td><td>9.686</td><td>38.8</td><td>1.97</td><td>231.8<Ã©></tr><tr><td>1ï¿½18'14"W 47ï¿½20'22"N</td><td>2.002</td><td>11.688</td><tÃ©2.5</td><td>1.067</td><Ã©218.8</td></tr><tr><td>1ï¿½16'43"W 47ï¿½20'29"N</td><td>1.302</td><td>12.99<Ã©><td>93.2</td><td>2.002</td><td>262.5</td></tr><tr><td>1ï¿½15'44"W 47ï¿½20'27"N</td><td>1.102Ã©d><td>14.092</td><tdÃ©.5</td><td>1.302</td><td>Ã©.2</td></tÃ©tr><td>1ï¿½14'54"W 47ï¿½20'34"N</td><td>1.45</td><td>15.542</td><td>64.6</td><td>1.102</tÃ©td>257.5</Ã©</tr><tr><td>1ï¿½13'54"W 47ï¿½20'54"N</td><td>0.708</td><td>16.25</td><td>57.2</td><td>1.45</td><tdÃ©4.6</td><Ã©><tr><td>1ï¿½13'27"W 47ï¿½21'6"N</td><td>1.625</td><td>17.875</td><td>79.5</td><td>0.708</td><td>2Ã©2</td></tÃ©tr><td>1ï¿½12'14"W 47ï¿½21'15"N</td><td>1.16</td><td>19.035</td><td>72.1</td><td>1.625</td><td>259.Ã©td></tr><tÃ©td>1ï¿½11'23"W 47ï¿½21'26"N</td><td>1.233</td><td>20.268</td><td>59</td><td>1.16</td><td>252.1</tdÃ©tr><tr><tdÃ©10'35"W 47ï¿½21'46"N</td><td>1.489</td><td>21.757</td><td>62.7</td><td>1.233</td><td>239</td></tÃ©tr><td>1ï¿½9Ã©"W 47ï¿½22'7"N</td><td>1.002</td><td>22.759</td><td>66.9</td><td>1.489</td><td>242.6</td></tr><tr>Ã©>1ï¿½8'52"W Ã©22'19"N</td><td>1.126</td><td>23.885</td><td>114.5</td><td>1.002</td><td>246.9</td></tr><tr><tdÃ©8'5"W 47ï¿½2Ã©"N</td><td>0.602</td><td>24.487</td><td>105.5</td><td>1.126</td><td>294.5</td></tr><tr><td>1ï¿½7'3Ã© 47ï¿½22'0"NÃ©d><td>1.622</td><td>26.109</td><td>80.1</td><td>0.602</td><td>285.5</td></tr><tr><td>1ï¿½6'25"W 4Ã©2'8"N</td>Ã©>1.192</td><td>27.301</td><td>94.7</td><td>1.622</td><td>260.1</td></tr><tr><td>1ï¿½5'30"W 47ï¿½22Ã©N</td><td>Ã©66</td><td>28.467</td><td>67.9</td><td>1.192</td><td>274.7</td></tr><tr><td>1ï¿½4'41"W 47ï¿½22'19"NÃ©d><td>0.89Ã©td><td>29.366</td><td>107.6</td><td>1.166</td><td>247.9</td></tr><tr><td>1ï¿½4'1"W 47ï¿½22'11"N</tdÃ©d>0.657</tÃ©td>30.023</td><td>97.1</td><td>0.899</td><td>287.6</td></tr><tr><td>1ï¿½3'31"W 47ï¿½22'8"N</td><tÃ©.033</td><Ã©31.056</td><td>116.1</td><td>0.657</td><td>277.1</td></tr><tr><td>1ï¿½2'49"W 47ï¿½21'54"N</td><td>Ã©42</td><tÃ©2.398</td><td>89.7</td><td>1.033</td><td>296.1</td></tr><tr><td>1ï¿½1'47"W 47ï¿½21'54"N</td><td>0.5Ã©/td><td>3Ã©69</td><td>82.4</td><td>1.342</td><td>269.7</td></tr><tr><td>1ï¿½1'21"W 47ï¿½21'57"N</td><td>0.737</tÃ©td>33.70Ã©td><td>102.3</td><td>0.571</td><td>262.4</td></tr><tr><td>1ï¿½0'48"W 47ï¿½21'52"N</td><td></td><td>3Ã©06</td><tÃ©/td><td>0.737</td><td>282.3</td></tr></table>
+						<b>Description:</b> <br></br><b>Attributs:<Ã©<br></br>Ã©><![CDATA[ ]]></description>
+						<name>La Pierre Percï¿½e St Florent</name>
+						<styleUrl>#msÃ©con42</stÃ©Url>
 						<Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
+								<altitÃ©mode>clamÃ©Ground</altitudemode><coordinates>-2.5975,47.4195,0</coordinates>
 								</Point><Point>
+							Ã©xtrude>0Ã©xtrude>
+								<tesselate>0</tesselate>
+								<altitudemode>clampToGround</altitudemode><coorÃ©ates>-2.5Ã©3333,47.393833,0</coordinates>
+								</Point><Point>
+								<extrude>0</extrude>
+								<tesÃ©ate>0</teÃ©late>
+								<altitudemode>clampToGround</altitudemode><coordinates>-2.541333333,47.388833,0</cÃ©dinates>
+Ã©					</Point><Point>
 								<extrude>0</extrude>
 								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.54683333,47.393833,0</coordinates>
+								<altiÃ©emode>claÃ©oGround</altitudemode><coordinates>-2.58666667,47.378833,0</coordinates>
 								</Point><Point>
-								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.541333333,47.388833,0</coordinates>
-								</Point><Point>
-								<extrude>0</extrude>
-								<tesselate>0</tesselate>
-								<altitudemode>clampToGround</altitudemode><coordinates>-2.58666667,47.378833,0</coordinates>
-								</Point><Point>
-								<extrude>0</extrude>
+Ã©					<extÃ©e>0</extrude>
 								<tesselate>0</tesselate>
 								<altitudemode>clampToGround</altitudemode><coordinates>-2.57016667,47.375167,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>
-								<tesselate>0</tesselate>
+					Ã©<tesselate>0</tesselate>
 								<altitudemode>clampToGround</altitudemode><coordinates>-2.53333333,47.361,0</coordinates>
 								</Point><Point>
 								<extrude>0</extrude>

@@ -713,7 +713,7 @@ class gChart
 		header('Content-type: image/png');
 		if ($post) {
 			$this->setDataSetString();
-			$url = 'http://chart.apis.google.com/chart?chid=' . md5(uniqid(rand(), true));
+			$url = 'https://chart.apis.google.com/chart?chid=' . md5(uniqid(rand(), true));
 			$context = stream_context_create(
 				array('http' => array(
 					'method' => 'POST',

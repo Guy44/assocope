@@ -101,7 +101,7 @@ if ($g_user ["name"] != "administrator") {
 	$g_acces_public_seulement = $data [0] ["acces_public"];
 	$g_contexte_o_n = $data [0] ["contexte_o_n"];
 	$g_sexe = $data [0] ["sexe"];
-	$g_wiki_url = "http://www.wikistoma.org/wiki/index.php?title=";
+	$g_wiki_url = atkconfig("url_assocope")."wiki/index.php?title=";
 	$g_tooltip_menu_o_n = $data [0] ["tooltip_menu_o_n"];
 	$g_icones_detaillees_o_n = $data [0] ["icones_detaillees_o_n"];
 	$g_icones_estampillage_o_n = $data [0] ["icones_estampillage_o_n"];
@@ -246,8 +246,8 @@ if ("\$Name$" != "\$" . "Name:  $")
 	$version .= " ($Name$)";
 $res .= '  <meta name="atkversion" content="' . $version . '" />' . "\n";
 // GG Pour test en local
-//$urlsite = 'http://' . atkHost () . '/association/';
-$urlsite = 'http://' . atkHost () . '/association/';
+
+$urlsite = atkconfig("http_https") . atkHost () . '/association/';
 $res .= '<base href="' . $urlsite . '" />' . "\n";
 $res .= '<meta name="Author" content="Guy Gourmellet">';
 $res .= '<meta name="Copyright" content="AssoCope">';

@@ -109,7 +109,6 @@ $aide=href(dispatch_url("search.search", "wiki",	array("title"=>"Menu_haut")),  
 $menutip=fairetooltip("menu_tooltip_topmenu_Tousmenus");
 $tousmenus=href(dispatch_url("search.search", "tousmenus",	array("title"=>"Tous menus")),    "?",	SESSION_NEW,	false, ' target="_blank"'. $menutip);
 	
-//			$aide=href("http://www.wikistoma.org/wiki/index.php?title=Menu_haut",$aided, SESSION_NEW, false, 'target="_blank"'. $menutip);
 $menutip=fairetooltip("menu_tooltip_topmenu_Faqs");
 $duree=GetWikiPageAge("AssoCope_faqs");
 if (empty($duree))
@@ -128,7 +127,6 @@ else
 {		$faqs='<b>Faqs</b>';
 }
 $faqs=href(dispatch_url("search.search", "wiki",	array("title"=>"AssoCope_faqs")),    $faqs,	SESSION_NEW,	false, ' target="_blank"'. $menutip);
-//			$faqs=href("http://www.wikistoma.org/wiki/index.php?title=AssoCope_faqs", $faqs, SESSION_NEW, false, 'target="_blank"' . $menutip);
 $duree=GetWikiPageAge("AssoCope_nouveaut%C3%A9s");
 if (empty($duree))
 {
@@ -147,7 +145,6 @@ else
 }
 $menutip=fairetooltip("menu_tooltip_topmenu_Nouveau");
 $nouveau=href(dispatch_url("search.search", "wiki",	array("title"=>"AssoCope_nouveaut%C3%A9s")),    $aided,	SESSION_NEW,	false, ' target="_blank"'. $menutip);
-//			$nouveau=href("http://www.wikistoma.org/wiki/index.php?title=AssoCope_nouveaut%C3%A9s", $aided, SESSION_NEW, false, 'target="_blank"' . $menutip);
 
 if (is_allowed("profil.userprefs", "edit")) {
 }
@@ -262,7 +259,6 @@ $menu .= href('menu.php?atkmenutop=Tables',  '<img class="recordlist" border="0"
 $menu .= '&nbsp&nbsp&nbsp&nbsp';
 $accueil=$menu;
 $content="";
-// $title = '<b>' . $wikiassoc_user . ' avec ' . href("http://www.wikistoma.org/wiki", atktext($wikiassoc_name), SESSION_NEW, false, 'target="_blank"') . ' - version : ' . $wikiassoc_version . ' ' . $wikiassoc_state . ' du ' . $wikiassoc_date . '.(Atk : ' . atkversion() . ')</b>';
 $top = $ui->renderBox(array (
 		"centerpiece" => $centerpiece,
 		"accueil" => $accueil,

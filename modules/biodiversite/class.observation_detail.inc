@@ -435,57 +435,13 @@ $retour=parent::adminHeader();
 		from biodiversite_taxinomie where id ='" . $idtaxinomie . "' ");
 		$url='<center><a href="'.$rows[0]["url_image"]. '"' .$target.'"><img src="'.$rows[0]["url_image"].'" height="130" alt="'.$rows[0]["nom_binomial"].'" title="'.$rows[0]["nom_binomial"].'" /></a></center>' ;
 
-		//		$url.='<center><a href="http://www.xeno-canto.org/browse.php?query='.$rows[0]["nom_binomial"].'&pagenumber=&order=taxonomy&view=4" target="_blank"><font color="ForestGreen"><b>Chants xeno canto</b></font></a></center>';
 		;
 
 
 		return $url ;
 
 	}
-	/*
-	 * 	function etymology_display($record, $mode)
-	 {
 
-		$db = & atkGetDb();
-		$rows = $db->getrows("select nom_binomial
-		from biodiversite_taxinomie where id ='" . $record["id_taxinomie"]["id"] . "' ");
-		$nom=trim($rows[0]["nom_binomial"]);
-		$target = '';
-		if ($nom!="")
-		{			$url="http://dictionary.reference.com/search?q=".$nom;
-		$target = ' target="_blank"';
-		return '<a href="' . $url . '"' . $target . '"><font color="ForestGreen"><b>Etymology</b></font></a>';
-		}
-		else
-		{
-		return "";
-		}
-		}
-		*/
-
-	/*
-	 function ascendance_display($record, $mode)
-	 {
-		//
-		$idtaxinomie=trim($record["id_taxinomie"]["id"]);
-		$db = & atkGetDb();
-		$rows = $db->getrows("select id_parent from biodiversite_taxinomie where id ='" . $idtaxinomie . "' ");
-		$id_parent=$rows[0]["id_parent"];
-		$ascendance="";
-		while (isset($id_parent))
-		{
-		$sql="SELECT t.id,  id_parent, nom_binomial, nom_latin from biodiversite_taxinomie t , biodiversite_rang_taxinomique r where t.id='".$id_parent."' and t.id_rang_taxinomique=r.id";
-		$data=$db->getrows($sql);
-		//		http://www.wikistoma.org/association/dispatch.php?atknodetype=biodiversite.taxinomie&atkaction=view&atkselector=biodiversite_taxinomie.id%3D%2782568%27&atklevel=1&atkprevlevel=0&atkstackid=4a1107623cb41&
-		// <a target="main"  href="dispatch.php?atknodetype=table.type_placemark&atkaction=admin&atklevel=-1&atkprevlevel=0&">Types Repères</a>
-		$id_parent=$data[0]["id_parent"];
-		$ascendance='<a target="main" href="dispatch.php?atknodetype=biodiversite.taxinomie&atkaction=view&atkselector=biodiversite_taxinomie.id='.$data[0]["id"]. '&">'.$data[0]["nom_binomial"].'</a>'.'('.$data[0]["nom_latin"].') <br />'.$ascendance;
-		}
-
-		return $ascendance;
-
-		}
-		*/
 	function ascendance_display($record, $mode)
 	{
 		$ascendance=$this->decoupe_affichage_colonne($this->descripteur_biodiversite_ascendance($record["id_taxinomie"]["id"], $destination='affichage'),50);
@@ -762,7 +718,7 @@ $retour=parent::adminHeader();
 		$db = & atkGetDb();
 		$r = $db->getrows("$select");
 		$site = atkHost();
-		$urlsite = 'http://' . $site;
+		$urlsite = atkconfig("http_https") . $site;
 		$sitesanswww = substr_replace($site, '', 0, 4);
 		for ($i = 0; $i < count($r); $i++) {
 			$title=$r[$i]['nom_binomial'].' ('.$r[$i]['nom_francais'].') ('.$r[$i]['date_observation'].' '.$r[$i]['heure_observation'].')';

@@ -54,7 +54,7 @@ function smarty_function_piedpage($params, &$smarty)
 	$menutip7=fairetooltip("menu_tooltip_topmenu_Explicationnoeud");
 	$menutip8=fairetooltip("menu_tooltip_topmenu_Traductionnoeud");
 	$footer.=" <div class='piedpage'>
-	<a ".$menutip1."class='piedpage' href='http://www.wikistoma.org/wiki/index.php?title=Accueil' target='_blank'>© 2006-".$an." AssoCope</a>";
+	<a ".$menutip1."class='piedpage' href='".atkConfig("url_assocope")."wiki/index.php?title=Accueil' target='_blank'>© 2006-".$an." AssoCope</a>";
 	if ($module!="" and $node!="")
 	{
 		$footer.="	&nbsp;|&nbsp;
@@ -98,7 +98,7 @@ function smarty_function_piedpage($params, &$smarty)
 	&nbsp;|&nbsp;
 	".$href_faqs."
 	&nbsp;|&nbsp;
-	<a  ".$menutip3."class='piedpage' href='http://www.wikistoma.org/association/dispatch.php?atknodetype=application.globales&atkaction=confidentialite&'>Règles de confidentialité</a>
+	<a  ".$menutip3."class='piedpage' href='".atkConfig("url_assocope")."association/dispatch.php?atknodetype=application.globales&atkaction=confidentialite&'>Règles de confidentialité</a>
 	&nbsp;|&nbsp;
 	<a  ".$menutip4."class='piedpage' href='http://www.achievo.org/atk' target='_blank'>Powered by Achievo Tool Kit</a>
 	</div>"         ;

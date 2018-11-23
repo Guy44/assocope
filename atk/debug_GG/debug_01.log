@@ -1,5 +1,5 @@
 [12:29:57h / 2.91277s / 14.05MB / 0 Queries / 0 System Queries] GET 
-http://www.wikistoma.org/association/dispatch.php?
+https://www.wikistoma.org/association/dispatch.php?
 atknodetype=table.activite&
 atkaction=admin&
 atklevel=-1&

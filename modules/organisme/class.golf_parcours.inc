@@ -415,11 +415,7 @@ class golf_parcours extends assMetaNode {
 			'<img class="recordlist" border="0" src="./themes/assocope/icons/assocope/meteo.png" alt="Météo" 
 			title="Météo"  ></img></a></b>';
 		}
-	//	http://www.wikistoma.org/association/dispatch.php?
-	// atknodetype=organisme.document&
-	//atkaction=fichier&
-	//atkselector=organisme_document.id%3D%271564%27
-	//&atklevel=2&atkprevlevel=1&atkstackid=4fa385a041cd7&
+
 		if ($record["id_document_photo"]!='')
 		{
 		$retour.=href(dispatch_url("organisme.document", "fichier", array (	'atkselector' => "organisme_document.id='" .$record["id_document_photo"]["id"]. "'"

@@ -2991,6 +2991,7 @@ Le président, <br /><br />                                    Le secrétaire,";
                 $query->addField("individu.telephone_mobile as telephone_mobile");
                 $query->addField("individu.courriel as courriel");
                 $query->addField("individu.date_naissance as date_naissance");
+                $query->addField("individu.date_deces as date_deces");
                 $query->addField("YEAR(individu.date_naissance) as annee_naissance");
                 $query->addField("individu.golf_licence as golf_licence");
                 $query->addField("individu.golf_index as golf_index");
@@ -3013,11 +3014,13 @@ Le président, <br /><br />                                    Le secrétaire,";
                 $tbl->setRowClass(1, "superbold");
                 $row = array();
                 $row[] = "#";
-                $row[] = "Portrait";
-                // $row[] = "Icônes";
                 $row[] = "Nom";
                 $row[] = "Prénom";
-                // $row[] = "Date de naissance";
+                $row[] = "Portrait";
+                $row[] = "Courriel ?";
+                // $row[] = "Icônes";
+                
+                $row[] = "Date de décès";
                 // $row[] = "Age";
                 // $row[] = "Courriel";
                 // $row[] = "Téléphone fixe";
@@ -3052,7 +3055,6 @@ Le président, <br /><br />                                    Le secrétaire,";
                         }
                     }
                     
-                    ($stuff[$i]["id_document_portrait"] != "") ? $row[] .= " " . '<center><b><a href="' . $url_portrait . '" target="_blank" ><img style="vertical-align:middle" src="' . $url_portrait . '" height="300px" alt="Portrait" title="Portrait" />' . '</br>' . $stuff[$i]["prenom"] . ' ' . $stuff[$i]["nom"] . '</a></center></b> ' : $row[] = '<b><center><p style="color:#ff0000;">Pas de portrait</center></b></p>';
                     /*
                      * Inscrit depuis année
                      * année dernière cotisation
@@ -3062,6 +3064,7 @@ Le président, <br /><br />                                    Le secrétaire,";
                     $id_organisme = $this->m_postvars["idorganisme"];
                     $sql = "SELECT
 `organisme`.`nom` as organisme_nom,
+`organisme`.`courriel` as organisme_courriel,
 `individu`.`prenom`,
 `individu`.`nom`,
 YEAR(`individu_inscription`.`date_inscription`) as annee_inscription,
@@ -3094,9 +3097,13 @@ individu_inscription.date_radiation is null
                     // $row[] = $this->descripteur_individu($id_individu, $qr_o_n = 'n', $aide_o_n = 'n', $size = 50, $origine_appel = 'liste nom', $long_o_n = 'o', $licence_golf_o_n = 'n', $sans_lien_o_n = 'n', $lat = "", $long = "", $sans_nom_o_n = 'n', $id_organisme);
                     // $row[] = $this->descripteur_individu_new($id_individu, $id_organisme, $origine_appel = 'organisme', $option = 'icones_privees');
                     
-                    $row[] = $stuff[$i]["nom"];
+                    $row[] = "<b>" . $stuff[$i]["nom"] . "</b>";
                     $row[] = "<b>" . $stuff[$i]["prenom"] . "</b>";
-                    // $row[] = $stuff[$i]["date_naissance"];
+                    ($cotis[0]["organisme_courriel"] != "") ? $courriel_contact = '<a ' . 'href="mailto:' . $cotis[0]["organisme_courriel"] . '?subject=Adresse de courriel de ' . $stuff[$i]["prenom"] . ' ' . $stuff[$i]["nom"] . ' pour ' . $cotis[0]["organisme_nom"] . '" target="_blank"' . ">Vous pouvez la fournir en cliquant ICI<a>" : $courriel_contact = "";
+                    ($stuff[$i]["id_document_portrait"] != "") ? $row[] .= " " . '<center><b><a href="' . $url_portrait . '" target="_blank" ><img style="vertical-align:middle" src="' . $url_portrait . '" height="300px" alt="Portrait" title="Portrait" /></a>' . '</br>' . $stuff[$i]["prenom"] . ' ' . $stuff[$i]["nom"] . '</center></b> ' : $row[] .= '<b><center><p style="color: // ff0000;">Sans portrait</center></b></p></br>';
+                    ($stuff[$i]["courriel"] == "") ? $row[] = '<b><center><p style="color:#ff0000;">Sans adresse de COURRIEL </center></b></br>' . $courriel_contact . "</p>" : $row[] = "";
+                    
+                    $row[] = $stuff[$i]["date_deces"];
                     /*
                      * if (! empty($stuff[$i]["date_naissance"])) {
                      * $row[] = date('Y') - ($stuff[$i]["annee_naissance"]);

@@ -12,13 +12,13 @@ class mod_global extends associationModule
         // TRAITE DANS menu/assocope.inc
         // $this->menuitem(string libelle_menu_item, "", "parent_menu", true);
         // string libelle_menu_item : @libellé_pour_tootip@libelle_pour_libelle_menu#nombre
-        // si @libellé_pour_tootip@ est absent c'est libelle_pour_libelle_menu qui est utilisé pour vaccès à tooltip
+        // si @libellé_pour_tootip@ est absent c'est libelle_pour_libelle_menu qui est utilisé pour vaccés é tooltip
         // dans le fichier lng
         /*
          * "menu_libelle_pour_libelle_menu"=>"contenu libellé menu",
          * "menu_tooltip_libellé_pour_tootip"=>"contenu tooltip menu",
          * "module_nomattribut_tooltip" => "contenu tooltip.",
-         * "wiki_module.node"=>"critère de recherche pour le wiki"
+         * "wiki_module.node"=>"critére de recherche pour le wiki"
          * 'target_blank'
          * 'target_menu'
          * début de name ' / ' : pas de saut de ligne et insertion de ' | '
@@ -90,7 +90,7 @@ class mod_global extends associationModule
         
         // Utilisateur
         include (atkconfig("atkroot") . "version.inc");
-        $title = '<b>' . $wikiassoc_user . ' avec' . href("http://www.wikistoma.org/wiki", atktext($wikiassoc_name), SESSION_NEW, false, 'target="_blank"') . ' <br /> version : ' . $wikiassoc_version . ' ' . $wikiassoc_state . ' du ' . $wikiassoc_date . '<br />' . href("http://www.atk-framework.com/wiki/ATK", atktext("Atk"), SESSION_NEW, false, 'target="_blank"') . '(' . atkversion() . ')' . ' <br /> Php version : ' . phpversion();
+        $title = '<b>' . $wikiassoc_user . ' avec' . href(atkconfig("url_assocope")."wiki", atktext($wikiassoc_name), SESSION_NEW, false, 'target="_blank"') . ' <br /> version : ' . $wikiassoc_version . ' ' . $wikiassoc_state . ' du ' . $wikiassoc_date . '<br />' . href("http://www.atk-framework.com/wiki/ATK", atktext("Atk"), SESSION_NEW, false, 'target="_blank"') . '(' . atkversion() . ')' . ' <br /> Php version : ' . phpversion();
         
         global $g_sessionManager;
         $administrateur = $g_sessionManager->getValue("atgAdministrateur_o_n", "globals");
@@ -228,8 +228,8 @@ class mod_global extends associationModule
             $qr_utilisateur = str_replace(' ', '+', $qr_utilisateur);
             $qr_utilisateur = str_replace("'", "/'", $qr_utilisateur);
             $qr_utilisateur = utf8_encode($qr_utilisateur);
-            $qr_utilisateur = href("index.php", '<img src="http://chart.apis.google.com/chart?cht=qr&chs=150x150&chl=' . $qr_utilisateur . '" class="gwt-Image" style="">', SESSION_DEFAULT, false, 'target="_top"');
-            
+            $qr_utilisateur = href("index.php", '<img src="https://chart.apis.google.com/chart?cht=qr&chs=150x150&chl=' . $qr_utilisateur . '" class="gwt-Image" style="">', SESSION_DEFAULT, false, 'target="_top"');
+ 
             // Nom Individu
             // $data = $node->descripteur_individu($idutilisateur, 'n', 'n', '0', 'menu');
             $data = $node->descripteur_individu_new($idutilisateur, null, "manu_utilisateur", $option = "icones_privees");
@@ -332,13 +332,13 @@ class mod_global extends associationModule
             
             $data = $db->getrows("SELECT count(id) as nombre from individu_contact where (id_contact=" . $idutilisateur . " or id_individu=" . $idutilisateur . " ) and date_realisee is null");
             $nombre = $data[0]["nombre"];
-            // Contacts à faire
+            // Contacts é faire
             $this->menuitem("/Contacts_a_traiter_u" . "#" . $nombre, dispatch_url("individu.contact_i", "admin", array(
                 "atkfilter" => " ( individu_contact.id_contact='" . $idutilisateur . "' or individu_contact.id_individu='" . $idutilisateur . "' )  and individu_contact.date_realisee is null  "
             )), "Utilisateur", true);
             $data = $db->getrows("SELECT count(id) as nombre from individu_contact where ( id_contact=" . $idutilisateur . " or id_individu=" . $idutilisateur . " ) and attente_reponse_o_n='1'");
             $nombre = $data[0]["nombre"];
-            // Contacts à faire
+            // Contacts é faire
             $this->menuitem("Contacts_attente_u" . "#" . $nombre, dispatch_url("individu.contact_i", "admin", array(
                 "atkfilter" => " ( individu_contact.id_contact='" . $idutilisateur . "'  or individu_contact.id_individu='" . $idutilisateur . "' ) and individu_contact.attente_reponse_o_n='1'  "
             )), "Utilisateur", true);
@@ -373,7 +373,6 @@ class mod_global extends associationModule
             )), "Utilisateur", true);
             // Historiques
             
-            // http://www.wikistoma.org/association/dispatch.php?atknodetype=pim.pim&atkaction=pim&atklevel=-1&atkprevlevel=0&
             $this->menuitem("Etp (Coeur)", dispatch_url("etp.coeur", "admin", array(
                 "atkfilter" => "etp_coeur.id_individu='" . $idutilisateur . "'"
             )), "Utilisateur", true);
@@ -424,8 +423,8 @@ class mod_global extends associationModule
             )), "Utilisateur", true);
             // Rappels
             $this->menuitem("Rappels_u", dispatch_url("pim.pim", "pim"), "Utilisateur", true);
-            // Règles de confidentialité
-            $this->menuitem("Règles de confidentialité_u", dispatch_url("application.globales", "confidentialite"), "Utilisateur", true);
+            // Régles de confidentialité
+            $this->menuitem("Régles de confidentialité_u", dispatch_url("application.globales", "confidentialite"), "Utilisateur", true);
             // Rencontres
             $this->menuitem("Rencontres_u" . "#" . $nombre_utilisateur_rencontre, dispatch_url("individu.rencontre_i", "admin", array(
                 "atkfilter" => "individu_rencontre.id_individu='" . $idutilisateur . "'"
@@ -574,7 +573,7 @@ class mod_global extends associationModule
                 "atkfilter" => "organisme_lieu.id_organisme='" . $organismeid . "'"
             )), "Organismes", true);
             
-            // Annuaire téléphonique
+            // Annuaire téléphonique télé
             $this->menuitem("Annuaire téléphonique_o", "http://www.pagesjaunes.fr/quidonc/quiportecenom.do?nom=" . $nom_organisme, "Organismes", true);
             
             $data = $db->getrows("SELECT count(id) as nombre from individu_web where id_organisme=" . $organismeid . " ");
@@ -615,7 +614,7 @@ class mod_global extends associationModule
                 )), "Organismes", true);
                 
                 /*
-                 * // Requêtes biodiversite
+                 * // Requétes biodiversite
                  * $data = $db->getrows("SELECT count(id) as nombre from biodiversite_requete where id_organisme=" . $organismeid . " ");
                  * $nombre_observations = $data[0]["nombre"];
                  * $this->menuitem("Requetes_o"."#".$nombre_observations, dispatch_url("biodiversite.requete", "admin", array (
@@ -679,7 +678,7 @@ class mod_global extends associationModule
 																		or id_organisme_contacte ='" . $organismeid . "' ) and date_realisee is null");
             $nombre = $data[0]["nombre"];
             
-            // Contacts à faire
+            // Contacts é faire
             $this->menuitem("/Contacts_a_traiter_o" . "#" . $nombre, dispatch_url("individu.contact_i", "admin", array(
                 "atkfilter" => " ( individu_contact.id_organisme_contactant ='" . $organismeid . "'
 																		or id_organisme_contacte ='" . $organismeid . "' ) and date_realisee is null "
@@ -688,7 +687,7 @@ class mod_global extends associationModule
             $data = $db->getrows("SELECT count(id) as nombre from individu_contact where ( individu_contact.id_organisme_contactant ='" . $organismeid . "'
 																		or id_organisme_contacte ='" . $organismeid . "' ) and attente_reponse_o_n='1' ");
             $nombre = $data[0]["nombre"];
-            // Contacts à faire
+            // Contacts é faire
             $this->menuitem("Contacts_attente_o" . "#" . $nombre, dispatch_url("individu.contact_i", "admin", array(
                 "atkfilter" => " ( individu_contact.id_organisme_contactant ='" . $organismeid . "'
 																		or id_organisme_contacte ='" . $organismeid . "' ) and attente_reponse_o_n='1' "
@@ -949,7 +948,7 @@ class mod_global extends associationModule
             $data = $db->getrows("SELECT count(id)  as nombre from individu_groupe_travail where id_organisme_participant
 		 ='" . $organismeid . "' ");
             $nombre_organisme_participant = $data[0]["nombre"];
-            // Participants à des rencontres
+            // Participants é des rencontres
             $this->menuitem("Participants_groupe_travail_o" . "#" . $nombre_organisme_participant, dispatch_url("individu.groupe_travail_i", "admin", array(
                 "atkfilter" => "individu_groupe_travail.id_organisme_participant ='" . $organismeid . "'"
             )), "Organismes", true);
@@ -957,7 +956,7 @@ class mod_global extends associationModule
             $data = $db->getrows("SELECT count(id)  as nombre from individu_rencontre where id_organisme_participant
 		 ='" . $organismeid . "' ");
             $nombre_organisme_participant = $data[0]["nombre"];
-            // Participants à des rencontres
+            // Participants é des rencontres
             $this->menuitem("Participants_o" . "#" . $nombre_organisme_participant, dispatch_url("individu.rencontre_i", "admin", array(
                 "atkfilter" => "individu_rencontre.id_organisme_participant ='" . $organismeid . "'"
             )), "Organismes", true);
@@ -992,7 +991,7 @@ class mod_global extends associationModule
             )), "Organismes", true);
             $data = $db->getrows("SELECT count(id) as nombre from organisme_regle where  id_organisme=" . $organismeid . " ");
             $nombre_organisme_regle = $data[0]["nombre"];
-            // Règles et définitions o
+            // Régles et définitions o
             $this->menuitem("Règles et définitions_o" . "#" . $nombre_organisme_regle, dispatch_url("manuel.manuel", "admin", array(
                 "atkfilter" => "organisme_regle.id_organisme='" . $organismeid . "'"
             )), "Organismes", true);
@@ -1044,10 +1043,9 @@ class mod_global extends associationModule
             $qr_organisme = str_replace(' ', '+', $qr_organisme);
             $qr_organisme = str_replace("'", "/'", $qr_organisme);
             $qr_organisme = utf8_encode($qr_organisme);
-            $qr_organisme = href("index.php", '<img src="http://chart.apis.google.com/chart?cht=qr&chs=150x150&chl=' . $qr_organisme . '" class="gwt-Image" style="">', SESSION_DEFAULT, false, null);
+            $qr_organisme = href("index.php", '<img src="https://chart.apis.google.com/chart?cht=qr&chs=150x150&chl=' . $qr_organisme . '" class="gwt-Image" style="">', SESSION_DEFAULT, false, null);
             $this->menuitem("-", "", "Organismes", true);
             $this->menuitem($qr_organisme, "", "Organismes", true);
-            
             $this->menuitem("-", '', "Organismes", true);
         }
         if ($topmenu == "Tableaux_de_bord_o") {
@@ -1173,8 +1171,8 @@ class mod_global extends associationModule
             )), "Comptabilite_o", true);
             $data = $db->getrows("SELECT count(id) as nombre from organisme_fourniture where  id_organisme=" . $organismeid . " ");
             $nombre_organisme_fourniture = $data[0]["nombre"];
-            // Dépenses Règlements
-            $this->menuitem("Dépenses Règlements" . "#" . $nombre_organisme_fourniture, dispatch_url("organisme.fourniture", "admin", array(
+            // Dépenses Réglements
+            $this->menuitem("Dépenses Réglements" . "#" . $nombre_organisme_fourniture, dispatch_url("organisme.fourniture", "admin", array(
                 "atkfilter" => "organisme_fourniture.id_organisme='" . $organismeid . "'"
             )), "Comptabilite_o", true);
             $data = $db->getrows("SELECT count(id) as nombre from organisme_financement where  id_organisme=" . $organismeid . " ");
@@ -1296,16 +1294,48 @@ class mod_global extends associationModule
                 "atkfilter" => "organisme_ecriture_comptable.id_organisme='" . $organismeid . "'"
             )), "Comptabilite_o", true);
             $this->menuitem("-", null, "Comptabilite_o", true);
-            $this->menuitem("!<b>Outils de contrôle</b>", null, "Comptabilite_o", true);
+            $this->menuitem("!<b>Outils de contréle</b>", null, "Comptabilite_o", true);
             $this->menuitem("!<b>1- Déséquilibres</b>", null, "Comptabilite_o", true);
             $data = $db->getrows("SELECT count(id) as nombre from organisme_ecriture_comptable where  id_organisme=" . $organismeid . "
 			 and id in (select id_ecriture FROM `v_ecriture_comptable_controle` WHERE   (debit is null or credit is null or not credit=debit))  ");
             $nombre = $data[0]["nombre"];
-            $this->menuitem("<b><i>Ecritures_incomplètes</i></b>" . "#" . $nombre, dispatch_url("organisme.ecriture_comptable", "admin", array(
+            $this->menuitem("<b><i>Ecritures_incomplétes</i></b>" . "#" . $nombre, dispatch_url("organisme.ecriture_comptable", "admin", array(
                 "atkfilter" => "organisme_ecriture_comptable.id_organisme='" . $organismeid . "' and organisme_ecriture_comptable.id in 
 			(select id_ecriture FROM `v_ecriture_comptable_controle` WHERE   (debit is null or credit is null or not credit=debit) 
 			) "
             )), "Comptabilite_o", true);
+            /*
+             * gg
+             *
+             * SELECT id FROM organisme_ecriture_comptable
+             * where
+             * id_organisme=366 and id_type_ecriture=3
+             *
+             *
+             * $data = $db->getrows("SELECT count(id) as nombre from organisme_ecriture_comptable where id_organisme=" . $organismeid . " and
+             * id_type_ecriture=3
+             * AND NOT EXISTS
+             * (SELECT * FROM individu_rencontre WHERE
+             * organisme_ecriture_comptable.id=individu_rencontre.id_ecriture_reglement
+             * or
+             * organisme_ecriture_comptable.id=individu_rencontre.id_ecriture_participation
+             * or
+             * organisme_ecriture_comptable.id=individu_rencontre.id_ecriture_reglement_2
+             * or
+             * organisme_ecriture_comptable.id=individu_rencontre.id_ecriture_participation_2) ");
+             * $nombre = $data[0]["nombre"];
+             * $this->menuitem("<b><i>Ecritures_orphelines_rencontre</i></b>" . "#" . $nombre, dispatch_url("organisme.ecriture_comptable", "admin", array(
+             * "atkfilter" => "organisme_ecriture_comptable.id_organisme='" . $organismeid . "' and organisme_ecriture_comptable.id in
+             * (
+             *
+             *
+             * (select id_ecriture FROM `v_ecriture_comptable_controle` WHERE (debit is null or credit is null or not credit=debit)
+             * ) "
+             * )), "Comptabilite_o", true);
+             *
+             *
+             */
+            
             $this->menuitem("!<b>2- Descendance</b>", null, "Comptabilite_o", true);
             
             $data = $db->getrows("SELECT count(id ) as nombre from individu_cotisation where
@@ -1518,7 +1548,7 @@ class mod_global extends associationModule
 			 )  "
             )), "Comptabilite_o", true);
             $this->menuitem("!<b>3- Type écriture</b>", null, "Comptabilite_o", true);
-            $this->menuitem("<b><i>Mettre à jour et vérifier</i></b>", dispatch_url("organisme.ecriture_comptable", "insertion_type_ecriture", array(
+            $this->menuitem("<b><i>Mettre é jour et vérifier</i></b>", dispatch_url("organisme.ecriture_comptable", "insertion_type_ecriture", array(
                 0
             )), "Comptabilite_o", true);
             $data = $db->getrows("SELECT count(id ) as nombre from organisme_ecriture_comptable where id_type_ecriture=" . $type_ecriture_cotisation . "
@@ -1725,6 +1755,7 @@ class mod_global extends associationModule
             
             $data = $db->getrows("SELECT count(id) as nombre from todo where id_individu_a_faire=" . $individuid . " ");
             $nombre_individu_tache_a_faire = $data[0]["nombre"];
+            $qr_individu = href("index.php", '<img src="https://chart.apis.google.com/chart?cht=qr&chs=150x150&chl=' . $qr_individu . '" class="gwt-Image" style="">', SESSION_DEFAULT, false, 'target="_top"');
             
             $data = $db->getrows("SELECT count(id) as nombre from individu_web where id_individu=" . $individuid . " ");
             $nombre_individu_web = $data[0]["nombre"];
@@ -1788,7 +1819,7 @@ class mod_global extends associationModule
              * if (!empty ($calendrier_contacts_url_individu)) {
              * $this->menuitem("Calendrier_contacts_i", $calendrier_contacts_url_individu, "Individus", true);
              * $this->menuitem('!<b><font color="Coral">('.$calendrier_contacts_refresh_individu.')</font></b>', null, "Individus", true);
-             * $this->menuitem("(Rafraîchir)", dispatch_url("individu.individu", "rafraichir_calendrier_contacts", array(
+             * $this->menuitem("(Rafraéchir)", dispatch_url("individu.individu", "rafraichir_calendrier_contacts", array(
              * "atkselector" => "individu.id='" . $individuid . "'"
              * )), "Individus", true);}
              */
@@ -1804,12 +1835,9 @@ class mod_global extends associationModule
             $qr_individu = str_replace(' ', '+', $qr_individu);
             $qr_individu = str_replace("'", "/'", $qr_individu);
             $qr_individu = utf8_encode($qr_individu);
-            $qr_individu = href("index.php", '<img src="http://chart.apis.google.com/chart?cht=qr&chs=150x150&chl=' . $qr_individu . '" class="gwt-Image" style="">', SESSION_DEFAULT, false, 'target="_top"');
+            $qr_individu = href("index.php", '<img src="https://chart.apis.google.com/chart?cht=qr&chs=150x150&chl=' . $qr_individu . '" class="gwt-Image" style="">', SESSION_DEFAULT, false, 'target="_top"');
             
-            /*
-             * $this->menuitem("@vcard_i@"."vcard", dispatch_url("individu.individu", "vcard", array (
-             * "individu.id" =>"$individuid" )), "Individus", true);
-             */
+    
             $this->menuitem("-", "", "Individus", true);
             
             $data = $db->getrows("SELECT count(id) as nombre from organisme_abandon_creance where  id_individu=" . $individuid . " ");
@@ -1873,13 +1901,13 @@ class mod_global extends associationModule
             
             $data = $db->getrows("SELECT count(id) as nombre from individu_contact where id_contact=" . $individuid . " and date_realisee is null");
             $nombre = $data[0]["nombre"];
-            // Contacts à faire
+            // Contacts é faire
             $this->menuitem("/Contacts_a_traiter_i" . "#" . $nombre, dispatch_url("individu.contact_i", "admin", array(
                 "atkfilter" => "individu_contact.id_contact='" . $individuid . "' and date_realisee is null  "
             )), "Individus", true);
             $data = $db->getrows("SELECT count(id) as nombre from individu_contact where id_contact=" . $individuid . " and attente_reponse_o_n='1'");
             $nombre = $data[0]["nombre"];
-            // Contacts à faire
+            // Contacts é faire
             $this->menuitem("Contacts_attente_i" . "#" . $nombre, dispatch_url("individu.contact_i", "admin", array(
                 "atkfilter" => "individu_contact.id_contact='" . $individuid . "' and attente_reponse_o_n='1'  "
             )), "Individus", true);
@@ -2032,7 +2060,7 @@ class mod_global extends associationModule
         if ($topmenu == "Rencontres") {
             // TOP RENCONTRES
             
-            // Dernière rencontre sélectionnée
+            // Derniére rencontre sélectionnée
             $rencontreid = 0;
             $user = getUser();
             $id = $user["id"];
@@ -2581,7 +2609,6 @@ cpv.id_pays=p.id ) ");
             // Wink tutorial
             $this->menuitem("Wink tutorial", "http://www.clubic.com/lancer-le-telechargement-19160-0-wink.html", "Outils", true);
             //
-            // $this->menuitem("qr", "http://chart.apis.google.com/chart?cht=qr&chs=120x120&chl=MECARD%3AN%3AGuy+Gourmellet%3BTEL%3A0240267464%3BURL%3Awww.wikistoma.org%3BEMAIL%3Aguy.gourmellet%40gmail.com%3BADR%3A2%2C+la+M%C3%A9tellerie+44310+St+Colomban%3BNOTE%3AMemo%3B%3B", "Outils", true);
             //
             $this->menuitem('-', "", "Outils", true);
             //
@@ -2615,7 +2642,7 @@ cpv.id_pays=p.id ) ");
                 "afficher_direct" => "o"
             )), "Outils", true);
             // Principe application
-            $this->menuitem("Principe application", "http://www.wikistoma.org/wiki", "Outils", true);
+            $this->menuitem("Principe application", atkconfig("url_assocope")."wiki", "Outils", true);
             $this->menuitem('-', "", "Outils", true);
         }
         if ($topmenu == "Administrer") {
@@ -2635,7 +2662,7 @@ cpv.id_pays=p.id ) ");
                     $url = dispatch_url("organisme.organisme", "travaux", array(
                         "atktravaux" => "fin"
                     ));
-                    $this->menuitem("En travaux : arrêter", $url, "Administrer", true);
+                    $this->menuitem("En travaux : arréter", $url, "Administrer", true);
                 } else {
                     $url = dispatch_url("organisme.organisme", "travaux", array(
                         "atktravaux" => "debut"
@@ -2646,7 +2673,7 @@ cpv.id_pays=p.id ) ");
                     $url = dispatch_url("organisme.organisme", "tracer_mysqldb", array(
                         "atktracer_mysqldb" => "fin"
                     ));
-                    $this->menuitem("Tracer query mysqldb : arrêter", $url, "Administrer", true);
+                    $this->menuitem("Tracer query mysqldb : arréter", $url, "Administrer", true);
                 } else {
                     $url = dispatch_url("organisme.organisme", "tracer_mysqldb", array(
                         "atktracer_mysqldb" => "debut"
@@ -2659,7 +2686,7 @@ cpv.id_pays=p.id ) ");
                 $this->menuitem("-> Manage domains", "https://panel.dreamhost.com/index.cgi?tree=domain.manage&", "Administrer", true);
                 $this->menuitem("-> Manage vps resources", "https://panel.dreamhost.com/index.cgi?tree=vserver.usage&", "Administrer", true);
                 $this->menuitem("-> Manage MySql", "https://panel.dreamhost.com/index.cgi?tree=goodies.mysql&", "Administrer", true);
-                $this->menuitem("-> phpMyAdmin (webmaster rf9999)", "http://www.wikistoma.org/association/modules/phpMyAdmin//", "Administrer", true);
+                $this->menuitem("-> phpMyAdmin (webmaster rf9999)", atkconfig("url_assocope")."association/modules/phpMyAdmin//", "Administrer", true);
                 // https://panel.dreamhost.com/index.cgi?tree=billing.accounts&
                 $this->menuitem("-", "", "Administrer", true);
                 $this->menuitem("Noms de domaine (Namebay (IL90969 IL86482) mdpc) ", "http://www.namebay.com/manage/main.asp", "Administrer", true);
@@ -2680,7 +2707,7 @@ cpv.id_pays=p.id ) ");
                 $this->menuitem("Debugs", dispatch_url("profil.debug", "admin"), "Administrer", true);
                 // Activité utilisateurs
                 // Ex Administration
-                $this->menuitem("Ex Administration", "http://wwww.wikistoma.org/association/top.old.php", "Administrer", true);
+                $this->menuitem("Ex Administration", atkconfig("url_assocope")."association/top.old.php", "Administrer", true);
                 // Export Contacts
                 $this->menuitem("Export Contacts", dispatch_url("individu.individu", "listeecran", array(
                     "atkcode" => '1'
@@ -2706,7 +2733,7 @@ cpv.id_pays=p.id ) ");
                 // Menus
                 // $this->menuitem("Menus", dispatch_url("menu.menu", "admin"), "Administrer", true);
                 
-                $this->menuitem("search db_search (webmaster rf9999)", "http://www.wikistoma.org/association/modules/search/db_search.php/", "Administrer", true);
+                $this->menuitem("search db_search (webmaster rf9999)", atkconfig("url_assocope")."association/modules/search/db_search.php/", "Administrer", true);
                 // Profils
                 $this->menuitem("Profils", dispatch_url("profil.profil", "admin"), "Administrer", true);
                 // Statistiques
@@ -2816,7 +2843,7 @@ cpv.id_pays=p.id ) ");
             $this->menuitem("Points_observations (Organisme)", dispatch_url("biodiversite.point_observation", "admin"), "Global", true);
             // Référencements(Organisme)
             $this->menuitem("referencements(Organisme)", dispatch_url("organisme.referencement", "admin"), "Global", true);
-            // Règles(Organisme)
+            // Régles(Organisme)
             $this->menuitem("regles(Organisme)", dispatch_url("manuel.manuel", "admin"), "Global", true);
             // Rencontres(Organisme)
             $this->menuitem("rencontres(Organisme)", dispatch_url("organisme.rencontre", "admin"), "Global", true);
@@ -2839,22 +2866,22 @@ cpv.id_pays=p.id ) ");
             $this->menuitem("-", "", "Divers", true);
             // Régions
             $this->menuitem("Régions", dispatch_url("table.type_region_pays", "admin"), "Divers", true);
-            // Repères
-            $this->menuitem("Repères", dispatch_url("gis.placemark", "admin"), "Divers", true);
+            // Repéres
+            $this->menuitem("Repéres", dispatch_url("gis.placemark", "admin"), "Divers", true);
             // Symboles
             $this->menuitem("Symboles", dispatch_url("gis.icone", "admin"), "Divers", true);
             // Zones
             $this->menuitem("Zones", dispatch_url("table.type_zone_region_pays", "admin"), "Divers", true);
             //
             $this->menuitem("-", null, "Divers", true);
-            // Attributs Repères
-            $this->menuitem("Attributs Repères", dispatch_url("table.type_attribut_placemark", "admin"), "Divers", true);
+            // Attributs Repéres
+            $this->menuitem("Attributs Repéres", dispatch_url("table.type_attribut_placemark", "admin"), "Divers", true);
             // Marée Météo
             $this->menuitem("Marée Météo", dispatch_url("table.maree_meteo", "admin"), "Divers", true);
             // Symboles Gps
             $this->menuitem("Symboles Gps", dispatch_url("table.type_symbole_gps", "admin"), "Divers", true);
-            // Types Repères
-            $this->menuitem("Types Repères", dispatch_url("table.type_placemark", "admin"), "Divers", true);
+            // Types Repéres
+            $this->menuitem("Types Repéres", dispatch_url("table.type_placemark", "admin"), "Divers", true);
             // Types symboles
             $this->menuitem("Types symboles", dispatch_url("table.type_icone", "admin"), "Divers", true);
             //
@@ -2873,8 +2900,6 @@ cpv.id_pays=p.id ) ");
             $this->menuitem("Compétiteurs", dispatch_url("individu.carte_golf", "admin"), "Divers", true);
             // Parcours
             $this->menuitem("Parcours", dispatch_url("organisme.golf_parcours", "admin"), "Divers", true);
-            
-            // http://www.wikistoma.org/association/dispatch.php?atknodetype=tournoi.tournoi&atkaction=admin&atkfilter=organisme_tournoi.id_organisme%20%3D%27366%27&atklevel=-1&atkprevlevel=0&
             
             // Tournois
             $this->menuitem("Tournois", dispatch_url("tournoi.tournoi", "admin"), "Divers", true);
@@ -2970,7 +2995,7 @@ cpv.id_pays=p.id ) ");
             // http://developer.android.com/index.html
             // http://code.google.com/apis/ajax/playground/
             // Android
-            $this->menuitem("Androïd", "http://developer.android.com/index.html", "Rd", true);
+            $this->menuitem("Androéd", "http://developer.android.com/index.html", "Rd", true);
             // Css
             $this->menuitem("Css", "http://www.w3.org/TR/REC-CSS1", "Rd", true);
             // Eclipse
@@ -2994,8 +3019,8 @@ cpv.id_pays=p.id ) ");
             
             // Html 401
             $this->menuitem("Html", "http://www.w3.org/TR/html401/cover.html#minitoc", "Rd", true);
-            // Icônes
-            $this->menuitem("Icônes", "http://www.iconarchive.com/show/glaze-icons-by-mart/spreadsheet-icon.html", "Rd", true);
+            // Icénes
+            $this->menuitem("Icénes", "http://www.iconarchive.com/show/glaze-icons-by-mart/spreadsheet-icon.html", "Rd", true);
             // Java
             $this->menuitem("Java", "http://www.wikijava.org", "Rd", true);
             // Javascript
@@ -3036,21 +3061,21 @@ cpv.id_pays=p.id ) ");
                 "feed_type" => "contacts_photos"
             )), "Rd", true);
             
-            $this->menuitem("Blogger.php", "http://www.wikistoma.org/association/modules/demos/Zend/Gdata/Blogger.php", "Rd", true);
-            $this->menuitem("Calendar.php", "http://www.wikistoma.org/association/modules/demos/Zend/Gdata/Calendar.php", "Rd", true);
-            $this->menuitem("Docs.php", "http://www.wikistoma.org/association/modules/demos/Zend/Gdata/Docs.php", "Rd", true);
-            $this->menuitem("Gapps.php", "http://www.wikistoma.org/association/modules/demos/Zend/Gdata/Gapps.php", "Rd", true);
-            $this->menuitem("Gbase.php", "http://www.wikistoma.org/association/modules/demos/Zend/Gdata/Gbase.php", "Rd", true);
-            $this->menuitem("Health.php", "http://www.wikistoma.org/association/modules/demos/Zend/Gdata/Health.php", "Rd", true);
-            $this->menuitem("InstallationChecker.php", "http://www.wikistoma.org/association/modules/demos/Zend/Gdata/InstallationChecker.php", "Rd", true);
-            $this->menuitem("Photos.php", "http://www.wikistoma.org/association/modules/demos/Zend/Gdata/Photos.php", "Rd", true);
-            $this->menuitem("Spreadsheet-ClientLogin.php", "http://www.wikistoma.org/association/modules/demos/Zend/Gdata/Spreadsheet-ClientLogin.php", "Rd", true);
+            $this->menuitem("Blogger.php", atkconfig("url_assocope")."association/modules/demos/Zend/Gdata/Blogger.php", "Rd", true);
+            $this->menuitem("Calendar.php", atkconfig("url_assocope")."association/modules/demos/Zend/Gdata/Calendar.php", "Rd", true);
+            $this->menuitem("Docs.php", atkconfig("url_assocope")."association/modules/demos/Zend/Gdata/Docs.php", "Rd", true);
+            $this->menuitem("Gapps.php", atkconfig("url_assocope")."association/modules/demos/Zend/Gdata/Gapps.php", "Rd", true);
+            $this->menuitem("Gbase.php", atkconfig("url_assocope")."association/modules/demos/Zend/Gdata/Gbase.php", "Rd", true);
+            $this->menuitem("Health.php", atkconfig("url_assocope")."association/modules/demos/Zend/Gdata/Health.php", "Rd", true);
+            $this->menuitem("InstallationChecker.php", atkconfig("url_assocope")."association/modules/demos/Zend/Gdata/InstallationChecker.php", "Rd", true);
+            $this->menuitem("Photos.php", atkconfig("url_assocope")."association/modules/demos/Zend/Gdata/Photos.php", "Rd", true);
+            $this->menuitem("Spreadsheet-ClientLogin.php", atkconfig("url_assocope")."association/modules/demos/Zend/Gdata/Spreadsheet-ClientLogin.php", "Rd", true);
             $this->menuitem("-", "", "Rd", true);
-            $this->menuitem("MyLibrary/demo.php", "http://www.wikistoma.org/association/modules/demos/Zend/Gdata/MyLibrary/demo.php", "Rd", true);
-            $this->menuitem("3LeggedOAuth/index.php", "http://www.wikistoma.org/association/modules/demos/Zend/Gdata/3LeggedOAuth/index.php", "Rd", true);
-            $this->menuitem("BooksBrowser/index.php", "http://www.wikistoma.org/association/modules/demos/Zend/Gdata/BooksBrowser/index.php", "Rd", true);
-            $this->menuitem("YouTubeVideoApp/index.php", "http://www.wikistoma.org/association/modules/demos/Zend/Gdata/YouTubeVideoApp/index.php", "Rd", true);
-            $this->menuitem("YouTubeVideoBrowser/index.php", "http://www.wikistoma.org/association/modules/demos/Zend/Gdata/YouTubeVideoBrowser/index.php", "Rd", true);
+            $this->menuitem("MyLibrary/demo.php", atkconfig("url_assocope")."association/modules/demos/Zend/Gdata/MyLibrary/demo.php", "Rd", true);
+            $this->menuitem("3LeggedOAuth/index.php", atkconfig("url_assocope")."association/modules/demos/Zend/Gdata/3LeggedOAuth/index.php", "Rd", true);
+            $this->menuitem("BooksBrowser/index.php", atkconfig("url_assocope")."association/modules/demos/Zend/Gdata/BooksBrowser/index.php", "Rd", true);
+            $this->menuitem("YouTubeVideoApp/index.php", atkconfig("url_assocope")."association/modules/demos/Zend/Gdata/YouTubeVideoApp/index.php", "Rd", true);
+            $this->menuitem("YouTubeVideoBrowser/index.php", atkconfig("url_assocope")."association/modules/demos/Zend/Gdata/YouTubeVideoBrowser/index.php", "Rd", true);
             $this->menuitem("-", "", "Rd", true);
             
             $this->menuitem("!<b>Tests</b>", "", "Rd", true);
@@ -3080,7 +3105,7 @@ cpv.id_pays=p.id ) ");
             $this->menuitem("D3-41", "modules/d3-google/demos_d3/041.php", "Rd", true);
             $this->menuitem("D3-60", "modules/d3-google/demos_d3/060.php", "Rd", true);
             
-            $this->menuitem("Graphiques", "http://www.wikistoma.org/association/modules/gChart/gChartExample2.php", "Rd", true);
+            $this->menuitem("Graphiques", atkconfig("url_assocope")."association/modules/gChart/gChartExample2.php", "Rd", true);
             $this->menuitem("Test vitesse Internet", "http://performance.toast.net", "Rd", true);
             // debugging
             $deb = href("index.php?atkdebug[key]=titi", 'Mise au point', SESSION_NEW, false, 'target="_top"');
@@ -3088,14 +3113,14 @@ cpv.id_pays=p.id ) ");
             // $this->menuitem("Mise au point",atkHref("index.php?atkdebug[key]=titi","", $sessionstatus=SESSION_NEW, false, 'target="_top"') , "Rd", true);
             
             // Tests
-            $this->menuitem("gbif", "http://www.wikistoma.org/association/modules/test/testubio_keycode.php", "Rd", true);
+            $this->menuitem("gbif", atkconfig("url_assocope")."association/modules/test/testubio_keycode.php", "Rd", true);
             $this->menuitem("Rapports bio", dispatch_url("biodiversite.biodiversite_rapports", "observation"), "Rd", true);
             $this->menuitem("Tests Guy", dispatch_url("test.testguy", "intro"), "Rd", true);
             $this->menuitem("Tests MySql", dispatch_url("test.testmysql", "testmysql"), "Rd", true);
             $this->menuitem("Tests descripteur_individu", dispatch_url("test.testmysql", "test_descripteur_individu"), "Rd", true);
             
             // Simpletest tutorial
-            $this->menuitem("db_search", "http://www.wikistoma.org/association/modules/search/db_search.php", "Rd", true);
+            $this->menuitem("db_search", atkconfig("url_assocope")."association/modules/search/db_search.php", "Rd", true);
             $this->menuitem("Simpletest tutorial", "http://www.lastcraft.com/first_test_tutorial.php", "Rd", true);
             $this->menuitem("Simpletest unit_tests", atkconfig("atkroot") . "simpletest/test/unit_tests.php", "Rd", true);
             $this->menuitem("Simpletest all_tests", atkconfig("atkroot") . "simpletest/test/all_tests.php", "Rd", true);
@@ -3179,7 +3204,7 @@ and id_organisme='" . $organismeid . "')"
                 )), "Traitements", true);
                 
                 $nombre = $data[0]["inscrire_federation_o_n"];
-                $this->menuitem("A inscrire à fédération" . "#" . $nombre, dispatch_url("individu.individu", "admin", array(
+                $this->menuitem("A inscrire é fédération" . "#" . $nombre, dispatch_url("individu.individu", "admin", array(
                     'atkfilter' => "individu.id in (select id_individu from individu_inscription where inscrire_federation_o_n=1
 and id_organisme=" . $organismeid . ")"
                 )), "Traitements", true);
@@ -3203,37 +3228,37 @@ and id_organisme=" . $organismeid . ")"
                 )), "Traitements", true);
                 
                 $nombre = $data[0]["regler_cotisation_federation_o_n"];
-                $this->menuitem("Règler cotisations fédération" . "#" . $nombre, dispatch_url("individu.individu", "admin", array(
+                $this->menuitem("Régler cotisations fédération" . "#" . $nombre, dispatch_url("individu.individu", "admin", array(
                     'atkfilter' => "individu.id in (select id_individu from individu_inscription where regler_cotisation_federation_o_n=1
     		and id_organisme=" . $organismeid . ")"
                 )), "Traitements", true);
                 
                 $nombre = $data[0]["imprimer_adresse_o_n"];
-                $this->menuitem("Adresses à imprimer" . "#" . $nombre, dispatch_url("individu.individu", "admin", array(
+                $this->menuitem("Adresses é imprimer" . "#" . $nombre, dispatch_url("individu.individu", "admin", array(
                     'atkfilter' => "individu.id in (select id_individu from individu_inscription where imprimer_adresse_o_n=1
     		and id_organisme=" . $organismeid . ")"
                 )), "Traitements", true);
                 
                 $nombre = $data[0]["envoyer_recu_fiscal_o_n"];
-                $this->menuitem("Reçus fiscaux à imprimer" . "#" . $nombre, dispatch_url("individu.individu", "admin", array(
+                $this->menuitem("Reéus fiscaux é imprimer" . "#" . $nombre, dispatch_url("individu.individu", "admin", array(
                     'atkfilter' => "individu.id in (select id_individu from individu_inscription where envoyer_recu_fiscal_o_n=1
     		and id_organisme=" . $organismeid . ")"
                 )), "Traitements", true);
                 
                 $nombre = $data[0]["envoyer_timbre_o_n"];
-                $this->menuitem("Timbres à envoyer" . "#" . $nombre, dispatch_url("individu.individu", "admin", array(
+                $this->menuitem("Timbres é envoyer" . "#" . $nombre, dispatch_url("individu.individu", "admin", array(
                     'atkfilter' => "individu.id in (select id_individu from individu_inscription where envoyer_timbre_o_n=1
     		and id_organisme=" . $organismeid . ")"
                 )), "Traitements", true);
                 
                 $nombre = $data[0]["envoyer_carte_adherent_o_n"];
-                $this->menuitem("Cartes à envoyer" . "#" . $nombre, dispatch_url("individu.individu", "admin", array(
+                $this->menuitem("Cartes é envoyer" . "#" . $nombre, dispatch_url("individu.individu", "admin", array(
                     'atkfilter' => "individu.id in (select id_individu from individu_inscription where envoyer_carte_adherent_o_n=1
     		and id_organisme=" . $organismeid . ")"
                 )), "Traitements", true);
                 
                 $nombre = $data[0]["reclamer_cotisation_o_n"];
-                $this->menuitem("Cotisations à relancer" . "#" . $nombre, dispatch_url("individu.individu", "admin", array(
+                $this->menuitem("Cotisations é relancer" . "#" . $nombre, dispatch_url("individu.individu", "admin", array(
                     'atkfilter' => "individu.id in (select id_individu from individu_inscription where reclamer_cotisation_o_n=1
     		and id_organisme=" . $organismeid . ")"
                 )), "Traitements", true);
@@ -3286,9 +3311,9 @@ and id_organisme=" . $organismeid . ")"
                     "atkcode" => "1",
                     "id" => $organismeid
                 )), "Traitements", true);
-                // Impression reçus fiscaux
+                // Impression reéus fiscaux
                 $nombre = $data[0]["envoyer_recu_fiscal_o_n"];
-                $this->menuitem("Impression reçus fiscaux#" . $nombre, dispatch_url("organisme.v_individu_recu_fiscal", "document", array(
+                $this->menuitem("Impression reéus fiscaux#" . $nombre, dispatch_url("organisme.v_individu_recu_fiscal", "document", array(
                     "atkselector" => "organisme_id='" . $organismeid . "'",
                     "atkfilter" => "v_individu_recu_fiscal.id_organisme='" . $organismeid . "'",
                     "atkdoctpl" => "recu_fiscal.odt",
@@ -3312,21 +3337,21 @@ and id_organisme=" . $organismeid . ")"
                 $this->menuitem("-", "", "Traitements", true);
                 $this->menuitem("!<b>4-Mise sous pli</b>", "", "Traitements", true);
                 $this->menuitem("-", "", "Traitements", true);
-                $this->menuitem("!<b>5-Mise à jour des dates</b>", "", "Traitements", true);
-                // Mise à jour date envoi reçus fiscaux
-                $this->menuitem("Mise à jour date reçus fiscaux##" . $nombre_recu_fiscal, dispatch_url("traitement.trimestriel", "recu_maj", array(
+                $this->menuitem("!<b>5-Mise é jour des dates</b>", "", "Traitements", true);
+                // Mise é jour date envoi reéus fiscaux
+                $this->menuitem("Mise é jour date reéus fiscaux##" . $nombre_recu_fiscal, dispatch_url("traitement.trimestriel", "recu_maj", array(
                     "atkselector" => "organisme_id='" . $organismeid . "'",
                     "id" => $organismeid
                 
                 )), "Traitements", true);
-                // Mise à jour date timbres
-                $this->menuitem("Mise à jour date timbres##" . $nombre_timbre, dispatch_url("traitement.trimestriel", "timbre_maj", array(
+                // Mise é jour date timbres
+                $this->menuitem("Mise é jour date timbres##" . $nombre_timbre, dispatch_url("traitement.trimestriel", "timbre_maj", array(
                     "atkselector" => "organisme_id='" . $organismeid . "'",
                     "id" => $organismeid
                 
                 )), "Traitements", true);
-                // Mise à jour date cartes
-                $this->menuitem("Mise à jour date cartes##" . $nombre_carte, dispatch_url("traitement.trimestriel", "carte_maj", array(
+                // Mise é jour date cartes
+                $this->menuitem("Mise é jour date cartes##" . $nombre_carte, dispatch_url("traitement.trimestriel", "carte_maj", array(
                     "atkselector" => "organisme_id='" . $organismeid . "'",
                     "id" => $organismeid
                 
@@ -3339,17 +3364,16 @@ and id_organisme=" . $organismeid . ")"
                 )), "Traitements", true);
                 
                 $this->menuitem("-", "", "Traitements", true);
-                $this->menuitem("!<b>7-Mise à jour date synchronisation</b>", "", "Traitements", true);
-                // Mise à jour envoi fédération http://www.wikistoma.org/association/dispatch.php?atkaction=traitement&id=2&atkcode=11&atklevel=1&atkprevlevel=0&atkstackid=48d6caa78d4ac&
-                $this->menuitem("@miseàjourenvoifédération@" . "Mise à jour envoi fédération##" . $nombre_synchro_federation, dispatch_url("organisme.organisme", "traitement", array(
+                $this->menuitem("!<b>7-Mise é jour date synchronisation</b>", "", "Traitements", true);
+                $this->menuitem("@miseéjourenvoifédération@" . "Mise é jour envoi fédération##" . $nombre_synchro_federation, dispatch_url("organisme.organisme", "traitement", array(
                     "atkcode" => "11",
                     "id" => $organismeid
                 )), "Traitements", true);
                 $this->menuitem("-", "", "Traitements", true);
                 
-                // Impression reçus fiscaux
-                $this->menuitem("!<b>8-Reçus fiscaux pour abandon de créance</b>", "", "Traitements", true);
-                $this->menuitem("Impression reçus fiscaux abandon de creance", dispatch_url("organisme.v_individu_recu_fiscal_abandon", "document", array(
+                // Impression reéus fiscaux
+                $this->menuitem("!<b>8-Reéus fiscaux pour abandon de créance</b>", "", "Traitements", true);
+                $this->menuitem("Impression reéus fiscaux abandon de creance", dispatch_url("organisme.v_individu_recu_fiscal_abandon", "document", array(
                     "atkselector" => "organisme_id='" . $organismeid . "'",
                     "atkfilter" => "v_individu_recu_fiscal_abandon.id_organisme='" . $organismeid . "'",
                     "atkdoctpl" => "recu_fiscal_abandon.odt",
@@ -3359,8 +3383,8 @@ and id_organisme=" . $organismeid . ")"
                 
                 )), "Traitements", true);
                 
-                // Mise à jour date envoi reçus fiscaux
-                $this->menuitem("Mise à jour date reçus fiscaux abandon de creance##" . $nombre_abandon_creance, dispatch_url("organisme.v_individu_recu_fiscal_abandon", "recu_maj", array(
+                // Mise é jour date envoi reéus fiscaux
+                $this->menuitem("Mise é jour date reéus fiscaux abandon de creance##" . $nombre_abandon_creance, dispatch_url("organisme.v_individu_recu_fiscal_abandon", "recu_maj", array(
                     "atkselector" => "organisme_id='" . $organismeid . "'",
                     "id" => $organismeid
                 

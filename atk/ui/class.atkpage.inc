@@ -369,7 +369,7 @@ class atkPage {
 			$version .= " ($Name$)";
 		$res .= '  <meta name="atkversion" content="' . $version . '" />' . "\n";
 		// GG
-		$urlsite = 'http://' . atkHost () . '/association/';
+		$urlsite = atkconfig("http_https"). atkHost () . '/association/';
 		$res .= '<base href="' . $urlsite . '" />' . "\n";
 		$res .= '<meta name="Author" content="Guy Gourmellet">';
 		$res .= '<meta name="Copyright" content="AssoCope">';
